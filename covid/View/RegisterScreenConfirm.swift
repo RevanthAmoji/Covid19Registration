@@ -131,6 +131,7 @@ class RegisterScreenConfirm: UIViewController {
         setPreviousData()
         setPreviousDetails()
        
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
 
     

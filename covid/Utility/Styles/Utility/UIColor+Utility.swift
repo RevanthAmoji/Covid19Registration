@@ -37,19 +37,3 @@ extension UIColor {
         self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0, green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0, blue: CGFloat(rgbValue & 0x0000FF) / 255.0, alpha: alpha )
     }
 }
-
-enum Colors:String {
-    case navigationBar = "05464A"
-    case buttonActiveColor = "045257"
-    case buttonInactiveColor = "FFFFFF"
-    case buttonHoverStateColor = "549491"
-    case redColor = "ED6660"
-    case menuBackGroundColor = "639290"
-    case textFieldBackGroundColor = "ECF3F2"
-  
-}
-
-enum TextColors:String {
-    case buttonActiveColor = "FFFFFF"
-    case buttonInactiveColor = "045257"
-}

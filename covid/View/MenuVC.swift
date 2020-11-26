@@ -9,13 +9,13 @@ import UIKit
 
 class MenuVC: UIViewController {
 
-    @IBOutlet weak var laguageLabel: UILabel!
+    @IBOutlet weak var laguageLabel: SutherlandLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SingletonUI.shared.viewMenuBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
-        self.view.backgroundColor =  UIColor.init(hex: Colors.buttonHoverStateColor.rawValue)
         // Hidden backbutton
         self.navigationController?.navigationBar.topItem?.hidesBackButton = true
 

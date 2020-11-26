@@ -22,9 +22,18 @@ extension UIColor {
         
         static let buttonfieldsInactive = UIColor(rgbValue: 0x045257)
         static let buttonfieldsactive = UIColor(rgbValue: 0xFFFFFF)
+        static let buttonHoverStateColor = UIColor(rgbValue: 0x549491)
         
         static let forminfo = UIColor(rgbValue: 0x549491)
         
+        
+        static let navigationBar = UIColor(rgbValue: 0x05464A)
+        
+        static let redColor = UIColor(rgbValue: 0xED6660)
+        
+        static let textFieldBackGroundColor = UIColor(rgbValue: 0xECF3F2)
+        
+        static let menuBackGroundColor = UIColor(rgbValue: 0x639290)
        
         static let shadowDefault = UIColor(rgbValue: 0x000000, alpha: 0.25)
         static let shadowDropLarge = UIColor(rgbValue: 0x000000, alpha: 0.16)

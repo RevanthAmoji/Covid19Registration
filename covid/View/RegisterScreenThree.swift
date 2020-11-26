@@ -45,6 +45,8 @@ class RegisterScreenThree: UIViewController {
         backGndView.isHidden = true
         
         btnNext.btnEnable(boolVal: false)
+        
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)

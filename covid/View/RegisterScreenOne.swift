@@ -42,6 +42,7 @@ class RegisterScreenOne: UIViewController {
 
         // Do any additional setup after loading the view.
         btnNext.btnEnable(boolVal: false)
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     
     // MARK: - Navigation

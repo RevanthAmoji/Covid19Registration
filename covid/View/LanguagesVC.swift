@@ -15,8 +15,8 @@ class LanguagesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SingletonUI.shared.viewMenuBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
-        self.view.backgroundColor =  UIColor.init(hex: Colors.buttonHoverStateColor.rawValue)
         self.languagesTableView.reloadData()
         
     }

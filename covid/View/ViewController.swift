@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     let yourAttributes: [NSAttributedString.Key: Any] = [
           .font: UIFont.systemFont(ofSize: 18),
-        .foregroundColor: UIColor.init(hex: Colors.buttonHoverStateColor.rawValue),
+        .foregroundColor: UIColor.Citygo.formsubtitlesnotselected,
           .underlineStyle: NSUnderlineStyle.single.rawValue]
     
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         btnGetStarted.btnEnable(boolVal: true)
         btnHowItWorks.btnHover(boolVal: true)
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

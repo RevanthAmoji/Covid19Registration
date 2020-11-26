@@ -92,10 +92,9 @@ class SutherlandTextField: UITextField {
        }
   
     func showBoaderColor(isEnable: Bool) {
-        
         if isEnable {
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = UIColor.init(hex: Colors.redColor.rawValue).cgColor
+            self.layer.borderColor = UIColor.Citygo.redColor.cgColor
         } else {
             self.layer.borderWidth = 0
             self.layer.borderColor = UIColor.clear.cgColor

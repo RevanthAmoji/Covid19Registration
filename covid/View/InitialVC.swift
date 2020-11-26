@@ -10,6 +10,7 @@ import UIKit
 class InitialVC: UIViewController {
     
     @IBOutlet weak var tfRelationShip: SutherlandTextField!
+    @IBOutlet weak var tfRelationShipDummy: SutherlandTextField!
     @IBOutlet weak var tfPatientFirstName: SutherlandTextField!
     @IBOutlet weak var tfPatientLastName: SutherlandTextField!
     @IBOutlet weak var tfSignature: SutherlandTextField!
@@ -50,7 +51,8 @@ class InitialVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setConstraintValues()
-        textfieldsBackGndColor()
+        //textfieldsBackGndColor()
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         self.heighlighBoarderColor(boolVal: false)
     }
     override func viewWillAppear (_ animated: Bool) {
@@ -162,21 +164,27 @@ class InitialVC: UIViewController {
         dropDownBackgroundView.isHidden = !boolVal
         
         if boolVal {
-            tfRelationShip.layer.borderColor = UIColor.init(hex: Colors.redColor.rawValue).cgColor
+            tfRelationShip.layer.borderColor = UIColor.Citygo.redColor.cgColor
+            tfRelationShipDummy.layer.borderColor = UIColor.Citygo.redColor.cgColor
         } else {
             tfRelationShip.layer.borderColor = UIColor.clear.cgColor
+            tfRelationShipDummy.layer.borderColor = UIColor.Citygo.redColor.cgColor
+
         }
         
         tfRelationShip.layer.borderWidth = 0.4
         tfRelationShip.layer.cornerRadius = 5.0
+        
+        tfRelationShipDummy.layer.borderWidth = 0.4
+        tfRelationShipDummy.layer.cornerRadius = 5.0
     }
-    
-    func textfieldsBackGndColor() {
-        tfRelationShip.backgroundColor = UIColor.init(hex: Colors.textFieldBackGroundColor.rawValue)
-        tfSignature.backgroundColor = UIColor.init(hex: Colors.textFieldBackGroundColor.rawValue)
-        tfPatientLastName.backgroundColor = UIColor.init(hex: Colors.textFieldBackGroundColor.rawValue)
-        tfPatientFirstName.backgroundColor = UIColor.init(hex: Colors.textFieldBackGroundColor.rawValue)
-    }
+//
+//    func textfieldsBackGndColor() {
+//        tfRelationShip.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+//        tfSignature.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+//        tfPatientLastName.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+//        tfPatientFirstName.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+//    }
     
     @objc func keyboardWillBeHidden (aNotification: NSNotification) {
         let contentInsets: UIEdgeInsets = .zero
@@ -239,9 +247,9 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
         if cell.titleLbl.text == "Myself" {
             cell.contentView.backgroundColor = UIColor.white
         } else {
-            cell.contentView.backgroundColor = UIColor.init(hex: Colors.textFieldBackGroundColor.rawValue)
+            cell.contentView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
         }
-        cell.titleLbl.textColor = UIColor.init(hex: Colors.buttonHoverStateColor.rawValue)
+        cell.titleLbl.textColor = UIColor.Citygo.formsubtitlesnotselected
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -250,7 +258,7 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.heighlighBoarderColor(boolVal: false)
         tfRelationShip.text = languagesList[indexPath.row]
-        
+        tfRelationShipDummy.text = languagesList[indexPath.row]
         ageViewHeight.constant = 102
         ageViewHeightView.isHidden = false
     }

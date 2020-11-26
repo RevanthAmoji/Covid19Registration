@@ -24,10 +24,13 @@ import UIKit
 extension UIFont {
     enum Citygo {
         static let quicksand700 = citygoFont(name: .quicksandregular, size: 22.0)
+        static let quicksandSemiBold700 = citygoFont(name: .quicksandsemibold, size: 22.0)
+        static let quicksandBold700 = citygoFont(name: .quicksandbold, size: 22.0)
         
         static let lato400 = citygoFont(name: .latoregular, size: 16.0)
         static let lato700 = citygoFont(name: .latoregular, size: 16.0)
         static let latoinfo400 = citygoFont(name: .latoitalic, size: 12.0)
+        static let latobtn700 = citygoFont(name: .latobold, size: 16.0)
         
         private static func citygoFont(name fontName: Citygo.FontFamily, size fontSize: CGFloat) -> UIFont {
             if let font = UIFont(name: fontName.rawValue, size: fontSize) {

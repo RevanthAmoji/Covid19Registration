@@ -27,26 +27,26 @@ class SutherlandButton: UIButton {
     func btnEnable(boolVal: Bool) {
         self.isEnabled = boolVal
         if boolVal {
-            self.setTitleColor(UIColor.init(hex: Colors.buttonInactiveColor.rawValue), for: .normal)
-            self.backgroundColor = UIColor.init(hex: Colors.buttonActiveColor.rawValue)
+            self.setTitleColor(UIColor.Citygo.buttonfieldsactive, for: .normal)
+            self.backgroundColor = UIColor.Citygo.buttonfieldsInactive
         } else {
-            self.setTitleColor(UIColor.init(hex: Colors.buttonActiveColor.rawValue), for: .normal)
-            self.backgroundColor = UIColor.init(hex: Colors.buttonInactiveColor.rawValue)
+            self.setTitleColor(UIColor.Citygo.buttonfieldsInactive, for: .normal)
+            self.backgroundColor = UIColor.Citygo.buttonfieldsactive
         }
-        self.layer.borderColor = UIColor.init(hex: Colors.buttonActiveColor.rawValue).cgColor
+        self.layer.borderColor = UIColor.Citygo.buttonfieldsInactive.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }
     func btnHover(boolVal: Bool){
         self.isEnabled = boolVal
         if boolVal {
-            self.setTitleColor(UIColor.init(hex: Colors.buttonInactiveColor.rawValue), for: .normal)
-            self.backgroundColor = UIColor.init(hex: Colors.buttonHoverStateColor.rawValue)
+            self.setTitleColor(UIColor.Citygo.buttonfieldsactive, for: .normal)
+            self.backgroundColor = UIColor.Citygo.buttonHoverStateColor
         } else {
-            self.setTitleColor(UIColor.init(hex: Colors.buttonActiveColor.rawValue), for: .normal)
-            self.backgroundColor = UIColor.init(hex: Colors.buttonInactiveColor.rawValue)
+            self.setTitleColor(UIColor.Citygo.buttonfieldsInactive, for: .normal)
+            self.backgroundColor = UIColor.Citygo.buttonfieldsactive
         }
-        self.layer.borderColor = UIColor.init(hex: Colors.buttonHoverStateColor.rawValue).cgColor
+        self.layer.borderColor = UIColor.Citygo.buttonHoverStateColor.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }
