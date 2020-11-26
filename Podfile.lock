@@ -1,0 +1,16 @@
+PODS:
+  - JBCalendarDatePicker (0.2.4)
+
+DEPENDENCIES:
+  - JBCalendarDatePicker
+
+SPEC REPOS:
+  https://github.com/joshbirnholz/JBPodSpecs.git:
+    - JBCalendarDatePicker
+
+SPEC CHECKSUMS:
+  JBCalendarDatePicker: f37fa398d885fb9229ee3d2def4c9ff7e426dd06
+
+PODFILE CHECKSUM: c726c247992fa320ef10644067ad2e65d9b2593a
+
+COCOAPODS: 1.9.1

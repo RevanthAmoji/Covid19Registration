@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropdownTableView" customModule="covid" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="210" height="38"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0D-Xj-oxQ">
+                    <rect key="frame" x="0.0" y="0.0" width="210" height="38"/>
+                    <subviews>
+                        <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-m0-65U">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="38" id="rjX-hK-qTM"/>
+                                <constraint firstAttribute="height" constant="38" id="zQb-nr-N3V"/>
+                            </constraints>
+                            <state key="normal">
+                                <imageReference key="image" image="unselected" symbolScale="large"/>
+                            </state>
+                            <state key="selected" image="selected"/>
+                            <state key="highlighted" image="selected"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-D9-DRf">
+                            <rect key="frame" x="52" y="9" width="30" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="C7z-bp-6YK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="por-fF-idL">
+                            <rect key="frame" x="112" y="0.0" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="XWm-Kr-r31"/>
+                                <constraint firstAttribute="width" constant="38" id="ejV-p5-sJQ"/>
+                            </constraints>
+                            <state key="normal">
+                                <imageReference key="image" image="unselected" symbolScale="large"/>
+                            </state>
+                            <state key="selected" image="selected"/>
+                            <state key="highlighted" image="selected"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-0A-Vl6">
+                            <rect key="frame" x="165" y="9" width="30" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="RBT-xA-HJQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Ukh-m0-65U" firstAttribute="centerY" secondItem="A0D-Xj-oxQ" secondAttribute="centerY" id="KcE-rs-8Xh"/>
+                        <constraint firstItem="por-fF-idL" firstAttribute="centerY" secondItem="A0D-Xj-oxQ" secondAttribute="centerY" id="Nn3-tL-Z5O"/>
+                        <constraint firstAttribute="trailing" secondItem="Rdi-0A-Vl6" secondAttribute="trailing" constant="15" id="fJw-tv-E3D"/>
+                        <constraint firstItem="Rdi-0A-Vl6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="por-fF-idL" secondAttribute="trailing" constant="14" id="g1R-xj-Azy"/>
+                        <constraint firstAttribute="height" constant="38" id="kbf-Ug-4as"/>
+                        <constraint firstItem="por-fF-idL" firstAttribute="leading" secondItem="VMJ-D9-DRf" secondAttribute="trailing" constant="30" id="pff-0k-cK6"/>
+                        <constraint firstItem="Ukh-m0-65U" firstAttribute="leading" secondItem="A0D-Xj-oxQ" secondAttribute="leading" id="pgR-TY-b1u"/>
+                        <constraint firstItem="VMJ-D9-DRf" firstAttribute="leading" secondItem="Ukh-m0-65U" secondAttribute="trailing" constant="14" id="pln-Gt-9Jg"/>
+                        <constraint firstItem="VMJ-D9-DRf" firstAttribute="centerY" secondItem="A0D-Xj-oxQ" secondAttribute="centerY" id="uIW-at-98J"/>
+                        <constraint firstItem="Rdi-0A-Vl6" firstAttribute="centerY" secondItem="A0D-Xj-oxQ" secondAttribute="centerY" id="zKt-Zx-U2H"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="A0D-Xj-oxQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0Ut-Hx-8jZ"/>
+                <constraint firstItem="A0D-Xj-oxQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9LE-nq-2v6"/>
+                <constraint firstItem="A0D-Xj-oxQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="agn-HJ-2VZ"/>
+                <constraint firstItem="A0D-Xj-oxQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ho8-l9-ZXK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-249.59999999999999" y="-136.73163418290855"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="selected" width="126" height="126"/>
+        <image name="unselected" width="126" height="126"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,15 @@
+/*
+ Localizable-español.strings
+  Citygo
+
+  Created by Piotr Shalatonin on 10/5/20.
+  Copyright © 2020 Piotr Shalatonin. All rights reserved.
+*/
+
+/* Choose Language Screen Initial Screen */
+"choose_language_title" = "Programe una prueba de COVID-19 hoy";
+"choose_language_subtitle" = "Puede hacerse una prueba de hisopo para verificar si tiene coronavirus (COVID-19) ahora. Esta es una prueba de virus vivo y no una prueba de anticuerpos.";
+"choose_language_getstarted" = "Empezar";
+"choose_language_itworks" = "¿Como funciona?";
+"choose_language_alreadyaccount" = "¿Ya tienes una cuenta?";
+

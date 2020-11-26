@@ -1,0 +1,14 @@
+/* 
+ Localizable-english.strings
+  Citygo
+
+  Created by Piotr Shalatonin on 10/5/20.
+  Copyright © 2020 Piotr Shalatonin. All rights reserved.
+*/
+
+/* Choose Language Screen Initial Screen */
+"choose_language_title" = "Schedule a COVID-19 Test Today";
+"choose_language_subtitle" = "You can have a swab test to check if you have coronavirus (COVID-19) now. This is a live virus test and not an antibody test";
+"choose_language_getstarted" = "Get Started";
+"choose_language_itworks" = "How does it work?";
+"choose_language_alreadyaccount" = "Alreay have an account?";

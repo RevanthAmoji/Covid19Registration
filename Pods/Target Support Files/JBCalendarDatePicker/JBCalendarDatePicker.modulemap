@@ -1,0 +1,6 @@
+framework module JBCalendarDatePicker {
+  umbrella header "JBCalendarDatePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
