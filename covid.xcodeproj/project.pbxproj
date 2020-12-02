@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030297E52574C4A400E604D8 /* ScheduleScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */; };
+		030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030297E92575465D00E604D8 /* LocationAnnotationView.swift */; };
 		0308DD72256F43AD0013A868 /* RegisterScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */; };
 		0308DD77256F45660013A868 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD76256F45660013A868 /* SingletonData.swift */; };
 		03574FFA2566B40100E2DB09 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03574FEF2566B40100E2DB09 /* Lato-Italic.ttf */; };
@@ -39,6 +41,10 @@
 		035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */; };
 		035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */; };
 		038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FD784256A7C6400BF054A /* RegisterScreenOne.swift */; };
+		03B2435B2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2435A2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift */; };
+		03B2436125780B8500CAE0B0 /* maps.json in Resources */ = {isa = PBXBuildFile; fileRef = 03B2436025780B8500CAE0B0 /* maps.json */; };
+		03B2436725781BFB00CAE0B0 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */; };
+		03B2436825781BFB00CAE0B0 /* MapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */; };
 		03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */; };
 		03D29932256C339C005A8201 /* RegisterScreentwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29931256C339B005A8201 /* RegisterScreentwo.swift */; };
 		03DD117325627CA100DD0583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD117225627CA100DD0583 /* AppDelegate.swift */; };
@@ -91,6 +97,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenOne.swift; sourceTree = "<group>"; };
+		030297E92575465D00E604D8 /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
 		0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenModel.swift; sourceTree = "<group>"; };
 		0308DD76256F45660013A868 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
 		03574FEF2566B40100E2DB09 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
@@ -124,6 +132,10 @@
 		035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressVC.swift; sourceTree = "<group>"; };
 		035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressViewModel.swift; sourceTree = "<group>"; };
 		038FD784256A7C6400BF054A /* RegisterScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenOne.swift; sourceTree = "<group>"; };
+		03B2435A2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenConfirmViewModel.swift; sourceTree = "<group>"; };
+		03B2436025780B8500CAE0B0 /* maps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = maps.json; sourceTree = "<group>"; };
+		03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
+		03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCollectionViewCell.xib; sourceTree = "<group>"; };
 		03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenConfirm.swift; sourceTree = "<group>"; };
 		03D29931256C339B005A8201 /* RegisterScreentwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreentwo.swift; sourceTree = "<group>"; };
 		03DD116F25627CA100DD0583 /* covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				0357503A25679F7100E2DB09 /* LanguagesCell.swift */,
+				03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */,
+				03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -285,6 +299,8 @@
 				03D29931256C339B005A8201 /* RegisterScreentwo.swift */,
 				035B0654256CA13F0069821D /* RegisterScreenThree.swift */,
 				03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */,
+				030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */,
+				030297E92575465D00E604D8 /* LocationAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,8 +311,17 @@
 				0357504F2567D6E600E2DB09 /* LanguageDatasourceItem.swift */,
 				035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */,
 				035B0659256CCE480069821D /* RegisterScreenThreeModel.swift */,
+				03B2435A2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03B2435F25780B6600CAE0B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03B2436025780B8500CAE0B0 /* maps.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		03DD116625627CA100DD0583 = {
@@ -324,6 +349,7 @@
 		03DD117125627CA100DD0583 /* covid */ = {
 			isa = PBXGroup;
 			children = (
+				03B2435F25780B6600CAE0B0 /* Resources */,
 				0308DD70256F43870013A868 /* Model */,
 				0357503925679F4C00E2DB09 /* Cells */,
 				03574FED2566B3E700E2DB09 /* Customfonts */,
@@ -565,6 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B2436125780B8500CAE0B0 /* maps.json in Resources */,
 				035750032566B40100E2DB09 /* Lato-Light.ttf in Resources */,
 				035750152566B40A00E2DB09 /* Quicksand-SemiBold.ttf in Resources */,
 				03DD11F32562B02200DD0583 /* Localizable-English.strings in Resources */,
@@ -581,6 +608,7 @@
 				035750142566B40A00E2DB09 /* Quicksand-Regular.ttf in Resources */,
 				03574FFD2566B40100E2DB09 /* Lato-Bold.ttf in Resources */,
 				035750132566B40A00E2DB09 /* Quicksand-Medium.ttf in Resources */,
+				03B2436825781BFB00CAE0B0 /* MapCollectionViewCell.xib in Resources */,
 				035750122566B40A00E2DB09 /* Quicksand-Bold.ttf in Resources */,
 				035750182566B40A00E2DB09 /* Quicksand-VariableFont_wght.ttf in Resources */,
 				035750002566B40100E2DB09 /* Lato-BlackItalic.ttf in Resources */,
@@ -716,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */,
 				03DD11EA2562B02200DD0583 /* UIImage+Utility.swift in Sources */,
 				03DD11ED2562B02200DD0583 /* UIImageview+Utility.swift in Sources */,
 				03DD11E32562B02200DD0583 /* UIScreen+Utility.swift in Sources */,
@@ -729,10 +758,12 @@
 				035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */,
 				03DD11EE2562B02200DD0583 /* UIFont+Styles.swift in Sources */,
 				035750212567927900E2DB09 /* MenuVC.swift in Sources */,
+				03B2435B2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift in Sources */,
 				03DD117725627CA100DD0583 /* ViewController.swift in Sources */,
 				03DD117325627CA100DD0583 /* AppDelegate.swift in Sources */,
 				03DD11EF2562B02200DD0583 /* CitygoConstants.swift in Sources */,
 				03DD11E42562B02200DD0583 /* UIView+Utility.swift in Sources */,
+				030297E52574C4A400E604D8 /* ScheduleScreenOne.swift in Sources */,
 				03DD12062562BB3300DD0583 /* InitialVC.swift in Sources */,
 				038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */,
 				03DD117525627CA100DD0583 /* SceneDelegate.swift in Sources */,
@@ -746,6 +777,7 @@
 				03DD11DF2562B02200DD0583 /* SutherlandTextField.swift in Sources */,
 				03DD11EB2562B02200DD0583 /* UIColor+Utility.swift in Sources */,
 				03DD11EC2562B02200DD0583 /* UIColor+Styles.swift in Sources */,
+				03B2436725781BFB00CAE0B0 /* MapCollectionViewCell.swift in Sources */,
 				03D29932256C339C005A8201 /* RegisterScreentwo.swift in Sources */,
 				0308DD77256F45660013A868 /* SingletonData.swift in Sources */,
 				03DD11E22562B02200DD0583 /* String+Utility.swift in Sources */,

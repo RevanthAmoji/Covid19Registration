@@ -80,16 +80,20 @@ class SingletonUI {
             if itemVal.tag == 1000 {
                 itemVal.font = UIFont.Citygo.quicksandBold700
                 itemVal.textColor = UIColor.Citygo.h1headingone
-            } else if itemVal.tag == 1001 {
+            }
+            else if itemVal.tag == 1001 {
                 itemVal.font = UIFont.Citygo.lato700
                 itemVal.textColor = UIColor.Citygo.mainbody
-            } else if itemVal.tag == 1002 {
+            }
+            else if itemVal.tag == 1002 {
                 itemVal.font = UIFont.Citygo.lato700
                 itemVal.textColor = UIColor.Citygo.mainbodybold
-            } else if itemVal.tag == 1003 {
+            }
+            else if itemVal.tag == 1003 {
                 itemVal.font = UIFont.Citygo.lato400
                 itemVal.textColor = UIColor.Citygo.formtitles
-            } else if itemVal.tag == 1004 {
+            }
+            else if itemVal.tag == 1004 {
                 itemVal.font = UIFont.Citygo.lato400
                 itemVal.textColor = UIColor.Citygo.formsubtitlesnotselected
             }

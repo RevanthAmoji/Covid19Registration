@@ -80,5 +80,7 @@
         <string>Lato-Light.ttf</string>
         <string>Lato-ThinItalic.ttf</string>
     </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Use for your purpose</string>
 </dict>
 </plist>

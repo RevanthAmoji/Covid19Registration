@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -70,7 +71,7 @@
                                     <constraint firstAttribute="height" constant="30" id="WbY-2w-NgJ"/>
                                     <constraint firstAttribute="width" constant="32" id="aLR-t4-MGh"/>
                                 </constraints>
-                                <state key="normal" image="arrow.down" catalog="system"/>
+                                <state key="normal" image="Down"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfP-OA-mhk">
                                 <rect key="frame" x="55" y="97" width="265" height="39"/>
@@ -136,7 +137,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="jk8-ft-lLG" kind="show" id="WNB-ct-D78"/>
+                                    <segue destination="LXJ-Vh-XGf" kind="show" id="Qos-uf-4Sn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You can have a swab test to check if you have coronavirus (COVID-19) now. Thiis is a live virus test and not an antibody test" textAlignment="center" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Jm-4i2" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -221,13 +222,13 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language  &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXP-RN-Dq9" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="30.5" width="315" height="27.5"/>
+                                        <rect key="frame" x="20" y="31" width="315" height="26"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambiar Idioma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cn2-pH-nro" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="62" width="315" height="19"/>
+                                        <rect key="frame" x="23" y="61" width="315" height="19"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -257,7 +258,7 @@
                                 <rect key="frame" x="0.0" y="144" width="375" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Scheduled Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sq-1q-BnL" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="7" width="207.5" height="27.5"/>
+                                        <rect key="frame" x="20" y="7.5" width="198.5" height="26"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -274,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="197" width="375" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6w-U9-i0t" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="7" width="90.5" height="27.5"/>
+                                        <rect key="frame" x="20" y="7.5" width="86" height="26"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -609,13 +610,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVH-2F-ZcJ">
-                                                <rect key="frame" x="323" y="202" width="32" height="30"/>
+                                                <rect key="frame" x="318" y="205" width="32" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="9mk-mA-r3x"/>
                                                     <constraint firstAttribute="height" constant="30" id="J4S-Ss-lpm"/>
                                                 </constraints>
-                                                <state key="normal" image="arrow.down" catalog="system"/>
+                                                <state key="normal" image="Down"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQr-s9-mvc">
                                                 <rect key="frame" x="20" y="200.5" width="335" height="34"/>
@@ -628,10 +629,10 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="s6z-Eh-hmr" firstAttribute="top" secondItem="VDv-4W-WzH" secondAttribute="bottom" constant="12" id="0mn-oI-ESn"/>
-                                            <constraint firstItem="rVH-2F-ZcJ" firstAttribute="trailing" secondItem="s6z-Eh-hmr" secondAttribute="trailing" id="4MP-2l-6oY"/>
+                                            <constraint firstItem="rVH-2F-ZcJ" firstAttribute="trailing" secondItem="s6z-Eh-hmr" secondAttribute="trailing" constant="-5" id="4MP-2l-6oY"/>
                                             <constraint firstItem="rK9-gu-BBu" firstAttribute="height" secondItem="l46-vW-W9n" secondAttribute="height" multiplier="0.0971963" id="7fM-uu-XEG"/>
                                             <constraint firstItem="s6z-Eh-hmr" firstAttribute="leading" secondItem="l46-vW-W9n" secondAttribute="leading" constant="20" id="7jS-0F-Jpo"/>
-                                            <constraint firstItem="rVH-2F-ZcJ" firstAttribute="centerY" secondItem="s6z-Eh-hmr" secondAttribute="centerY" constant="-3" id="9QU-7e-NHp"/>
+                                            <constraint firstItem="rVH-2F-ZcJ" firstAttribute="centerY" secondItem="s6z-Eh-hmr" secondAttribute="centerY" id="9QU-7e-NHp"/>
                                             <constraint firstItem="rK9-gu-BBu" firstAttribute="top" secondItem="l46-vW-W9n" secondAttribute="top" constant="36" id="GeN-NY-S8D"/>
                                             <constraint firstItem="s6z-Eh-hmr" firstAttribute="height" secondItem="l46-vW-W9n" secondAttribute="height" multiplier="0.145794" id="Hei-PQ-aHg"/>
                                             <constraint firstItem="ZQr-s9-mvc" firstAttribute="top" secondItem="s6z-Eh-hmr" secondAttribute="top" id="JVC-nH-5Bh"/>
@@ -1079,13 +1080,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dO-As-cyg">
-                                        <rect key="frame" x="323" y="202" width="32" height="30"/>
+                                        <rect key="frame" x="318" y="205" width="32" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="K2B-b0-wFT"/>
                                             <constraint firstAttribute="height" constant="30" id="qAm-je-mC2"/>
                                         </constraints>
-                                        <state key="normal" image="arrow.down" catalog="system"/>
+                                        <state key="normal" image="expand_less-24px"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-Cm-jFe">
                                         <rect key="frame" x="20" y="200.5" width="335" height="34"/>
@@ -1099,9 +1100,9 @@
                                 <constraints>
                                     <constraint firstItem="D4q-Cm-jFe" firstAttribute="leading" secondItem="xVd-Kt-27W" secondAttribute="leading" id="CRh-g8-jtD"/>
                                     <constraint firstItem="D4q-Cm-jFe" firstAttribute="bottom" secondItem="xVd-Kt-27W" secondAttribute="bottom" constant="-5" id="IDe-Da-d1B"/>
-                                    <constraint firstItem="0dO-As-cyg" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" id="YrY-rK-iI6"/>
+                                    <constraint firstItem="0dO-As-cyg" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" constant="-5" id="YrY-rK-iI6"/>
                                     <constraint firstItem="D4q-Cm-jFe" firstAttribute="top" secondItem="xVd-Kt-27W" secondAttribute="top" id="dRc-ML-DcT"/>
-                                    <constraint firstItem="0dO-As-cyg" firstAttribute="centerY" secondItem="xVd-Kt-27W" secondAttribute="centerY" constant="-3" id="wvt-0c-5FF"/>
+                                    <constraint firstItem="0dO-As-cyg" firstAttribute="centerY" secondItem="xVd-Kt-27W" secondAttribute="centerY" id="wvt-0c-5FF"/>
                                     <constraint firstItem="D4q-Cm-jFe" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" id="xE6-x7-LcB"/>
                                 </constraints>
                             </view>
@@ -3121,7 +3122,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="C6v-qM-fXu"/>
                                                     <constraint firstAttribute="height" constant="26" id="Ybh-Rw-49n"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="JiP-tg-0bS"/>
                                                 </connections>
@@ -3263,7 +3264,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="26" id="5OQ-93-2rH"/>
                                                     <constraint firstAttribute="width" constant="22" id="RbW-Zr-UV9"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="76F-KX-tf7"/>
                                                 </connections>
@@ -3420,7 +3421,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="3Qu-m5-Coc"/>
                                                     <constraint firstAttribute="height" constant="26" id="itI-oj-Scg"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="3ux-e7-dLk"/>
                                                 </connections>
@@ -3577,7 +3578,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="26" id="S0X-1i-0qh"/>
                                                     <constraint firstAttribute="width" constant="22" id="rZH-aH-by3"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="DEU-EB-UFz"/>
                                                 </connections>
@@ -3734,7 +3735,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="26" id="G50-6k-krE"/>
                                                     <constraint firstAttribute="width" constant="22" id="uHQ-6Z-y60"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="7GJ-As-9jF"/>
                                                 </connections>
@@ -3814,7 +3815,7 @@ Cg
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9F-6w-Gac">
+                                                            <button opaque="NO" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9F-6w-Gac">
                                                                 <rect key="frame" x="109.5" y="0.0" width="38" height="38"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="38" id="KKn-7m-D7M"/>
@@ -3891,7 +3892,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="DOa-Uh-u9t"/>
                                                     <constraint firstAttribute="height" constant="26" id="oas-JF-HDu"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="eXx-hw-hvS"/>
                                                 </connections>
@@ -4048,7 +4049,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="By7-Up-2p9"/>
                                                     <constraint firstAttribute="height" constant="26" id="h7t-bm-oPe"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="pyj-b0-pdg"/>
                                                 </connections>
@@ -4205,7 +4206,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="26" id="BM4-Px-gSN"/>
                                                     <constraint firstAttribute="width" constant="22" id="jNc-2x-xsK"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="2oq-5f-Cud"/>
                                                 </connections>
@@ -4362,7 +4363,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="05g-eL-U1b"/>
                                                     <constraint firstAttribute="height" constant="26" id="nST-KE-YOs"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="SB9-7f-bgh"/>
                                                 </connections>
@@ -4519,7 +4520,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="26" id="4AV-2z-VSi"/>
                                                     <constraint firstAttribute="width" constant="22" id="b29-vL-YRP"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="2J5-Sr-WVu"/>
                                                 </connections>
@@ -4590,7 +4591,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="LSO-CW-mj3"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="9Xa-2w-1B5"/>
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" tag="710" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-CJ-hwb" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
@@ -4629,7 +4630,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="L38-Nh-RvF"/>
                                                     <constraint firstAttribute="height" constant="26" id="o5A-iI-F1E"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="YBw-Oq-2Zi"/>
                                                 </connections>
@@ -4685,7 +4686,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="26" id="UaM-ud-zxx"/>
                                                     <constraint firstAttribute="width" constant="22" id="wKB-5t-5TU"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="ODf-UR-AWL"/>
                                                 </connections>
@@ -4717,7 +4718,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="NTC-wX-dFt"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="4g8-3U-KBW"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 2" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1a-CZ-4JJ" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -4744,7 +4745,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="H5O-xB-2Kj"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="6eW-cr-YMc"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="City" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeF-YN-OIt" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -4771,7 +4772,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="GA2-cg-Jxn"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="gV7-jM-fFO"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State/Province/Region" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTs-Lz-LzU" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -4798,7 +4799,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="683-51-A25"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="8gc-4Q-J4N"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Zip Code" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-wI-ELz" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -4825,7 +4826,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="rWP-nB-TB0"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="mXB-4c-SBL"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1006" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Appartment, Suitee, Building, Unit, Floor etc." lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-RZ-Efa" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -4958,7 +4959,7 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="eZD-Pm-UjB"/>
                                                     <constraint firstAttribute="height" constant="26" id="tqr-W0-Q9v"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal" image="Edit"/>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="E8M-G2-8lv"/>
                                                 </connections>
@@ -4990,7 +4991,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="1ef-Gm-qir"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="3Hw-8V-Te5"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Email Address" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="207-iJ-NKT" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -5017,7 +5018,7 @@ Cg
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="whi-oF-5gr" id="Yiq-ax-jUa"/>
+                                                            <outlet property="delegate" destination="jk8-ft-lLG" id="RgK-xC-5b6"/>
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" tag="712" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2F-Z5-arG" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
@@ -5212,7 +5213,9 @@ Cg
                                                     <constraint firstAttribute="width" constant="22" id="WXk-OA-2df"/>
                                                     <constraint firstAttribute="height" constant="26" id="sk9-aU-xX7"/>
                                                 </constraints>
-                                                <state key="normal" image="pencil" catalog="system"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="Edit" symbolScale="large" renderingMode="original"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="btnEditAction:" destination="jk8-ft-lLG" eventType="touchUpInside" id="lBJ-vT-J0B"/>
                                                 </connections>
@@ -5418,21 +5421,225 @@ Cg
             </objects>
             <point key="canvasLocation" x="6877.6000000000004" y="302.24887556221893"/>
         </scene>
+        <!--Schedule Screen One-->
+        <scene sceneID="a4A-ah-gAD">
+            <objects>
+                <viewController id="LXJ-Vh-XGf" customClass="ScheduleScreenOne" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ve-yu-KBi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uC-HO-ouK">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbu-tQ-Wa9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen4" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-s7-Pfg">
+                                                <rect key="frame" x="20" y="23" width="335" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="335" id="ahQ-nO-pGX"/>
+                                                    <constraint firstAttribute="height" constant="75" id="k9M-jD-4oz"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsB-Ze-fe9">
+                                                <rect key="frame" x="0.0" y="98" width="375" height="180"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book a Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI7-Dg-bxk" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="5" width="335" height="17.5"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="20.5"/>
+                                                        <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search below to find a testing facility in your local area" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUI-Hz-T1K" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="38.5" width="335" height="41"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by location" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-2Q-n75" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="94.5" width="335" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="Sdx-W3-sRP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-eH-h4Y" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="130.5" width="335" height="39"/>
+                                                        <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="39" id="Fad-6f-UR2"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPaddingCustom">
+                                                                <real key="value" value="50"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="LXJ-Vh-XGf" id="SHq-3j-sgC"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-HV-f0Q">
+                                                        <rect key="frame" x="310" y="135" width="32" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="DJw-En-FKJ"/>
+                                                            <constraint firstAttribute="height" constant="30" id="vgd-ZN-pUb"/>
+                                                        </constraints>
+                                                        <state key="normal" image="search"/>
+                                                        <connections>
+                                                            <action selector="searchBtnAction:" destination="LXJ-Vh-XGf" eventType="touchUpInside" id="VfF-Rr-zm0"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="hUI-Hz-T1K" firstAttribute="leading" secondItem="zsB-Ze-fe9" secondAttribute="leading" constant="20" id="5sR-mo-8HJ"/>
+                                                    <constraint firstItem="Y3x-HV-f0Q" firstAttribute="trailing" secondItem="hLF-eH-h4Y" secondAttribute="trailing" constant="-13" id="6aY-Lx-aX4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a6g-2Q-n75" secondAttribute="trailing" constant="20" id="Jia-Rz-CSS"/>
+                                                    <constraint firstItem="hLF-eH-h4Y" firstAttribute="top" secondItem="a6g-2Q-n75" secondAttribute="bottom" constant="11" id="Moi-3N-Ax7"/>
+                                                    <constraint firstItem="OI7-Dg-bxk" firstAttribute="leading" secondItem="zsB-Ze-fe9" secondAttribute="leading" constant="20" id="QgZ-4R-ojl"/>
+                                                    <constraint firstItem="a6g-2Q-n75" firstAttribute="top" secondItem="hUI-Hz-T1K" secondAttribute="bottom" constant="15" id="Ri5-xA-dbF"/>
+                                                    <constraint firstItem="hLF-eH-h4Y" firstAttribute="leading" secondItem="zsB-Ze-fe9" secondAttribute="leading" constant="20" id="WCR-Qb-bje"/>
+                                                    <constraint firstItem="Y3x-HV-f0Q" firstAttribute="centerY" secondItem="hLF-eH-h4Y" secondAttribute="centerY" id="Zk8-CE-Ola"/>
+                                                    <constraint firstItem="a6g-2Q-n75" firstAttribute="leading" secondItem="zsB-Ze-fe9" secondAttribute="leading" constant="20" id="hpm-hR-Tmm"/>
+                                                    <constraint firstItem="OI7-Dg-bxk" firstAttribute="height" secondItem="zsB-Ze-fe9" secondAttribute="height" multiplier="0.0971963" id="lYr-Tj-uZA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hLF-eH-h4Y" secondAttribute="trailing" constant="20" id="o6e-dW-MrB"/>
+                                                    <constraint firstItem="OI7-Dg-bxk" firstAttribute="top" secondItem="zsB-Ze-fe9" secondAttribute="top" constant="5" id="oA9-do-Zuh"/>
+                                                    <constraint firstAttribute="height" constant="180" id="rQw-wN-F1H"/>
+                                                    <constraint firstItem="hUI-Hz-T1K" firstAttribute="top" secondItem="OI7-Dg-bxk" secondAttribute="bottom" constant="16" id="t4I-a3-geB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hUI-Hz-T1K" secondAttribute="trailing" constant="20" id="tgU-eW-Fj5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OI7-Dg-bxk" secondAttribute="trailing" constant="20" id="zgE-qX-uew"/>
+                                                </constraints>
+                                            </view>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mxa-nk-Nu1">
+                                                <rect key="frame" x="20" y="284" width="335" height="275"/>
+                                            </mapView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJh-32-YXR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                                <rect key="frame" x="253" y="569" width="102" height="39"/>
+                                                <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="39" id="V9O-ey-HoR"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="gti-OD-HhO"/>
+                                                </constraints>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="nextBtnAction:" destination="phI-O9-5HU" eventType="touchUpInside" id="zLn-ax-6pA"/>
+                                                </connections>
+                                            </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e6B-Wv-36l">
+                                                <rect key="frame" x="20" y="427" width="335" height="132"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yN8-WJ-tkB">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DBv-6p-E9A">
+                                                        <rect key="frame" x="0.0" y="2" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yDM-TP-Uxp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="LXJ-Vh-XGf" id="Zss-jq-H61"/>
+                                                    <outlet property="delegate" destination="LXJ-Vh-XGf" id="SuG-FV-yI5"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="zsB-Ze-fe9" firstAttribute="top" secondItem="oMe-s7-Pfg" secondAttribute="bottom" id="C9M-mB-w9b"/>
+                                            <constraint firstItem="e6B-Wv-36l" firstAttribute="bottom" secondItem="mxa-nk-Nu1" secondAttribute="bottom" id="F79-gY-bg9"/>
+                                            <constraint firstItem="DJh-32-YXR" firstAttribute="top" secondItem="mxa-nk-Nu1" secondAttribute="bottom" constant="10" id="MWJ-UX-uMH"/>
+                                            <constraint firstItem="oMe-s7-Pfg" firstAttribute="top" secondItem="kbu-tQ-Wa9" secondAttribute="top" constant="23" id="U5O-24-Obf"/>
+                                            <constraint firstAttribute="trailing" secondItem="zsB-Ze-fe9" secondAttribute="trailing" id="UZ3-Ms-8ot"/>
+                                            <constraint firstItem="DJh-32-YXR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kbu-tQ-Wa9" secondAttribute="leading" constant="20" symbolic="YES" id="Y0V-Bu-KKx"/>
+                                            <constraint firstItem="mxa-nk-Nu1" firstAttribute="top" secondItem="zsB-Ze-fe9" secondAttribute="bottom" constant="6" id="bx5-5i-HND"/>
+                                            <constraint firstItem="oMe-s7-Pfg" firstAttribute="centerX" secondItem="kbu-tQ-Wa9" secondAttribute="centerX" id="dqZ-O3-m2G"/>
+                                            <constraint firstItem="mxa-nk-Nu1" firstAttribute="leading" secondItem="kbu-tQ-Wa9" secondAttribute="leading" constant="20" id="e2P-PM-1EB"/>
+                                            <constraint firstItem="e6B-Wv-36l" firstAttribute="leading" secondItem="mxa-nk-Nu1" secondAttribute="leading" id="eH6-1W-L8x"/>
+                                            <constraint firstItem="e6B-Wv-36l" firstAttribute="trailing" secondItem="mxa-nk-Nu1" secondAttribute="trailing" id="gob-95-8Np"/>
+                                            <constraint firstAttribute="trailing" secondItem="mxa-nk-Nu1" secondAttribute="trailing" constant="20" id="ksI-vK-BPq"/>
+                                            <constraint firstAttribute="bottom" secondItem="DJh-32-YXR" secondAttribute="bottom" constant="15" id="muZ-QU-qh1"/>
+                                            <constraint firstItem="zsB-Ze-fe9" firstAttribute="leading" secondItem="kbu-tQ-Wa9" secondAttribute="leading" id="qQp-iQ-e14"/>
+                                            <constraint firstAttribute="trailing" secondItem="DJh-32-YXR" secondAttribute="trailing" constant="20" id="x4Y-Bp-Ueo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kbu-tQ-Wa9" firstAttribute="top" secondItem="4uC-HO-ouK" secondAttribute="top" id="8Tf-tf-UHo"/>
+                                    <constraint firstAttribute="trailing" secondItem="kbu-tQ-Wa9" secondAttribute="trailing" id="T2l-IB-c3V"/>
+                                    <constraint firstItem="kbu-tQ-Wa9" firstAttribute="centerX" secondItem="4uC-HO-ouK" secondAttribute="centerX" id="VcT-Mp-86x"/>
+                                    <constraint firstItem="kbu-tQ-Wa9" firstAttribute="centerY" secondItem="4uC-HO-ouK" secondAttribute="centerY" id="ci1-yh-bOQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="kbu-tQ-Wa9" secondAttribute="bottom" id="epL-cA-8YR"/>
+                                    <constraint firstItem="kbu-tQ-Wa9" firstAttribute="leading" secondItem="4uC-HO-ouK" secondAttribute="leading" id="iXz-5d-OHO"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E9g-C5-FFs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4uC-HO-ouK" firstAttribute="leading" secondItem="E9g-C5-FFs" secondAttribute="leading" id="88t-g5-794"/>
+                            <constraint firstItem="4uC-HO-ouK" firstAttribute="trailing" secondItem="E9g-C5-FFs" secondAttribute="trailing" id="Ltw-Qm-BCx"/>
+                            <constraint firstItem="E9g-C5-FFs" firstAttribute="bottom" secondItem="4uC-HO-ouK" secondAttribute="bottom" id="ZUm-jp-wUr"/>
+                            <constraint firstItem="e6B-Wv-36l" firstAttribute="height" secondItem="4Ve-yu-KBi" secondAttribute="height" multiplier="0.172414" constant="16.999999999999986" id="aGR-kP-L14"/>
+                            <constraint firstItem="4uC-HO-ouK" firstAttribute="top" secondItem="E9g-C5-FFs" secondAttribute="top" id="pup-TG-CSF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sp1-OF-i4Q">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="plQ-ua-Zsn"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="itemsCollectionView" destination="e6B-Wv-36l" id="7vB-Tk-AA1"/>
+                        <outlet property="mapView" destination="mxa-nk-Nu1" id="YVo-PZ-ef5"/>
+                        <outlet property="searchField" destination="hLF-eH-h4Y" id="opD-eQ-Bim"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66m-LC-IrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7701.6000000000004" y="403.44827586206901"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QMc-kT-Jge"/>
         <segue reference="iw0-31-ymH"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.down" catalog="system" width="120" height="128"/>
+        <image name="Down" width="36" height="36"/>
+        <image name="Edit" width="36" height="36"/>
+        <image name="Edit" width="36" height="36"/>
         <image name="calendar" width="166" height="166"/>
-        <image name="homescreenlogo" width="448" height="338"/>
+        <image name="expand_less-24px" width="36" height="36"/>
+        <image name="homescreenlogo" width="247" height="191"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="screen1" width="650" height="142"/>
         <image name="screen2" width="650" height="142"/>
         <image name="screen3" width="650" height="142"/>
+        <image name="screen4" width="650" height="142"/>
+        <image name="search" width="86" height="84"/>
         <image name="selected" width="126" height="126"/>
         <image name="unselected" width="126" height="126"/>
         <systemColor name="systemBackgroundColor">
