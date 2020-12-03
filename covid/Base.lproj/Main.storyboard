@@ -86,7 +86,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwz-z7-Oiv" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="484" width="295" height="39"/>
+                                <rect key="frame" x="40" y="486" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="Qdu-0k-Hfi"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-rD-ls7" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="538" width="295" height="39"/>
+                                <rect key="frame" x="40" y="540" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="How does it work?">
                                     <color key="titleColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -117,7 +117,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY2-2p-8do">
-                                <rect key="frame" x="40" y="587" width="295" height="39"/>
+                                <rect key="frame" x="40" y="589" width="295" height="39"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Already have an account?">
@@ -133,9 +133,12 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="LXJ-Vh-XGf" kind="show" id="Bfy-qE-jdJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You can have a swab test to check if you have coronavirus (COVID-19) now. Thiis is a live virus test and not an antibody test" textAlignment="center" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Jm-4i2" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="21" y="401" width="333" height="56"/>
+                                <rect key="frame" x="21" y="401" width="333" height="58"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -216,13 +219,13 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language  &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXP-RN-Dq9" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="31" width="315" height="26"/>
+                                        <rect key="frame" x="20" y="30.5" width="315" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambiar Idioma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cn2-pH-nro" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="61" width="315" height="19"/>
+                                        <rect key="frame" x="23" y="62" width="315" height="19"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -252,7 +255,7 @@
                                 <rect key="frame" x="0.0" y="144" width="375" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Scheduled Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sq-1q-BnL" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="7.5" width="198.5" height="26"/>
+                                        <rect key="frame" x="20" y="7" width="207.5" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -269,7 +272,7 @@
                                 <rect key="frame" x="0.0" y="197" width="375" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6w-U9-i0t" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="7.5" width="86" height="26"/>
+                                        <rect key="frame" x="20" y="7" width="90.5" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -548,6 +551,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OV-o7-jHE">
+                                <rect key="frame" x="0.0" y="44" width="375" height="1056"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-qF-z1M">
+                                        <rect key="frame" x="20" y="249.5" width="335" height="190"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QmI-aU-q9d">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="190"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguagesCell" rowHeight="60" id="OCd-xt-kRS" customClass="LanguagesCell" customModule="covid" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="335" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCd-xt-kRS" id="aF6-Oe-pCH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-wc-WdU">
+                                                                    <rect key="frame" x="21" y="20.5" width="298" height="19"/>
+                                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="9Rf-wc-WdU" secondAttribute="trailing" constant="16" id="LBZ-a4-8st"/>
+                                                                <constraint firstItem="9Rf-wc-WdU" firstAttribute="leading" secondItem="aF6-Oe-pCH" secondAttribute="leading" constant="21" id="Oqv-3q-xmn"/>
+                                                                <constraint firstItem="9Rf-wc-WdU" firstAttribute="centerY" secondItem="aF6-Oe-pCH" secondAttribute="centerY" id="Zb0-Vh-roX"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="titleLbl" destination="9Rf-wc-WdU" id="gCr-j2-u2H"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="phI-O9-5HU" id="Rep-Yj-GTA"/>
+                                                    <outlet property="delegate" destination="phI-O9-5HU" id="XNn-B5-NYx"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QmI-aU-q9d" secondAttribute="trailing" id="KMm-7K-NiL"/>
+                                            <constraint firstAttribute="height" constant="190" id="ObC-fn-3Se"/>
+                                            <constraint firstItem="QmI-aU-q9d" firstAttribute="top" secondItem="wMt-qF-z1M" secondAttribute="top" id="X8Z-vZ-asr"/>
+                                            <constraint firstItem="QmI-aU-q9d" firstAttribute="leading" secondItem="wMt-qF-z1M" secondAttribute="leading" id="jnU-Bl-E8c"/>
+                                            <constraint firstAttribute="bottom" secondItem="QmI-aU-q9d" secondAttribute="bottom" id="vPp-Ps-rbh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVd-Kt-27W" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="200.5" width="335" height="39"/>
+                                        <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dO-As-cyg">
+                                        <rect key="frame" x="318" y="205" width="32" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="K2B-b0-wFT"/>
+                                            <constraint firstAttribute="height" constant="30" id="qAm-je-mC2"/>
+                                        </constraints>
+                                        <state key="normal" image="expand_less-24px"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-Cm-jFe">
+                                        <rect key="frame" x="20" y="200.5" width="335" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="dropdownBtnAction:" destination="phI-O9-5HU" eventType="touchUpInside" id="hGH-v6-OoE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.38777185169842582" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="leading" secondItem="xVd-Kt-27W" secondAttribute="leading" id="CRh-g8-jtD"/>
+                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="bottom" secondItem="xVd-Kt-27W" secondAttribute="bottom" constant="-5" id="IDe-Da-d1B"/>
+                                    <constraint firstItem="0dO-As-cyg" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" constant="-5" id="YrY-rK-iI6"/>
+                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="top" secondItem="xVd-Kt-27W" secondAttribute="top" id="dRc-ML-DcT"/>
+                                    <constraint firstItem="0dO-As-cyg" firstAttribute="centerY" secondItem="xVd-Kt-27W" secondAttribute="centerY" id="wvt-0c-5FF"/>
+                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" id="xE6-x7-LcB"/>
+                                </constraints>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q35-2L-NVY">
                                 <rect key="frame" x="0.0" y="44" width="375" height="1056"/>
                                 <subviews>
@@ -740,13 +842,13 @@
                                         <rect key="frame" x="0.0" y="369.5" width="375" height="203"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient's First Name" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur5-jF-Q8Z" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="17" y="1" width="335" height="27"/>
+                                                <rect key="frame" x="17" y="1" width="335" height="26.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbt-b6-bYU" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="40" width="335" height="39"/>
+                                                <rect key="frame" x="16" y="39.5" width="335" height="39"/>
                                                 <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="juv-pZ-3cl"/>
@@ -767,7 +869,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Patient's Last Name" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ja-NV-Z6V" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="106" width="335" height="19"/>
+                                                <rect key="frame" x="20" y="105.5" width="335" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -934,8 +1036,8 @@
                                                     <outlet property="delegate" destination="phI-O9-5HU" id="War-he-O5u"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1006" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoD-6K-3gM" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="118" width="335" height="72"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoD-6K-3gM" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="106" width="335" height="84"/>
                                                 <string key="text">I, [Full Name] acknowledge that I have the full consent of [Patient Name Here] to register on their behalf and any misrepresentation of their provided details is my sole responsbility</string>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -945,7 +1047,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="rbQ-7R-WVr" firstAttribute="top" secondItem="anJ-Jz-Xsg" secondAttribute="bottom" constant="12" id="GJu-lG-pQb"/>
-                                            <constraint firstItem="HoD-6K-3gM" firstAttribute="top" secondItem="rbQ-7R-WVr" secondAttribute="bottom" constant="27" id="QmH-7z-Zgf"/>
+                                            <constraint firstItem="HoD-6K-3gM" firstAttribute="top" secondItem="rbQ-7R-WVr" secondAttribute="bottom" constant="15" id="QmH-7z-Zgf"/>
                                             <constraint firstAttribute="trailing" secondItem="rbQ-7R-WVr" secondAttribute="trailing" constant="24" id="RAc-9r-cQj"/>
                                             <constraint firstItem="rbQ-7R-WVr" firstAttribute="leading" secondItem="bBp-FR-OaY" secondAttribute="leading" constant="16" id="RCq-34-hgK"/>
                                             <constraint firstAttribute="height" constant="230" id="URk-MU-T0f"/>
@@ -1001,105 +1103,6 @@
                                     <constraint firstItem="G5p-VO-8s3" firstAttribute="leading" secondItem="Q35-2L-NVY" secondAttribute="leading" id="xt3-0D-WSa"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OV-o7-jHE">
-                                <rect key="frame" x="0.0" y="44" width="375" height="1056"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-qF-z1M">
-                                        <rect key="frame" x="20" y="249.5" width="335" height="190"/>
-                                        <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QmI-aU-q9d">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="190"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguagesCell" rowHeight="60" id="OCd-xt-kRS" customClass="LanguagesCell" customModule="covid" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="335" height="60"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCd-xt-kRS" id="aF6-Oe-pCH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-wc-WdU">
-                                                                    <rect key="frame" x="21" y="20.5" width="298" height="19"/>
-                                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="9Rf-wc-WdU" secondAttribute="trailing" constant="16" id="LBZ-a4-8st"/>
-                                                                <constraint firstItem="9Rf-wc-WdU" firstAttribute="leading" secondItem="aF6-Oe-pCH" secondAttribute="leading" constant="21" id="Oqv-3q-xmn"/>
-                                                                <constraint firstItem="9Rf-wc-WdU" firstAttribute="centerY" secondItem="aF6-Oe-pCH" secondAttribute="centerY" id="Zb0-Vh-roX"/>
-                                                            </constraints>
-                                                        </tableViewCellContentView>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <connections>
-                                                            <outlet property="titleLbl" destination="9Rf-wc-WdU" id="gCr-j2-u2H"/>
-                                                        </connections>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="phI-O9-5HU" id="Rep-Yj-GTA"/>
-                                                    <outlet property="delegate" destination="phI-O9-5HU" id="XNn-B5-NYx"/>
-                                                </connections>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="QmI-aU-q9d" secondAttribute="trailing" id="KMm-7K-NiL"/>
-                                            <constraint firstAttribute="height" constant="190" id="ObC-fn-3Se"/>
-                                            <constraint firstItem="QmI-aU-q9d" firstAttribute="top" secondItem="wMt-qF-z1M" secondAttribute="top" id="X8Z-vZ-asr"/>
-                                            <constraint firstItem="QmI-aU-q9d" firstAttribute="leading" secondItem="wMt-qF-z1M" secondAttribute="leading" id="jnU-Bl-E8c"/>
-                                            <constraint firstAttribute="bottom" secondItem="QmI-aU-q9d" secondAttribute="bottom" id="vPp-Ps-rbh"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVd-Kt-27W" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="200.5" width="335" height="39"/>
-                                        <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
-                                                <real key="value" value="17"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dO-As-cyg">
-                                        <rect key="frame" x="318" y="205" width="32" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="K2B-b0-wFT"/>
-                                            <constraint firstAttribute="height" constant="30" id="qAm-je-mC2"/>
-                                        </constraints>
-                                        <state key="normal" image="expand_less-24px"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-Cm-jFe">
-                                        <rect key="frame" x="20" y="200.5" width="335" height="34"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="dropdownBtnAction:" destination="phI-O9-5HU" eventType="touchUpInside" id="hGH-v6-OoE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.38777185169842582" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="leading" secondItem="xVd-Kt-27W" secondAttribute="leading" id="CRh-g8-jtD"/>
-                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="bottom" secondItem="xVd-Kt-27W" secondAttribute="bottom" constant="-5" id="IDe-Da-d1B"/>
-                                    <constraint firstItem="0dO-As-cyg" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" constant="-5" id="YrY-rK-iI6"/>
-                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="top" secondItem="xVd-Kt-27W" secondAttribute="top" id="dRc-ML-DcT"/>
-                                    <constraint firstItem="0dO-As-cyg" firstAttribute="centerY" secondItem="xVd-Kt-27W" secondAttribute="centerY" id="wvt-0c-5FF"/>
-                                    <constraint firstItem="D4q-Cm-jFe" firstAttribute="trailing" secondItem="xVd-Kt-27W" secondAttribute="trailing" id="xE6-x7-LcB"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zYi-rj-CFa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2970,13 +2973,16 @@ Cg
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Screening Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMD-iQ-M9y" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="36" width="335" height="14.5"/>
+                                                <rect key="frame" x="20" y="36" width="335" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="bmk-aP-0PI"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="20.5"/>
                                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check the details are correct below then select confirm to proceed" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-tC-FlH" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="66.5" width="335" height="53.5"/>
+                                                <rect key="frame" x="20" y="77" width="335" height="43"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2991,7 +2997,6 @@ Cg
                                             <constraint firstAttribute="trailing" secondItem="gMD-iQ-M9y" secondAttribute="trailing" constant="20" id="cEs-66-rH6"/>
                                             <constraint firstAttribute="bottom" secondItem="Hb7-tC-FlH" secondAttribute="bottom" constant="30" id="i2k-7S-GTt"/>
                                             <constraint firstItem="Hb7-tC-FlH" firstAttribute="top" secondItem="gMD-iQ-M9y" secondAttribute="bottom" constant="16" id="qr1-Rw-gOR"/>
-                                            <constraint firstItem="gMD-iQ-M9y" firstAttribute="height" secondItem="6uX-fz-Bnn" secondAttribute="height" multiplier="0.0971963" id="rpv-Q6-enI"/>
                                             <constraint firstItem="gMD-iQ-M9y" firstAttribute="top" secondItem="6uX-fz-Bnn" secondAttribute="top" constant="36" id="xcF-Sf-0Sb"/>
                                         </constraints>
                                     </view>
@@ -5590,6 +5595,7 @@ Cg
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="DJh-32-YXR" firstAttribute="top" secondItem="e6B-Wv-36l" secondAttribute="bottom" constant="10" id="ANn-1y-31Y"/>
                                             <constraint firstItem="zsB-Ze-fe9" firstAttribute="top" secondItem="oMe-s7-Pfg" secondAttribute="bottom" id="C9M-mB-w9b"/>
                                             <constraint firstItem="e6B-Wv-36l" firstAttribute="bottom" secondItem="mxa-nk-Nu1" secondAttribute="bottom" id="F79-gY-bg9"/>
                                             <constraint firstItem="DJh-32-YXR" firstAttribute="top" secondItem="mxa-nk-Nu1" secondAttribute="bottom" constant="10" id="MWJ-UX-uMH"/>
@@ -5642,6 +5648,9 @@ Cg
             <point key="canvasLocation" x="7701.6000000000004" y="403.44827586206901"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bfy-qE-jdJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Down" width="36" height="36"/>
         <image name="Edit" width="36" height="36"/>

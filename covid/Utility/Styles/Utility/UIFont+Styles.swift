@@ -107,7 +107,7 @@ enum titles {
     
     static let firstTimeTesting = "Is this \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "")'s first time taking a test?"
     
-    static let contactWithAnyOne = "Has \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") been in contactk with anyone who has tested positive in the last 15 days?"
+    static let contactWithAnyOne = "Has \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") been in contact with anyone who has tested positive in the last 15 days?"
     
     
     static let medicalCondition = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a chronic medical condition?"
