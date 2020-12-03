@@ -23,6 +23,12 @@ class RegisterScreentwo: UIViewController {
     
     @IBOutlet weak var btnNext: SutherlandButton!
     
+    @IBOutlet weak var medicalConditionTitle:UILabel!
+    @IBOutlet weak var pregnantTitle:UILabel!
+    @IBOutlet weak var highRiskCategoryTitle:UILabel!
+    @IBOutlet weak var smokerTitle:UILabel!
+    
+    
     var medicalCondition:String? = ""
     var pregnant:String? = ""
     var highRiskCategory:String? = ""
@@ -34,8 +40,15 @@ class RegisterScreentwo: UIViewController {
         // Do any additional setup after loading the view.
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        self.setViewTitles()
     }
     
+    func setViewTitles(){
+        self.medicalConditionTitle.text = titles.medicalCondition
+        self.pregnantTitle.text = titles.pregnant
+        self.highRiskCategoryTitle.text = titles.highRiskCategory
+        self.smokerTitle.text = titles.smoker
+    }
 
     /*
     // MARK: - Navigation

@@ -30,6 +30,12 @@ class RegisterScreenOne: UIViewController {
     
     @IBOutlet weak var btnNext: SutherlandButton!
     
+    @IBOutlet weak var symptomsTitle:UILabel!
+    @IBOutlet weak var dateSymStartedTitle:UILabel!
+    @IBOutlet weak var proritizedForTestingTitle:UILabel!
+    @IBOutlet weak var firstTimeTestingTitle:UILabel!
+    @IBOutlet weak var contactWithAnyOneTitle:UILabel!
+    
     var symptoms:String? = ""
     var proritizedForTesting:String? = ""
     var firstTimeTesting:String? = ""
@@ -43,6 +49,7 @@ class RegisterScreenOne: UIViewController {
         // Do any additional setup after loading the view.
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        self.setViewTitles()
     }
     
     // MARK: - Navigation
@@ -52,6 +59,14 @@ class RegisterScreenOne: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
 
+    }
+    
+    func setViewTitles(){
+        self.symptomsTitle.text = titles.symptoms
+        self.dateSymStartedTitle.text = titles.dateSymptomsStarted
+        self.proritizedForTestingTitle.text = titles.proritizedForTesting
+        self.firstTimeTestingTitle.text = titles.firstTimeTesting
+        self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
     }
   
     // MARK: - Custom Button Actions

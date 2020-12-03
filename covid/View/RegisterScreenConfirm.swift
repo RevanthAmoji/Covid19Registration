@@ -101,7 +101,20 @@ class RegisterScreenConfirm: UIViewController {
     @IBOutlet weak var btnNext: SutherlandButton!
     
     @IBOutlet weak var tfCareProvider, tfAddressLineOne, tfAddressLineTwo, tfCity, tfState, tfZipCode, tfPhoneNumber,tfEmailAddress  : SutherlandTextField!
-
+    
+    @IBOutlet weak var symptomsTitle:UILabel!
+    @IBOutlet weak var dateSymStartedTitle:UILabel!
+    @IBOutlet weak var proritizedForTestingTitle:UILabel!
+    @IBOutlet weak var firstTimeTestingTitle:UILabel!
+    @IBOutlet weak var contactWithAnyOneTitle:UILabel!
+    @IBOutlet weak var medicalConditionTitle:UILabel!
+    @IBOutlet weak var pregnantTitle:UILabel!
+    @IBOutlet weak var highRiskCategoryTitle:UILabel!
+    @IBOutlet weak var smokerTitle:UILabel!
+    @IBOutlet weak var primaryCareProviderTitle:UILabel!
+    @IBOutlet weak var careFacilityTitle:UILabel!
+   
+    
     var symptoms:String?
     var dateSymptomsStarted:String?
     var proritizedForTesting:String?
@@ -134,6 +147,8 @@ class RegisterScreenConfirm: UIViewController {
         setPreviousDetails()
        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+        setViewTitles()
     }
 
     
@@ -149,6 +164,20 @@ class RegisterScreenConfirm: UIViewController {
         let center: NotificationCenter = NotificationCenter.default
         center.removeObserver(self, name: UIWindow.keyboardDidShowNotification, object: nil)
         center.removeObserver(self, name: UIWindow.keyboardWillHideNotification, object: nil)
+    }
+    
+    func setViewTitles(){
+        self.symptomsTitle.text = titles.symptoms
+        self.dateSymStartedTitle.text = titles.dateSymptomsStarted
+        self.proritizedForTestingTitle.text = titles.proritizedForTesting
+        self.firstTimeTestingTitle.text = titles.firstTimeTesting
+        self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
+        self.medicalConditionTitle.text = titles.medicalCondition
+        self.pregnantTitle.text = titles.pregnant
+        self.highRiskCategoryTitle.text = titles.highRiskCategory
+        self.smokerTitle.text = titles.smoker
+        self.primaryCareProviderTitle.text = titles.primaryCareProvider
+        self.careFacilityTitle.text = titles.careFacility
     }
     
     func setPreviousData() {

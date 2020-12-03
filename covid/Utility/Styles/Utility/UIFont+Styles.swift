@@ -70,3 +70,58 @@ extension UIFont {
         }
     }
 }
+
+/*
+ 
+ SingletonData.shared.firstNamePatient = tfPatientFirstName.text
+ SingletonData.shared.lastNamePatient = tfPatientLastName.text
+ 
+ 
+ var symptoms:String?
+ var dateSymptomsStarted:String?
+ var proritizedForTesting:String?
+ var firstTimeTesting:String?
+ var contactWithAnyOne:String?
+ var medicalCondition:String?
+ var pregnant:String?
+ var highRiskCategory:String?
+ var smoker:String?
+ var primaryCareProvider:String?
+ var careFacility:String?
+ var careProvider:String?
+ var addressLineOne:String?
+ var addressLineTwo:String?
+ var city:String?
+ var state:String?
+ var zipCode:String?
+ var phoneNumber:String?
+ var emailAddress:String?
+ */
+enum titles {
+    
+    static let symptoms = "Has \(SingletonData.shared.firstNamePatient ?? "") \(SingletonData.shared.lastNamePatient ?? "") developed coronavirus symptions?"
+   
+    static let dateSymptomsStarted = "Date symptoms started"
+    
+    static let proritizedForTesting = "Has \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") been proritized for testing?"
+    
+    static let firstTimeTesting = "Is this \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "")'s first time taking a test?"
+    
+    static let contactWithAnyOne = "Has \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") been in contactk with anyone who has tested positive in the last 15 days?"
+    
+    
+    static let medicalCondition = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a chronic medical condition?"
+    
+    static let pregnant = "Is \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") pregnant?"
+    
+    static let highRiskCategory = "Is \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") over 65 years of age, or part of a high risk category?"
+    
+    static let smoker = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") smoke, chew, or vape?"
+    
+    static let primaryCareProvider = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a primary care provider?"
+    
+    
+    static let careFacility = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") live in a group setting e.g. Care Facility"
+       
+}
+

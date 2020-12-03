@@ -33,6 +33,10 @@ class RegisterScreenThree: UIViewController {
     @IBOutlet weak var tfZipCode: SutherlandTextField!
     @IBOutlet weak var tfPhoneNumber: SutherlandTextField!
     @IBOutlet weak var tfEmailAddress: SutherlandTextField!
+    
+    @IBOutlet weak var primaryCareProviderTitle:UILabel!
+    @IBOutlet weak var careFacilityTitle:UILabel!
+   
 
     var primaryCareProvider:String? = ""
     var careFacility:String? = ""
@@ -47,6 +51,8 @@ class RegisterScreenThree: UIViewController {
         btnNext.btnEnable(boolVal: false)
         
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+        self.setViewTitles()
     }
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,6 +69,10 @@ class RegisterScreenThree: UIViewController {
     }
 
 
+    func setViewTitles(){
+        self.primaryCareProviderTitle.text = titles.primaryCareProvider
+        self.careFacilityTitle.text = titles.careFacility
+    }
     /*
     // MARK: - Navigation
 

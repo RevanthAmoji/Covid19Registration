@@ -219,9 +219,12 @@ class InitialVC: UIViewController {
             errorMessage = "Please enter signature"
         } else {
             btnNext.btnEnable(boolVal: true)
+            SingletonData.shared.firstNamePatient = tfPatientFirstName.text
+            SingletonData.shared.lastNamePatient = tfPatientLastName.text
+
             return
         }
-        self.showsAlertWithoutWhiteBg(titleVal: "", messageVal: errorMessage)
+       // self.showsAlertWithoutWhiteBg(titleVal: "", messageVal: errorMessage)
         print(errorMessage)
     }
     

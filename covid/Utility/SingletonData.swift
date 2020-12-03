@@ -12,7 +12,10 @@ class SingletonData {
     static let shared = SingletonData()
     private init() {
     }
-        
+    
+    var firstNamePatient:String?
+    var lastNamePatient:String?
+    
     var symptoms:String?
     var dateSymptomsStarted:String?
     var proritizedForTesting:String?

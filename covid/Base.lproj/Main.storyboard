@@ -86,7 +86,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwz-z7-Oiv" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="486" width="295" height="39"/>
+                                <rect key="frame" x="40" y="484" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="Qdu-0k-Hfi"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-rD-ls7" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="540" width="295" height="39"/>
+                                <rect key="frame" x="40" y="538" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="How does it work?">
                                     <color key="titleColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -115,12 +115,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="720-5Z-vs0" kind="show" id="pOF-wx-IhB"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY2-2p-8do">
-                                <rect key="frame" x="40" y="589" width="295" height="39"/>
+                                <rect key="frame" x="40" y="587" width="295" height="39"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Already have an account?">
@@ -136,12 +133,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
-                                <connections>
-                                    <segue destination="LXJ-Vh-XGf" kind="show" id="Qos-uf-4Sn"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You can have a swab test to check if you have coronavirus (COVID-19) now. Thiis is a live virus test and not an antibody test" textAlignment="center" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Jm-4i2" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="21" y="401" width="333" height="58"/>
+                                <rect key="frame" x="21" y="401" width="333" height="56"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -746,13 +740,13 @@
                                         <rect key="frame" x="0.0" y="369.5" width="375" height="203"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient's First Name" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur5-jF-Q8Z" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="17" y="1" width="335" height="26.5"/>
+                                                <rect key="frame" x="17" y="1" width="335" height="27"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbt-b6-bYU" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="39.5" width="335" height="39"/>
+                                                <rect key="frame" x="16" y="40" width="335" height="39"/>
                                                 <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="juv-pZ-3cl"/>
@@ -773,7 +767,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Patient's Last Name" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ja-NV-Z6V" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="105.5" width="335" height="19.5"/>
+                                                <rect key="frame" x="20" y="106" width="335" height="19"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1913,7 +1907,12 @@ Cg
                         <outlet property="btnProritizedForTestingfalse" destination="2za-Jv-S4U" id="na2-og-NXg"/>
                         <outlet property="btnSymptomsTrue" destination="1x3-Wt-h2m" id="2ln-jZ-CfD"/>
                         <outlet property="btnSymptomsfalse" destination="iYh-o0-Cmk" id="BzL-oS-l6h"/>
+                        <outlet property="contactWithAnyOneTitle" destination="eOI-Nq-vR6" id="LwQ-gO-DhE"/>
+                        <outlet property="dateSymStartedTitle" destination="nVG-74-Gui" id="DnS-j0-m7j"/>
+                        <outlet property="firstTimeTestingTitle" destination="rQj-dI-IyK" id="os4-AJ-uJ2"/>
+                        <outlet property="proritizedForTestingTitle" destination="UHL-Ob-sE5" id="jYb-YC-4Ou"/>
                         <outlet property="scrollViewReg" destination="BF1-lK-CKN" id="u2l-VF-W1o"/>
+                        <outlet property="symptomsTitle" destination="R6h-Bl-Mum" id="MSc-Gw-6LD"/>
                         <outlet property="tfDateSymStarted" destination="R1Z-cF-ZSx" id="MvJ-fV-1d9"/>
                     </connections>
                 </viewController>
@@ -2374,6 +2373,10 @@ Cg
                         <outlet property="btnPregnantfalse" destination="6Nz-io-LXW" id="DyN-02-c8P"/>
                         <outlet property="btnSmokerTrue" destination="qmi-qT-joO" id="aa9-gv-4sf"/>
                         <outlet property="btnSmokerfalse" destination="Dzr-VH-TE3" id="Zr0-ld-FCt"/>
+                        <outlet property="highRiskCategoryTitle" destination="tEm-Ye-Ngl" id="zse-GT-uM2"/>
+                        <outlet property="medicalConditionTitle" destination="PHB-IC-XPD" id="igg-qd-583"/>
+                        <outlet property="pregnantTitle" destination="5d1-Rq-ZTP" id="W5m-KX-RXg"/>
+                        <outlet property="smokerTitle" destination="wVj-Im-IEI" id="Hms-b2-lWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyZ-03-ky2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2934,7 +2937,9 @@ Cg
                         <outlet property="btnNext" destination="OCu-w7-8cf" id="6Nk-3x-PiR"/>
                         <outlet property="btnPrimaryCareProviderTrue" destination="YRM-QQ-7nd" id="cq6-FX-c55"/>
                         <outlet property="btnPrimaryCareProviderfalse" destination="5K5-8i-LjL" id="Ewt-mW-7ag"/>
+                        <outlet property="careFacilityTitle" destination="RSO-mC-gXy" id="5bq-ah-DFJ"/>
                         <outlet property="fieldsViewHeight" destination="xsh-gx-b8u" id="s7v-D9-PnK"/>
+                        <outlet property="primaryCareProviderTitle" destination="h7m-Kj-4eM" id="Q4d-6u-IYv"/>
                         <outlet property="scrollViewReg" destination="Nw7-ok-KHU" id="RNg-vw-TBO"/>
                         <outlet property="tfAddressLineOne" destination="RG2-vX-bBC" id="hrY-49-mpX"/>
                         <outlet property="tfAddressLineTwo" destination="yVO-bi-BhG" id="kDC-Z6-GVd"/>
@@ -5255,6 +5260,9 @@ Cg
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="LXJ-Vh-XGf" kind="show" id="RYk-D7-U7U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -5389,6 +5397,11 @@ Cg
                         <outlet property="btntrueTen" destination="L6x-wy-g1j" id="RKz-w9-AgX"/>
                         <outlet property="btntrueThree" destination="Fau-xQ-wMR" id="NOE-xr-BQz"/>
                         <outlet property="btntrueTwo" destination="80y-xw-8P6" id="204-pM-Qe4"/>
+                        <outlet property="careFacilityTitle" destination="Rr7-Cd-FUF" id="r2H-G5-tbO"/>
+                        <outlet property="contactWithAnyOneTitle" destination="MLk-5I-oeY" id="6UK-dc-AyW"/>
+                        <outlet property="dateSymStartedTitle" destination="EXA-8n-RXS" id="xlK-pb-t0n"/>
+                        <outlet property="firstTimeTestingTitle" destination="Ugt-bI-rm8" id="gSS-8h-ivP"/>
+                        <outlet property="highRiskCategoryTitle" destination="B3C-g3-ur0" id="euR-Jd-90Y"/>
                         <outlet property="lblEditAddressOfCareProviderTwelve" destination="DCA-Nj-cey" id="X9X-3B-TDD"/>
                         <outlet property="lblEditCareFacilityFourteen" destination="k87-0p-hqo" id="P1m-fo-nDr"/>
                         <outlet property="lblEditCareProviderEleven" destination="vYt-d2-u3r" id="h9R-v4-wZi"/>
@@ -5403,9 +5416,15 @@ Cg
                         <outlet property="lblEditSmokerNine" destination="hji-FL-iAM" id="neg-pU-PKI"/>
                         <outlet property="lblEditSymptomsOne" destination="XU1-uf-Uby" id="uS3-d9-lnk"/>
                         <outlet property="lblEditdateSymptomsStartedTwo" destination="7ec-vh-zcP" id="dov-Lz-RlB"/>
+                        <outlet property="medicalConditionTitle" destination="muj-QL-1Sd" id="Dam-W1-bVc"/>
+                        <outlet property="pregnantTitle" destination="yKZ-We-WQ6" id="SFu-PH-h2a"/>
+                        <outlet property="primaryCareProviderTitle" destination="H7g-hs-2V5" id="1e1-Kq-nBb"/>
+                        <outlet property="proritizedForTestingTitle" destination="oPj-Dt-inj" id="hT7-00-qjC"/>
                         <outlet property="scrollViewReg" destination="9Kh-S4-fyG" id="F0l-Sa-WXr"/>
+                        <outlet property="smokerTitle" destination="t4R-ul-Lbi" id="Qqu-20-blp"/>
                         <outlet property="symptomsBackGrdView" destination="eog-Y6-joQ" id="uws-p8-wzR"/>
                         <outlet property="symptomsHeight" destination="1vD-cH-wdz" id="ybU-t2-f29"/>
+                        <outlet property="symptomsTitle" destination="JVw-RW-au0" id="E0B-Ny-iqA"/>
                         <outlet property="tfAddressLineOne" destination="4p8-Xu-99b" id="eQL-Ah-Lmt"/>
                         <outlet property="tfAddressLineTwo" destination="d1r-GI-Se5" id="SqZ-FG-tuC"/>
                         <outlet property="tfCareProvider" destination="t3e-Ra-hfF" id="p92-PP-WZm"/>
@@ -5623,9 +5642,6 @@ Cg
             <point key="canvasLocation" x="7701.6000000000004" y="403.44827586206901"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="iw0-31-ymH"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Down" width="36" height="36"/>
         <image name="Edit" width="36" height="36"/>
