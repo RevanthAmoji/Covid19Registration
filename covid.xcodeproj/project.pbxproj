@@ -11,6 +11,7 @@
 		030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030297E92575465D00E604D8 /* LocationAnnotationView.swift */; };
 		0308DD72256F43AD0013A868 /* RegisterScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */; };
 		0308DD77256F45660013A868 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD76256F45660013A868 /* SingletonData.swift */; };
+		03098D3C2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */; };
 		03574FFA2566B40100E2DB09 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03574FEF2566B40100E2DB09 /* Lato-Italic.ttf */; };
 		03574FFB2566B40100E2DB09 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03574FF02566B40100E2DB09 /* Lato-LightItalic.ttf */; };
 		03574FFC2566B40100E2DB09 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03574FF12566B40100E2DB09 /* Lato-Thin.ttf */; };
@@ -41,6 +42,14 @@
 		035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */; };
 		035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */; };
 		038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FD784256A7C6400BF054A /* RegisterScreenOne.swift */; };
+		03AD6411257F49BD00ECC469 /* ScheduleScreentwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */; };
+		03AD641C257FC07500ECC469 /* ScheduleTwoDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */; };
+		03AD641D257FC07500ECC469 /* ScheduleTwoDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */; };
+		03AD6422257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6421257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift */; };
+		03AD642E257FFE8200ECC469 /* slots.json in Resources */ = {isa = PBXBuildFile; fileRef = 03AD642D257FFE8200ECC469 /* slots.json */; };
+		03B0BD242583E85000BA519B /* RegisterPortalOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0BD232583E85000BA519B /* RegisterPortalOne.swift */; };
+		03B0BD292583F0D200BA519B /* RegisterPortalTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0BD282583F0D200BA519B /* RegisterPortalTwo.swift */; };
+		03B0BD86257CB0A1004667DE /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0BD85257CB0A1004667DE /* CreateAccountVC.swift */; };
 		03B2435B2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2435A2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift */; };
 		03B2436125780B8500CAE0B0 /* maps.json in Resources */ = {isa = PBXBuildFile; fileRef = 03B2436025780B8500CAE0B0 /* maps.json */; };
 		03B2436725781BFB00CAE0B0 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */; };
@@ -101,6 +110,7 @@
 		030297E92575465D00E604D8 /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
 		0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenModel.swift; sourceTree = "<group>"; };
 		0308DD76256F45660013A868 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
+		03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwoAllDates.swift; sourceTree = "<group>"; };
 		03574FEF2566B40100E2DB09 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
 		03574FF02566B40100E2DB09 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		03574FF12566B40100E2DB09 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
@@ -132,6 +142,14 @@
 		035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressVC.swift; sourceTree = "<group>"; };
 		035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressViewModel.swift; sourceTree = "<group>"; };
 		038FD784256A7C6400BF054A /* RegisterScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenOne.swift; sourceTree = "<group>"; };
+		03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwo.swift; sourceTree = "<group>"; };
+		03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTwoDaysCell.swift; sourceTree = "<group>"; };
+		03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTwoDaysCell.xib; sourceTree = "<group>"; };
+		03AD6421257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTwoAvailableCell.swift; sourceTree = "<group>"; };
+		03AD642D257FFE8200ECC469 /* slots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = slots.json; sourceTree = "<group>"; };
+		03B0BD232583E85000BA519B /* RegisterPortalOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalOne.swift; sourceTree = "<group>"; };
+		03B0BD282583F0D200BA519B /* RegisterPortalTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalTwo.swift; sourceTree = "<group>"; };
+		03B0BD85257CB0A1004667DE /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		03B2435A2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenConfirmViewModel.swift; sourceTree = "<group>"; };
 		03B2436025780B8500CAE0B0 /* maps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = maps.json; sourceTree = "<group>"; };
 		03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -274,6 +292,9 @@
 				0357503A25679F7100E2DB09 /* LanguagesCell.swift */,
 				03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */,
 				03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */,
+				03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */,
+				03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */,
+				03AD6421257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -301,6 +322,11 @@
 				03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */,
 				030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */,
 				030297E92575465D00E604D8 /* LocationAnnotationView.swift */,
+				03B0BD85257CB0A1004667DE /* CreateAccountVC.swift */,
+				03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */,
+				03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */,
+				03B0BD232583E85000BA519B /* RegisterPortalOne.swift */,
+				03B0BD282583F0D200BA519B /* RegisterPortalTwo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +345,7 @@
 		03B2435F25780B6600CAE0B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03AD642D257FFE8200ECC469 /* slots.json */,
 				03B2436025780B8500CAE0B0 /* maps.json */,
 			);
 			path = Resources;
@@ -597,6 +624,7 @@
 				03DD11F32562B02200DD0583 /* Localizable-English.strings in Resources */,
 				035750162566B40A00E2DB09 /* Quicksand-Light.ttf in Resources */,
 				03574FFC2566B40100E2DB09 /* Lato-Thin.ttf in Resources */,
+				03AD642E257FFE8200ECC469 /* slots.json in Resources */,
 				03DD118225627CA300DD0583 /* LaunchScreen.storyboard in Resources */,
 				03DD11F02562B02200DD0583 /* Localizable-Español.strings in Resources */,
 				035750042566B40100E2DB09 /* Lato-ThinItalic.ttf in Resources */,
@@ -613,6 +641,7 @@
 				035750182566B40A00E2DB09 /* Quicksand-VariableFont_wght.ttf in Resources */,
 				035750002566B40100E2DB09 /* Lato-BlackItalic.ttf in Resources */,
 				03574FFE2566B40100E2DB09 /* Lato-Black.ttf in Resources */,
+				03AD641D257FC07500ECC469 /* ScheduleTwoDaysCell.xib in Resources */,
 				03574FFB2566B40100E2DB09 /* Lato-LightItalic.ttf in Resources */,
 				035750192566B40A00E2DB09 /* README.txt in Resources */,
 				035DA31825691FD900B28354 /* DropdownTableView.xib in Resources */,
@@ -746,6 +775,7 @@
 			files = (
 				030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */,
 				03DD11EA2562B02200DD0583 /* UIImage+Utility.swift in Sources */,
+				03B0BD242583E85000BA519B /* RegisterPortalOne.swift in Sources */,
 				03DD11ED2562B02200DD0583 /* UIImageview+Utility.swift in Sources */,
 				03DD11E32562B02200DD0583 /* UIScreen+Utility.swift in Sources */,
 				03DD11E72562B02200DD0583 /* Style.swift in Sources */,
@@ -756,17 +786,23 @@
 				035B0655256CA13F0069821D /* RegisterScreenThree.swift in Sources */,
 				03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */,
 				035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */,
+				03AD6411257F49BD00ECC469 /* ScheduleScreentwo.swift in Sources */,
 				03DD11EE2562B02200DD0583 /* UIFont+Styles.swift in Sources */,
+				03AD641C257FC07500ECC469 /* ScheduleTwoDaysCell.swift in Sources */,
+				03AD6422257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift in Sources */,
 				035750212567927900E2DB09 /* MenuVC.swift in Sources */,
 				03B2435B2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift in Sources */,
 				03DD117725627CA100DD0583 /* ViewController.swift in Sources */,
 				03DD117325627CA100DD0583 /* AppDelegate.swift in Sources */,
+				03B0BD292583F0D200BA519B /* RegisterPortalTwo.swift in Sources */,
 				03DD11EF2562B02200DD0583 /* CitygoConstants.swift in Sources */,
+				03B0BD86257CB0A1004667DE /* CreateAccountVC.swift in Sources */,
 				03DD11E42562B02200DD0583 /* UIView+Utility.swift in Sources */,
 				030297E52574C4A400E604D8 /* ScheduleScreenOne.swift in Sources */,
 				03DD12062562BB3300DD0583 /* InitialVC.swift in Sources */,
 				038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */,
 				03DD117525627CA100DD0583 /* SceneDelegate.swift in Sources */,
+				03098D3C2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift in Sources */,
 				03DD11F12562B02200DD0583 /* LocalizationManager.swift in Sources */,
 				03DD117D25627CA100DD0583 /* covid.xcdatamodeld in Sources */,
 				035750502567D6E600E2DB09 /* LanguageDatasourceItem.swift in Sources */,

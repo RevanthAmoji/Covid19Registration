@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScheduleTwoDaysCell" id="gTV-IL-0wX" customClass="ScheduleTwoDaysCell" customModule="covid" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERF-5E-nPW">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="136"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbB-hC-GXc">
+                                <rect key="frame" x="5" y="10" width="150" height="116"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-i0-P9W" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="150" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-ai-pfC" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="59.5" width="150" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="WUZ-ai-pfC" firstAttribute="height" secondItem="3bo-i0-P9W" secondAttribute="height" id="7vB-eX-am1"/>
+                                    <constraint firstAttribute="bottom" secondItem="WUZ-ai-pfC" secondAttribute="bottom" constant="10" id="A2m-xm-wnj"/>
+                                    <constraint firstAttribute="trailing" secondItem="WUZ-ai-pfC" secondAttribute="trailing" id="Beu-md-OPh"/>
+                                    <constraint firstItem="WUZ-ai-pfC" firstAttribute="top" secondItem="3bo-i0-P9W" secondAttribute="bottom" constant="8" id="FrU-Ff-9un"/>
+                                    <constraint firstAttribute="trailing" secondItem="3bo-i0-P9W" secondAttribute="trailing" id="Mh2-s2-UKm"/>
+                                    <constraint firstItem="WUZ-ai-pfC" firstAttribute="leading" secondItem="AbB-hC-GXc" secondAttribute="leading" id="UAu-oa-fx3"/>
+                                    <constraint firstItem="3bo-i0-P9W" firstAttribute="top" secondItem="AbB-hC-GXc" secondAttribute="top" constant="5" id="ZjD-HO-ABu"/>
+                                    <constraint firstItem="3bo-i0-P9W" firstAttribute="leading" secondItem="AbB-hC-GXc" secondAttribute="leading" id="x9n-HS-WvE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AbB-hC-GXc" secondAttribute="bottom" constant="10" id="Djs-0T-mcr"/>
+                            <constraint firstAttribute="trailing" secondItem="AbB-hC-GXc" secondAttribute="trailing" constant="5" id="HKN-u1-9cG"/>
+                            <constraint firstItem="AbB-hC-GXc" firstAttribute="top" secondItem="ERF-5E-nPW" secondAttribute="top" constant="10" id="SvB-5J-RhR"/>
+                            <constraint firstItem="AbB-hC-GXc" firstAttribute="leading" secondItem="ERF-5E-nPW" secondAttribute="leading" constant="5" id="sYy-CD-lGH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ERF-5E-nPW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HKX-ax-50E"/>
+                <constraint firstAttribute="trailing" secondItem="ERF-5E-nPW" secondAttribute="trailing" id="Lnf-iT-EOz"/>
+                <constraint firstItem="ERF-5E-nPW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fl4-ZW-7Uy"/>
+                <constraint firstAttribute="bottom" secondItem="ERF-5E-nPW" secondAttribute="bottom" id="glr-AU-d4l"/>
+            </constraints>
+            <size key="customSize" width="160" height="136"/>
+            <connections>
+                <outlet property="backGndView" destination="AbB-hC-GXc" id="YNU-0N-hA0"/>
+                <outlet property="subTitlelbl" destination="WUZ-ai-pfC" id="vJ2-3A-x8E"/>
+                <outlet property="titlelbl" destination="3bo-i0-P9W" id="n7v-2q-THq"/>
+            </connections>
+            <point key="canvasLocation" x="146.37681159420291" y="122.54464285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

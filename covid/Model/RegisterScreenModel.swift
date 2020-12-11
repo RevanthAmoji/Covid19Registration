@@ -35,3 +35,30 @@ struct RegisterScreenModel {
 //    }
     
 }
+
+
+struct slots:Codable {
+    
+    var AvailableDates:[AvailableDates]?
+    var Data:[Datas]?
+   
+}
+
+struct AvailableDates:Codable {
+    
+    var Text:String?
+    var Value:String?
+   
+}
+
+struct Datas:Codable {
+    
+    var HospitalID:String?
+    var SlotStart:String?
+    var SlotEnd:String?
+    var SlotID:String?
+    var AppointmentDate:String?
+    var AppointmentDateStr:String?
+    var Address:String?
+    var AvailableSlots:String?
+}

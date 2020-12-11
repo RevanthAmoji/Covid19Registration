@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class SingletonData {
     
     static let shared = SingletonData()
@@ -58,5 +59,29 @@ class SingletonData {
         }
         return chartDetailsArray!
     }
+    
+    func getSlotsDetails() -> slots  {
+        
+        var chartDetailsArray:slots = slots()
+        
+        if let path = Bundle.main.path(forResource: "slots", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options:.mappedIfSafe)
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: [])
+                let modulesData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+                do {
+                    let array = try JSONDecoder().decode(slots.self, from: modulesData)
+                    chartDetailsArray = array
+                } catch let e {
+                    print("getChartTypeDetails error : \(e)")
+                }
+                
+            } catch let e {
+                print("getChartTypeDetails error: \(e)")
+            }
+        }
+        return chartDetailsArray
+    }
+    
 
 }
