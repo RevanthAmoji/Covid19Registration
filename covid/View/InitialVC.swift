@@ -41,11 +41,14 @@ class InitialVC: UIViewController {
     @IBOutlet weak var dropDownTableViewBackGroundView:UIView!
     
     @IBOutlet weak var languagesTableView: UITableView!
+    
+    @IBOutlet weak var infoLbl: SutherlandLabel!
    
-    var languagesList:[String] = ["Myself","Spouse","Child","Other"]
+    var languagesList:[RelationModel] = []
     
     var selectionAge:String? = ""
     var selectionRegister:String? = ""
+    var selectRelationNumber:String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,8 @@ class InitialVC: UIViewController {
         //textfieldsBackGndColor()
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         self.heighlighBoarderColor(boolVal: false)
+        
+       checkConnectivityRelation()
     }
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -98,6 +103,7 @@ class InitialVC: UIViewController {
     
     @IBAction func nextBtnAction(_ sender: Any) {
     
+        checkConnectivity()
         print("nextbtnaction")
     }
 
@@ -112,13 +118,13 @@ class InitialVC: UIViewController {
         
         if selBtn.tag == 100 {
             
-            selectionAge = "Yes"
+            selectionAge = "1"
             btnAgefalse.isSelected = false
             btnAgeTrue.isSelected = true
             
         } else if selBtn.tag == 101 {
             
-            selectionAge = "No"
+            selectionAge = "0"
             btnAgeTrue.isSelected = false
             btnAgefalse.isSelected = true
         }
@@ -134,13 +140,13 @@ class InitialVC: UIViewController {
         
         if selBtn.tag == 102 {
             
-            selectionRegister = "Yes"
+            selectionRegister = "1"
             btnRegisterfalse.isSelected = false
             btnRegisterTrue.isSelected = true
             
         } else if selBtn.tag == 103 {
             
-            selectionRegister = "No"
+            selectionRegister = "0"
             btnRegisterTrue.isSelected = false
             btnRegisterfalse.isSelected = true
         }
@@ -236,6 +242,69 @@ class InitialVC: UIViewController {
         alertController.addAction(trueAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"PatientRelationship\":\"\(selectRelationNumber ?? "")\",\"PatientAge\":\"\(selectionAge ?? "")\",\"PatientFirstName\":\"\(tfPatientFirstName.text ?? "")\",\"PatientLastName\":\"\(tfPatientLastName.text ?? "")\",\"PatientConsent\":\"\(selectionRegister ?? "")\",\"GuardianFullName\":\"\(tfSignature.text ?? "")\"}'}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreenOne") as! RegisterScreenOne
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
+    }
+
+    func checkConnectivityRelation() {
+        
+        if Reachability.isConnectedToNetwork() {
+    
+            let authUrl = Endpoint.relation
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getRelationData(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.count != 0 {
+                        
+                        self.languagesList = dashboads
+                        self.languagesTableView.reloadData()
+                        
+                    } else {
+                        
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                        
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+       }
+    }
 
 }
 
@@ -246,7 +315,7 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LanguagesCell", for: indexPath) as! LanguagesCell
-        cell.titleLbl.text = languagesList[indexPath.row]
+        cell.titleLbl.text = languagesList[indexPath.row].Text
         if cell.titleLbl.text == "Myself" {
             cell.contentView.backgroundColor = UIColor.white
         } else {
@@ -260,8 +329,9 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.heighlighBoarderColor(boolVal: false)
-        tfRelationShip.text = languagesList[indexPath.row]
-        tfRelationShipDummy.text = languagesList[indexPath.row]
+        tfRelationShip.text = languagesList[indexPath.row].Text
+        tfRelationShipDummy.text = languagesList[indexPath.row].Text
+        selectRelationNumber = languagesList[indexPath.row].Value
         ageViewHeight.constant = 102
         ageViewHeightView.isHidden = false
     }
@@ -283,6 +353,7 @@ extension InitialVC: UITextFieldDelegate {
         } else  if textField == tfSignature {
             if  textField.text?.count != 0 {
                 
+                infoLbl.text = "I, \(tfSignature.text ?? "") acknowledge that I have the full consent of [Patient Name Here] to register on their behalf and any misrepresentation of their provided details is my sole responsbility"
                 self.checkAllTheFeilds()
             }
         } else  if textField == tfPatientLastName {
@@ -295,6 +366,19 @@ extension InitialVC: UITextFieldDelegate {
     }
     /// Thid is used to validate number plate and model when typing on keypad
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == tfSignature {
+            let text = textField.text
+            let _char = string.cString(using: .utf8)
+            let isBackSpace =  strcmp(_char, "x")
+            if isBackSpace == -120 {
+                    
+                return true
+            } else {
+                infoLbl.text = "I, \(text ?? "")\(string) acknowledge that I have the full consent of [Patient Name Here] to register on their behalf and any misrepresentation of their provided details is my sole responsbility"
+                    return true
+            }
+
+        }
       return true
     }
 }

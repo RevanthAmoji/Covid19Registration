@@ -62,3 +62,16 @@ struct Datas:Codable {
     var Address:String?
     var AvailableSlots:String?
 }
+
+
+struct ServerResponse:Codable {
+    
+    var isSuccess:Bool?
+    var Message:String?
+   
+}
+
+struct RelationModel:Codable {
+    var Text:String?
+    var Value:String?
+}

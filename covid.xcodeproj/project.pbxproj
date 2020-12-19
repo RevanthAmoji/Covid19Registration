@@ -58,6 +58,10 @@
 		03B3731625883EE1009BC7D5 /* ScheduleConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */; };
 		03B3731B25883F7E009BC7D5 /* RegisterPortalConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */; };
 		03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */; };
+		03CA994A258E1BD500429B89 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA9949258E1BD500429B89 /* Services.swift */; };
+		03CA994F258E1BEC00429B89 /* DashboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA994E258E1BEC00429B89 /* DashboardService.swift */; };
+		03CA9954258E1C1C00429B89 /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA9953258E1C1C00429B89 /* ServiceConstant.swift */; };
+		03CA9959258E501D00429B89 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA9958258E501D00429B89 /* Reachability.swift */; };
 		03D29932256C339C005A8201 /* RegisterScreentwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29931256C339B005A8201 /* RegisterScreentwo.swift */; };
 		03DD117325627CA100DD0583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD117225627CA100DD0583 /* AppDelegate.swift */; };
 		03DD117525627CA100DD0583 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD117425627CA100DD0583 /* SceneDelegate.swift */; };
@@ -161,6 +165,10 @@
 		03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleConfirm.swift; sourceTree = "<group>"; };
 		03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalConfirm.swift; sourceTree = "<group>"; };
 		03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenConfirm.swift; sourceTree = "<group>"; };
+		03CA9949258E1BD500429B89 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		03CA994E258E1BEC00429B89 /* DashboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardService.swift; sourceTree = "<group>"; };
+		03CA9953258E1C1C00429B89 /* ServiceConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
+		03CA9958258E501D00429B89 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		03D29931256C339B005A8201 /* RegisterScreentwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreentwo.swift; sourceTree = "<group>"; };
 		03DD116F25627CA100DD0583 /* covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DD117225627CA100DD0583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -385,6 +393,10 @@
 		03DD117125627CA100DD0583 /* covid */ = {
 			isa = PBXGroup;
 			children = (
+				03CA9958258E501D00429B89 /* Reachability.swift */,
+				03CA9953258E1C1C00429B89 /* ServiceConstant.swift */,
+				03CA9949258E1BD500429B89 /* Services.swift */,
+				03CA994E258E1BEC00429B89 /* DashboardService.swift */,
 				03B2435F25780B6600CAE0B0 /* Resources */,
 				0308DD70256F43870013A868 /* Model */,
 				0357503925679F4C00E2DB09 /* Cells */,
@@ -787,6 +799,7 @@
 				03B0BD242583E85000BA519B /* RegisterPortalOne.swift in Sources */,
 				03DD11ED2562B02200DD0583 /* UIImageview+Utility.swift in Sources */,
 				03DD11E32562B02200DD0583 /* UIScreen+Utility.swift in Sources */,
+				03CA9959258E501D00429B89 /* Reachability.swift in Sources */,
 				03DD11E72562B02200DD0583 /* Style.swift in Sources */,
 				035B065A256CCE480069821D /* RegisterScreenThreeModel.swift in Sources */,
 				035750262567929500E2DB09 /* LanguagesVC.swift in Sources */,
@@ -816,7 +829,10 @@
 				03DD11F12562B02200DD0583 /* LocalizationManager.swift in Sources */,
 				03DD117D25627CA100DD0583 /* covid.xcdatamodeld in Sources */,
 				035750502567D6E600E2DB09 /* LanguageDatasourceItem.swift in Sources */,
+				03CA994F258E1BEC00429B89 /* DashboardService.swift in Sources */,
+				03CA9954258E1C1C00429B89 /* ServiceConstant.swift in Sources */,
 				0357503B25679F7100E2DB09 /* LanguagesCell.swift in Sources */,
+				03CA994A258E1BD500429B89 /* Services.swift in Sources */,
 				035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */,
 				035DA31025691FBA00B28354 /* DropdownTableView.swift in Sources */,
 				03DD11E12562B02200DD0583 /* SutherlandLabel.swift in Sources */,

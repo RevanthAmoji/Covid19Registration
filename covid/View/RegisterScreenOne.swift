@@ -73,11 +73,11 @@ class RegisterScreenOne: UIViewController {
     @IBAction func btnSymptomsAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 100 {
-            symptoms = "Yes"
+            symptoms = "1"
             btnSymptomsfalse.isSelected = false
             btnSymptomsTrue.isSelected = true
         } else if selBtn.tag == 101 {
-            symptoms = "No"
+            symptoms = "0"
             btnSymptomsfalse.isSelected = true
             btnSymptomsTrue.isSelected = false
         }
@@ -86,11 +86,11 @@ class RegisterScreenOne: UIViewController {
     @IBAction func btnProritizedForTestingAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 102 {
-            proritizedForTesting = "Yes"
+            proritizedForTesting = "1"
             btnProritizedForTestingfalse.isSelected = false
             btnProritizedForTestingTrue.isSelected = true
         } else if selBtn.tag == 103 {
-            proritizedForTesting = "No"
+            proritizedForTesting = "0"
             btnProritizedForTestingfalse.isSelected = true
             btnProritizedForTestingTrue.isSelected = false
         }
@@ -99,11 +99,11 @@ class RegisterScreenOne: UIViewController {
     @IBAction func btnFirstTimeTestingAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 104 {
-            firstTimeTesting = "Yes"
+            firstTimeTesting = "1"
             btnFirstTimeTestingfalse.isSelected = false
             btnFirstTimeTestingTrue.isSelected = true
         } else if selBtn.tag == 105 {
-            firstTimeTesting = "No"
+            firstTimeTesting = "0"
             btnFirstTimeTestingfalse.isSelected = true
             btnFirstTimeTestingTrue.isSelected = false
         }
@@ -112,11 +112,11 @@ class RegisterScreenOne: UIViewController {
     @IBAction func btnContactWithAnyOneAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 106 {
-            contactWithAnyOne = "Yes"
+            contactWithAnyOne = "1"
             btnContactWithAnyOnefalse.isSelected = false
             btnContactWithAnyOneTrue.isSelected = true
         } else if selBtn.tag == 107 {
-            contactWithAnyOne = "No"
+            contactWithAnyOne = "0"
             btnContactWithAnyOnefalse.isSelected = true
             btnContactWithAnyOneTrue.isSelected = false
         }
@@ -138,6 +138,8 @@ class RegisterScreenOne: UIViewController {
         SingletonData.shared.firstTimeTesting = firstTimeTesting
         SingletonData.shared.contactWithAnyOne = contactWithAnyOne
         SingletonData.shared.dateSymptomsStarted = tfDateSymStarted.text
+        
+        checkConnectivity()
     }
     
     func checkAllTheFeilds() {
@@ -162,6 +164,38 @@ class RegisterScreenOne: UIViewController {
         alertController.addAction(trueAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"HasCorona_symptoms\":\"\(symptoms ?? "")\",\"Symptoms_StartedDate\":\"\(tfDateSymStarted.text ?? "")\",\"Proritized_Testing\":\"\(proritizedForTesting ?? "")\",\"FirstTime_Test\":\"\(firstTimeTesting ?? "")\",\"Contact_Last15days\":\"\(contactWithAnyOne ?? "")\"}'}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreentwo") as! RegisterScreentwo
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
+    }
+
 }
 
 extension RegisterScreenOne: JBCalendarViewControllerDelegate {

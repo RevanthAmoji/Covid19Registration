@@ -14,6 +14,8 @@ class SingletonData {
     private init() {
     }
     
+    var email:String?
+    
     var firstNamePatient:String?
     var lastNamePatient:String?
     
@@ -41,6 +43,9 @@ class SingletonData {
     var clientAddress: String?
     var testDate: String?
     var testTime: String?
+    
+    var relationName:String?
+    var relationNumber:String?
     
     func getChartTypeDetails() -> Array<Any>  {
         

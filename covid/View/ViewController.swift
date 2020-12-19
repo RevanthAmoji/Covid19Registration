@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         btnGetStarted.btnEnable(boolVal: true)
         btnHowItWorks.btnHover(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,5 +81,7 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: false)
     }
     
+    
+     
 }
 

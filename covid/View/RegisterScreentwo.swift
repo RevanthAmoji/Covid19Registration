@@ -64,11 +64,11 @@ class RegisterScreentwo: UIViewController {
     @IBAction func btnMedicalConditionAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 100 {
-            medicalCondition = "Yes"
+            medicalCondition = "1"
             btnMedicalConditionfalse.isSelected = false
             btnMedicalConditionTrue.isSelected = true
         } else if selBtn.tag == 101 {
-            medicalCondition = "No"
+            medicalCondition = "0"
             btnMedicalConditionfalse.isSelected = true
             btnMedicalConditionTrue.isSelected = false
         }
@@ -77,11 +77,11 @@ class RegisterScreentwo: UIViewController {
     @IBAction func btnPregnantAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 102 {
-            pregnant = "Yes"
+            pregnant = "1"
             btnPregnantfalse.isSelected = false
             btnPregnantTrue.isSelected = true
         } else if selBtn.tag == 103 {
-            pregnant = "No"
+            pregnant = "0"
             btnPregnantfalse.isSelected = true
             btnPregnantTrue.isSelected = false
         }
@@ -90,11 +90,11 @@ class RegisterScreentwo: UIViewController {
     @IBAction func btnHighRiskCategoryAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 104 {
-            highRiskCategory = "Yes"
+            highRiskCategory = "1"
             btnHighRiskCategoryfalse.isSelected = false
             btnHighRiskCategoryTrue.isSelected = true
         } else if selBtn.tag == 105 {
-            highRiskCategory = "No"
+            highRiskCategory = "0"
             btnHighRiskCategoryfalse.isSelected = true
             btnHighRiskCategoryTrue.isSelected = false
         }
@@ -103,11 +103,11 @@ class RegisterScreentwo: UIViewController {
     @IBAction func btnSmokerAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 106 {
-            smoker = "Yes"
+            smoker = "1"
             btnSmokerfalse.isSelected = false
             btnSmokerTrue.isSelected = true
         } else if selBtn.tag == 107 {
-            smoker = "No"
+            smoker = "0"
             btnSmokerfalse.isSelected = true
             btnSmokerTrue.isSelected = false
         }
@@ -119,6 +119,7 @@ class RegisterScreentwo: UIViewController {
         SingletonData.shared.pregnant = pregnant
         SingletonData.shared.highRiskCategory = highRiskCategory
         SingletonData.shared.smoker = smoker
+        checkConnectivity()
     }
     func checkAllTheFeilds() {
         var errorMessage = ""
@@ -131,4 +132,45 @@ class RegisterScreentwo: UIViewController {
         //self.showsAlertWithoutWhiteBg(titleVal: "", messageVal: errorMessage)
         print(errorMessage)
     }
+    
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Medical_Condition\":\"\(medicalCondition ?? "")\",\"Pregnant\":\"\(pregnant ?? "")\",\"Highrisk_Category\":\"\(highRiskCategory ?? "")\",\"Smoke\":\"\(smoker ?? "")\"}'}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreenThree") as! RegisterScreenThree
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
+    }
+
 }
