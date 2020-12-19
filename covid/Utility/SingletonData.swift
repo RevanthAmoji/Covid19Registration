@@ -37,6 +37,11 @@ class SingletonData {
     var phoneNumber:String?
     var emailAddress:String?
     
+    var clientName: String?
+    var clientAddress: String?
+    var testDate: String?
+    var testTime: String?
+    
     func getChartTypeDetails() -> Array<Any>  {
         
         var chartDetailsArray:Array? = []

@@ -114,7 +114,6 @@ class RegisterScreenConfirm: UIViewController {
     @IBOutlet weak var primaryCareProviderTitle:UILabel!
     @IBOutlet weak var careFacilityTitle:UILabel!
    
-    
     var symptoms:String?
     var dateSymptomsStarted:String?
     var proritizedForTesting:String?

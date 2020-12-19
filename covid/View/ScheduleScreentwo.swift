@@ -13,12 +13,16 @@ class ScheduleScreentwo: UIViewController {
     
     @IBOutlet weak var itemsTableView:UITableView!
     
+    @IBOutlet weak var btnNext:SutherlandButton!
+    
     var slots:slots = SingletonData.shared.getSlotsDetails()
     
     lazy var availableSlots:[Datas]? = []
     
     var previousSelVal:Int = -1
     var previousSelTableVal:Int = -1
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,8 @@ class ScheduleScreentwo: UIViewController {
        
         itemsCollectionView.reloadData()
         itemsCollectionView.layoutIfNeeded()
+        
+        btnNext.btnEnable(boolVal: false)
     }
     
 
@@ -115,7 +121,8 @@ extension ScheduleScreentwo: UICollectionViewDelegate, UICollectionViewDataSourc
         
         previousSelVal = indexPath.row
         itemsCollectionView.reloadData()
-        
+        let modelVal = slots.AvailableDates?[indexPath.row]
+        SingletonData.shared.testDate = modelVal?.Text
         itemsTableView.reloadData()
     }
 }
@@ -169,6 +176,10 @@ extension ScheduleScreentwo : UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         previousSelTableVal = indexPath.row
         itemsTableView.reloadData()
+        let model = availableSlots?[indexPath.row]
+        let slot = "\(model?.SlotStart ?? "") - \(model?.SlotEnd ?? "")"
+        SingletonData.shared.testTime = slot
+        btnNext.btnEnable(boolVal: true)
     }
     
 }

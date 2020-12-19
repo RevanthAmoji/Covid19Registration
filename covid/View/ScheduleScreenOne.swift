@@ -25,14 +25,10 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     let locationManager = CLLocationManager()
     @IBOutlet weak var searchField: UITextField!
     
-    var previousSelVal:Int = -1
+    @IBOutlet weak var btnNext:SutherlandButton!
     
-//    let stadiums = [Stadium(name: "Velachery", lattitude: 12.9815, longtitude: 80.2180),
-//                    Stadium(name: "Thiruvunmayur", lattitude: 12.9830, longtitude: 80.2594),
-//                    Stadium(name: "Adayar", lattitude: 13.0012, longtitude: 80.2565),
-//                    Stadium(name: "Perungudi", lattitude: 12.9654, longtitude: 80.2461),
-//                    Stadium(name: "Medavakam", lattitude: 12.9171, longtitude: 80.1923),
-//                   ]
+    var previousSelVal:Int = -1
+
     var stadiums:[Stadium] = []
     
     override func viewDidLoad() {
@@ -46,6 +42,8 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         self.itemsCollectionView.register(UINib(nibName: "MapCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MapCollectionViewCell")
+        
+        btnNext.btnEnable(boolVal: false)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -185,7 +183,11 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         previousSelVal = indexPath.row
+        let model = stadiums[indexPath.row]
+        SingletonData.shared.clientName = model.HospitalName
+        SingletonData.shared.clientAddress  = model.HospitalAddress
         itemsCollectionView.reloadData()
+        btnNext.btnEnable(boolVal: true)
     }
 
 }

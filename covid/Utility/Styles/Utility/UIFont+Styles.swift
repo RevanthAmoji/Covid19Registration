@@ -122,6 +122,8 @@ enum titles {
     
     
     static let careFacility = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") live in a group setting e.g. Care Facility"
+    
+    static let identificationTitle = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a valid form of identification?"
        
 }
 

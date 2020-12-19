@@ -42,6 +42,7 @@
 		035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */; };
 		035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */; };
 		038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FD784256A7C6400BF054A /* RegisterScreenOne.swift */; };
+		03AB099525878269001FEF4A /* RegisterPortalThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB099425878269001FEF4A /* RegisterPortalThree.swift */; };
 		03AD6411257F49BD00ECC469 /* ScheduleScreentwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */; };
 		03AD641C257FC07500ECC469 /* ScheduleTwoDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */; };
 		03AD641D257FC07500ECC469 /* ScheduleTwoDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */; };
@@ -54,6 +55,8 @@
 		03B2436125780B8500CAE0B0 /* maps.json in Resources */ = {isa = PBXBuildFile; fileRef = 03B2436025780B8500CAE0B0 /* maps.json */; };
 		03B2436725781BFB00CAE0B0 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */; };
 		03B2436825781BFB00CAE0B0 /* MapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */; };
+		03B3731625883EE1009BC7D5 /* ScheduleConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */; };
+		03B3731B25883F7E009BC7D5 /* RegisterPortalConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */; };
 		03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */; };
 		03D29932256C339C005A8201 /* RegisterScreentwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29931256C339B005A8201 /* RegisterScreentwo.swift */; };
 		03DD117325627CA100DD0583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD117225627CA100DD0583 /* AppDelegate.swift */; };
@@ -142,6 +145,7 @@
 		035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressVC.swift; sourceTree = "<group>"; };
 		035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressViewModel.swift; sourceTree = "<group>"; };
 		038FD784256A7C6400BF054A /* RegisterScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenOne.swift; sourceTree = "<group>"; };
+		03AB099425878269001FEF4A /* RegisterPortalThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalThree.swift; sourceTree = "<group>"; };
 		03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwo.swift; sourceTree = "<group>"; };
 		03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTwoDaysCell.swift; sourceTree = "<group>"; };
 		03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTwoDaysCell.xib; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		03B2436025780B8500CAE0B0 /* maps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = maps.json; sourceTree = "<group>"; };
 		03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCollectionViewCell.xib; sourceTree = "<group>"; };
+		03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleConfirm.swift; sourceTree = "<group>"; };
+		03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalConfirm.swift; sourceTree = "<group>"; };
 		03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenConfirm.swift; sourceTree = "<group>"; };
 		03D29931256C339B005A8201 /* RegisterScreentwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreentwo.swift; sourceTree = "<group>"; };
 		03DD116F25627CA100DD0583 /* covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,13 +326,16 @@
 				03D29931256C339B005A8201 /* RegisterScreentwo.swift */,
 				035B0654256CA13F0069821D /* RegisterScreenThree.swift */,
 				03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */,
-				030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */,
 				030297E92575465D00E604D8 /* LocationAnnotationView.swift */,
 				03B0BD85257CB0A1004667DE /* CreateAccountVC.swift */,
+				030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */,
 				03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */,
 				03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */,
+				03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */,
 				03B0BD232583E85000BA519B /* RegisterPortalOne.swift */,
 				03B0BD282583F0D200BA519B /* RegisterPortalTwo.swift */,
+				03AB099425878269001FEF4A /* RegisterPortalThree.swift */,
+				03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -784,6 +793,7 @@
 				035E7C1A2564EBE600BF3EAB /* SignletonUI.swift in Sources */,
 				03DD11F52562B02200DD0583 /* Localizable.swift in Sources */,
 				035B0655256CA13F0069821D /* RegisterScreenThree.swift in Sources */,
+				03B3731625883EE1009BC7D5 /* ScheduleConfirm.swift in Sources */,
 				03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */,
 				035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */,
 				03AD6411257F49BD00ECC469 /* ScheduleScreentwo.swift in Sources */,
@@ -811,8 +821,10 @@
 				035DA31025691FBA00B28354 /* DropdownTableView.swift in Sources */,
 				03DD11E12562B02200DD0583 /* SutherlandLabel.swift in Sources */,
 				03DD11DF2562B02200DD0583 /* SutherlandTextField.swift in Sources */,
+				03AB099525878269001FEF4A /* RegisterPortalThree.swift in Sources */,
 				03DD11EB2562B02200DD0583 /* UIColor+Utility.swift in Sources */,
 				03DD11EC2562B02200DD0583 /* UIColor+Styles.swift in Sources */,
+				03B3731B25883F7E009BC7D5 /* RegisterPortalConfirm.swift in Sources */,
 				03B2436725781BFB00CAE0B0 /* MapCollectionViewCell.swift in Sources */,
 				03D29932256C339C005A8201 /* RegisterScreentwo.swift in Sources */,
 				0308DD77256F45660013A868 /* SingletonData.swift in Sources */,
