@@ -7,6 +7,19 @@
 
 import UIKit
 
+extension Date {
+
+    func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {
+
+        let currentCalendar = Calendar.current
+
+        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else { return 0 }
+        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else { return 0 }
+
+        return end - start
+    }
+}
+
 class ScheduleScreentwo: UIViewController {
     
     @IBOutlet weak var itemsCollectionView:UICollectionView!
@@ -15,15 +28,14 @@ class ScheduleScreentwo: UIViewController {
     
     @IBOutlet weak var btnNext:SutherlandButton!
     
-    var slots:slots = SingletonData.shared.getSlotsDetails()
+    var slots:slots?
     
     lazy var availableSlots:[Datas]? = []
     
     var previousSelVal:Int = -1
     var previousSelTableVal:Int = -1
     
-
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,9 +47,50 @@ class ScheduleScreentwo: UIViewController {
         itemsCollectionView.layoutIfNeeded()
         
         btnNext.btnEnable(boolVal: false)
+        self.checkConnectivityRelation()
     }
     
+    func getCurrentDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let result = formatter.string(from: date)
+        return result
+    }
+    
+    func checkConnectivityRelation() {
+        
+        if Reachability.isConnectedToNetwork() {
+    
+            let authUrl = Endpoint.slotslist+(SingletonData.shared.hospitalID ?? "")+Endpoint.requiredDate+getCurrentDate()
+            print("location url: \(authUrl as Any)")
+            Services.getDashboardService().getSlotsData(url: authUrl, completion: {
+                result in
+                switch result {
+                
+                case .success(let dashboads):
+                    self.slots = dashboads
+                    self.itemsCollectionView.reloadData()
+                    self.itemsCollectionView.layoutIfNeeded()
+                   
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+       }
+    }
 
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -73,7 +126,7 @@ extension ScheduleScreentwo: UICollectionViewDelegate, UICollectionViewDataSourc
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return slots.AvailableDates?.count ?? 0
+        return slots?.AvailableDates?.count ?? 0
     }
     
     /// Here Display dynamic 'Reports' data from array by using index value in each item.
@@ -85,7 +138,7 @@ extension ScheduleScreentwo: UICollectionViewDelegate, UICollectionViewDataSourc
       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScheduleTwoDaysCell", for: indexPath as IndexPath) as! ScheduleTwoDaysCell
         
-        let model = slots.AvailableDates?[indexPath.row]
+        let model = slots?.AvailableDates?[indexPath.row]
         cell.titlelbl.text = model?.Text
         cell.subTitlelbl.text =  model?.Value
         
@@ -116,12 +169,12 @@ extension ScheduleScreentwo: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let model = slots.AvailableDates?[indexPath.row]
-        availableSlots = slots.Data?.filter {$0.AppointmentDateStr == model?.Text}
+        let model = slots?.AvailableDates?[indexPath.row]
+        availableSlots = slots?.Data?.filter {$0.AppointmentDateStr == model?.Text}
         
         previousSelVal = indexPath.row
         itemsCollectionView.reloadData()
-        let modelVal = slots.AvailableDates?[indexPath.row]
+        let modelVal = slots?.AvailableDates?[indexPath.row]
         SingletonData.shared.testDate = modelVal?.Text
         itemsTableView.reloadData()
     }
@@ -179,6 +232,7 @@ extension ScheduleScreentwo : UITableViewDataSource, UITableViewDelegate
         let model = availableSlots?[indexPath.row]
         let slot = "\(model?.SlotStart ?? "") - \(model?.SlotEnd ?? "")"
         SingletonData.shared.testTime = slot
+        SingletonData.shared.slotId = model?.SlotID
         btnNext.btnEnable(boolVal: true)
     }
     

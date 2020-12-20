@@ -15,6 +15,8 @@ class RegisterPortalConfirm: UIViewController {
   
     @IBOutlet weak var backGrdViewOne, backGrdViewTwo, backGrdViewThree, backGrdViewFour, backGrdViewFive, backGrdViewSix, backGrdViewSeven, backGrdViewEight, backGrdViewNine, backGrdViewTen, backGrdViewEleven, backGrdViewTwelve : UIView!
     
+    @IBOutlet weak var backGrdViewTwoFinal:UIView!
+    
     @IBOutlet weak var btnEditOne,btnEditTwo,btnEditThree,btnEditFour,btnEditFive,btnEditSix,btnEditSeven,btnEditEight,btnEditNine,btnEditTen,btnEditEleven,btnEditTwelve: UIButton!
     
     @IBOutlet weak var lblEditFirstNameOne, lblEditMiddleNameTwo, lblEditLastNameThree, lblEditDateOfBirthFour, lblEditGenderFive, lblEditRactSix, lblEditAddressSeven, lblEditInsuranceProviderEight, lblEditPolicyNumberNine, lblEditPolicyHolderTen, lblEditIdentificationEleven, lblEditIdentificationAttachedTwelve : UILabel!
@@ -48,19 +50,28 @@ class RegisterPortalConfirm: UIViewController {
     var identification:String? = "dfa"
     var identificationAttached:String? = "ass.png"
     
+    var genderVal:String?
+    var raceVal:String?
+    var identificationVal:String?
+    
     var datePicker: JBDatePickerViewController!
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        backGrdViewTwoHeight.constant = 0
+        backGrdViewTwo.isHidden = true
+        backGrdViewTwoFinal.isHidden = true
+        
         // Do any additional setup after loading the view.
         identificationTitle.text = titles.identificationTitle
         
         btnNext.btnEnable(boolVal: true)
         // Do any additional setup after loading the view.
         setDefaultHeight()
-        //setPreviousData()
+        setPreviousData()
         setPreviousDetails()
+        
        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -94,6 +105,28 @@ class RegisterPortalConfirm: UIViewController {
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 120, right: 0)
         self.scrollViewReg.contentInset = contentInsets
         self.scrollViewReg.scrollIndicatorInsets = contentInsets
+    }
+   
+    func setPreviousData() {
+        
+        self.firstName = SingletonData.shared.firstNamePatient
+        self.lastName = SingletonData.shared.lastNamePatient
+        self.dateOfBirth = SingletonData.shared.dateOfBirth
+        self.gender = SingletonData.shared.gender
+        self.race = SingletonData.shared.race
+        self.addressLineOne = SingletonData.shared.addressLineOnePatient
+        self.addressLineTwo = SingletonData.shared.addressLineTwoPatient
+        self.city = SingletonData.shared.cityPatient
+        self.state = SingletonData.shared.statePatient
+        self.zipCode = SingletonData.shared.zipCodePatient
+        self.insuranceProvider = SingletonData.shared.insuranceProvider
+        self.policyNumber = SingletonData.shared.policyNumber
+        self.policyHolderName = SingletonData.shared.policyHolderName
+        self.identification = SingletonData.shared.identification
+        self.identificationAttached = SingletonData.shared.identificationAttached
+        self.raceVal = SingletonData.shared.raceVal
+        self.genderVal = SingletonData.shared.genderVal
+        self.identificationVal = SingletonData.shared.identificationVal
     }
     
     func setPreviousDetails() {
@@ -145,7 +178,7 @@ class RegisterPortalConfirm: UIViewController {
         backGrdViewOne.isHidden = true
         //2
         backGrdViewTwo.isHidden = true
-        backGrdViewTwoHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
+        backGrdViewTwoHeight.constant = 0
         //3
         backGrdViewThree.isHidden = true
         backGrdViewThreeHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
@@ -203,8 +236,8 @@ class RegisterPortalConfirm: UIViewController {
             backGrdViewOne.isHidden = false
             backGrdViewOneHeight.constant = viewHeight.symptomsWithEditHeight.rawValue
         } else if selBtn.tag == 501 {
-            backGrdViewTwo.isHidden = false
-            backGrdViewTwoHeight.constant = viewHeight.dateSymptomsWithEditHeight.rawValue
+            backGrdViewTwo.isHidden = true
+            backGrdViewTwoHeight.constant = 0
             
         } else if selBtn.tag == 502 {
             backGrdViewThree.isHidden = false
@@ -251,11 +284,11 @@ class RegisterPortalConfirm: UIViewController {
             
         } else if selBtn.tag == 701 {
             backGrdViewTwo.isHidden = true
-            backGrdViewTwoHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
-            btnEditTwo.isHidden = false
-            
-            middleName = tfEditMiddleNameTwo.text
-            lblEditMiddleNameTwo.text = tfEditMiddleNameTwo.text
+            backGrdViewTwoHeight.constant = 0
+//            btnEditTwo.isHidden = false
+//
+//            middleName = tfEditMiddleNameTwo.text
+//            lblEditMiddleNameTwo.text = tfEditMiddleNameTwo.text
             
         } else if selBtn.tag == 702 {
             backGrdViewThree.isHidden = true

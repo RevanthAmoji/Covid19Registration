@@ -13,6 +13,8 @@ class MapCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var subTitlelbl: SutherlandLabel!
     @IBOutlet weak var seats: SutherlandLabel!
     
+    @IBOutlet weak var titleWidth: NSLayoutConstraint!
+    
     @IBOutlet weak var backGndView: UIView!
 
     override func awakeFromNib() {

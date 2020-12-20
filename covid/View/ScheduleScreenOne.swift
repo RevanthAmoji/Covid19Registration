@@ -25,6 +25,8 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     let locationManager = CLLocationManager()
     @IBOutlet weak var searchField: UITextField!
     
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var btnNext:SutherlandButton!
     
     var previousSelVal:Int = -1
@@ -38,6 +40,8 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
         checkLocationServices()
         fetchStadiumsOnMap(stadiums)
         self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+        
+        collectionViewHeight.constant = 0
         
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -53,12 +57,19 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     
     @IBAction func searchBtnAction(_ sender: Any) {
       
-        stadiums = (SingletonData.shared.getChartTypeDetails() as? [Stadium])!
-        itemsCollectionView.reloadData()
-        fetchStadiumsOnMap(stadiums)
-        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+       // stadiums = (SingletonData.shared.getChartTypeDetails() as? [Stadium])!
+
+        searchField.resignFirstResponder()
+        if searchField.text?.count != 0 {
+            checkConnectivityRelation()
+        }
+       
     }
 
+    @IBAction func nextBtnAction(_ sender: Any) {
+      
+       
+    }
     /*
     // MARK: - Navigation
 
@@ -69,7 +80,60 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     }
     */
     
+    func checkConnectivityRelation() {
+        
+        if Reachability.isConnectedToNetwork() {
     
+            let authUrl = Endpoint.location+(self.searchField.text ?? "")
+            print("location url: \(authUrl as Any)")
+            Services.getDashboardService().getLocationData(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    
+                    if dashboads.count == 0 {
+                        
+                        self.collectionViewHeight.constant = 0
+                       
+                        UIView.animate(withDuration: TimeInterval(0.5)) {
+                            self.stadiums.removeAll()
+                            self.itemsCollectionView.reloadData()
+                            self.view.layoutIfNeeded()
+                        }
+                        
+                    } else if dashboads.count != 0 {
+                        
+                        self.collectionViewHeight.constant = 132
+                        UIView.animate(withDuration: TimeInterval(1.2)) {
+                        self.stadiums = dashboads
+                        self.itemsCollectionView.reloadData()
+                        self.fetchStadiumsOnMap(self.stadiums)
+                        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+                        }
+                        
+                    } else {
+                        
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                        
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+       }
+    }
+        func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+            let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+            let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                print("You've pressed default");
+            }
+            alertController.addAction(trueAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     func checkLocationServices() {
       if CLLocationManager.locationServicesEnabled() {
         checkLocationAuthorization()
@@ -103,9 +167,13 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
       for stadium in stadiums {
         let annotations = MKPointAnnotation()
         annotations.title = stadium.HospitalName
-        annotations.coordinate = CLLocationCoordinate2D(latitude: Double(stadium.Logitude ?? "0.0") ?? 0, longitude: Double(stadium.Latidude ?? "0.0") ?? 0)
+        annotations.coordinate = CLLocationCoordinate2D(latitude: Double(stadium.Latidude ?? "0.0") ?? 0, longitude: Double(stadium.Logitude ?? "0.0") ?? 0)
         let coordinateRegion = MKCoordinateRegion(center: annotations.coordinate, latitudinalMeters: 10, longitudinalMeters: 10)
-        mapView.setRegion(coordinateRegion, animated: true)
+        
+        if( annotations.coordinate.latitude > -89 && annotations.coordinate.latitude < 89 && annotations.coordinate.longitude > -179 && annotations.coordinate.longitude < 179 ){
+            mapView.setRegion(coordinateRegion, animated: true)
+        }
+        
         mapView.addAnnotation(annotations)
       }
     }
@@ -158,6 +226,9 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
         cell.titlelbl.text = model.HospitalName
         cell.subTitlelbl.text = model.HospitalAddress
         cell.seats.text = (model.AvailableSlots ?? "0") + " Slots Available"
+        let width = self.itemsCollectionView.frame.size.width
+        let percentage = ((width*80)/100)-20
+        cell.titleWidth.constant = percentage
        
         if previousSelVal == indexPath.row {
             
@@ -167,7 +238,7 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
             
         } else {
             
-            cell.backGndView.backgroundColor = UIColor.white
+            cell.backGndView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
             cell.backGndView.layer.borderColor = UIColor.clear.cgColor
             cell.backGndView.layer.borderWidth = 1.0
         }
@@ -177,7 +248,10 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: Double(218), height: Double(120))
+        let width = self.itemsCollectionView.frame.size.width
+        let percentage = (width*80)/100
+        
+        return CGSize(width: Double(percentage), height: Double(118))
         
     }
     
@@ -186,6 +260,7 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
         let model = stadiums[indexPath.row]
         SingletonData.shared.clientName = model.HospitalName
         SingletonData.shared.clientAddress  = model.HospitalAddress
+        SingletonData.shared.hospitalID = model.HospitalID
         itemsCollectionView.reloadData()
         btnNext.btnEnable(boolVal: true)
     }

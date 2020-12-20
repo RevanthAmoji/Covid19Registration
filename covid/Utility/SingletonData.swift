@@ -43,9 +43,30 @@ class SingletonData {
     var clientAddress: String?
     var testDate: String?
     var testTime: String?
+    var hospitalID: String?
+    var slotId:String?
     
     var relationName:String?
     var relationNumber:String?
+    
+
+    var dateOfBirth:String?
+    var gender:String?
+    var genderVal:String?
+    var race:String?
+    var raceVal:String?
+    var addressLineOnePatient:String?
+    var addressLineTwoPatient:String?
+    var cityPatient:String?
+    var statePatient:String?
+    var zipCodePatient:String?
+    var insuranceProvider:String?
+    var policyNumber:String?
+    var policyHolderName:String?
+    var identification:String?
+    var identificationVal:String?
+    var identificationAttached:String?
+    
     
     func getChartTypeDetails() -> Array<Any>  {
         
@@ -95,3 +116,5 @@ class SingletonData {
     
 
 }
+
+

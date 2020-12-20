@@ -86,13 +86,13 @@ class RegisterScreenThree: UIViewController {
     @IBAction func btnPrimaryCareProviderAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 100 {
-            primaryCareProvider = "Yes"
+            primaryCareProvider = "1"
             btnPrimaryCareProviderfalse.isSelected = false
             btnPrimaryCareProviderTrue.isSelected = true
             fieldsViewHeight.constant = 780
             backGndView.isHidden = false
         } else if selBtn.tag == 101 {
-            primaryCareProvider = "No"
+            primaryCareProvider = "0"
             btnPrimaryCareProviderfalse.isSelected = true
             btnPrimaryCareProviderTrue.isSelected = false
             fieldsViewHeight.constant = 0
@@ -103,11 +103,11 @@ class RegisterScreenThree: UIViewController {
     @IBAction func btnCareFacilityAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 102 {
-            careFacility = "Yes"
+            careFacility = "1"
             btnCareFacilityfalse.isSelected = false
             btnCareFacilityTrue.isSelected = true
         } else if selBtn.tag == 103 {
-            careFacility = "No"
+            careFacility = "0"
             btnCareFacilityfalse.isSelected = true
             btnCareFacilityTrue.isSelected = false
         }
@@ -126,6 +126,8 @@ class RegisterScreenThree: UIViewController {
         SingletonData.shared.zipCode = tfZipCode.text
         SingletonData.shared.phoneNumber = tfPhoneNumber.text
         SingletonData.shared.emailAddress = tfEmailAddress.text
+        
+        checkConnectivity()
     }
 
     @objc func keyboardWillBeHidden (aNotification: NSNotification) {
@@ -186,6 +188,45 @@ class RegisterScreenThree: UIViewController {
         }
         //self.showsAlertWithoutWhiteBg(titleVal: "", messageVal: errorMessage)
         print(errorMessage)
+    }
+    
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(tfCareProvider.text ?? "")\",\"PrimaryCare_AddLine1\":\"\(tfAddressLineOne.text ?? "")\",\"PrimaryCare_AddLine2\":\"\(tfAddressLineTwo.text ?? "")\",\"PrimaryCare_City\":\"\(tfCity.text ?? "")\",\"PrimaryCare_State\":\"\(tfState.text ?? "")\",\"PrimaryCare_Zipcode\":\"\(tfZipCode.text ?? "")\",\"PrimaryCare_Email\":\"\(tfEmailAddress.text ?? "")\",\"PrimaryCare_Phone\":\"\(tfPhoneNumber.text ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreenConfirm") as! RegisterScreenConfirm
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
     }
 }
 

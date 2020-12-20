@@ -89,7 +89,57 @@ class RegisterPortalTwo: UIViewController {
         //self.showsAlertWithoutWhiteBg(titleVal: "", messageVal: errorMessage)
         print(errorMessage)
     }
+    
+    @IBAction func nextBtnAction(_ sender: Any) {
+        
+        SingletonData.shared.addressLineOnePatient = tfAddressLineOne.text
+        SingletonData.shared.addressLineTwoPatient = tfAddressLineTwo.text
+        SingletonData.shared.cityPatient = tfCity.text
+        SingletonData.shared.statePatient = tfState.text
+        SingletonData.shared.zipCodePatient = tfZipCode.text
+        
+        checkConnectivity()
+    }
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Patient_AddLine1\":\"\(tfAddressLineOne.text ?? "")\",\"Patient_AddLine2\":\"\(tfAddressLineTwo.text ?? "")\",\"Patient_City\":\"\(tfCity.text ?? "")\",\"Patient_State\":\"\(tfState.text ?? "")\",\"Patient_Zipcode\":\"\(tfZipCode.text ?? "")\"}'}"
+            print("email verification: \(dic)")
+            
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterPortalThree") as! RegisterPortalThree
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
+    }
 
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension RegisterPortalTwo: UITextFieldDelegate {

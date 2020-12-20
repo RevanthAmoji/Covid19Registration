@@ -60,7 +60,7 @@ struct Datas:Codable {
     var AppointmentDate:String?
     var AppointmentDateStr:String?
     var Address:String?
-    var AvailableSlots:String?
+    var AvailableSlots:Int?
 }
 
 

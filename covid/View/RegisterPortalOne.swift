@@ -25,11 +25,14 @@ class RegisterPortalOne: UIViewController {
     @IBOutlet weak var backGndViewAge: UIView!
     @IBOutlet weak var backGndViewRace: UIView!
     
-    var ageList:[String] = ["Male","Femal","Other"]
-    var raceList:[String] = ["A","B","C","Other"]
+    var ageList:[RelationModel] = []
+    var raceList:[RelationModel] = []
     
     @IBOutlet weak var ageTableView: UITableView!
     @IBOutlet weak var raceTableView: UITableView!
+    
+    var gender:String = "-1"
+    var race:String = "-1"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,7 @@ class RegisterPortalOne: UIViewController {
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
+        self.checkConnectivityGender()
     }
     
     @IBAction func dropdownBtnAgeAction(_ sender: Any) {
@@ -51,7 +55,115 @@ class RegisterPortalOne: UIViewController {
         raceTableView.reloadData()
     }
     
+    @IBAction func nextBtnAction(_ sender: Any) {
+        
+        SingletonData.shared.dateOfBirth = tfDateSymStarted.text
+        SingletonData.shared.genderVal = gender
+        SingletonData.shared.gender = tfAge.text
+        SingletonData.shared.race = tfRace.text
+        SingletonData.shared.raceVal = race
+        
+        checkConnectivity()
+    }
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? "rev1@test.com"
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Patient_DOB\":\"\(tfDateSymStarted.text ?? "")\",\"Patient_Gender\":\"\(gender)\",\"Patient_Ethnicity\":\"\(race)\"}'}"
+            print("RegisterPortal verification: \(dic)")
+            
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterPortalTwo") as! RegisterPortalTwo
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
+    }
 
+    
+    func checkConnectivityGender() {
+        
+        if Reachability.isConnectedToNetwork() {
+    
+            let authUrl = Endpoint.gender
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getRelationData(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.count != 0 {
+                        
+                        self.ageList = dashboads
+                        //self.ageTableView.reloadData()
+                        self.checkConnectivityEthinicity()
+                        
+                    } else {
+                        
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+       }
+    }
+    
+    func checkConnectivityEthinicity() {
+        
+        if Reachability.isConnectedToNetwork() {
+    
+            let authUrl = Endpoint.ethinicity
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getRelationData(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.count != 0 {
+                        self.raceList = dashboads
+                        //self.raceTableView.reloadData()
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+       }
+    }
+
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     @IBAction func buttonCalPressed(_ sender: Any) {
         let calendarPicker = JBCalendarViewController()
         calendarPicker.popoverPresentationController?.sourceView = btnDateSymBackGndView
@@ -152,9 +264,9 @@ extension RegisterPortalOne: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LanguagesCell", for: indexPath) as! LanguagesCell
         if tableView == ageTableView {
-         cell.titleLbl.text = ageList[indexPath.row]
+            cell.titleLbl.text = ageList[indexPath.row].Text
         } else {
-            cell.titleLbl.text = raceList[indexPath.row]
+            cell.titleLbl.text = raceList[indexPath.row].Text
         }
 
         cell.contentView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
@@ -167,14 +279,16 @@ extension RegisterPortalOne: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == ageTableView {
             self.heighlighBoarderColorAge(boolVal: false)
-            tfAge.text = ageList[indexPath.row]
-            tfAgeDummy.text = ageList[indexPath.row]
+            tfAge.text = ageList[indexPath.row].Text
+            tfAgeDummy.text = ageList[indexPath.row].Text
+            gender = ageList[indexPath.row].Value ?? ""
           //  backGndViewAge.isHidden = false
         } else {
             self.heighlighBoarderColorRace(boolVal: false)
-            tfRace.text = raceList[indexPath.row]
-            tfRaceDummy.text = raceList[indexPath.row]
+            tfRace.text = raceList[indexPath.row].Text
+            tfRaceDummy.text = raceList[indexPath.row].Text
            // backGndViewRace.isHidden = false
+            race = raceList[indexPath.row].Value ?? ""
         }
     }
 }

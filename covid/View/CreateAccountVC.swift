@@ -13,6 +13,7 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
       
     }
     
