@@ -105,7 +105,7 @@ class RegisterPortalTwo: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
-            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Patient_AddLine1\":\"\(tfAddressLineOne.text ?? "")\",\"Patient_AddLine2\":\"\(tfAddressLineTwo.text ?? "")\",\"Patient_City\":\"\(tfCity.text ?? "")\",\"Patient_State\":\"\(tfState.text ?? "")\",\"Patient_Zipcode\":\"\(tfZipCode.text ?? "")\"}'}"
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Patient_AddLine1\":\"\(tfAddressLineOne.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"Patient_AddLine2\":\"\(tfAddressLineTwo.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"Patient_City\":\"\(tfCity.text ?? "")\",\"Patient_State\":\"\(tfState.text ?? "")\",\"Patient_Zipcode\":\"\(tfZipCode.text ?? "")\"}'}"
             print("email verification: \(dic)")
             
             let authUrl = Endpoint.account
