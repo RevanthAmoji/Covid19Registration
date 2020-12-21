@@ -23,12 +23,10 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     
-        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         nextBtn.btnEnable(boolVal: false)
-        
+    
     }
     
     func checkConnectivity() {

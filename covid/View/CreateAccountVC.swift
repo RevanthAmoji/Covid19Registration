@@ -32,6 +32,10 @@ class CreateAccountVC: UIViewController {
         nextBtn.btnEnable(boolVal: false)
 
        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+        passwordTF.textContentType = .oneTimeCode
+        rePasswordTF.textContentType = .oneTimeCode
+
       
     }
     
@@ -159,6 +163,16 @@ extension CreateAccountVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == passwordTF {
+            
+            passwordTF.isSecureTextEntry = true
+           
+        } else if textField == rePasswordTF {
+            
+            rePasswordTF.isSecureTextEntry = true
+        }
     }
     /// Thid is used to validate number plate and model when resign keyboard
     func textFieldDidEndEditing(_ textField: UITextField) {

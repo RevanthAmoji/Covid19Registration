@@ -8,38 +8,6 @@
 
 import UIKit
 
-enum CitygoTextFieldState {
-    case placeholder
-    case normal
-    case active
-    case validation
-    case error
-    case disabled
-}
-extension CitygoTextFieldState {
-var imageString: String {
-    get {
-        switch self {
-        case .placeholder:
-            return ""
-        case .normal:
-            return ""
-        case .active:
-            return ""
-        case .validation:
-            return "like"
-        case .error:
-            return "error-circle"
-        case .disabled:
-            return ""
-        }
-    }
-    set {
-       // newValue
-        print(newValue)
-    }
-}
-}
 class SutherlandTextField: UITextField {
 //    @IBInspectable
 //    public var styles: String = "" {
@@ -67,21 +35,6 @@ class SutherlandTextField: UITextField {
             rightViewMode = .always
         }
     }
-  
-     public func showIconWithToolTip(uiState: CitygoTextFieldState) {
-           let imageName = uiState.imageString
-           let paddingView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(40), height: self.frame.size.height))
-           let button = UIButton(type: .custom)
-           button.setImage(UIImage(named: imageName), for: .normal)
-           // button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
-           button.frame = CGRect(x: CGFloat(0), y: CGFloat(paddingView.frame.size.height/2-10), width: CGFloat(20), height: CGFloat(20))
-           if  uiState == .error {
-               button.addTarget(self, action: #selector(self.showCustomToolTip(_:)), for: .touchUpInside)
-           }
-           paddingView.addSubview(button)
-           rightView = paddingView
-           rightViewMode = .always
-       }
     public func hideIcon() {
         let paddingView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(10), height: self.frame.size.height))
         rightView = paddingView

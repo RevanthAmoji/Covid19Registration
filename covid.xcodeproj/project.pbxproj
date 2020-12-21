@@ -16,6 +16,7 @@
 		03057EFC2590C2BB004CA4D5 /* SHProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */; };
 		03057F022590C308004CA4D5 /* UIViewController+LoaderShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */; };
 		03057F152590C856004CA4D5 /* covid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 03057F142590C856004CA4D5 /* covid.gif */; };
+		03057F1A2590EC00004CA4D5 /* MyScheduleTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */; };
 		0308DD72256F43AD0013A868 /* RegisterScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */; };
 		0308DD77256F45660013A868 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD76256F45660013A868 /* SingletonData.swift */; };
 		03098D3C2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */; };
@@ -129,6 +130,7 @@
 		03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProgressBarViewController.swift; sourceTree = "<group>"; };
 		03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoaderShower.swift"; sourceTree = "<group>"; };
 		03057F142590C856004CA4D5 /* covid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = covid.gif; sourceTree = "<group>"; };
+		03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTestsViewController.swift; sourceTree = "<group>"; };
 		0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenModel.swift; sourceTree = "<group>"; };
 		0308DD76256F45660013A868 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
 		03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwoAllDates.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				03057EE825903C88004CA4D5 /* VerifiedViewController.swift */,
 				03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */,
 				03057EF225905DE7004CA4D5 /* FinalViewController.swift */,
+				03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -866,6 +869,7 @@
 				03CA994F258E1BEC00429B89 /* DashboardService.swift in Sources */,
 				03CA9954258E1C1C00429B89 /* ServiceConstant.swift in Sources */,
 				0357503B25679F7100E2DB09 /* LanguagesCell.swift in Sources */,
+				03057F1A2590EC00004CA4D5 /* MyScheduleTestsViewController.swift in Sources */,
 				03CA994A258E1BD500429B89 /* Services.swift in Sources */,
 				035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */,
 				035DA31025691FBA00B28354 /* DropdownTableView.swift in Sources */,

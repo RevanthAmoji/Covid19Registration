@@ -75,3 +75,17 @@ struct RelationModel:Codable {
     var Text:String?
     var Value:String?
 }
+
+
+struct MyScheduleTests:Codable {
+    
+    var SlotNo:Int?
+    var PatientName:String?
+    var ClinicName:String?
+    var ClinicAddress:String?
+    var TestDate:String?
+    var TestTime:String?
+    var PatientRelationship:String?
+    var Latidude:String?
+    var Logitude:String?
+}
