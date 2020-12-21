@@ -31,7 +31,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     func checkConnectivity() {
         
-        self.showProgressBar()
+      //  self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = emailTF.text ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\"}'}"
@@ -44,7 +44,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 switch result {
                 
                 case .success(let dashboads):
-                    self.hideProgressBar()
+                   // self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -57,13 +57,13 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                     }
                     
                 case .failure( _):
-                    self.hideProgressBar()
+                   // self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-            self.hideProgressBar()
+         //   self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
