@@ -146,14 +146,15 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     func checkLocationAuthorization() {
       switch CLLocationManager.authorizationStatus() {
       case .authorizedWhenInUse:
-        mapView.showsUserLocation = true
+       // mapView.showsUserLocation = true
     
       // For these case, you need to show a pop-up telling users what's up and how to turn on permisneeded if needed
+        break
       case .denied:
         break
       case .notDetermined:
         locationManager.requestWhenInUseAuthorization()
-        mapView.showsUserLocation = true
+       // mapView.showsUserLocation = true
       case .restricted:
         break
       case .authorizedAlways:

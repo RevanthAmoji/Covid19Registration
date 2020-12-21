@@ -12,13 +12,18 @@ enum Endpoint {
     
     static let mainServer = "https://covid19api.sutherlandglobal.com/api"
     
-    
     static let account = mainServer + "/Account"
+    
+    static let values = mainServer + "/Values"
     
     static let relation = mainServer + "/Scheduling?DD_Group=CC_Relationship"
     static let location = mainServer + "/Scheduling?PinCode="
     static let slotslist = mainServer + "/Scheduling?HospitalID="
     static let requiredDate = "&RequiredDate="
+    
+    static let validEmail = mainServer + "/Scheduling?MailID="
+    static let userName = "&username="
+    
     
     //CC_Gender
     static let gender = mainServer + "/Scheduling?DD_Group=CC_Gender"

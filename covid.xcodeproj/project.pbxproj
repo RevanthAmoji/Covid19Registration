@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		030297E52574C4A400E604D8 /* ScheduleScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */; };
 		030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030297E92575465D00E604D8 /* LocationAnnotationView.swift */; };
+		03057EE925903C88004CA4D5 /* VerifiedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EE825903C88004CA4D5 /* VerifiedViewController.swift */; };
+		03057EEE25904CF9004CA4D5 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */; };
+		03057EF325905DE7004CA4D5 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EF225905DE7004CA4D5 /* FinalViewController.swift */; };
 		0308DD72256F43AD0013A868 /* RegisterScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */; };
 		0308DD77256F45660013A868 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD76256F45660013A868 /* SingletonData.swift */; };
 		03098D3C2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */; };
@@ -115,6 +118,9 @@
 /* Begin PBXFileReference section */
 		030297E42574C4A400E604D8 /* ScheduleScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenOne.swift; sourceTree = "<group>"; };
 		030297E92575465D00E604D8 /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
+		03057EE825903C88004CA4D5 /* VerifiedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedViewController.swift; sourceTree = "<group>"; };
+		03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
+		03057EF225905DE7004CA4D5 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenModel.swift; sourceTree = "<group>"; };
 		0308DD76256F45660013A868 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
 		03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwoAllDates.swift; sourceTree = "<group>"; };
@@ -344,6 +350,9 @@
 				03B0BD282583F0D200BA519B /* RegisterPortalTwo.swift */,
 				03AB099425878269001FEF4A /* RegisterPortalThree.swift */,
 				03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */,
+				03057EE825903C88004CA4D5 /* VerifiedViewController.swift */,
+				03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */,
+				03057EF225905DE7004CA4D5 /* FinalViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -810,6 +819,7 @@
 				03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */,
 				035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */,
 				03AD6411257F49BD00ECC469 /* ScheduleScreentwo.swift in Sources */,
+				03057EE925903C88004CA4D5 /* VerifiedViewController.swift in Sources */,
 				03DD11EE2562B02200DD0583 /* UIFont+Styles.swift in Sources */,
 				03AD641C257FC07500ECC469 /* ScheduleTwoDaysCell.swift in Sources */,
 				03AD6422257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift in Sources */,
@@ -821,6 +831,8 @@
 				03DD11EF2562B02200DD0583 /* CitygoConstants.swift in Sources */,
 				03B0BD86257CB0A1004667DE /* CreateAccountVC.swift in Sources */,
 				03DD11E42562B02200DD0583 /* UIView+Utility.swift in Sources */,
+				03057EEE25904CF9004CA4D5 /* VerificationCodeViewController.swift in Sources */,
+				03057EF325905DE7004CA4D5 /* FinalViewController.swift in Sources */,
 				030297E52574C4A400E604D8 /* ScheduleScreenOne.swift in Sources */,
 				03DD12062562BB3300DD0583 /* InitialVC.swift in Sources */,
 				038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */,

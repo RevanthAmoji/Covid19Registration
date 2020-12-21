@@ -68,6 +68,8 @@ class SingletonData {
     var identificationAttached:String?
     
     
+    var verificationCode:String?
+    
     func getChartTypeDetails() -> Array<Any>  {
         
         var chartDetailsArray:Array? = []

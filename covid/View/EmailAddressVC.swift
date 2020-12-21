@@ -17,7 +17,8 @@ class EmailAddressVC: UIViewController {
     @IBOutlet weak var emailTF: SutherlandTextField!
     @IBOutlet weak var reenterEmailTF: SutherlandTextField!
     @IBOutlet weak var nextBtn: SutherlandButton!
-    
+
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
