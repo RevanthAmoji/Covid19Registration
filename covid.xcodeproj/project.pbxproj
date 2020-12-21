@@ -17,6 +17,8 @@
 		03057F022590C308004CA4D5 /* UIViewController+LoaderShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */; };
 		03057F152590C856004CA4D5 /* covid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 03057F142590C856004CA4D5 /* covid.gif */; };
 		03057F1A2590EC00004CA4D5 /* MyScheduleTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */; };
+		03057F282591145C004CA4D5 /* MyScheduleTestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F272591145C004CA4D5 /* MyScheduleTestsCell.swift */; };
+		03057F3825911CAD004CA4D5 /* ConfirmScreeningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F3725911CAD004CA4D5 /* ConfirmScreeningVC.swift */; };
 		0308DD72256F43AD0013A868 /* RegisterScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */; };
 		0308DD77256F45660013A868 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD76256F45660013A868 /* SingletonData.swift */; };
 		03098D3C2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */; };
@@ -131,6 +133,8 @@
 		03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoaderShower.swift"; sourceTree = "<group>"; };
 		03057F142590C856004CA4D5 /* covid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = covid.gif; sourceTree = "<group>"; };
 		03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTestsViewController.swift; sourceTree = "<group>"; };
+		03057F272591145C004CA4D5 /* MyScheduleTestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTestsCell.swift; sourceTree = "<group>"; };
+		03057F3725911CAD004CA4D5 /* ConfirmScreeningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmScreeningVC.swift; sourceTree = "<group>"; };
 		0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenModel.swift; sourceTree = "<group>"; };
 		0308DD76256F45660013A868 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
 		03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwoAllDates.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 				03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */,
 				03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */,
 				03AD6421257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift */,
+				03057F272591145C004CA4D5 /* MyScheduleTestsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */,
 				03057EF225905DE7004CA4D5 /* FinalViewController.swift */,
 				03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */,
+				03057F3725911CAD004CA4D5 /* ConfirmScreeningVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -828,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03057F3825911CAD004CA4D5 /* ConfirmScreeningVC.swift in Sources */,
 				030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */,
 				03DD11EA2562B02200DD0583 /* UIImage+Utility.swift in Sources */,
 				03B0BD242583E85000BA519B /* RegisterPortalOne.swift in Sources */,
@@ -850,6 +857,7 @@
 				03AD6422257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift in Sources */,
 				035750212567927900E2DB09 /* MenuVC.swift in Sources */,
 				03B2435B2578035D00CAE0B0 /* RegisterScreenConfirmViewModel.swift in Sources */,
+				03057F282591145C004CA4D5 /* MyScheduleTestsCell.swift in Sources */,
 				03DD117725627CA100DD0583 /* ViewController.swift in Sources */,
 				03DD117325627CA100DD0583 /* AppDelegate.swift in Sources */,
 				03B0BD292583F0D200BA519B /* RegisterPortalTwo.swift in Sources */,

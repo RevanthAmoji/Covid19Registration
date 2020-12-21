@@ -136,6 +136,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="nhh-d0-ov1" kind="show" id="U5d-C4-Drr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You can have a swab test to check if you have coronavirus (COVID-19) now. Thiis is a live virus test and not an antibody test" textAlignment="center" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Jm-4i2" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                 <rect key="frame" x="21" y="401" width="333" height="56"/>
@@ -6446,28 +6449,28 @@ Cg
             </objects>
             <point key="canvasLocation" x="10193" y="-18"/>
         </scene>
-        <!--View Controller-->
+        <!--My Schedule Tests View Controller-->
         <scene sceneID="byT-WG-Tlm">
             <objects>
-                <viewController id="nhh-d0-ov1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyScheduleTestsViewController" id="nhh-d0-ov1" customClass="MyScheduleTestsViewController" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rbe-Yw-RUW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Scheduled Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-be-T3x" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="33" width="231" height="21"/>
+                                <rect key="frame" x="17" y="77" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage who needs a test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeL-9g-1j8" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="63" width="333" height="20.5"/>
+                                <rect key="frame" x="17" y="107" width="333" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-B6-YqH" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="107" width="295" height="39"/>
+                                <rect key="frame" x="17" y="151" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="295" id="Frp-ld-FBb"/>
@@ -6482,65 +6485,80 @@ Cg
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-XM-fPx">
-                                <rect key="frame" x="30" y="223.5" width="315" height="2"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-XM-fPx">
+                                <rect key="frame" x="30" y="267.5" width="315" height="2"/>
                                 <color key="backgroundColor" red="0.3895894587" green="0.57257980109999995" blue="0.56470763680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="EBW-UH-g2S"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="rTD-sp-z2W"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-ky-OLZ">
-                                <rect key="frame" x="0.0" y="226.5" width="375" height="440.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-ky-OLZ">
+                                <rect key="frame" x="0.0" y="270.5" width="375" height="396.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="83" id="h3N-zR-fZX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyScheduleTestsCell" rowHeight="83" id="h3N-zR-fZX" customClass="MyScheduleTestsCell" customModule="covid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h3N-zR-fZX" id="6QZ-xv-kdv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-dk-Yrv">
+                                                    <rect key="frame" x="30" y="0.0" width="315" height="1"/>
+                                                    <color key="backgroundColor" red="0.3895894587" green="0.57257980109999995" blue="0.56470763680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="0zz-bU-DcM"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Vuy-dh-fQD"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89H-L5-fzg" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="0.0" width="177" height="83"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zn6-o2-RYK" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                                    <rect key="frame" x="218" y="22" width="137" height="39"/>
-                                                    <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1m-nd-Fdn">
+                                                    <rect key="frame" x="218" y="22.5" width="137" height="38"/>
+                                                    <color key="backgroundColor" red="0.1333333333" green="0.31764705879999999" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="137" id="VpZ-Uf-0qV"/>
-                                                        <constraint firstAttribute="height" constant="39" id="ouF-cq-HV2"/>
+                                                        <constraint firstAttribute="height" constant="38" id="4oc-fs-cs3"/>
+                                                        <constraint firstAttribute="width" constant="137" id="zg1-ZB-Rci"/>
                                                     </constraints>
-                                                    <state key="normal" title="See details">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="btnGetStartedStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YC4-up-6Mb"/>
-                                                    </connections>
-                                                </button>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zn6-o2-RYK" firstAttribute="centerY" secondItem="6QZ-xv-kdv" secondAttribute="centerY" id="3dZ-CU-bTp"/>
+                                                <constraint firstItem="9Lz-dk-Yrv" firstAttribute="top" secondItem="6QZ-xv-kdv" secondAttribute="top" id="0jE-Ru-wPm"/>
+                                                <constraint firstItem="f1m-nd-Fdn" firstAttribute="leading" secondItem="89H-L5-fzg" secondAttribute="trailing" constant="21" id="7tc-PD-7Pd"/>
                                                 <constraint firstAttribute="bottom" secondItem="89H-L5-fzg" secondAttribute="bottom" id="CnS-kS-DRV"/>
-                                                <constraint firstItem="zn6-o2-RYK" firstAttribute="leading" secondItem="89H-L5-fzg" secondAttribute="trailing" constant="21" id="NEg-ND-OOf"/>
+                                                <constraint firstItem="9Lz-dk-Yrv" firstAttribute="leading" secondItem="6QZ-xv-kdv" secondAttribute="leading" constant="30" id="IiQ-eY-Afm"/>
+                                                <constraint firstAttribute="trailing" secondItem="f1m-nd-Fdn" secondAttribute="trailing" constant="20" id="M2F-ek-2Me"/>
                                                 <constraint firstItem="89H-L5-fzg" firstAttribute="top" secondItem="6QZ-xv-kdv" secondAttribute="top" id="XKy-Jr-8y5"/>
                                                 <constraint firstItem="89H-L5-fzg" firstAttribute="leading" secondItem="6QZ-xv-kdv" secondAttribute="leading" constant="20" id="ajR-hg-382"/>
-                                                <constraint firstAttribute="trailing" secondItem="zn6-o2-RYK" secondAttribute="trailing" constant="20" id="kwD-fU-rfa"/>
+                                                <constraint firstItem="f1m-nd-Fdn" firstAttribute="centerY" secondItem="89H-L5-fzg" secondAttribute="centerY" id="o7I-OS-YWq"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Lz-dk-Yrv" secondAttribute="trailing" constant="30" id="xda-PR-qGT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titlelbl" destination="89H-L5-fzg" id="Hw7-qp-f3c"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nhh-d0-ov1" id="NGe-08-Xai"/>
+                                    <outlet property="delegate" destination="nhh-d0-ov1" id="IGO-4k-9tS"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Booked Tests" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcR-bY-FBA" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="20" y="183" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="227" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -6572,6 +6590,9 @@ Cg
                     <navigationItem key="navigationItem" id="2lS-xj-Z70">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="tyt-At-4RX"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="itemsTableView" destination="b8c-ky-OLZ" id="Myc-Vo-KJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFf-ra-Oo8" sceneMemberID="firstResponder"/>
             </objects>
@@ -6927,10 +6948,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="4880.8000000000002" y="1861.6191904047978"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm ScreeningVC-->
         <scene sceneID="YMG-lf-cbi">
             <objects>
-                <viewController id="Blm-T7-eNf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmScreeningVC" id="Blm-T7-eNf" customClass="ConfirmScreeningVC" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMl-07-OWl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7060,10 +7081,11 @@ Cg
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="btnGetDirectionsAction:" destination="Blm-T7-eNf" eventType="touchUpInside" id="Za0-ky-apK"/>
                                                     <action selector="btnGetStartedStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq4-gl-ZoW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-jk-NoR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-jk-NoR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="321" width="160" height="39"/>
                                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -7151,6 +7173,12 @@ Cg
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="QNh-4Z-Pxk"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="lblClientAddress" destination="pmJ-Ev-W0O" id="yPP-7u-iUb"/>
+                        <outlet property="lblClientName" destination="vCT-39-xcf" id="bWt-Vk-edY"/>
+                        <outlet property="lblTestDate" destination="Teu-qe-xsz" id="5m6-wl-ACD"/>
+                        <outlet property="lblTestTime" destination="YQh-ke-dAh" id="7rs-ht-NNd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIO-YF-HHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
