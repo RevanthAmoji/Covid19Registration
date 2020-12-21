@@ -203,7 +203,7 @@ class RegisterScreenThree: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
-            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(tfCareProvider.text ?? "")\",\"PrimaryCare_AddLine1\":\"\(tfAddressLineOne.text ?? "")\",\"PrimaryCare_AddLine2\":\"\(tfAddressLineTwo.text ?? "")\",\"PrimaryCare_City\":\"\(tfCity.text ?? "")\",\"PrimaryCare_State\":\"\(tfState.text ?? "")\",\"PrimaryCare_Zipcode\":\"\(tfZipCode.text ?? "")\",\"PrimaryCare_Email\":\"\(tfEmailAddress.text ?? "")\",\"PrimaryCare_Phone\":\"\(tfPhoneNumber.text ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(tfCareProvider.text ?? "")\",\"PrimaryCare_AddLine1\":\"\(tfAddressLineOne.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_AddLine2\":\"\(tfAddressLineTwo.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_City\":\"\(tfCity.text ?? "")\",\"PrimaryCare_State\":\"\(tfState.text ?? "")\",\"PrimaryCare_Zipcode\":\"\(tfZipCode.text ?? "")\",\"PrimaryCare_Email\":\"\(tfEmailAddress.text ?? "")\",\"PrimaryCare_Phone\":\"\(tfPhoneNumber.text ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
             print("email verification: \(dic)")
             let authUrl = Endpoint.account
             print("email verification: \(authUrl as Any)")

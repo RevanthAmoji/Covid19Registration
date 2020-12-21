@@ -8,7 +8,7 @@
 import UIKit
 import NVActivityIndicatorView
 
-class EmailAddressVC: UIViewController {
+class EmailAddressVC: UIViewController,ProgressBarShower{
     
     // Intialize view model variable
     var viewModel = EmailAddressViewModel()
@@ -33,6 +33,7 @@ class EmailAddressVC: UIViewController {
     
     func checkConnectivity() {
         
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = emailTF.text ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\"}'}"
@@ -43,7 +44,9 @@ class EmailAddressVC: UIViewController {
             Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
                 result in
                 switch result {
+                
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -56,11 +59,13 @@ class EmailAddressVC: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }

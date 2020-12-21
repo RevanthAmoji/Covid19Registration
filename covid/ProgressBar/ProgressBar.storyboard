@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Progress Bar View Controller-->
+        <scene sceneID="Sit-g0-wX1">
+            <objects>
+                <viewController storyboardIdentifier="SHProgressBarViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mlG-cj-FKQ" customClass="SHProgressBarViewController" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MLb-A3-zt8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZO-hQ-7Je">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h5m-GV-gVH">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="9QL-7E-ZqK"/>
+                                            <constraint firstAttribute="width" constant="200" id="G3m-N0-YAs"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="h5m-GV-gVH" firstAttribute="centerX" secondItem="SZO-hQ-7Je" secondAttribute="centerX" id="2Uo-gZ-sVd"/>
+                                    <constraint firstAttribute="width" constant="200" id="Pfu-GA-im0"/>
+                                    <constraint firstAttribute="height" constant="100" id="Xwv-r1-1ee"/>
+                                    <constraint firstItem="h5m-GV-gVH" firstAttribute="centerY" secondItem="SZO-hQ-7Je" secondAttribute="centerY" id="flJ-E1-kSk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tdP-fQ-hFu"/>
+                        <color key="backgroundColor" white="0.30354352680000007" alpha="0.30292693661971831" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SZO-hQ-7Je" firstAttribute="centerX" secondItem="tdP-fQ-hFu" secondAttribute="centerX" id="ZgT-qK-gQn"/>
+                            <constraint firstItem="SZO-hQ-7Je" firstAttribute="centerY" secondItem="tdP-fQ-hFu" secondAttribute="centerY" id="yt5-AD-048"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgLoader" destination="h5m-GV-gVH" id="g0b-1s-4gf"/>
+                        <outlet property="viewLoader" destination="SZO-hQ-7Je" id="s4l-7O-npR"/>
+                        <outlet property="xcenter" destination="ZgT-qK-gQn" id="60F-zl-6Df"/>
+                        <outlet property="ycenter" destination="yt5-AD-048" id="Glk-ug-ifl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itt-F0-Gjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="-569"/>
+        </scene>
+    </scenes>
+</document>

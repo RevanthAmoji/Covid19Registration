@@ -763,7 +763,7 @@ class RegisterScreenConfirm: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
-            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"HasCorona_symptoms\":\"\(symptoms ?? "")\",\"Symptoms_StartedDate\":\"\(dateSymptomsStarted ?? "")\",\"Proritized_Testing\":\"\(proritizedForTesting ?? "")\",\"FirstTime_Test\":\"\(firstTimeTesting ?? "")\",\"Contact_Last15days\":\"\(contactWithAnyOne ?? "")\",\"Medical_Condition\":\"\(medicalCondition ?? "")\",\"Pregnant\":\"\(pregnant ?? "")\",\"Highrisk_Category\":\"\(highRiskCategory ?? "")\",\"Smoke\":\"\(smoker ?? "")\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(careProvider ?? "")\",\"PrimaryCare_AddLine1\":\"\(addressLineOne ?? "")\",\"PrimaryCare_AddLine2\":\"\(addressLineTwo ?? "")\",\"PrimaryCare_City\":\"\(city ?? "")\",\"PrimaryCare_State\":\"\(state ?? "")\",\"PrimaryCare_Zipcode\":\"\(zipCode ?? "")\",\"PrimaryCare_Email\":\"\(emailAddress ?? "")\",\"PrimaryCare_Phone\":\"\(phoneNumber ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"HasCorona_symptoms\":\"\(symptoms ?? "")\",\"Symptoms_StartedDate\":\"\(dateSymptomsStarted ?? "")\",\"Proritized_Testing\":\"\(proritizedForTesting ?? "")\",\"FirstTime_Test\":\"\(firstTimeTesting ?? "")\",\"Contact_Last15days\":\"\(contactWithAnyOne ?? "")\",\"Medical_Condition\":\"\(medicalCondition ?? "")\",\"Pregnant\":\"\(pregnant ?? "")\",\"Highrisk_Category\":\"\(highRiskCategory ?? "")\",\"Smoke\":\"\(smoker ?? "")\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(careProvider ?? "")\",\"PrimaryCare_AddLine1\":\"\(addressLineOne?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_AddLine2\":\"\(addressLineTwo?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_City\":\"\(city ?? "")\",\"PrimaryCare_State\":\"\(state ?? "")\",\"PrimaryCare_Zipcode\":\"\(zipCode ?? "")\",\"PrimaryCare_Email\":\"\(emailAddress ?? "")\",\"PrimaryCare_Phone\":\"\(phoneNumber ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
             print("email verification: \(dic)")
             let authUrl = Endpoint.account
             print("email verification: \(authUrl as Any)")
@@ -774,7 +774,7 @@ class RegisterScreenConfirm: UIViewController {
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreenConfirm") as! RegisterScreenConfirm
+                        let controller = storyboard.instantiateViewController(withIdentifier: "ScheduleScreenOne") as! ScheduleScreenOne
                         self.navigationController?.pushViewController(controller, animated: false)
                     } else {
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")

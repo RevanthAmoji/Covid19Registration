@@ -23,6 +23,11 @@ target 'covid' do
           :git => 'https://github.com/ninjaprox/NVActivityIndicatorView',
           :branch => 'master',
           :tag => 'v3.5'
+          
+          pod 'SwiftGifOrigin',
+                  :git => 'https://github.com/swiftgif/SwiftGif',
+                  :branch => 'master',
+                  :tag => 'v1.7.0'
   
   target 'covidTests' do
     inherit! :search_paths

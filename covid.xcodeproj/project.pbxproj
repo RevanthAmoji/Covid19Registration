@@ -12,6 +12,10 @@
 		03057EE925903C88004CA4D5 /* VerifiedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EE825903C88004CA4D5 /* VerifiedViewController.swift */; };
 		03057EEE25904CF9004CA4D5 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */; };
 		03057EF325905DE7004CA4D5 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EF225905DE7004CA4D5 /* FinalViewController.swift */; };
+		03057EFB2590C2BB004CA4D5 /* ProgressBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03057EF82590C2BA004CA4D5 /* ProgressBar.storyboard */; };
+		03057EFC2590C2BB004CA4D5 /* SHProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */; };
+		03057F022590C308004CA4D5 /* UIViewController+LoaderShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */; };
+		03057F152590C856004CA4D5 /* covid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 03057F142590C856004CA4D5 /* covid.gif */; };
 		0308DD72256F43AD0013A868 /* RegisterScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */; };
 		0308DD77256F45660013A868 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DD76256F45660013A868 /* SingletonData.swift */; };
 		03098D3C2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */; };
@@ -121,6 +125,10 @@
 		03057EE825903C88004CA4D5 /* VerifiedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedViewController.swift; sourceTree = "<group>"; };
 		03057EED25904CF9004CA4D5 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
 		03057EF225905DE7004CA4D5 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		03057EF82590C2BA004CA4D5 /* ProgressBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProgressBar.storyboard; sourceTree = "<group>"; };
+		03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProgressBarViewController.swift; sourceTree = "<group>"; };
+		03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoaderShower.swift"; sourceTree = "<group>"; };
+		03057F142590C856004CA4D5 /* covid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = covid.gif; sourceTree = "<group>"; };
 		0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenModel.swift; sourceTree = "<group>"; };
 		0308DD76256F45660013A868 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
 		03098D3B2581B9BC00B4C072 /* ScheduleScreentwoAllDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwoAllDates.swift; sourceTree = "<group>"; };
@@ -248,6 +256,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03057EF72590C2BA004CA4D5 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				03057F142590C856004CA4D5 /* covid.gif */,
+				03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */,
+				03057EF82590C2BA004CA4D5 /* ProgressBar.storyboard */,
+				03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
 		0308DD70256F43870013A868 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +421,7 @@
 		03DD117125627CA100DD0583 /* covid */ = {
 			isa = PBXGroup;
 			children = (
+				03057EF72590C2BA004CA4D5 /* ProgressBar */,
 				03CA9958258E501D00429B89 /* Reachability.swift */,
 				03CA9953258E1C1C00429B89 /* ServiceConstant.swift */,
 				03CA9949258E1BD500429B89 /* Services.swift */,
@@ -665,12 +685,14 @@
 				035750172566B40A00E2DB09 /* OFL.txt in Resources */,
 				035750142566B40A00E2DB09 /* Quicksand-Regular.ttf in Resources */,
 				03574FFD2566B40100E2DB09 /* Lato-Bold.ttf in Resources */,
+				03057EFB2590C2BB004CA4D5 /* ProgressBar.storyboard in Resources */,
 				035750132566B40A00E2DB09 /* Quicksand-Medium.ttf in Resources */,
 				03B2436825781BFB00CAE0B0 /* MapCollectionViewCell.xib in Resources */,
 				035750122566B40A00E2DB09 /* Quicksand-Bold.ttf in Resources */,
 				035750182566B40A00E2DB09 /* Quicksand-VariableFont_wght.ttf in Resources */,
 				035750002566B40100E2DB09 /* Lato-BlackItalic.ttf in Resources */,
 				03574FFE2566B40100E2DB09 /* Lato-Black.ttf in Resources */,
+				03057F152590C856004CA4D5 /* covid.gif in Resources */,
 				03AD641D257FC07500ECC469 /* ScheduleTwoDaysCell.xib in Resources */,
 				03574FFB2566B40100E2DB09 /* Lato-LightItalic.ttf in Resources */,
 				035750192566B40A00E2DB09 /* README.txt in Resources */,
@@ -847,11 +869,13 @@
 				03CA994A258E1BD500429B89 /* Services.swift in Sources */,
 				035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */,
 				035DA31025691FBA00B28354 /* DropdownTableView.swift in Sources */,
+				03057F022590C308004CA4D5 /* UIViewController+LoaderShower.swift in Sources */,
 				03DD11E12562B02200DD0583 /* SutherlandLabel.swift in Sources */,
 				03DD11DF2562B02200DD0583 /* SutherlandTextField.swift in Sources */,
 				03AB099525878269001FEF4A /* RegisterPortalThree.swift in Sources */,
 				03DD11EB2562B02200DD0583 /* UIColor+Utility.swift in Sources */,
 				03DD11EC2562B02200DD0583 /* UIColor+Styles.swift in Sources */,
+				03057EFC2590C2BB004CA4D5 /* SHProgressBarViewController.swift in Sources */,
 				03B3731B25883F7E009BC7D5 /* RegisterPortalConfirm.swift in Sources */,
 				03B2436725781BFB00CAE0B0 /* MapCollectionViewCell.swift in Sources */,
 				03D29932256C339C005A8201 /* RegisterScreentwo.swift in Sources */,
