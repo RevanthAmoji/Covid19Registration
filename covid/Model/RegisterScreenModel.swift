@@ -89,3 +89,57 @@ struct MyScheduleTests:Codable {
     var Latidude:String?
     var Logitude:String?
 }
+
+struct AccountDetails:Codable {
+    var StatusCode:Int?
+    var Message:String?
+    var Data:[AccountData]?
+}
+
+struct AccountData:Codable {
+    var EmailAddress:String?
+    var PatientRelationshipVal:String?
+    var PatientRelationshipText:String?
+    var PatientAge:String?
+    var PatientFirstName:String?
+    var PatientLastName:String?
+    var PatientConsent:String?
+    var GuardianFullName:String?
+    var HasCoronasymptoms:Int?
+    var SymptomsStartedDate:String?
+    var ProritizedTesting:String?
+    var IsFirstTimeTest:String?
+    var ContactedLast15days:String?
+    var MedicalCondition:String?
+    var IsPregnant:String?
+    var IsHighriskCategory:String?
+    var IsSmoke:String?
+    var hasPrimarycareProv:Int?
+    var PrimaryCareName:String?
+    var PrimaryCareAddLine1:String?
+    var PrimaryCareAddLine2:String?
+    var PrimaryCareCity:String?
+    var PrimaryCareState:String?
+    var PrimaryCareZipcode:String?
+    var PrimaryCareEmail:String?
+    var PrimaryCarePhone:String?
+    var hasCareFacility:Int?
+    var PatientDOB:String?
+    var PatientGenderVal:String?
+    var PatientGenderText:String?
+    var PatientEthnicityVal:String?
+    var PatientEthnicityText:String?
+    var PatientAddLine1:String?
+    var PatientAddLine2:String?
+    var PatientCity:String?
+    var PatientState:Int?
+    var PatientZipcode:String?
+    var PatienthasMedicalInsu:String?
+    var PatientInsuranceName:String?
+    var PatientPolicyno:String?
+    var PatientPolicyholderName:String?
+    var PatienthasvalididentificationVal:String?
+    var PatienthasvalididentificationText:String?
+    var PatientIdentificationName:String?
+    var Password:String?
+}

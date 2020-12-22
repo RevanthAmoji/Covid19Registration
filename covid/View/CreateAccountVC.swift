@@ -111,7 +111,7 @@ class CreateAccountVC: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
             let email = emailTF.text ?? ""
-            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(emailTF.text ?? "")\",\"AccountFirstName\":\"\(firstnameTF.text ?? "")\",\"AccountLastName\":\"\(lastNameTF.text ?? "")\",\"Password\":\"\(passwordTF.text ?? "")\"}'}"
+            let dic = "{\"EmailAddress\":\"\(emailTF.text ?? "")\",\"AccountFirstName\":\"\(firstnameTF.text ?? "")\",\"AccountLastName\":\"\(lastNameTF.text ?? "")\",\"Password\":\"\(passwordTF.text ?? "")\"}"
             print("email verification: \(dic)")
             let authUrl = Endpoint.values
             print("email verification: \(authUrl as Any)")
