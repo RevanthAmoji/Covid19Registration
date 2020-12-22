@@ -72,6 +72,9 @@ class ScheduleScreentwo: UIViewController {
                     self.slots = dashboads
                     self.itemsCollectionView.reloadData()
                     self.itemsCollectionView.layoutIfNeeded()
+                    
+                    let indexpath = IndexPath(row: 0, section: 0)
+                    self.collectionView(self.itemsCollectionView, didSelectItemAt: indexpath)
                    
                 case .failure( _):
                     //something went wrong, print the error.
