@@ -38,7 +38,8 @@ class ConfirmScreeningVC: UIViewController {
         self.getDirections()
     }
     func getDirections() {
-        let directionsURL = "http://maps.apple.com/?saddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
+        //34.0288° N, 118.4718° W
+        let directionsURL = "http://maps.apple.com/?saddr=34.03845,-118.47514&daddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
         guard let url = URL(string: directionsURL) else {
             return
         }

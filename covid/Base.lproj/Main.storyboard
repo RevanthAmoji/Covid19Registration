@@ -7088,7 +7088,6 @@ Cg
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="btnGetDirectionsAction:" destination="Blm-T7-eNf" eventType="touchUpInside" id="Za0-ky-apK"/>
-                                                    <action selector="btnGetStartedStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq4-gl-ZoW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-jk-NoR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
