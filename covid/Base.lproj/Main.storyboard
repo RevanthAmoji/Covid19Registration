@@ -266,7 +266,7 @@
                                         <rect key="frame" x="0.0" y="50" width="335" height="203"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtR-cg-ANZ" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="1" width="315" height="26.5"/>
+                                                <rect key="frame" x="10" y="8" width="315" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -286,7 +286,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <outlet property="delegate" destination="phI-O9-5HU" id="iZ0-VF-ji9"/>
+                                                    <outlet property="delegate" destination="mqa-wJ-sBm" id="x5N-Bc-i3h"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Password" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPL-X0-oHo" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
@@ -310,14 +310,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <outlet property="delegate" destination="phI-O9-5HU" id="TJS-mt-zRJ"/>
+                                                    <outlet property="delegate" destination="mqa-wJ-sBm" id="C8c-M5-Udb"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="hB9-Tn-pet" firstAttribute="height" secondItem="DcC-rY-PvY" secondAttribute="height" id="5M0-hj-uNk"/>
-                                            <constraint firstItem="qtR-cg-ANZ" firstAttribute="top" secondItem="1DD-gV-lWI" secondAttribute="top" constant="1" id="Auv-Vz-LmV"/>
                                             <constraint firstItem="KPL-X0-oHo" firstAttribute="top" secondItem="DcC-rY-PvY" secondAttribute="bottom" constant="27" id="CZ6-RN-3Ub"/>
                                             <constraint firstItem="qtR-cg-ANZ" firstAttribute="trailing" secondItem="DcC-rY-PvY" secondAttribute="trailing" id="EW4-gU-1Pm"/>
                                             <constraint firstItem="DcC-rY-PvY" firstAttribute="top" secondItem="qtR-cg-ANZ" secondAttribute="bottom" constant="12" id="FwM-WT-aF1"/>
@@ -449,6 +448,10 @@
                         <outlet property="btnGetStarted" destination="SPb-BW-gg8" id="UL6-Rz-uWb"/>
                         <outlet property="btnHowItWorks" destination="Chb-g4-qxi" id="W06-fP-dbV"/>
                         <outlet property="languageTF" destination="m9Z-51-qow" id="ZLU-kS-ZHr"/>
+                        <outlet property="lblPassword" destination="KPL-X0-oHo" id="NXv-lH-JkG"/>
+                        <outlet property="lblUserName" destination="qtR-cg-ANZ" id="fBt-hz-mmj"/>
+                        <outlet property="tfEmail" destination="DcC-rY-PvY" id="gVB-Hv-ZnS"/>
+                        <outlet property="tfPassword" destination="hB9-Tn-pet" id="LDF-oj-K0B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qc4-PK-Pyk" sceneMemberID="firstResponder"/>

@@ -35,6 +35,9 @@ class LoginVC: UIViewController {
         btnHowItWorks.btnHover(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
+        tfPassword.textContentType = .oneTimeCode
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -90,4 +93,28 @@ class LoginVC: UIViewController {
        
         self.navigationController?.pushViewController(controller, animated: false)
     }
+}
+
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == tfPassword {
+            
+            tfPassword.isSecureTextEntry = true
+           
+        }
+    }
+    /// Thid is used to validate number plate and model when resign keyboard
+    func textFieldDidEndEditing(_ textField: UITextField) {
+       
+    }
+    /// Thid is used to validate number plate and model when typing on keypad
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+      return true
+    }
+    
 }
