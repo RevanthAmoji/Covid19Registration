@@ -15,6 +15,10 @@ class ConfirmScreeningVC: UIViewController {
     @IBOutlet weak var lblTestDate:UILabel!
     @IBOutlet weak var lblTestTime:UILabel!
     
+    @IBOutlet weak var lblTitle:UILabel!
+    
+    
+    
     var availableSlots:MyScheduleTests?
     
     override func viewDidLoad() {
@@ -26,6 +30,8 @@ class ConfirmScreeningVC: UIViewController {
     }
     
     func setPreviousData() {
+        
+        lblTitle.text = availableSlots?.PatientName
         
         lblClientName.text = availableSlots?.ClinicName
         lblClientAddress.text = availableSlots?.ClinicAddress
@@ -39,7 +45,8 @@ class ConfirmScreeningVC: UIViewController {
     }
     func getDirections() {
         //34.0288° N, 118.4718° W
-        let directionsURL = "http://maps.apple.com/?saddr=34.03845,-118.47514&daddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
+       //let directionsURL = "http://maps.apple.com/?saddr=34.03845,-118.47514&daddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
+        let directionsURL = "http://maps.apple.com/?daddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
         guard let url = URL(string: directionsURL) else {
             return
         }

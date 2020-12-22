@@ -21,7 +21,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var tfEmail: SutherlandTextField!
     @IBOutlet weak var tfPassword: SutherlandTextField!
     
-    
+    // Intialize view model variable
+    var viewModel = EmailAddressViewModel()
 
     let yourAttributes: [NSAttributedString.Key: Any] = [
           .font: UIFont.systemFont(ofSize: 18),
@@ -31,7 +32,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnGetStarted.btnEnable(boolVal: true)
+        btnGetStarted.btnEnable(boolVal: false)
         btnHowItWorks.btnHover(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -64,6 +65,8 @@ class LoginVC: UIViewController {
     */
 
     @IBAction func btnGetStartedStarted(_ sender: Any) {
+        
+        SingletonData.shared.email = tfEmail.text ?? ""
         
     }
     
@@ -109,7 +112,14 @@ extension LoginVC: UITextFieldDelegate {
     }
     /// Thid is used to validate number plate and model when resign keyboard
     func textFieldDidEndEditing(_ textField: UITextField) {
-       
+        let isValid = viewModel.validateEmailAddress(email: tfEmail.text ?? "")
+        if textField == tfEmail {
+           
+            tfEmail.showBoaderColor(isEnable: !isValid)
+        }
+        if tfEmail.text?.count != 0 && isValid && tfPassword.text?.count != 0 {
+            btnGetStarted.btnEnable(boolVal: true)
+        }
     }
     /// Thid is used to validate number plate and model when typing on keypad
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

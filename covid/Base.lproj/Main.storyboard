@@ -345,6 +345,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btnGetStartedStarted:" destination="mqa-wJ-sBm" eventType="touchUpInside" id="hhr-Rx-BYC"/>
+                                            <segue destination="nhh-d0-ov1" kind="show" id="Lo3-HV-BlC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chb-g4-qxi" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
@@ -6702,23 +6703,23 @@ Cg
             <objects>
                 <viewController storyboardIdentifier="MyScheduleTestsViewController" id="nhh-d0-ov1" customClass="MyScheduleTestsViewController" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rbe-Yw-RUW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Scheduled Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-be-T3x" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="33" width="231" height="21"/>
+                                <rect key="frame" x="17" y="77" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage who needs a test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeL-9g-1j8" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="63" width="333" height="20.5"/>
+                                <rect key="frame" x="17" y="107" width="333" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-B6-YqH" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="107" width="295" height="39"/>
+                                <rect key="frame" x="17" y="151" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="295" id="Frp-ld-FBb"/>
@@ -6734,7 +6735,7 @@ Cg
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-XM-fPx">
-                                <rect key="frame" x="30" y="223.5" width="315" height="2"/>
+                                <rect key="frame" x="30" y="267.5" width="315" height="2"/>
                                 <color key="backgroundColor" red="0.3895894587" green="0.57257980109999995" blue="0.56470763680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="EBW-UH-g2S"/>
@@ -6742,7 +6743,7 @@ Cg
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-ky-OLZ">
-                                <rect key="frame" x="0.0" y="226.5" width="375" height="420.5"/>
+                                <rect key="frame" x="0.0" y="270.5" width="375" height="396.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyScheduleTestsCell" rowHeight="83" id="h3N-zR-fZX" customClass="MyScheduleTestsCell" customModule="covid" customModuleProvider="target">
@@ -6806,7 +6807,7 @@ Cg
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Booked Tests" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcR-bY-FBA" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="20" y="183" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="227" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -7225,7 +7226,7 @@ Cg
                                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check the details are correct below then select confirm to proceed" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNe-dr-Mg8" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your test has been booked. Please review the information below on next steps." lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNe-dr-Mg8" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="77" width="335" height="43"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -7264,26 +7265,26 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Clinic Name" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCT-39-xcf" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="56" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="56" width="335" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Clinic Address" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmJ-Ev-W0O" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="83" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="83.5" width="335" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCE-KS-Ue7">
-                                                <rect key="frame" x="20" y="123" width="335" height="1"/>
+                                                <rect key="frame" x="20" y="124" width="335" height="1"/>
                                                 <color key="backgroundColor" red="0.3895894587" green="0.57257980109999995" blue="0.56470763680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="pRa-VJ-7Oy"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgZ-lh-mnI" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="139.5" width="335" height="27"/>
+                                                <rect key="frame" x="20" y="140.5" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="QDa-iU-F4u"/>
                                                 </constraints>
@@ -7292,20 +7293,20 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Tuesday 20th October 2020" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teu-qe-xsz" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="176.5" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="177.5" width="335" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JHq-K7-B6J">
-                                                <rect key="frame" x="20" y="216.5" width="335" height="1"/>
+                                                <rect key="frame" x="20" y="218" width="335" height="1"/>
                                                 <color key="backgroundColor" red="0.3895894587" green="0.57257980109999995" blue="0.56470763680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="AM9-u1-57G"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-RA-i8I" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="237.5" width="335" height="27"/>
+                                                <rect key="frame" x="20" y="239" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="7ba-oj-Rax"/>
                                                 </constraints>
@@ -7314,13 +7315,13 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Tuesday 20th October 2020" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-ke-dAh" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="274.5" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="276" width="335" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qo-bd-zWs" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="378" width="160" height="39"/>
+                                                <rect key="frame" x="20" y="380" width="160" height="39"/>
                                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="XJ1-89-qD6"/>
@@ -7339,7 +7340,7 @@ Cg
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-jk-NoR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="319" width="160" height="39"/>
+                                                <rect key="frame" x="20" y="321" width="160" height="39"/>
                                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="83H-42-Xyg"/>
@@ -7431,6 +7432,7 @@ Cg
                         <outlet property="lblClientName" destination="vCT-39-xcf" id="bWt-Vk-edY"/>
                         <outlet property="lblTestDate" destination="Teu-qe-xsz" id="5m6-wl-ACD"/>
                         <outlet property="lblTestTime" destination="YQh-ke-dAh" id="7rs-ht-NNd"/>
+                        <outlet property="lblTitle" destination="stx-03-FmR" id="n6b-XX-fmG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIO-YF-HHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -11089,7 +11091,7 @@ Cg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h3L-5F-G0Q"/>
+        <segue reference="Lo3-HV-BlC"/>
         <segue reference="jVd-gC-QPO"/>
     </inferredMetricsTieBreakers>
     <resources>
