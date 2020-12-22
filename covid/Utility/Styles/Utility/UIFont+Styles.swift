@@ -124,6 +124,10 @@ enum titles {
     static let careFacility = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") live in a group setting e.g. Care Facility"
     
     static let identificationTitle = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a valid form of identification?"
+    
+    static let portalOneTitle = "Enter below the details for \(SingletonData.shared.firstNamePatient ?? "")"
+    
+    static let portalFinalTitle = "Does \(SingletonData.shared.firstNamePatient ?? "") have a valid form of indentification?"
        
 }
 

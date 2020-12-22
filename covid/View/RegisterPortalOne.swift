@@ -31,6 +31,8 @@ class RegisterPortalOne: UIViewController {
     @IBOutlet weak var ageTableView: UITableView!
     @IBOutlet weak var raceTableView: UITableView!
     
+    @IBOutlet weak var lblTitle:UILabel!
+    
     var gender:String = "-1"
     var race:String = "-1"
 
@@ -39,6 +41,9 @@ class RegisterPortalOne: UIViewController {
 
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+        lblTitle.text = titles.portalOneTitle
+        
         // Do any additional setup after loading the view.
         self.checkConnectivityGender()
     }

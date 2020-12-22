@@ -8394,6 +8394,7 @@ Cg
                         <outlet property="btnDateSym" destination="ae7-bH-as9" id="12x-pu-8se"/>
                         <outlet property="btnDateSymBackGndView" destination="ae7-bH-as9" id="yFG-ZB-kRE"/>
                         <outlet property="btnNext" destination="Fd3-ZF-VK7" id="Dm8-6R-GmN"/>
+                        <outlet property="lblTitle" destination="Vnj-eB-cWX" id="qxz-56-gUA"/>
                         <outlet property="raceTableView" destination="Vq9-t2-vUI" id="BHe-Pu-rg5"/>
                         <outlet property="tfAge" destination="igX-hp-PSK" id="Dlx-Vx-2ES"/>
                         <outlet property="tfAgeDummy" destination="5Gh-lX-FWD" id="Emd-ql-OdA"/>
@@ -9201,6 +9202,7 @@ Cg
                         <outlet property="btnNext" destination="PFl-M4-4l6" id="Oh8-mo-PMu"/>
                         <outlet property="btnSelAgree" destination="oLe-Np-Qkq" id="lcy-oK-dsF"/>
                         <outlet property="identificationTableView" destination="2Dh-j8-dYr" id="Qio-lf-xpa"/>
+                        <outlet property="lblSubTitle" destination="LWf-hF-9KZ" id="IVy-D2-tWP"/>
                         <outlet property="policyBackGndView" destination="6UI-At-x4d" id="iYm-IM-egM"/>
                         <outlet property="policyBackGndViewHeight" destination="Zd3-QA-vZK" id="uVb-EL-OaT"/>
                         <outlet property="scrollViewReg" destination="QDJ-Bc-mQO" id="huu-K3-E1s"/>

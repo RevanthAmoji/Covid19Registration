@@ -28,6 +28,8 @@ class RegisterPortalThree: UIViewController {
     @IBOutlet weak var tfIdentificationDummy: SutherlandTextField!
     @IBOutlet weak var tfAttached: SutherlandTextField!
     
+    @IBOutlet weak var lblSubTitle: UILabel!
+    
     @IBOutlet weak var scrollViewReg: UIScrollView!
 
     @IBOutlet weak var identificationTableView: UITableView!
@@ -45,6 +47,9 @@ class RegisterPortalThree: UIViewController {
         uploadFormBackGndViewwHeight.constant = 0 //140
         
         btnNext.btnEnable(boolVal: false)
+        
+        //portalFinalTitle
+        lblSubTitle.text = titles.portalFinalTitle
         
         checkConnectivityIdentification()
     }
