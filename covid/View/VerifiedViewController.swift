@@ -26,14 +26,13 @@ class VerifiedViewController: UIViewController {
     
             let email = "revanth.amojinarsimha@sutherlandglobal.com"
            // let email = SingletonData.shared.email
-            let username = "\(SingletonData.shared.createAccountFirstname ?? "first")%\(SingletonData.shared.createAccountLastname ?? "last")"
+            let username = "\(SingletonData.shared.createAccountFirstname ?? "first")%20\(SingletonData.shared.createAccountLastname ?? "last")"
             let authUrl = Endpoint.validEmail+(email)+Endpoint.userName+username //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
             print("verified verification: \(authUrl as Any)")
             Services.getDashboardService().getVerifiedData(url: authUrl, completion: {
                 result in
                 switch result {
                 case .success(let dashboads):
-                    
                     if let verified = dashboads as? String {
                         print(dashboads)
                         SingletonData.shared.verificationCode = verified
