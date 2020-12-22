@@ -15,6 +15,8 @@ class SingletonData {
     }
     
     var email:String?
+    var createAccountFirstname:String?
+    var createAccountLastname:String?
     
     var firstNamePatient:String?
     var lastNamePatient:String?

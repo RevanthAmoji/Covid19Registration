@@ -20,6 +20,7 @@ class ConfirmScreeningVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         setPreviousData()
     }

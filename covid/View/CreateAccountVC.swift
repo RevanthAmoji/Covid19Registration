@@ -36,6 +36,8 @@ class CreateAccountVC: UIViewController {
         passwordTF.textContentType = .oneTimeCode
         rePasswordTF.textContentType = .oneTimeCode
 
+        emailTF.text = SingletonData.shared.email
+        reenterEmailTF.text = SingletonData.shared.email
       
     }
     
@@ -140,6 +142,9 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func nextBtnAction(_ sender: Any) {
+        
+        SingletonData.shared.createAccountFirstname = firstnameTF.text ?? ""
+        SingletonData.shared.createAccountLastname = lastNameTF.text ?? ""
         
         checkConnectivity()
         

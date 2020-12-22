@@ -18,6 +18,7 @@ class VerificationCodeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     
     func checkConnectivity() {

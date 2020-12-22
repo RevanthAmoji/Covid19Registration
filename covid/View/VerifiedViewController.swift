@@ -17,15 +17,17 @@ class VerifiedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     
     func checkConnectivity() {
         
         if Reachability.isConnectedToNetwork() {
     
-            let email = "revanth.amojinarsimha@sutherlandglobal.com"
-            let username = "revanth%20amoji"
-            let authUrl = Endpoint.validEmail+email+Endpoint.userName+username //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
+           // let email = "revanth.amojinarsimha@sutherlandglobal.com"
+            let email = SingletonData.shared.email
+            let username = "\(SingletonData.shared.createAccountFirstname ?? "")%\(SingletonData.shared.createAccountLastname ?? "")"
+            let authUrl = Endpoint.validEmail+(email ?? "")+Endpoint.userName+username //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
             print("verified verification: \(authUrl as Any)")
             Services.getDashboardService().getVerifiedData(url: authUrl, completion: {
                 result in

@@ -39,7 +39,8 @@ class MyScheduleTestsViewController: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
     
-            let authUrl = Endpoint.accountDetails+"s.shetty@gmail.com"
+           // let authUrl = Endpoint.accountDetails+"s.shetty@gmail.com"
+            let authUrl = Endpoint.accountDetails+(SingletonData.shared.email ?? "")
             print("email verification: \(authUrl as Any)")
             Services.getDashboardService().getMyScheduleData(url: authUrl, completion: {
                 result in
