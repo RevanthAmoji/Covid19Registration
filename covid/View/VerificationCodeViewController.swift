@@ -35,11 +35,38 @@ class VerificationCodeViewController: UIViewController {
         
     }
     
-    @IBAction func verifiedPhone(_ sender: Any) {
+    
+    func checkConnectivityEmail() {
         
-        checkConnectivity()
+      //  self.showProgressBar()
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\"}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account+"?VerifyEmailAddress=\(email)"
+            print("email verification: \(authUrl as Any)")
+            SingletonData.shared.email = email
+            Services.getDashboardService().getEmailVerification(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                
+                case .success( _):
+                   // self.hideProgressBar()
+                  break
+                    
+                case .failure( _):
+                   // self.hideProgressBar()
+                    //something went wrong, print the error.
+                    self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+                }
+            })
+        } else {
+         //   self.hideProgressBar()
+            self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
+       }
     }
     
+  
     func showOfflineMessage(title: String, msg: String) {
        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
@@ -52,6 +79,14 @@ class VerificationCodeViewController: UIViewController {
         alert.addAction(cancelButton)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func verifiedPhone(_ sender: Any) {
+        
+        checkConnectivity()
+        checkConnectivityEmail()
+    }
+    
+   
 
 
     /*

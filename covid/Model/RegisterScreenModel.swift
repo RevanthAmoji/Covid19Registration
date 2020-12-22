@@ -71,6 +71,9 @@ struct ServerResponse:Codable {
    
 }
 
+
+
+
 struct RelationModel:Codable {
     var Text:String?
     var Value:String?
