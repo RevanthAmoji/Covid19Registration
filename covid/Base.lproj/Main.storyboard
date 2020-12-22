@@ -6447,7 +6447,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ul-ZT-MO7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10070" y="303"/>
+            <point key="canvasLocation" x="10319" y="-253"/>
         </scene>
         <!--My Schedule Tests View Controller-->
         <scene sceneID="byT-WG-Tlm">

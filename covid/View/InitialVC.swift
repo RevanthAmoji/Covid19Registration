@@ -220,6 +220,12 @@ class InitialVC: UIViewController {
         } else if tfPatientLastName.text?.count == 0 || tfPatientLastName == nil {
             errorMessage = "Please enter patient last name"
         } else if selectionRegister?.count == 0 || selectionRegister == nil {
+            
+            if tfRelationShip.text == "Myself" {
+                btnNext.btnEnable(boolVal: true)
+                SingletonData.shared.firstNamePatient = tfPatientFirstName.text
+                SingletonData.shared.lastNamePatient = tfPatientLastName.text
+            }
             errorMessage = "Please select consent from the patient to register on their behalf"
         } else if tfSignature.text?.count == 0 || tfSignature == nil {
             errorMessage = "Please enter signature"
@@ -318,6 +324,8 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
         cell.titleLbl.text = languagesList[indexPath.row].Text
         if cell.titleLbl.text == "Myself" {
             cell.contentView.backgroundColor = UIColor.white
+            
+            
         } else {
             cell.contentView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
         }
@@ -334,6 +342,22 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
         selectRelationNumber = languagesList[indexPath.row].Value
         ageViewHeight.constant = 102
         ageViewHeightView.isHidden = false
+        
+        if tfRelationShip.text != "Myself" && ((tfPatientFirstName.text?.count) != 0) {
+            btnNext.btnEnable(boolVal: false)
+            registerViewHeight.constant = 125
+            registerViewHeightView.isHidden = false
+        } else if tfRelationShip.text == "Myself" && registerViewHeight.constant == 125 {
+            btnNext.btnEnable(boolVal: true)
+            registerViewHeight.constant = 0
+            registerViewHeightView.isHidden = true
+            signatureViewHeight.constant = 0
+            signatureViewHeighViewt.isHidden = true
+            selectionRegister = ""
+            tfSignature.text = ""
+            btnRegisterfalse.isSelected = false
+            btnRegisterTrue.isSelected = false
+        }
     }
 }
 
@@ -347,8 +371,10 @@ extension InitialVC: UITextFieldDelegate {
         if textField == tfPatientFirstName {
             if  textField.text?.count != 0 {
                 
-                registerViewHeight.constant = 125
-                registerViewHeightView.isHidden = false
+                if tfRelationShip.text != "Myself" {
+                  registerViewHeight.constant = 125
+                  registerViewHeightView.isHidden = false
+                }
             }
         } else  if textField == tfSignature {
             if  textField.text?.count != 0 {

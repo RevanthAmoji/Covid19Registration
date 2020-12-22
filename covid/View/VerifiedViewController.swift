@@ -24,10 +24,10 @@ class VerifiedViewController: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
     
-           // let email = "revanth.amojinarsimha@sutherlandglobal.com"
-            let email = SingletonData.shared.email
-            let username = "\(SingletonData.shared.createAccountFirstname ?? "")%\(SingletonData.shared.createAccountLastname ?? "")"
-            let authUrl = Endpoint.validEmail+(email ?? "")+Endpoint.userName+username //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
+            let email = "revanth.amojinarsimha@sutherlandglobal.com"
+           // let email = SingletonData.shared.email
+            let username = "\(SingletonData.shared.createAccountFirstname ?? "first")%\(SingletonData.shared.createAccountLastname ?? "last")"
+            let authUrl = Endpoint.validEmail+(email)+Endpoint.userName+username //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
             print("verified verification: \(authUrl as Any)")
             Services.getDashboardService().getVerifiedData(url: authUrl, completion: {
                 result in
