@@ -24,6 +24,15 @@ class RegisterPortalTwo: UIViewController {
 
         // Do any additional setup after loading the view.
         btnNext.btnEnable(boolVal: false)
+        if SingletonData.shared.StatusCode == 0 {
+            tfAddressLineOne.text = SingletonData.shared.addressLineOnePatient
+            tfAddressLineTwo.text = SingletonData.shared.addressLineTwoPatient
+            tfCity.text = SingletonData.shared.cityPatient
+            tfState.text = SingletonData.shared.statePatient
+            tfZipCode.text = SingletonData.shared.zipCodePatient
+            btnNext.btnEnable(boolVal: true)
+        }
+        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     

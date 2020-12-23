@@ -249,4 +249,36 @@ class DashboardService {
         
        
     }
+    
+    func getPreviousData(url:String,completion: @escaping (_ : ServiceResult<AccountDetails>) -> Void) {
+        
+        let authUrl = url
+        var request = URLRequest(url: try! authUrl.asURL())
+        request.httpMethod = "GET"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // *** Here, Convert Array to NSData format and assign to httpbody ***
+        //        let data = try! JSONSerialization.data(withJSONObject: dic, options: [])
+        
+        AF.request(request).responseJSON { response in
+            //            print("Upload Personalized KPI Response \(response)")
+            switch (response.result) {
+            case .success:
+                
+                do {
+                    let responseDecoder = try JSONDecoder().decode(AccountDetails.self, from: response.data!)
+                    // print("getAppointmentData Dashboard Response \(String(describing: responseDecoder.data?.count))")
+                    completion(ServiceResult.success(value: responseDecoder))
+                }
+                catch let e {
+                    print("decoder error \(e)")
+                    completion(ServiceResult.failure(error: e))
+                }
+            case .failure(let error):
+                completion(ServiceResult.failure(error:error))
+            }
+        }
+    }
 }

@@ -69,9 +69,35 @@ class RegisterScreenThree: UIViewController {
     }
 
 
-    func setViewTitles(){
+    func setViewTitles() {
+        
         self.primaryCareProviderTitle.text = titles.primaryCareProvider
         self.careFacilityTitle.text = titles.careFacility
+        
+        if SingletonData.shared.StatusCode == 0 {
+            
+            self.primaryCareProvider = SingletonData.shared.primaryCareProvider
+            if primaryCareProvider == checkBoxInt.trueVal.rawValue {
+                btnPrimaryCareProviderTrue.isSelected = true
+            } else  if primaryCareProvider == checkBoxInt.falseVal.rawValue {
+                btnPrimaryCareProviderfalse.isSelected = true
+            }
+            self.careFacility = SingletonData.shared.careFacility
+            if careFacility == checkBoxInt.trueVal.rawValue {
+                btnCareFacilityTrue.isSelected = true
+            } else  if careFacility == checkBoxInt.falseVal.rawValue {
+                btnCareFacilityfalse.isSelected = true
+            }
+            self.tfCareProvider.text = SingletonData.shared.careProvider
+            self.tfAddressLineOne.text = SingletonData.shared.addressLineOne
+            self.tfAddressLineTwo.text = SingletonData.shared.addressLineTwo
+            self.tfCity.text = SingletonData.shared.city
+            self.tfState.text = SingletonData.shared.state
+            self.tfZipCode.text = SingletonData.shared.zipCode
+            self.tfPhoneNumber.text = SingletonData.shared.phoneNumber
+            self.tfEmailAddress.text = SingletonData.shared.emailAddress
+            btnNext.btnEnable(boolVal: true)
+        }
     }
     /*
     // MARK: - Navigation

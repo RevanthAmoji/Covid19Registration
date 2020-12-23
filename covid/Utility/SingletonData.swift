@@ -20,6 +20,7 @@ class SingletonData {
     
     var firstNamePatient:String?
     var lastNamePatient:String?
+    var patientAge:String?
     
     var symptoms:String?
     var dateSymptomsStarted:String?
@@ -69,8 +70,12 @@ class SingletonData {
     var identificationVal:String?
     var identificationAttached:String?
     
+    var guardianFullName:String?
+    var consent:String?
     
     var verificationCode:String?
+    
+    var StatusCode:Int?
     
     func getChartTypeDetails() -> Array<Any>  {
         

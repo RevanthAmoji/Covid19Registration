@@ -67,6 +67,37 @@ class RegisterScreenOne: UIViewController {
         self.proritizedForTestingTitle.text = titles.proritizedForTesting
         self.firstTimeTestingTitle.text = titles.firstTimeTesting
         self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
+        
+        if SingletonData.shared.StatusCode == 0 {
+            
+            symptoms = SingletonData.shared.symptoms
+            if symptoms == checkBoxInt.trueVal.rawValue {
+                btnSymptomsTrue.isSelected = true
+            } else if symptoms == checkBoxInt.falseVal.rawValue {
+                btnSymptomsfalse.isSelected = true
+            }
+            tfDateSymStarted.text = SingletonData.shared.dateSymptomsStarted
+            
+            proritizedForTesting = SingletonData.shared.proritizedForTesting
+            if proritizedForTesting == checkBoxInt.trueVal.rawValue {
+                btnProritizedForTestingTrue.isSelected = true
+            } else if proritizedForTesting == checkBoxInt.falseVal.rawValue {
+                btnProritizedForTestingfalse.isSelected = true
+            }
+            firstTimeTesting = SingletonData.shared.firstTimeTesting
+            if firstTimeTesting == checkBoxInt.trueVal.rawValue {
+                btnFirstTimeTestingTrue.isSelected = true
+            } else  if firstTimeTesting == checkBoxInt.falseVal.rawValue {
+                btnFirstTimeTestingfalse.isSelected = true
+            }
+            contactWithAnyOne = SingletonData.shared.contactWithAnyOne
+            if contactWithAnyOne == checkBoxInt.trueVal.rawValue {
+                btnContactWithAnyOneTrue.isSelected = true
+            } else  if contactWithAnyOne == checkBoxInt.falseVal.rawValue {
+                btnContactWithAnyOnefalse.isSelected = true
+            }
+            btnNext.btnEnable(boolVal: true)
+        }
     }
   
     // MARK: - Custom Button Actions

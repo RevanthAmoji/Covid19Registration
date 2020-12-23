@@ -51,6 +51,16 @@ class RegisterPortalThree: UIViewController {
         //portalFinalTitle
         lblSubTitle.text = titles.portalFinalTitle
         
+        if SingletonData.shared.StatusCode == 0 {
+            
+            tfInsuranceProvider.text =  SingletonData.shared.insuranceProvider
+            tfPolicyNumber.text = SingletonData.shared.policyNumber
+            tfPolicyHolderName.text = SingletonData.shared.policyHolderName
+            tfIdentification.text = SingletonData.shared.identification
+            identification = SingletonData.shared.identificationVal ?? "-1"
+            btnNext.btnEnable(boolVal: true)
+        }
+        
         checkConnectivityIdentification()
     }
     

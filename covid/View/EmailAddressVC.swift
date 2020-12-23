@@ -47,9 +47,8 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                    // self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let controller = storyboard.instantiateViewController(withIdentifier: "InitialVC") as! InitialVC
-                            self.navigationController?.pushViewController(controller, animated: false)
+                        
+                        self.checkConnectivityBackUpData()
                         
                     } else {
                         self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
@@ -80,11 +79,85 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
            
         }
-        let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) { _ in
-        }
+      
         alert.addAction(okButton)
-        alert.addAction(cancelButton)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func checkConnectivityBackUpData() {
+        
+        if Reachability.isConnectedToNetwork() {
+            
+            // let authUrl = Endpoint.accountDetails+"s.shetty@gmail.com"
+            let authUrl = Endpoint.accountPreviousData+(SingletonData.shared.email ?? "")
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getPreviousData(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    SingletonData.shared.StatusCode = dashboads.StatusCode
+                    if dashboads.StatusCode == 0 {
+                    
+                        let data = dashboads.Data?[0]
+                        SingletonData.shared.firstNamePatient = data?.PatientFirstName
+                        SingletonData.shared.lastNamePatient = data?.PatientLastName
+                        SingletonData.shared.email = data?.EmailAddress
+                        SingletonData.shared.patientAge = data?.PatientAge?.convertedValue
+                        SingletonData.shared.relationNumber = data?.PatientRelationshipVal
+                        SingletonData.shared.relationName = data?.PatientRelationshipText
+                        SingletonData.shared.guardianFullName = data?.GuardianFullName
+                        SingletonData.shared.consent = data?.PatientConsent?.convertedValue
+                        SingletonData.shared.symptoms = data?.HasCoronasymptoms?.convertedValue
+                        SingletonData.shared.dateSymptomsStarted = data?.SymptomsStartedDate
+                        SingletonData.shared.proritizedForTesting = data?.ProritizedTesting?.convertedValue
+                        SingletonData.shared.firstTimeTesting = data?.IsFirstTimeTest?.convertedValue
+                        SingletonData.shared.contactWithAnyOne = data?.ContactedLast15days?.convertedValue
+                        SingletonData.shared.medicalCondition = data?.MedicalCondition?.convertedValue
+                        SingletonData.shared.pregnant = data?.IsPregnant?.convertedValue
+                        SingletonData.shared.highRiskCategory = data?.IsHighriskCategory?.convertedValue
+                        SingletonData.shared.smoker = data?.IsSmoke?.convertedValue
+                        
+                        SingletonData.shared.primaryCareProvider = data?.hasPrimarycareProv?.convertedValue
+                        SingletonData.shared.careProvider = data?.PrimaryCareName
+                        SingletonData.shared.addressLineOne = data?.PrimaryCareAddLine1
+                        SingletonData.shared.addressLineTwo = data?.PrimaryCareAddLine2
+                        SingletonData.shared.city = data?.PrimaryCareCity
+                        SingletonData.shared.state = data?.PrimaryCareState
+                        SingletonData.shared.zipCode = data?.PrimaryCareZipcode
+                        SingletonData.shared.phoneNumber = data?.PrimaryCarePhone
+                        SingletonData.shared.email = data?.PrimaryCareEmail
+                        SingletonData.shared.careFacility = data?.hasCareFacility?.convertedValue
+                        
+                        SingletonData.shared.dateOfBirth = data?.PatientDOB
+                        SingletonData.shared.gender = data?.PatientGenderText
+                        SingletonData.shared.genderVal = data?.PatientGenderVal
+                        SingletonData.shared.race = data?.PatientEthnicityText
+                        SingletonData.shared.raceVal = data?.PatientEthnicityVal
+                        
+                        SingletonData.shared.addressLineOnePatient = data?.PatientAddLine1
+                        SingletonData.shared.addressLineTwoPatient = data?.PatientAddLine2
+                        SingletonData.shared.cityPatient = data?.PatientCity
+                        SingletonData.shared.statePatient = data?.PatientState
+                        SingletonData.shared.zipCodePatient = data?.PatientZipcode
+                        SingletonData.shared.insuranceProvider = data?.PatientInsuranceName
+                        SingletonData.shared.policyNumber = data?.PatientPolicyno
+                        SingletonData.shared.policyHolderName = data?.PatientPolicyholderName
+                        SingletonData.shared.identification = data?.PatienthasvalididentificationText
+                        SingletonData.shared.identificationVal = data?.PatienthasvalididentificationVal
+                        
+                    }
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "InitialVC") as! InitialVC
+                        self.navigationController?.pushViewController(controller, animated: false)
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+                }
+            })
+        } else {
+            self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
+        }
     }
 
     /*
@@ -129,4 +202,17 @@ extension EmailAddressVC: UITextFieldDelegate {
       return true
     }
     
+}
+
+extension String {
+    var convertedValue: String? {
+        switch self.lowercased() {
+        case "yes":
+            return "1"
+        case "no":
+            return "0"
+        default:
+            return nil
+        }
+    }
 }

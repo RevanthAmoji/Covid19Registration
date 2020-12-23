@@ -76,20 +76,50 @@ class InitialVC: UIViewController {
 
     func setConstraintValues(){
         
-        btnNext.btnEnable(boolVal: false)
-        
-        ageViewHeight.constant = 0
-        nameViewHeight.constant = 0
-        registerViewHeight.constant = 0
-        signatureViewHeight.constant = 0
-        
-        ageViewHeightView.isHidden = true
-        nameViewHeightView.isHidden = true
-        registerViewHeightView.isHidden = true
-        signatureViewHeighViewt.isHidden = true
-        
-        btnNext.layoutIfNeeded()
-        btnNext.frame = CGRect(x: 0, y: scrollViewReg.contentSize.height-32-39, width: 102, height: 39)
+        if SingletonData.shared.StatusCode == 0 {
+            
+            tfRelationShip.text = SingletonData.shared.relationName
+            tfRelationShipDummy.text = SingletonData.shared.relationName
+            selectRelationNumber = SingletonData.shared.relationNumber
+            
+            selectionAge = SingletonData.shared.patientAge
+            if selectionAge == checkBoxInt.trueVal.rawValue {
+                btnAgeTrue.isSelected = true
+            } else if selectionAge == checkBoxInt.falseVal.rawValue  {
+                btnAgefalse.isSelected = true
+            }
+            
+            tfPatientFirstName.text = SingletonData.shared.firstNamePatient
+            tfPatientLastName.text = SingletonData.shared.lastNamePatient
+            
+            selectionRegister = SingletonData.shared.consent
+            if selectionRegister == checkBoxInt.trueVal.rawValue {
+                btnRegisterTrue.isSelected = true
+            } else if selectionRegister == checkBoxInt.falseVal.rawValue {
+                btnRegisterfalse.isSelected = true
+            }
+            
+            tfSignature.text = SingletonData.shared.guardianFullName
+            
+            btnNext.btnEnable(boolVal: true)
+            
+        } else {
+            
+            btnNext.btnEnable(boolVal: false)
+            
+            ageViewHeight.constant = 0
+            nameViewHeight.constant = 0
+            registerViewHeight.constant = 0
+            signatureViewHeight.constant = 0
+            
+            ageViewHeightView.isHidden = true
+            nameViewHeightView.isHidden = true
+            registerViewHeightView.isHidden = true
+            signatureViewHeighViewt.isHidden = true
+            
+            btnNext.layoutIfNeeded()
+            btnNext.frame = CGRect(x: 0, y: scrollViewReg.contentSize.height-32-39, width: 102, height: 39)
+        }
     }
     /*
     // MARK: - Navigation

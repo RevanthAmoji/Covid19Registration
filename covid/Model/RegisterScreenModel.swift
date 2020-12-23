@@ -108,7 +108,7 @@ struct AccountData:Codable {
     var PatientLastName:String?
     var PatientConsent:String?
     var GuardianFullName:String?
-    var HasCoronasymptoms:Int?
+    var HasCoronasymptoms:String?
     var SymptomsStartedDate:String?
     var ProritizedTesting:String?
     var IsFirstTimeTest:String?
@@ -117,7 +117,7 @@ struct AccountData:Codable {
     var IsPregnant:String?
     var IsHighriskCategory:String?
     var IsSmoke:String?
-    var hasPrimarycareProv:Int?
+    var hasPrimarycareProv:String?
     var PrimaryCareName:String?
     var PrimaryCareAddLine1:String?
     var PrimaryCareAddLine2:String?
@@ -126,7 +126,7 @@ struct AccountData:Codable {
     var PrimaryCareZipcode:String?
     var PrimaryCareEmail:String?
     var PrimaryCarePhone:String?
-    var hasCareFacility:Int?
+    var hasCareFacility:String?
     var PatientDOB:String?
     var PatientGenderVal:String?
     var PatientGenderText:String?
@@ -135,7 +135,7 @@ struct AccountData:Codable {
     var PatientAddLine1:String?
     var PatientAddLine2:String?
     var PatientCity:String?
-    var PatientState:Int?
+    var PatientState:String?
     var PatientZipcode:String?
     var PatienthasMedicalInsu:String?
     var PatientInsuranceName:String?
@@ -144,5 +144,4 @@ struct AccountData:Codable {
     var PatienthasvalididentificationVal:String?
     var PatienthasvalididentificationText:String?
     var PatientIdentificationName:String?
-    var Password:String?
 }

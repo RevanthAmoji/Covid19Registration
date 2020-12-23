@@ -43,7 +43,16 @@ class RegisterPortalOne: UIViewController {
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         lblTitle.text = titles.portalOneTitle
-        
+        if SingletonData.shared.StatusCode == 0 {
+            tfDateSymStarted.text = SingletonData.shared.dateOfBirth
+            gender = SingletonData.shared.genderVal ?? "-1"
+            tfAge.text =  SingletonData.shared.gender
+            tfAgeDummy.text =  SingletonData.shared.gender
+            tfRace.text = SingletonData.shared.race
+            tfRaceDummy.text = SingletonData.shared.race
+            race = SingletonData.shared.raceVal ?? "-1"
+            btnNext.btnEnable(boolVal: true)
+        }
         // Do any additional setup after loading the view.
         self.checkConnectivityGender()
     }

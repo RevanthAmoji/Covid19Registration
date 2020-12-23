@@ -26,6 +26,7 @@ enum Endpoint {
     
     static let accountDetails = mainServer + "/Account?emailAddress="
     
+    static let accountPreviousData = mainServer + "/Account?EmailId="
     //CC_Gender
     static let gender = mainServer + "/Scheduling?DD_Group=CC_Gender"
         //CC_Ethinicity

@@ -48,6 +48,34 @@ class RegisterScreentwo: UIViewController {
         self.pregnantTitle.text = titles.pregnant
         self.highRiskCategoryTitle.text = titles.highRiskCategory
         self.smokerTitle.text = titles.smoker
+        
+        if SingletonData.shared.StatusCode == 0 {
+            medicalCondition = SingletonData.shared.medicalCondition
+            if medicalCondition == checkBoxInt.trueVal.rawValue {
+                btnMedicalConditionTrue.isSelected = true
+            } else  if medicalCondition == checkBoxInt.falseVal.rawValue {
+                btnMedicalConditionfalse.isSelected = true
+            }
+            pregnant = SingletonData.shared.pregnant
+            if pregnant == checkBoxInt.trueVal.rawValue {
+                btnPregnantTrue.isSelected = true
+            } else  if pregnant == checkBoxInt.falseVal.rawValue  {
+                btnPregnantfalse.isSelected = true
+            }
+            highRiskCategory = SingletonData.shared.highRiskCategory
+            if highRiskCategory == checkBoxInt.trueVal.rawValue {
+                btnHighRiskCategoryTrue.isSelected = true
+            } else if highRiskCategory == checkBoxInt.falseVal.rawValue {
+                btnHighRiskCategoryfalse.isSelected = true
+            }
+            smoker = SingletonData.shared.smoker
+            if smoker == checkBoxInt.trueVal.rawValue {
+                btnSmokerTrue.isSelected = true
+            } else if smoker == checkBoxInt.falseVal.rawValue {
+                btnSmokerfalse.isSelected = true
+            }
+            btnNext.btnEnable(boolVal: true)
+        }
     }
 
     /*
