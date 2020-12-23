@@ -127,7 +127,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                         SingletonData.shared.state = data?.PrimaryCareState
                         SingletonData.shared.zipCode = data?.PrimaryCareZipcode
                         SingletonData.shared.phoneNumber = data?.PrimaryCarePhone
-                        SingletonData.shared.email = data?.PrimaryCareEmail
+                       // SingletonData.shared.email = data?.PrimaryCareEmail
                         SingletonData.shared.careFacility = data?.hasCareFacility?.convertedValue
                         
                         SingletonData.shared.dateOfBirth = data?.PatientDOB
