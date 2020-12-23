@@ -7341,7 +7341,7 @@ Cg
                                                     <action selector="btnGetDirectionsAction:" destination="Blm-T7-eNf" eventType="touchUpInside" id="Za0-ky-apK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-jk-NoR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-jk-NoR" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="321" width="160" height="39"/>
                                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
