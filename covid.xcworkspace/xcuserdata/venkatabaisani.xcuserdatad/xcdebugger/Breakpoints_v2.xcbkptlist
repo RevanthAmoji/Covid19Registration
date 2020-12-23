@@ -231,22 +231,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "956CB19F-ABA4-43DF-AFA8-0EE2FA3A1A2F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "covid/View/InitialVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "checkAllTheFeilds()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8BF4D14A-FFF5-44ED-994E-3ACC405C1B09"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -318,8 +302,8 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "checkConnectivityBackUpData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,10 +318,42 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "showOfflineMessage(title:msg:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C07020C7-B2B5-4BDD-9D4C-7828CFAAEDDE - 3fe06fba706de47d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "covid.EmailAddressVC.showOfflineMessage(title: Swift.String, msg: Swift.String) -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "194">
+               </Location>
+               <Location
+                  uuid = "C07020C7-B2B5-4BDD-9D4C-7828CFAAEDDE - 8820968a56d5cea0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in covid.EmailAddressVC.showOfflineMessage(title: Swift.String, msg: Swift.String) -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -354,6 +370,102 @@
             endingLineNumber = "270"
             landmarkName = "getPreviousData(url:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/EmailAddressVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "checkConnectivityBackUpData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8 - 80593282196dd77a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.AccountDetails&gt;) -&gt; () in covid.EmailAddressVC.checkConnectivityBackUpData() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "226">
+               </Location>
+               <Location
+                  uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8 - 80593282196dd77a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.AccountDetails&gt;) -&gt; () in covid.EmailAddressVC.checkConnectivityBackUpData() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "274">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBEE1134-3AB6-4041-BE69-1B2E87401777"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/InitialVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "checkConnectivity()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BBEE1134-3AB6-4041-BE69-1B2E87401777 - cd6e7976938b0e33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "covid.InitialVC.checkConnectivity() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/InitialVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "291"
+                  endingLineNumber = "291"
+                  offsetFromSymbolStart = "4794">
+               </Location>
+               <Location
+                  uuid = "BBEE1134-3AB6-4041-BE69-1B2E87401777 - db3999a3d17f07e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.ServerResponse&gt;) -&gt; () in covid.InitialVC.checkConnectivity() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/InitialVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "262">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

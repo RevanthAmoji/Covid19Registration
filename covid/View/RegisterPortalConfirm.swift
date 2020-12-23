@@ -237,8 +237,6 @@ class RegisterPortalConfirm: UIViewController {
     }
     func checkConnectivity() {
         
-        //        SingletonData.shared.createAccountFirstname = firstnameTF.text ?? ""
-        //        SingletonData.shared.createAccountLastname = lastNameTF.text ?? ""
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"PatientFirstName\":\"\(SingletonData.shared.firstNamePatient ?? "")\",\"PatientLastName\":\"\(SingletonData.shared.lastNamePatient ?? "")\",\"Password\":\"\(SingletonData.shared.password ?? "")\"}"

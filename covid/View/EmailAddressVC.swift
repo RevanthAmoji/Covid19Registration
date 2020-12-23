@@ -69,6 +69,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     @IBAction func nextBtnAction(_ sender: Any) {
         
+        SingletonData.shared.email = emailTF.text
         checkConnectivity()
         
     }
