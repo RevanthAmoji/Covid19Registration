@@ -14,7 +14,11 @@ class SingletonData {
     private init() {
     }
     
+    var isFromLogin:Bool? = false
+    
     var email:String?
+    var password:String?
+    
     var createAccountFirstname:String?
     var createAccountLastname:String?
     

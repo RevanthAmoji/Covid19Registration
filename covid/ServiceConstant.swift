@@ -32,6 +32,8 @@ enum Endpoint {
         //CC_Ethinicity
     static let ethinicity = mainServer + "/Scheduling?DD_Group=CC_Ethinicity"
     
+    
+    
     static let identificationType = mainServer + "/Scheduling?DD_Group=CC_IdentificationType"
     
     static let errorMessage = "Something went wrong, Please try again"

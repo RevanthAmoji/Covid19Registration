@@ -345,7 +345,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btnGetStartedStarted:" destination="mqa-wJ-sBm" eventType="touchUpInside" id="hhr-Rx-BYC"/>
-                                            <segue destination="nhh-d0-ov1" kind="show" id="Lo3-HV-BlC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chb-g4-qxi" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
@@ -6175,11 +6174,11 @@ Cg
             <objects>
                 <viewController storyboardIdentifier="CreateAccountVC" id="g08-ww-Tdl" customClass="CreateAccountVC" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sJ9-sY-zPW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1018"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1038"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWA-ox-0B7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1018"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1038"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyv-NO-xK7">
                                         <rect key="frame" x="0.0" y="0.0" width="371" height="150"/>
@@ -6596,7 +6595,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30l-Mg-CAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9365.6000000000004" y="92.653673163418304"/>
+            <point key="canvasLocation" x="9609" y="-238"/>
         </scene>
         <!--Verified View Controller-->
         <scene sceneID="CXf-BO-a6Z">
@@ -6703,23 +6702,23 @@ Cg
             <objects>
                 <viewController storyboardIdentifier="MyScheduleTestsViewController" id="nhh-d0-ov1" customClass="MyScheduleTestsViewController" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rbe-Yw-RUW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Scheduled Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-be-T3x" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="77" width="231" height="21"/>
+                                <rect key="frame" x="17" y="33" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage who needs a test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeL-9g-1j8" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="107" width="333" height="20.5"/>
+                                <rect key="frame" x="17" y="63" width="333" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-B6-YqH" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="151" width="295" height="39"/>
+                                <rect key="frame" x="17" y="107" width="295" height="39"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="295" id="Frp-ld-FBb"/>
@@ -6733,9 +6732,12 @@ Cg
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="profileBtnAction:" destination="nhh-d0-ov1" eventType="touchUpInside" id="5JB-hH-UQF"/>
+                                </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-XM-fPx">
-                                <rect key="frame" x="30" y="267.5" width="315" height="2"/>
+                                <rect key="frame" x="30" y="223.5" width="315" height="2"/>
                                 <color key="backgroundColor" red="0.3895894587" green="0.57257980109999995" blue="0.56470763680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="EBW-UH-g2S"/>
@@ -6743,7 +6745,7 @@ Cg
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-ky-OLZ">
-                                <rect key="frame" x="0.0" y="270.5" width="375" height="396.5"/>
+                                <rect key="frame" x="0.0" y="226.5" width="375" height="420.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyScheduleTestsCell" rowHeight="83" id="h3N-zR-fZX" customClass="MyScheduleTestsCell" customModule="covid" customModuleProvider="target">
@@ -6807,7 +6809,7 @@ Cg
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Booked Tests" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcR-bY-FBA" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="20" y="227" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="183" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -10950,7 +10952,7 @@ Cg
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="g08-ww-Tdl" kind="show" id="K0M-K3-H52"/>
+                                            <action selector="buttonConfirmPressed:" destination="VCp-v5-4eQ" eventType="touchUpInside" id="kO1-5w-hXW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -11093,7 +11095,7 @@ Cg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lo3-HV-BlC"/>
+        <segue reference="h3L-5F-G0Q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Down" width="36" height="36"/>

@@ -219,6 +219,72 @@ class RegisterPortalConfirm: UIViewController {
         // Configure the calendar's properties
         present(calendarPicker, animated: true, completion: nil)
     }
+    
+    @IBAction func buttonConfirmPressed(_ sender: Any) {
+       
+        if SingletonData.shared.isFromLogin ?? false {
+            
+            self.checkConnectivity()
+            
+        } else {
+            
+            //CreateAccountVC
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "CreateAccountVC") as! CreateAccountVC
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+    }
+    func checkConnectivity() {
+        
+        //        SingletonData.shared.createAccountFirstname = firstnameTF.text ?? ""
+        //        SingletonData.shared.createAccountLastname = lastNameTF.text ?? ""
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"PatientFirstName\":\"\(SingletonData.shared.firstNamePatient ?? "")\",\"PatientLastName\":\"\(SingletonData.shared.lastNamePatient ?? "")\",\"Password\":\"\(SingletonData.shared.password ?? "")\"}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.values
+            print("email verification: \(authUrl as Any)")
+            SingletonData.shared.email = email
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "MyScheduleTestsViewController") as! MyScheduleTestsViewController
+                        self.navigationController?.pushViewController(controller, animated: true)
+                        
+                    } else {
+                        self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+                        
+                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+                }
+            })
+        } else {
+            self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
+        }
+    }
+    
+   
+    
+    func showOfflineMessage(title: String, msg: String) {
+       
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
+           
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) { _ in
+        }
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

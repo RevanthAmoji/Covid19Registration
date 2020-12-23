@@ -67,6 +67,8 @@ class LoginVC: UIViewController {
     @IBAction func btnGetStartedStarted(_ sender: Any) {
         
         SingletonData.shared.email = tfEmail.text ?? ""
+        SingletonData.shared.password = tfPassword.text ?? ""
+        checkConnectivityBackUpData()
         
     }
     
@@ -96,6 +98,61 @@ class LoginVC: UIViewController {
        
         self.navigationController?.pushViewController(controller, animated: false)
     }
+    
+    
+    func showOfflineMessage(title: String, msg: String) {
+       
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
+           
+        }
+      
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func checkConnectivityBackUpData() {
+        
+        if Reachability.isConnectedToNetwork() {
+            
+            // let authUrl = Endpoint.accountDetails+"s.shetty@gmail.com"
+            let authUrl = "https://covid19api.sutherlandglobal.com/api/Authentication?EmailAddress=\(tfEmail.text ?? "")&Password=\(tfPassword.text ?? "")"
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getLogin(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        let loginVal = dashboads.Data?[0]
+                        if loginVal?.Message == "Valid" {
+                            let usernames = loginVal?.UserName?.components(separatedBy: " ")
+                            SingletonData.shared.firstNamePatient = String(usernames?[0] ?? "")
+                            SingletonData.shared.lastNamePatient = String(usernames?[1] ?? "")
+                            SingletonData.shared.isFromLogin = false
+                            
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let controller = storyboard.instantiateViewController(withIdentifier: "MyScheduleTestsViewController") as! MyScheduleTestsViewController
+                            self.navigationController?.pushViewController(controller, animated: true)
+                            
+                        } else {
+                            self.showOfflineMessage(title: "Invalid username or password", msg: "")
+                        }
+                        
+                    } else {
+                        self.showOfflineMessage(title: "Invalid username or password", msg: "")
+                    }
+                       
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+                }
+            })
+        } else {
+            self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
+        }
+    }
+
 }
 
 extension LoginVC: UITextFieldDelegate {

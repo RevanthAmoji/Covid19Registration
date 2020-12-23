@@ -145,3 +145,31 @@ struct AccountData:Codable {
     var PatienthasvalididentificationText:String?
     var PatientIdentificationName:String?
 }
+/*
+{
+    "isSuccess": true,
+    "Data": [
+        {
+            "UserName": "Rev69 Last69",
+            "UserID": 146,
+            "IsActive": true,
+            "IsValid": 1,
+            "Message": "Valid",
+            "IsAccountVerified": "Yes"
+        }
+    ]
+}
+*/
+struct LoginModel:Codable {
+    var isSuccess:Bool?
+    var Data:[LoginData]?
+}
+
+struct LoginData:Codable {
+    var UserName:String?
+    var UserID:Int?
+    var IsActive:Bool?
+    var IsValid:Int?
+    var Message:String?
+    var IsAccountVerified:String?
+}

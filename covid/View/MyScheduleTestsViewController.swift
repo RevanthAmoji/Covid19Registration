@@ -25,6 +25,14 @@ class MyScheduleTestsViewController: UIViewController {
     }
     
 
+    @IBAction func profileBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "InitialVC") as! InitialVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
