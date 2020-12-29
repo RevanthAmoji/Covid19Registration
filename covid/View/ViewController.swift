@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var titlelbl: SutherlandLabel!
     @IBOutlet weak var subTitlelbl: SutherlandLabel!
     @IBOutlet weak var languageTF: SutherlandTextField!
-
+    
+   
     let yourAttributes: [NSAttributedString.Key: Any] = [
           .font: UIFont.systemFont(ofSize: 18),
         .foregroundColor: UIColor.Citygo.formsubtitlesnotselected,
@@ -28,6 +29,9 @@ class ViewController: UIViewController {
         btnGetStarted.btnEnable(boolVal: true)
         btnHowItWorks.btnHover(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+      
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +85,32 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: false)
     }
     
-    
-     
 }
 
+extension UITextView {
+
+
+func hyperLink(originalText: String, hyperLink: String, urlString: String) {
+
+    let style = NSMutableParagraphStyle()
+    style.alignment = .left
+
+    let attributedOriginalText = NSMutableAttributedString(string: originalText)
+    let linkRange = attributedOriginalText.mutableString.range(of: hyperLink)
+    let fullRange = NSMakeRange(0, attributedOriginalText.length)
+   
+    attributedOriginalText.addAttribute(NSAttributedString.Key.paragraphStyle, value:style, range: fullRange)
+    attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: fullRange)
+    attributedOriginalText.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15), range: fullRange)
+
+    attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: urlString, range: linkRange)
+
+    self.linkTextAttributes = [
+        .font: UIFont.systemFont(ofSize: 18),
+      .foregroundColor: UIColor.systemBlue,
+        .underlineStyle: NSUnderlineStyle.single.rawValue] as [NSAttributedString.Key : Any]
+    
+    self.tintColor = UIColor.red
+    self.attributedText = attributedOriginalText
+}
+}

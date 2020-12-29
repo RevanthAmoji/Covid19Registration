@@ -53,7 +53,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule a COVID-19 Test Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="mjY-6o-Nh4" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule a COVID-19 Test Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="mjY-6o-Nh4" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                 <rect key="frame" x="20" y="366" width="335" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Uwf-yu-aBd"/>
@@ -754,20 +754,36 @@
                                     <action selector="nextBtnAction:" destination="olG-Jc-zas" eventType="touchUpInside" id="Zkz-gR-wMB"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zar-hR-8uw">
+                                <rect key="frame" x="17" y="346" width="340" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5lM-9f-ARQ"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="olG-Jc-zas" id="4Kc-jS-9uC"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5q8-kK-CRA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pgZ-GC-mWZ" firstAttribute="leading" secondItem="5q8-kK-CRA" secondAttribute="leading" constant="17" id="0sb-CX-1JE"/>
+                            <constraint firstItem="zar-hR-8uw" firstAttribute="trailing" secondItem="SnB-Ux-DPi" secondAttribute="trailing" id="12H-8H-l3z"/>
                             <constraint firstItem="CEJ-36-x5X" firstAttribute="leading" secondItem="5q8-kK-CRA" secondAttribute="leading" constant="17" id="6OD-nT-mtL"/>
                             <constraint firstItem="5q8-kK-CRA" firstAttribute="trailing" secondItem="pgZ-GC-mWZ" secondAttribute="trailing" constant="127" id="BrP-Y2-pqp"/>
                             <constraint firstItem="D21-Bf-sgL" firstAttribute="leading" secondItem="CEJ-36-x5X" secondAttribute="leading" id="ByP-Kb-618"/>
                             <constraint firstItem="5q8-kK-CRA" firstAttribute="trailing" secondItem="SnB-Ux-DPi" secondAttribute="trailing" constant="18" id="EW4-wv-SvD"/>
                             <constraint firstItem="e7k-AH-oZP" firstAttribute="trailing" secondItem="SnB-Ux-DPi" secondAttribute="trailing" id="EzE-lt-Dry"/>
                             <constraint firstItem="e7k-AH-oZP" firstAttribute="top" secondItem="CEJ-36-x5X" secondAttribute="bottom" constant="27" id="J0a-8J-u6r"/>
+                            <constraint firstItem="zar-hR-8uw" firstAttribute="leading" secondItem="SnB-Ux-DPi" secondAttribute="leading" id="K8p-Yb-L9R"/>
                             <constraint firstItem="LE4-79-Rxq" firstAttribute="top" secondItem="pgZ-GC-mWZ" secondAttribute="bottom" constant="9" id="MR0-iJ-2J9"/>
                             <constraint firstItem="e7k-AH-oZP" firstAttribute="leading" secondItem="SnB-Ux-DPi" secondAttribute="leading" id="O0n-Ii-w9X"/>
                             <constraint firstItem="5q8-kK-CRA" firstAttribute="trailing" secondItem="CEJ-36-x5X" secondAttribute="trailing" constant="17" id="OH5-55-GfG"/>
+                            <constraint firstItem="zar-hR-8uw" firstAttribute="top" secondItem="SnB-Ux-DPi" secondAttribute="bottom" constant="8" symbolic="YES" id="SKb-Fs-TJl"/>
                             <constraint firstItem="D21-Bf-sgL" firstAttribute="top" secondItem="LE4-79-Rxq" secondAttribute="bottom" constant="30" id="SOC-0I-FmA"/>
                             <constraint firstItem="SnB-Ux-DPi" firstAttribute="top" secondItem="e7k-AH-oZP" secondAttribute="bottom" constant="11" id="TCY-ZM-V0E"/>
                             <constraint firstItem="5q8-kK-CRA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ekg-CD-9Rg" secondAttribute="trailing" id="Zft-Jc-0BR"/>
@@ -788,11 +804,12 @@
                         <outlet property="emailTF" destination="CEJ-36-x5X" id="DlK-R8-tyq"/>
                         <outlet property="nextBtn" destination="ekg-CD-9Rg" id="VSU-VO-6fP"/>
                         <outlet property="reenterEmailTF" destination="SnB-Ux-DPi" id="kBd-Fr-yeA"/>
+                        <outlet property="textViewAlert" destination="zar-hR-8uw" id="FRi-wK-zjR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNf-jW-VvD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="82"/>
+            <point key="canvasLocation" x="1616.8" y="81.409295352323838"/>
         </scene>
         <!--InitialVC-->
         <scene sceneID="kNQ-71-ea1">

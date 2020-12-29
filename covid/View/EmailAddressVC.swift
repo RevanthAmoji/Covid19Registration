@@ -18,7 +18,10 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     @IBOutlet weak var reenterEmailTF: SutherlandTextField!
     @IBOutlet weak var nextBtn: SutherlandButton!
 
-   
+    @IBOutlet weak var textViewAlert: UITextView!
+    
+    let linkUrl = "www.sutherland.com"
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         
         SingletonData.shared.isFromLogin = false
     
+        textViewAlert.isHidden = true
+         textViewAlert.hyperLink(originalText: "E-Mail already exists. Click here to Sign In.", hyperLink: "here", urlString: linkUrl)
+
     }
     
     func checkConnectivityAuthorization() {
@@ -45,9 +51,10 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                  //   if let verified = dashboads as? Bool {
                         
                         if dashboads {
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                            self.navigationController?.pushViewController(controller, animated: false)
+//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//                            self.navigationController?.pushViewController(controller, animated: false)
+                            self.textViewAlert.isHidden = false
                         } else {
                             self.checkConnectivity()
                         }
@@ -86,7 +93,6 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                    // self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
-                        
                         self.checkConnectivityBackUpData()
                         
                     } else {
@@ -117,13 +123,25 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
-           
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(controller, animated: false)
         }
       
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showOfflineMessageForExitUser(title: String, msg: String) {
+       
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
+           
+        }
+      
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func checkConnectivityBackUpData() {
         
@@ -212,7 +230,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
 
 }
 
-extension EmailAddressVC: UITextFieldDelegate {
+extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -241,6 +259,21 @@ extension EmailAddressVC: UITextFieldDelegate {
        
       return true
     }
+    
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        if (URL.absoluteString == linkUrl) {
+//            UIApplication.shared.open(URL) { (Bool) in
+//
+//            }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(controller, animated: false)
+        }
+        return false
+    }
+    
+     
     
 }
 

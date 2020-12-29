@@ -302,8 +302,8 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "showOfflineMessage(title:msg:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -385,6 +385,22 @@
             startingLineNumber = "245"
             endingLineNumber = "245"
             landmarkName = "checkAllTheFeilds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D985AD8-568C-4240-9CBE-E20736BF25E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "hyperLink(originalText:hyperLink:urlString:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
