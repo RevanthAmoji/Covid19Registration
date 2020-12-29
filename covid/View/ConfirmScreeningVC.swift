@@ -32,7 +32,7 @@ class ConfirmScreeningVC: UIViewController {
     
     func setPreviousData() {
         
-        lblTitle.text = availableSlots?.PatientName
+        lblTitle.text = "\(availableSlots?.PatientName ?? "") (\(availableSlots?.PatientRelationship ?? ""))"
         
         lblClientName.text = availableSlots?.ClinicName
         lblClientAddress.text = availableSlots?.ClinicAddress

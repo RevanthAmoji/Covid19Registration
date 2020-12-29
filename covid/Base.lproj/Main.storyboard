@@ -149,6 +149,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="choose_language_subtitle"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELY-3m-fCr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -158,7 +162,9 @@
                             <constraint firstItem="hcr-rD-ls7" firstAttribute="trailing" secondItem="zwz-z7-Oiv" secondAttribute="trailing" id="41T-SD-whj"/>
                             <constraint firstItem="YfP-OA-mhk" firstAttribute="leading" secondItem="ner-Ae-ANW" secondAttribute="leading" id="6w6-kq-MEy"/>
                             <constraint firstItem="qk3-DN-zr9" firstAttribute="top" secondItem="ner-Ae-ANW" secondAttribute="bottom" constant="41" id="7Wj-yW-Pwo"/>
+                            <constraint firstItem="ELY-3m-fCr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9T9-tq-wDY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjY-6o-Nh4" secondAttribute="trailing" constant="20" id="9We-22-YKo"/>
+                            <constraint firstItem="ELY-3m-fCr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9XI-XF-gjP"/>
                             <constraint firstItem="v9X-Jm-4i2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="9ro-M2-fmD"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="top" secondItem="hcr-rD-ls7" secondAttribute="bottom" constant="10" id="APe-yC-49l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v9X-Jm-4i2" secondAttribute="trailing" constant="21" id="CZm-Ig-W5R"/>
@@ -181,9 +187,11 @@
                             <constraint firstItem="ner-Ae-ANW" firstAttribute="top" secondItem="zLO-Jq-Ndv" secondAttribute="bottom" constant="9" id="iWG-vN-kMI"/>
                             <constraint firstItem="zLO-Jq-Ndv" firstAttribute="trailing" secondItem="ner-Ae-ANW" secondAttribute="trailing" id="nUV-Td-cwh"/>
                             <constraint firstItem="v9X-Jm-4i2" firstAttribute="top" secondItem="mjY-6o-Nh4" secondAttribute="bottom" constant="10" id="pAr-YI-d58"/>
+                            <constraint firstItem="ELY-3m-fCr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pk6-nI-kYC"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="leading" secondItem="hcr-rD-ls7" secondAttribute="leading" id="pu5-yF-Vjs"/>
                             <constraint firstItem="zLO-Jq-Ndv" firstAttribute="leading" secondItem="ner-Ae-ANW" secondAttribute="leading" constant="13" id="r0R-F3-WoK"/>
                             <constraint firstItem="YfP-OA-mhk" firstAttribute="bottom" secondItem="ner-Ae-ANW" secondAttribute="bottom" id="tZA-Ma-y6g"/>
+                            <constraint firstItem="ELY-3m-fCr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="taY-Gh-byc"/>
                             <constraint firstItem="Naj-4H-HHx" firstAttribute="trailing" secondItem="ner-Ae-ANW" secondAttribute="trailing" constant="-7" id="tfg-5F-E1b"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="trailing" secondItem="hcr-rD-ls7" secondAttribute="trailing" id="yxq-lf-BfC"/>
                             <constraint firstItem="zLO-Jq-Ndv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="zJM-7r-cCn"/>
@@ -198,6 +206,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backGndView" destination="ELY-3m-fCr" id="T9Z-MZ-2aL"/>
                         <outlet property="btnAlreadyAccount" destination="zY2-2p-8do" id="XCs-sy-JPx"/>
                         <outlet property="btnGetStarted" destination="zwz-z7-Oiv" id="DjL-VM-Zan"/>
                         <outlet property="btnHowItWorks" destination="hcr-rD-ls7" id="TWn-ak-q5U"/>
@@ -208,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="45"/>
+            <point key="canvasLocation" x="156" y="44.527736131934034"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="T0i-Px-zP7">
@@ -6732,7 +6741,7 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Scheduled Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-be-T3x" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-be-T3x" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                 <rect key="frame" x="17" y="33" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -7288,7 +7297,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="B9N-ab-khK"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Location" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-0g-7bE" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital Name" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-0g-7bE" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="19" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="vAm-0G-fmD"/>
@@ -7316,7 +7325,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="pRa-VJ-7Oy"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgZ-lh-mnI" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slot Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgZ-lh-mnI" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="140.5" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="QDa-iU-F4u"/>
@@ -7338,7 +7347,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="AM9-u1-57G"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-RA-i8I" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slot Time" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-RA-i8I" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="239" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="7ba-oj-Rax"/>
