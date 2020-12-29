@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ConfirmScreeningVC: UIViewController {
 
@@ -44,9 +45,11 @@ class ConfirmScreeningVC: UIViewController {
         self.getDirections()
     }
     func getDirections() {
+        /*
         //34.0288° N, 118.4718° W
        //let directionsURL = "http://maps.apple.com/?saddr=34.03845,-118.47514&daddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
-        let directionsURL = "http://maps.apple.com/?daddr=\(availableSlots?.Latidude ?? ""),\(availableSlots?.Logitude ?? "")"
+        var directionsURL = "http://maps.apple.com/?daddr=\(availableSlots?.ClinicAddress ?? "")"
+        directionsURL = directionsURL.replacingOccurrences(of: " ", with: "%20")
         guard let url = URL(string: directionsURL) else {
             return
         }
@@ -55,6 +58,11 @@ class ConfirmScreeningVC: UIViewController {
         } else {
             UIApplication.shared.openURL(url)
         }
+        */
+        let coordinate = CLLocationCoordinate2DMake(Double(availableSlots?.Latidude ?? "0") ?? 0,Double(availableSlots?.Logitude ?? "0") ?? 0)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = availableSlots?.ClinicAddress ?? "Target location"
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
 
     /*

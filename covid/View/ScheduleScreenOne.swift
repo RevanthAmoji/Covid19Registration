@@ -114,7 +114,6 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
                     } else {
                         
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
-                        
                     }
                     
                 case .failure( _):
