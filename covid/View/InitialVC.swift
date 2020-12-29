@@ -103,23 +103,24 @@ class InitialVC: UIViewController {
             
             btnNext.btnEnable(boolVal: true)
             
-        } else {
-            
-            btnNext.btnEnable(boolVal: false)
-            
-            ageViewHeight.constant = 0
-            nameViewHeight.constant = 0
-            registerViewHeight.constant = 0
-            signatureViewHeight.constant = 0
-            
-            ageViewHeightView.isHidden = true
-            nameViewHeightView.isHidden = true
-            registerViewHeightView.isHidden = true
-            signatureViewHeighViewt.isHidden = true
-            
-            btnNext.layoutIfNeeded()
-            btnNext.frame = CGRect(x: 0, y: scrollViewReg.contentSize.height-32-39, width: 102, height: 39)
         }
+//        else {
+//
+//            btnNext.btnEnable(boolVal: false)
+//
+//            ageViewHeight.constant = 0
+//            nameViewHeight.constant = 0
+//            registerViewHeight.constant = 0
+//            signatureViewHeight.constant = 0
+//
+//            ageViewHeightView.isHidden = true
+//            nameViewHeightView.isHidden = true
+//            registerViewHeightView.isHidden = true
+//            signatureViewHeighViewt.isHidden = true
+//
+//            btnNext.layoutIfNeeded()
+//            btnNext.frame = CGRect(x: 0, y: scrollViewReg.contentSize.height-32-39, width: 102, height: 39)
+//        }
     }
     /*
     // MARK: - Navigation
@@ -159,8 +160,8 @@ class InitialVC: UIViewController {
             btnAgefalse.isSelected = true
         }
         
-        nameViewHeight.constant = 203
-        nameViewHeightView.isHidden = false
+//        nameViewHeight.constant = 203
+//        nameViewHeightView.isHidden = false
         
     }
     
@@ -181,8 +182,8 @@ class InitialVC: UIViewController {
             btnRegisterfalse.isSelected = true
         }
         
-        signatureViewHeight.constant = 230
-        signatureViewHeighViewt.isHidden = false
+//        signatureViewHeight.constant = 230
+//        signatureViewHeighViewt.isHidden = false
         
     }
     
@@ -240,6 +241,7 @@ class InitialVC: UIViewController {
     }
     
     func checkAllTheFeilds() {
+        btnNext.btnEnable(boolVal: false)
         var errorMessage = ""
         if tfRelationShip.text?.count == 0 {
             errorMessage = "Please select relation"
@@ -370,8 +372,8 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
         tfRelationShip.text = languagesList[indexPath.row].Text
         tfRelationShipDummy.text = languagesList[indexPath.row].Text
         selectRelationNumber = languagesList[indexPath.row].Value
-        ageViewHeight.constant = 102
-        ageViewHeightView.isHidden = false
+//        ageViewHeight.constant = 102
+//        ageViewHeightView.isHidden = false
         
         if tfRelationShip.text != "Myself" && ((tfPatientFirstName.text?.count) != 0) {
             btnNext.btnEnable(boolVal: false)
@@ -387,7 +389,17 @@ extension InitialVC: UITableViewDelegate, UITableViewDataSource {
             tfSignature.text = ""
             btnRegisterfalse.isSelected = false
             btnRegisterTrue.isSelected = false
+        } else {
+            registerViewHeight.constant = 125
+            registerViewHeightView.isHidden = false
+            signatureViewHeight.constant = 230
+            signatureViewHeighViewt.isHidden = false
+            selectionRegister = ""
+            tfSignature.text = ""
+            btnRegisterfalse.isSelected = false
+            btnRegisterTrue.isSelected = false
         }
+        checkAllTheFeilds()
     }
 }
 
@@ -400,11 +412,11 @@ extension InitialVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == tfPatientFirstName {
             if  textField.text?.count != 0 {
-                
-                if tfRelationShip.text != "Myself" {
-                  registerViewHeight.constant = 125
-                  registerViewHeightView.isHidden = false
-                }
+                self.checkAllTheFeilds()
+//                if tfRelationShip.text != "Myself" {
+//                  registerViewHeight.constant = 125
+//                  registerViewHeightView.isHidden = false
+//                }
             }
         } else  if textField == tfSignature {
             if  textField.text?.count != 0 {

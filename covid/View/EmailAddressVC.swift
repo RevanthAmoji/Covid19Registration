@@ -31,6 +31,43 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     }
     
+    func checkConnectivityAuthorization() {
+        
+        if Reachability.isConnectedToNetwork() {
+    
+            let email = emailTF.text ?? ""
+            let authUrl = Endpoint.authorization+email //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
+            print("verified verification: \(authUrl as Any)")
+            Services.getDashboardService().getAutherizationResponse(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                 //   if let verified = dashboads as? Bool {
+                        
+                        if dashboads {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                            self.navigationController?.pushViewController(controller, animated: false)
+                        } else {
+                            self.checkConnectivity()
+                        }
+                       
+//                    } else {
+//                        self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+//                    }
+                    
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
+                }
+            })
+        } else {
+            self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
+       }
+    }
+    
+   
+    
     func checkConnectivity() {
         
       //  self.showProgressBar()
@@ -72,7 +109,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     @IBAction func nextBtnAction(_ sender: Any) {
         
         SingletonData.shared.email = emailTF.text
-        checkConnectivity()
+        checkConnectivityAuthorization()
         
     }
     

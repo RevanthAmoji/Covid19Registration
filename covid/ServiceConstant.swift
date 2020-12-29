@@ -32,7 +32,7 @@ enum Endpoint {
         //CC_Ethinicity
     static let ethinicity = mainServer + "/Scheduling?DD_Group=CC_Ethinicity"
     
-    
+    static let authorization = mainServer + "/Authentication?emailAddress="
     
     static let identificationType = mainServer + "/Scheduling?DD_Group=CC_IdentificationType"
     

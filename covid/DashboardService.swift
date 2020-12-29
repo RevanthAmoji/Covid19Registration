@@ -84,7 +84,38 @@ class DashboardService {
         }
         
     }
-    
+//    ....
+
+    func getAutherizationResponse(url:String,completion: @escaping (_ : ServiceResult<Bool>) -> Void) {
+
+        let authUrl = url
+        var request = URLRequest(url: try! authUrl.asURL())
+        request.httpMethod = "GET"
+
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        AF.request(request).responseJSON { response in
+//            print("Upload Personalized KPI Response \(response)")
+            switch (response.result) {
+            case .success:
+
+                do {
+                    let responseDecoder = try JSONDecoder().decode(Bool.self, from: response.data!)
+                    // print("getAppointmentData Dashboard Response \(String(describing: responseDecoder.data?.count))")
+                    completion(ServiceResult.success(value: responseDecoder))
+                }
+                catch let e {
+                    print("decoder error \(e)")
+                    completion(ServiceResult.failure(error: e))
+                }
+            case .failure(let error):
+                completion(ServiceResult.failure(error:error))
+            }
+        }
+
+    }
+
     
     func getLocationData(url:String,completion: @escaping (_ : ServiceResult<[Stadium]>) -> Void) {
        
