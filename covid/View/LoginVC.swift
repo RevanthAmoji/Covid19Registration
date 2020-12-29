@@ -129,7 +129,7 @@ class LoginVC: UIViewController {
                             let usernames = loginVal?.UserName?.components(separatedBy: " ")
                             SingletonData.shared.firstNamePatient = String(usernames?[0] ?? "")
                             SingletonData.shared.lastNamePatient = String(usernames?[1] ?? "")
-                            SingletonData.shared.isFromLogin = true
+                           
                             
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let controller = storyboard.instantiateViewController(withIdentifier: "MyScheduleTestsViewController") as! MyScheduleTestsViewController

@@ -222,8 +222,8 @@
             filePath = "covid/View/MyScheduleTestsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "checkConnectivityBackUpData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,13 +318,13 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "showOfflineMessage(title:msg:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C07020C7-B2B5-4BDD-9D4C-7828CFAAEDDE - 3fe06fba706de47d"
+                  uuid = "C07020C7-B2B5-4BDD-9D4C-7828CFAAEDDE - 3fe06fba706de452"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -334,12 +334,12 @@
                   urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
                   offsetFromSymbolStart = "194">
                </Location>
                <Location
-                  uuid = "C07020C7-B2B5-4BDD-9D4C-7828CFAAEDDE - 8820968a56d5cea0"
+                  uuid = "C07020C7-B2B5-4BDD-9D4C-7828CFAAEDDE - 8820968a56d5ce83"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -349,8 +349,8 @@
                   urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
@@ -382,13 +382,13 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "checkConnectivityBackUpData()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8 - 80593282196dd77a"
+                  uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8 - 80593282196dd75b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -398,12 +398,12 @@
                   urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
                   offsetFromSymbolStart = "226">
                </Location>
                <Location
-                  uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8 - 80593282196dd77a"
+                  uuid = "10DD9376-7854-4BE3-8E2D-73285A0D33D8 - 80593282196dd75b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -413,8 +413,8 @@
                   urlString = "file:///Users/venkatabaisani/Documents/Revanth_video/Covid19Registration/covid/View/EmailAddressVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
                   offsetFromSymbolStart = "274">
                </Location>
             </Locations>

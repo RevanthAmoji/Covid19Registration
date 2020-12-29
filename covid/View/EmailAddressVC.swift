@@ -26,6 +26,8 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         nextBtn.btnEnable(boolVal: false)
+        
+        SingletonData.shared.isFromLogin = false
     
     }
     

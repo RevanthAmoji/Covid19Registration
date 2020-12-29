@@ -22,6 +22,8 @@ class MyScheduleTestsViewController: UIViewController {
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         checkConnectivity()
+        
+        SingletonData.shared.isFromLogin = true
     }
     
 
