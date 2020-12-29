@@ -18,12 +18,15 @@ class MyScheduleTestsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         checkConnectivity()
         
         SingletonData.shared.isFromLogin = true
+        
+        
     }
     
 
@@ -34,7 +37,13 @@ class MyScheduleTestsViewController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+   
     /*
     // MARK: - Navigation
 

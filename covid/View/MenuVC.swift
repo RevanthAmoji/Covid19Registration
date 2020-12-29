@@ -40,5 +40,12 @@ class MenuVC: UIViewController {
         
         self.navigationController?.popViewController(animated: false)
     }
+    
+    @IBAction func signOutBtnAction(_ sender: Any) {
+        
+        UserData.shared.nilUserDetails()
+        navigationController?.popToViewController(ofClass: ViewController.self)
+        
+    }
      
 }

@@ -130,6 +130,8 @@ class LoginVC: UIViewController {
                             SingletonData.shared.firstNamePatient = String(usernames?[0] ?? "")
                             SingletonData.shared.lastNamePatient = String(usernames?[1] ?? "")
                            
+                            UserData.shared.setIsUserLogin(boolVal: true)
+                            UserData.shared.setUserDetails(UserName: self.tfEmail.text ?? "", password: self.tfPassword.text ?? "")
                             
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let controller = storyboard.instantiateViewController(withIdentifier: "MyScheduleTestsViewController") as! MyScheduleTestsViewController

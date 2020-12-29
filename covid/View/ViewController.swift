@@ -25,6 +25,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let isLogin = UserData.shared.getIsUserLogin()
+        if isLogin ?? false {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "MyScheduleTestsViewController") as! MyScheduleTestsViewController
+            self.navigationController?.pushViewController(controller, animated: false)
+            SingletonData.shared.email = UserData.shared.getUserName()
+        }
+        
+//        MyScheduleTestsViewController
         // Do any additional setup after loading the view.
         btnGetStarted.btnEnable(boolVal: true)
         btnHowItWorks.btnHover(boolVal: true)

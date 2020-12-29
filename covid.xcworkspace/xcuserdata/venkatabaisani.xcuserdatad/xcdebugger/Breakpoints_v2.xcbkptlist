@@ -382,8 +382,8 @@
             filePath = "covid/View/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "hyperLink(originalText:hyperLink:urlString:)"
             landmarkType = "7">
          </BreakpointContent>

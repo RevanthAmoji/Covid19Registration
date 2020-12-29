@@ -68,6 +68,7 @@
 		03B3731625883EE1009BC7D5 /* ScheduleConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */; };
 		03B3731B25883F7E009BC7D5 /* RegisterPortalConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */; };
 		03BA1564259241B700799F49 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA1563259241B700799F49 /* LoginVC.swift */; };
+		03BDB6A0259B9D2F00FFC253 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BDB69F259B9D2F00FFC253 /* UserDefaults.swift */; };
 		03BE621F256D863F00F6259F /* RegisterScreenConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */; };
 		03CA994A258E1BD500429B89 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA9949258E1BD500429B89 /* Services.swift */; };
 		03CA994F258E1BEC00429B89 /* DashboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA994E258E1BEC00429B89 /* DashboardService.swift */; };
@@ -186,6 +187,7 @@
 		03B3731525883EE1009BC7D5 /* ScheduleConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleConfirm.swift; sourceTree = "<group>"; };
 		03B3731A25883F7E009BC7D5 /* RegisterPortalConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalConfirm.swift; sourceTree = "<group>"; };
 		03BA1563259241B700799F49 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		03BDB69F259B9D2F00FFC253 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		03BE621E256D863F00F6259F /* RegisterScreenConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenConfirm.swift; sourceTree = "<group>"; };
 		03CA9949258E1BD500429B89 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		03CA994E258E1BEC00429B89 /* DashboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardService.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				03DD11CE2562B02200DD0583 /* Localization */,
 				035E7C192564EBE600BF3EAB /* SignletonUI.swift */,
 				0308DD76256F45660013A868 /* SingletonData.swift */,
+				03BDB69F259B9D2F00FFC253 /* UserDefaults.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				030297EA2575465D00E604D8 /* LocationAnnotationView.swift in Sources */,
 				03DD11EA2562B02200DD0583 /* UIImage+Utility.swift in Sources */,
 				03B0BD242583E85000BA519B /* RegisterPortalOne.swift in Sources */,
+				03BDB6A0259B9D2F00FFC253 /* UserDefaults.swift in Sources */,
 				03DD11ED2562B02200DD0583 /* UIImageview+Utility.swift in Sources */,
 				03DD11E32562B02200DD0583 /* UIScreen+Utility.swift in Sources */,
 				03CA9959258E501D00429B89 /* Reachability.swift in Sources */,

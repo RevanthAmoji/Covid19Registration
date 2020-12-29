@@ -523,17 +523,27 @@
                                 <rect key="frame" x="0.0" y="197" width="375" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6w-U9-i0t" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="7" width="90.5" height="27.5"/>
+                                        <rect key="frame" x="20" y="3.5" width="90.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Light_Bold" family="Quicksand" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-po-SDq">
+                                        <rect key="frame" x="20" y="3.5" width="90.5" height="34"/>
+                                        <connections>
+                                            <action selector="signOutBtnAction:" destination="BCP-Ge-VBq" eventType="touchUpInside" id="qcD-Tw-vRP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="T6w-U9-i0t" secondAttribute="trailing" constant="20" symbolic="YES" id="8Cd-wh-1Ka"/>
+                                    <constraint firstItem="qUd-po-SDq" firstAttribute="top" secondItem="T6w-U9-i0t" secondAttribute="top" id="Iso-8P-Ywv"/>
+                                    <constraint firstItem="qUd-po-SDq" firstAttribute="leading" secondItem="T6w-U9-i0t" secondAttribute="leading" id="SUq-sg-zje"/>
                                     <constraint firstItem="T6w-U9-i0t" firstAttribute="leading" secondItem="dq0-cj-BVu" secondAttribute="leading" constant="20" id="TBv-B8-j8r"/>
+                                    <constraint firstItem="qUd-po-SDq" firstAttribute="trailing" secondItem="T6w-U9-i0t" secondAttribute="trailing" id="XxV-xs-jsL"/>
                                     <constraint firstAttribute="height" constant="53" id="Y1n-Ad-bfm"/>
                                     <constraint firstItem="T6w-U9-i0t" firstAttribute="centerY" secondItem="dq0-cj-BVu" secondAttribute="centerY" constant="-6" id="dVe-zT-z4C"/>
+                                    <constraint firstItem="qUd-po-SDq" firstAttribute="bottom" secondItem="T6w-U9-i0t" secondAttribute="bottom" id="jQ5-yf-M3n"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -566,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GjL-xl-0uq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="883"/>
+            <point key="canvasLocation" x="1901.5999999999999" y="882.90854572713647"/>
         </scene>
         <!--LanguagesVC-->
         <scene sceneID="ig6-5f-xbq">
@@ -6606,7 +6616,7 @@ Cg
                         <outlet property="nextBtn" destination="8Ew-Os-Wr8" id="sYj-cX-QGS"/>
                         <outlet property="passwordTF" destination="eSd-cV-nT2" id="neq-Ed-dmk"/>
                         <outlet property="rePasswordTF" destination="qh3-qj-zIf" id="pI0-03-dAo"/>
-                        <outlet property="reenterEmailTF" destination="MBu-qD-uf9" id="Cef-Bw-Kgn"/>
+                        <outlet property="reenterEmailTF" destination="qHP-Bb-USG" id="oie-Gg-xsp"/>
                         <outlet property="scrollViewReg" destination="WWA-ox-0B7" id="295-XM-5Wd"/>
                     </connections>
                 </viewController>
@@ -6856,7 +6866,11 @@ Cg
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2lS-xj-Z70">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" image="person" catalog="system" id="tyt-At-4RX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="tyt-At-4RX">
+                            <connections>
+                                <action selector="profileViewBtnAction:" destination="nhh-d0-ov1" id="IDa-gD-Uue"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemsTableView" destination="b8c-ky-OLZ" id="Myc-Vo-KJ9"/>

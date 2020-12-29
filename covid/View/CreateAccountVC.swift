@@ -122,6 +122,9 @@ class CreateAccountVC: UIViewController {
                 case .success(let dashboads):
                     if dashboads.isSuccess ?? false {
                         
+                        UserData.shared.setIsUserLogin(boolVal: true)
+                        UserData.shared.setUserDetails(UserName: self.emailTF.text ?? "", password: self.passwordTF.text ?? "")
+                        
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let controller = storyboard.instantiateViewController(withIdentifier: "VerifiedViewController") as! VerifiedViewController
                             self.navigationController?.pushViewController(controller, animated: false)
