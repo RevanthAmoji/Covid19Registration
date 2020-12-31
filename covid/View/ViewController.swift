@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var backGndView:UIView!
     
-   
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+
+
     let yourAttributes: [NSAttributedString.Key: Any] = [
           .font: UIFont.systemFont(ofSize: 18),
         .foregroundColor: UIColor.Citygo.formsubtitlesnotselected,
@@ -47,6 +49,8 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+
         languageTF.text = SingletonUI.shared.selectedLanguage
         self.setDynamicText()
     }

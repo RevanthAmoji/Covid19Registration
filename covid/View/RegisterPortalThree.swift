@@ -38,6 +38,8 @@ class RegisterPortalThree: UIViewController {
     
     var identification:String = "-1"
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -63,9 +65,11 @@ class RegisterPortalThree: UIViewController {
         
         checkConnectivityIdentification()
     }
-    
+   
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)

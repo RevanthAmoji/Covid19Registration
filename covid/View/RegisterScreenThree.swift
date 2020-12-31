@@ -36,6 +36,8 @@ class RegisterScreenThree: UIViewController {
     
     @IBOutlet weak var primaryCareProviderTitle:UILabel!
     @IBOutlet weak var careFacilityTitle:UILabel!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
    
 
     var primaryCareProvider:String? = ""
@@ -48,14 +50,16 @@ class RegisterScreenThree: UIViewController {
         fieldsViewHeight.constant = 0
         backGndView.isHidden = true
         
-        btnNext.btnEnable(boolVal: false)
+      //  btnNext.btnEnable(boolVal: false)
         
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         self.setViewTitles()
     }
+   
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
@@ -174,7 +178,7 @@ class RegisterScreenThree: UIViewController {
     }
     
     func checkAllTheFeilds() {
-        btnNext.btnEnable(boolVal: false)
+      //  btnNext.btnEnable(boolVal: false)
         var errorMessage = ""
         if (primaryCareProvider?.count == 0 || primaryCareProvider == nil) {
            

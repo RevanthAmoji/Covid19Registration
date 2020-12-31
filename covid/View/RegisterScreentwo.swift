@@ -28,6 +28,12 @@ class RegisterScreentwo: UIViewController {
     @IBOutlet weak var highRiskCategoryTitle:UILabel!
     @IBOutlet weak var smokerTitle:UILabel!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
+    @IBOutlet weak var pregnantBackView: UIView!
+    @IBOutlet weak var pregnantBackViewHeight: NSLayoutConstraint!
+    
+    
     
     var medicalCondition:String? = ""
     var pregnant:String? = ""
@@ -41,8 +47,20 @@ class RegisterScreentwo: UIViewController {
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         self.setViewTitles()
+        
+        if SingletonData.shared.gender?.lowercased() == "female" {
+            pregnantBackView.isHidden = false
+            pregnantBackViewHeight.constant = 100
+        } else {
+            pregnantBackView.isHidden = true
+            pregnantBackViewHeight.constant = 0
+        }
+        
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     func setViewTitles(){
         self.medicalConditionTitle.text = titles.medicalCondition
         self.pregnantTitle.text = titles.pregnant

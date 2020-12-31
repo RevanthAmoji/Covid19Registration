@@ -21,6 +21,8 @@ class ScheduleConfirm: UIViewController {
     @IBOutlet weak var btnEditOne,btnEditTwo,btnEditThree:UIButton!
     
     @IBOutlet weak var lblClientName,lblClientAddress,lblTestDate,lblTestTime:SutherlandLabel!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,10 @@ class ScheduleConfirm: UIViewController {
         // Do any additional setup after loading the view.
         setPreviousData()
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     @IBAction func edit(_ sender: UIButton) {
         let button = sender
         if button.tag == 1 {

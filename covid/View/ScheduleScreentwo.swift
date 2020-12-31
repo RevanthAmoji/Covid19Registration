@@ -22,6 +22,8 @@ extension Date {
 
 class ScheduleScreentwo: UIViewController {
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     @IBOutlet weak var itemsCollectionView:UICollectionView!
     
     @IBOutlet weak var itemsTableView:UITableView!
@@ -57,7 +59,10 @@ class ScheduleScreentwo: UIViewController {
         let result = formatter.string(from: date)
         return result
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     func checkConnectivityRelation() {
         
         if Reachability.isConnectedToNetwork() {

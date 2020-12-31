@@ -24,6 +24,8 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var nextBtn: SutherlandButton!
     
     @IBOutlet weak var scrollViewReg: UIScrollView!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
 
     override func viewDidLoad() {
@@ -68,6 +70,8 @@ class CreateAccountVC: UIViewController {
     
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+      
+            SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)

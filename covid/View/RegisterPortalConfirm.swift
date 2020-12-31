@@ -10,6 +10,9 @@ import JBCalendarDatePicker
 
 class RegisterPortalConfirm: UIViewController {
     
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     @IBOutlet weak var backGrdViewOneHeight, backGrdViewTwoHeight, backGrdViewThreeHeight, backGrdViewFourHeight, backGrdViewFiveHeight, backGrdViewSixHeight, backGrdViewSevenHeight, backGrdViewEightHeight, backGrdViewNineHeight, backGrdViewTenHeight, backGrdViewElevenHeight, backGrdViewTwelveHeight : NSLayoutConstraint!
    
   
@@ -76,8 +79,12 @@ class RegisterPortalConfirm: UIViewController {
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
     }
+    
+   
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)

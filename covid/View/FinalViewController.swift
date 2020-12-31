@@ -8,6 +8,8 @@
 import UIKit
 
 class FinalViewController: UIViewController {
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,10 @@ class FinalViewController: UIViewController {
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
 
     /*
     // MARK: - Navigation

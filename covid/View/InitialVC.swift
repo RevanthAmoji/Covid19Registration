@@ -40,15 +40,29 @@ class InitialVC: UIViewController {
     @IBOutlet weak var dropDownBackgroundView:UIView!
     @IBOutlet weak var dropDownTableViewBackGroundView:UIView!
     
+    @IBOutlet weak var dropDownBackgroundGenderView:UIView!
+    @IBOutlet weak var dropDownTableViewBackGroundGenderView:UIView!
+    
     @IBOutlet weak var languagesTableView: UITableView!
+    @IBOutlet weak var genderTableView: UITableView!
     
     @IBOutlet weak var infoLbl: SutherlandLabel!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
+    @IBOutlet weak var tfGender: SutherlandTextField!
+    @IBOutlet weak var tfGenderDummy: SutherlandTextField!
    
     var languagesList:[RelationModel] = []
+    var genderList:[RelationModel] = []
     
     var selectionAge:String? = ""
     var selectionRegister:String? = ""
     var selectRelationNumber:String? = ""
+    var selectGenderNumber:String? = ""
+    
+    var gender:String = "-1"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +71,15 @@ class InitialVC: UIViewController {
         //textfieldsBackGndColor()
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         self.heighlighBoarderColor(boolVal: false)
+        self.heighlighGenderBoarderColor(boolVal: false)
         
        checkConnectivityRelation()
+    
     }
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
@@ -134,6 +152,8 @@ class InitialVC: UIViewController {
     
     @IBAction func nextBtnAction(_ sender: Any) {
     
+        SingletonData.shared.gender = tfGender.text
+        SingletonData.shared.genderVal = selectGenderNumber
         checkConnectivity()
         print("nextbtnaction")
     }
@@ -141,7 +161,14 @@ class InitialVC: UIViewController {
     @IBAction func dropdownBtnAction(_ sender: Any) {
     
         self.heighlighBoarderColor(boolVal: true)
+        languagesTableView.reloadData()
     }
+    @IBAction func dropdownBtnGenderAction(_ sender: Any) {
+    
+        self.heighlighGenderBoarderColor(boolVal: true)
+        genderTableView.reloadData()
+    }
+    
     
     @IBAction func reloationshipBtnAction(_ sender: Any) {
     
@@ -215,6 +242,29 @@ class InitialVC: UIViewController {
         tfRelationShipDummy.layer.borderWidth = 0.4
         tfRelationShipDummy.layer.cornerRadius = 5.0
     }
+    func heighlighGenderBoarderColor(boolVal: Bool){
+ 
+ //       dropDownBackgroundGenderView.bringSubviewToFront(tfGender)
+//        self.view.bringSubviewToFront(btnImageDropdown)
+//        self.view.bringSubviewToFront(btnDropdown)
+        
+        dropDownBackgroundGenderView.isHidden = !boolVal
+        
+        if boolVal {
+            tfGender.layer.borderColor = UIColor.Citygo.redColor.cgColor
+            tfGenderDummy.layer.borderColor = UIColor.Citygo.redColor.cgColor
+        } else {
+            tfGender.layer.borderColor = UIColor.clear.cgColor
+            tfGenderDummy.layer.borderColor = UIColor.Citygo.redColor.cgColor
+
+        }
+        
+        tfGender.layer.borderWidth = 0.4
+        tfGender.layer.cornerRadius = 5.0
+        
+        tfGenderDummy.layer.borderWidth = 0.4
+        tfGenderDummy.layer.cornerRadius = 5.0
+    }
 //
 //    func textfieldsBackGndColor() {
 //        tfRelationShip.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
@@ -241,7 +291,7 @@ class InitialVC: UIViewController {
     }
     
     func checkAllTheFeilds() {
-        btnNext.btnEnable(boolVal: false)
+        //btnNext.btnEnable(boolVal: false)
         var errorMessage = ""
         if tfRelationShip.text?.count == 0 {
             errorMessage = "Please select relation"
@@ -283,10 +333,10 @@ class InitialVC: UIViewController {
     
     
     func checkConnectivity() {
-        
+        //Patient_Gender
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
-            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"PatientRelationship\":\"\(selectRelationNumber ?? "")\",\"PatientAge\":\"\(selectionAge ?? "")\",\"PatientFirstName\":\"\(tfPatientFirstName.text ?? "")\",\"PatientLastName\":\"\(tfPatientLastName.text ?? "")\",\"PatientConsent\":\"\(selectionRegister ?? "")\",\"GuardianFullName\":\"\(tfSignature.text ?? "")\"}'}"
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"PatientRelationship\":\"\(selectRelationNumber ?? "")\",\"PatientAge\":\"\(selectionAge ?? "")\",\"PatientFirstName\":\"\(tfPatientFirstName.text ?? "")\",\"PatientLastName\":\"\(tfPatientLastName.text ?? "")\",\"PatientConsent\":\"\(selectionRegister ?? "")\",\"Patient_Gender\":\"\(selectGenderNumber ?? "")\",\"GuardianFullName\":\"\(tfSignature.text ?? "")\"}'}"
             print("email verification: \(dic)")
             let authUrl = Endpoint.account
             print("email verification: \(authUrl as Any)")
@@ -327,6 +377,7 @@ class InitialVC: UIViewController {
                         
                         self.languagesList = dashboads
                         self.languagesTableView.reloadData()
+                        self.checkConnectivityGender()
                         
                     } else {
                         
@@ -343,63 +394,117 @@ class InitialVC: UIViewController {
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }
+    
+    func checkConnectivityGender() {
+        
+        if Reachability.isConnectedToNetwork() {
+    
+            let authUrl = Endpoint.gender
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getRelationData(url: authUrl, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.count != 0 {
+                        
+                        self.genderList = dashboads
+                        self.genderTableView.reloadData()
+                        
+                    } else {
+                        
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+       }
+    }
 
 }
 
 extension InitialVC: UITableViewDelegate, UITableViewDataSource {
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return languagesList.count
+        if tableView == genderTableView {
+            return genderList.count
+        } else {
+            return languagesList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LanguagesCell", for: indexPath) as! LanguagesCell
-        cell.titleLbl.text = languagesList[indexPath.row].Text
-        if cell.titleLbl.text == "Myself" {
-            cell.contentView.backgroundColor = UIColor.white
+        
+        if tableView == genderTableView {
             
+            cell.titleLbl.text = genderList[indexPath.row].Text
+            cell.contentView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+        
+            cell.titleLbl.textColor = UIColor.Citygo.formsubtitlesnotselected
             
         } else {
-            cell.contentView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+            
+            cell.titleLbl.text = languagesList[indexPath.row].Text
+            if cell.titleLbl.text == "Myself" {
+                cell.contentView.backgroundColor = UIColor.white
+                
+            } else {
+                cell.contentView.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
+            }
+            cell.titleLbl.textColor = UIColor.Citygo.formsubtitlesnotselected
         }
-        cell.titleLbl.textColor = UIColor.Citygo.formsubtitlesnotselected
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 48.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.heighlighBoarderColor(boolVal: false)
-        tfRelationShip.text = languagesList[indexPath.row].Text
-        tfRelationShipDummy.text = languagesList[indexPath.row].Text
-        selectRelationNumber = languagesList[indexPath.row].Value
-//        ageViewHeight.constant = 102
-//        ageViewHeightView.isHidden = false
         
-        if tfRelationShip.text != "Myself" && ((tfPatientFirstName.text?.count) != 0) {
-            btnNext.btnEnable(boolVal: false)
-            registerViewHeight.constant = 125
-            registerViewHeightView.isHidden = false
-        } else if tfRelationShip.text == "Myself" && registerViewHeight.constant == 125 {
-            btnNext.btnEnable(boolVal: true)
-            registerViewHeight.constant = 0
-            registerViewHeightView.isHidden = true
-            signatureViewHeight.constant = 0
-            signatureViewHeighViewt.isHidden = true
-            selectionRegister = ""
-            tfSignature.text = ""
-            btnRegisterfalse.isSelected = false
-            btnRegisterTrue.isSelected = false
+        if tableView == genderTableView {
+            
+            self.heighlighGenderBoarderColor(boolVal: false)
+            tfGender.text = genderList[indexPath.row].Text
+            tfGenderDummy.text = genderList[indexPath.row].Text
+            selectGenderNumber = genderList[indexPath.row].Value
+            
         } else {
-            registerViewHeight.constant = 125
-            registerViewHeightView.isHidden = false
-            signatureViewHeight.constant = 230
-            signatureViewHeighViewt.isHidden = false
-            selectionRegister = ""
-            tfSignature.text = ""
-            btnRegisterfalse.isSelected = false
-            btnRegisterTrue.isSelected = false
+            
+            self.heighlighBoarderColor(boolVal: false)
+            tfRelationShip.text = languagesList[indexPath.row].Text
+            tfRelationShipDummy.text = languagesList[indexPath.row].Text
+            selectRelationNumber = languagesList[indexPath.row].Value
+            //        ageViewHeight.constant = 102
+            //        ageViewHeightView.isHidden = false
+            
+            if tfRelationShip.text != "Myself" && ((tfPatientFirstName.text?.count) != 0) {
+               // btnNext.btnEnable(boolVal: false)
+                registerViewHeight.constant = 125
+                registerViewHeightView.isHidden = false
+            } else if tfRelationShip.text == "Myself" && registerViewHeight.constant == 125 {
+                btnNext.btnEnable(boolVal: true)
+                registerViewHeight.constant = 0
+                registerViewHeightView.isHidden = true
+                signatureViewHeight.constant = 0
+                signatureViewHeighViewt.isHidden = true
+                selectionRegister = ""
+                tfSignature.text = ""
+                btnRegisterfalse.isSelected = false
+                btnRegisterTrue.isSelected = false
+            } else {
+                registerViewHeight.constant = 125
+                registerViewHeightView.isHidden = false
+                signatureViewHeight.constant = 230
+                signatureViewHeighViewt.isHidden = false
+                selectionRegister = ""
+                tfSignature.text = ""
+                btnRegisterfalse.isSelected = false
+                btnRegisterTrue.isSelected = false
+            }
+            checkAllTheFeilds()
         }
-        checkAllTheFeilds()
     }
 }
 

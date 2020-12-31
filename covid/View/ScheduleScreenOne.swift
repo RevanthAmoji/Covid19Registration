@@ -29,6 +29,8 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     
     @IBOutlet weak var btnNext:SutherlandButton!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     var previousSelVal:Int = -1
 
     var stadiums:[Stadium] = []
@@ -50,8 +52,10 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
         btnNext.btnEnable(boolVal: false)
 
     }
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         self.mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
     

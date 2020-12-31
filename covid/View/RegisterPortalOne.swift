@@ -33,6 +33,8 @@ class RegisterPortalOne: UIViewController {
     
     @IBOutlet weak var lblTitle:UILabel!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     var gender:String = "-1"
     var race:String = "-1"
 
@@ -56,7 +58,10 @@ class RegisterPortalOne: UIViewController {
         // Do any additional setup after loading the view.
         self.checkConnectivityGender()
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     @IBAction func dropdownBtnAgeAction(_ sender: Any) {
     
         self.heighlighBoarderColorAge(boolVal: true)

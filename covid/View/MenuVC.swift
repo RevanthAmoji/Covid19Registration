@@ -11,6 +11,8 @@ class MenuVC: UIViewController {
 
     @IBOutlet weak var laguageLabel: SutherlandLabel!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

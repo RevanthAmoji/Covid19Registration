@@ -11,6 +11,8 @@ class MyScheduleTestsViewController: UIViewController {
 
     
     @IBOutlet weak var itemsTableView:UITableView!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
         
     var availableSlots:[MyScheduleTests]? = []
     
@@ -29,6 +31,10 @@ class MyScheduleTestsViewController: UIViewController {
         
     }
     
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
 
     @IBAction func profileBtnAction(_ sender: Any) {
         

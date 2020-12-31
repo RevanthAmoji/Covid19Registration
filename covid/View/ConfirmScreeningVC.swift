@@ -18,7 +18,7 @@ class ConfirmScreeningVC: UIViewController {
     
     @IBOutlet weak var lblTitle:UILabel!
     
-    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
     
     var availableSlots:MyScheduleTests?
     
@@ -30,6 +30,10 @@ class ConfirmScreeningVC: UIViewController {
         setPreviousData()
     }
     
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     func setPreviousData() {
         
         lblTitle.text = "\(availableSlots?.PatientName ?? "") (\(availableSlots?.PatientRelationship ?? ""))"

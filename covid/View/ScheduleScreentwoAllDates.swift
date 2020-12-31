@@ -11,6 +11,8 @@ class ScheduleScreentwoAllDates: UIViewController {
     
     @IBOutlet weak var itemsTableView:UITableView!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     var slots:slots = SingletonData.shared.getSlotsDetails()
     
     lazy var availableSlots:[Datas]? = []
@@ -24,7 +26,10 @@ class ScheduleScreentwoAllDates: UIViewController {
         self.itemsTableView.reloadData()
     }
     
-
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     /*
     // MARK: - Navigation
 

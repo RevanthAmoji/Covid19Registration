@@ -36,6 +36,18 @@ class SingletonUI {
         self.barButtonColor()
     }
     
+    func naviagationBarRightButton(vc: UIViewController,barItem:UIBarButtonItem) {
+        let isEnable=UserData.shared.getIsUserLogin()
+        if isEnable ?? false {
+            barItem.isEnabled = true
+            vc.navigationController?.navigationItem.rightBarButtonItem = barItem
+        } else {
+            barItem.isEnabled = false
+            vc.navigationController?.navigationItem.rightBarButtonItem = nil
+        }
+        
+    }
+    
     func barButtonColor() {
     
         UIBarButtonItem.appearance().tintColor = .white

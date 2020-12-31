@@ -21,6 +21,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var tfEmail: SutherlandTextField!
     @IBOutlet weak var tfPassword: SutherlandTextField!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     // Intialize view model variable
     var viewModel = EmailAddressViewModel()
 
@@ -40,8 +42,11 @@ class LoginVC: UIViewController {
         
         
     }
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+
         languageTF.text = SingletonUI.shared.selectedLanguage
         self.setDynamicText()
     }

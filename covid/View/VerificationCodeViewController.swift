@@ -13,12 +13,18 @@ class VerificationCodeViewController: UIViewController {
     @IBOutlet weak var tf2: SutherlandTextField!
     @IBOutlet weak var tf3: SutherlandTextField!
     @IBOutlet weak var tf4: SutherlandTextField!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+    }
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
     }
     
     func checkConnectivity() {

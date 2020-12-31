@@ -20,6 +20,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
 
     @IBOutlet weak var textViewAlert: UITextView!
     
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     let linkUrl = "www.sutherland.com"
 
 
@@ -118,7 +121,10 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         checkConnectivityAuthorization()
         
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
     func showOfflineMessage(title: String, msg: String) {
        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)

@@ -36,6 +36,8 @@ class RegisterScreenOne: UIViewController {
     @IBOutlet weak var firstTimeTestingTitle:UILabel!
     @IBOutlet weak var contactWithAnyOneTitle:UILabel!
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     var symptoms:String? = ""
     var proritizedForTesting:String? = ""
     var firstTimeTesting:String? = ""
@@ -50,6 +52,11 @@ class RegisterScreenOne: UIViewController {
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         self.setViewTitles()
+    }
+    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
     }
     
     // MARK: - Navigation

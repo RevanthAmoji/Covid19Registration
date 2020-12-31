@@ -30,6 +30,8 @@ enum checkBoxInt: String {
 class RegisterScreenConfirm: UIViewController {
     
     var viewModel = RegisterScreenThreeModel()
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
     @IBOutlet weak var symptomsHeight: NSLayoutConstraint!
     @IBOutlet weak var backGrdViewTwoHeight: NSLayoutConstraint!
@@ -157,6 +159,8 @@ class RegisterScreenConfirm: UIViewController {
     
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+       
+            SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)

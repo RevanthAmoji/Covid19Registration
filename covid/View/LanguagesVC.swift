@@ -12,6 +12,8 @@ class LanguagesVC: UIViewController {
     @IBOutlet weak var languagesTableView: UITableView!
     var languagesList:[String] = ["English", "Español"]
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,10 @@ class LanguagesVC: UIViewController {
         self.languagesTableView.reloadData()
         
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
 
     /*
     // MARK: - Navigation
