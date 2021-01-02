@@ -37,10 +37,15 @@ class RegisterPortalOne: UIViewController {
     
     var gender:String = "-1"
     var race:String = "-1"
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet weak var datePickerBackGndview: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        datePickerBackGndview.isHidden = true
         btnNext.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -62,6 +67,41 @@ class RegisterPortalOne: UIViewController {
         super.viewWillAppear(animated)
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
     }
+    /*
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        tfDateSymStarted.inputAccessoryView = toolbar
+              tfDateSymStarted.inputView = datePicker
+        self.view.bringSubviewToFront(datePicker)
+        
+    }
+
+      @objc func donedatePicker(){
+
+       let formatter = DateFormatter()
+       formatter.dateFormat = "MM/dd/YYYY"
+        tfDateSymStarted.text = formatter.string(from: datePicker.date)
+       self.view.endEditing(true)
+     }
+
+     @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+      }
+    
+    
+    */
+    
     @IBAction func dropdownBtnAgeAction(_ sender: Any) {
     
         self.heighlighBoarderColorAge(boolVal: true)
@@ -72,6 +112,17 @@ class RegisterPortalOne: UIViewController {
     
         self.heighlighBoarderColorRace(boolVal: true)
         raceTableView.reloadData()
+    }
+    
+    @IBAction func cancelBtnAction(_ sender: Any) {
+        datePickerBackGndview.isHidden = true
+    }
+    
+    @IBAction func doneBtnAction(_ sender: Any) {
+        datePickerBackGndview.isHidden = true
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/YYYY"
+        tfDateSymStarted.text = formatter.string(from: datePicker.date)
     }
     
     @IBAction func nextBtnAction(_ sender: Any) {
@@ -184,11 +235,14 @@ class RegisterPortalOne: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func buttonCalPressed(_ sender: Any) {
-        let calendarPicker = JBCalendarViewController()
-        calendarPicker.popoverPresentationController?.sourceView = btnDateSymBackGndView
-        calendarPicker.delegate = self
-        // Configure the calendar's properties
-        present(calendarPicker, animated: true, completion: nil)
+        //        let calendarPicker = JBCalendarViewController()
+        //        calendarPicker.popoverPresentationController?.sourceView = btnDateSymBackGndView
+        //        calendarPicker.delegate = self
+        //        // Configure the calendar's properties
+        //        present(calendarPicker, animated: true, completion: nil)
+        //showDatePicker()
+       // tfDateSymStarted.inputView = datePicker
+        datePickerBackGndview.isHidden = false
     }
     /*
     // MARK: - Navigation
