@@ -288,8 +288,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
             endingLineNumber = "130"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "showOfflineMessage(title:msg:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -382,8 +382,8 @@
             filePath = "covid/View/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "hyperLink(originalText:hyperLink:urlString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -551,16 +551,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3A297177-AE14-4C67-B2AD-734EA6CE9A2A"
+            uuid = "4CEC8779-A69F-4E17-A899-1EC4F5846ADD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "covid/Utility/UI/Controls/SutherlandButton.swift"
+            filePath = "covid/Utility/UI/Controls/SutherlandTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "btnEnable(boolVal:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "setupTextField()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

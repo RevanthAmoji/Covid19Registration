@@ -15,6 +15,43 @@ class SutherlandTextField: UITextField {
 //            StylesManager.shared.apply(styles: styles, for: self)
 //        }
 //    }
+    lazy var infoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.Citygo.latoinfo400
+        label.textColor = UIColor.Citygo.formtitles
+        return label
+    }()
+
+    
+    override init(frame: CGRect) {
+           super.init(frame: frame)
+           setupTextField()
+       }
+
+       required init?(coder: NSCoder) {
+            super.init(coder: coder)
+           setupTextField()
+       }
+
+       override func prepareForInterfaceBuilder() {
+           super.prepareForInterfaceBuilder()
+           self.setupTextField()
+       }
+
+       private func setupTextField() {
+         
+        addSubview(infoLabel)
+        infoLabel.text = ""
+        infoLabel.frame = CGRect(x: 0, y: self.frame.origin.y + self.frame.size.height + 10, width: self.frame.size.width, height: 20)
+       // self.superview?.addSubview(infoLabel)
+        
+//        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+//        infoLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+//        infoLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: -2).isActive = true
+        self.setNeedsDisplay()
+       }
+    
     @IBInspectable var leftPadingCustom: CGFloat {
         get {
             return leftView!.frame.size.width
@@ -45,6 +82,7 @@ class SutherlandTextField: UITextField {
        }
   
     func showBoaderColor(isEnable: Bool) {
+        
         if isEnable {
             self.layer.borderWidth = 1.0
             self.layer.borderColor = UIColor.Citygo.redColor.cgColor

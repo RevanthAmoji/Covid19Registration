@@ -95,27 +95,33 @@ class SingletonUI {
             }
             else if itemVal.tag == 1001 {
                 itemVal.font = UIFont.Citygo.lato700
-                itemVal.textColor = UIColor.Citygo.mainbody
+              //  itemVal.textColor = UIColor.Citygo.mainbody
+                itemVal.textColor = UIColor.Citygo.h1headingone
             }
             else if itemVal.tag == 1002 {
                 itemVal.font = UIFont.Citygo.lato700
-                itemVal.textColor = UIColor.Citygo.mainbodybold
+               // itemVal.textColor = UIColor.Citygo.mainbodybold
+                itemVal.textColor = UIColor.Citygo.h1headingone
             }
             else if itemVal.tag == 1003 {
                 itemVal.font = UIFont.Citygo.lato400
-                itemVal.textColor = UIColor.Citygo.formtitles
+               // itemVal.textColor = UIColor.Citygo.formtitles
+                itemVal.textColor = UIColor.Citygo.h1headingone
             }
             else if itemVal.tag == 1004 {
                 itemVal.font = UIFont.Citygo.lato400
-                itemVal.textColor = UIColor.Citygo.formsubtitlesnotselected
+               // itemVal.textColor = UIColor.Citygo.formsubtitlesnotselected
+                itemVal.textColor = UIColor.Citygo.h1headingone
             }
             else if itemVal.tag == 1005 {
                 itemVal.font = UIFont.Citygo.lato400
-                itemVal.textColor = UIColor.Citygo.formsubtitlesentryfields
+               // itemVal.textColor = UIColor.Citygo.formsubtitlesentryfields
+                itemVal.textColor = UIColor.Citygo.h1headingone
             }
             else if itemVal.tag == 1006 {
                 itemVal.font = UIFont.Citygo.latoinfo400
                 itemVal.textColor = UIColor.Citygo.formtitles
+               // itemVal.textColor = UIColor.Citygo.h1headingone
             }
         }
         let btnArr = viewController.view.subviews(ofType: SutherlandButton.self)
@@ -130,7 +136,8 @@ class SingletonUI {
         for item in tfArr {
             let itemVal = item as SutherlandTextField
             itemVal.font = UIFont.Citygo.lato700
-            itemVal.textColor = UIColor.Citygo.formsubtitlesentryfields
+//            itemVal.textColor = UIColor.Citygo.formsubtitlesentryfields
+            itemVal.textColor = UIColor.Citygo.h1headingone
             itemVal.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
         }
     }

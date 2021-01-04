@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     enum Citygo {
         
-        static let h1headingone = UIColor(rgbValue: 0x27235e)
+        static let h1headingone = UIColor(rgbValue: 0x27225e)
        
         static let mainbody = UIColor(rgbValue: 0x253B3D)
         static let mainbodybold = UIColor(rgbValue: 0x253B3D)

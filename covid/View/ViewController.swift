@@ -33,8 +33,9 @@ class ViewController: UIViewController {
         let isLogin = UserData.shared.getIsUserLogin()
         backGndView.isHidden = true
         if isLogin ?? false {
-            backGndView.isHidden = false
+           
             checkConnectivityBackUpData()
+            backGndView.isHidden = false
         }
         
 //        MyScheduleTestsViewController
@@ -135,7 +136,7 @@ class ViewController: UIViewController {
                             SingletonData.shared.email = UserData.shared.getUserName()
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let controller = storyboard.instantiateViewController(withIdentifier: "MyScheduleTestsViewController") as! MyScheduleTestsViewController
-                            self.navigationController?.pushViewController(controller, animated: true)
+                            self.navigationController?.pushViewController(controller, animated: false)
                             
                         } else {
                             self.backGndView.isHidden = false
