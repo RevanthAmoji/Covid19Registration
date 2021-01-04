@@ -123,6 +123,7 @@ class RegisterPortalOne: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/YYYY"
         tfDateSymStarted.text = formatter.string(from: datePicker.date)
+        btnNext.btnEnable(boolVal: true)
     }
     
     @IBAction func nextBtnAction(_ sender: Any) {

@@ -20,19 +20,25 @@ extension UIColor {
         static let formsubtitlesnotselected = UIColor(rgbValue: 0x549491)
         static let formsubtitlesentryfields = UIColor(rgbValue: 0x045257)
         
-        static let buttonfieldsInactive = UIColor(rgbValue: 0x045257)
+        static let buttonfieldsInactive = UIColor(rgbValue: 0x27235e)
         static let buttonfieldsactive = UIColor(rgbValue: 0xFFFFFF)
         static let buttonHoverStateColor = UIColor(rgbValue: 0x549491)
+        
+        static let buttonInactiveBacground = UIColor(rgbValue: 0xf1f1f1)
+       // 27235e
+        //f56d99
+        static let buttonBorderColor = UIColor(rgbValue: 0xf56d99)
+        
         
         static let forminfo = UIColor(rgbValue: 0x549491)
         
         
-        static let navigationBar = UIColor(rgbValue: 0x05464A)
+        static let navigationBar = UIColor(rgbValue: 0x27235e)
         
         static let redColor = UIColor(rgbValue: 0xED6660)
         
-        static let textFieldBackGroundColor = UIColor(rgbValue: 0xECF3F2)
-        
+        static let textFieldBackGroundColor = UIColor(rgbValue: 0xe8f7fc)
+        //e8f7fc
         static let menuBackGroundColor = UIColor(rgbValue: 0x639290)
        
         static let shadowDefault = UIColor(rgbValue: 0x000000, alpha: 0.25)

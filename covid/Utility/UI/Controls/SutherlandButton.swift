@@ -31,9 +31,9 @@ class SutherlandButton: UIButton {
             self.backgroundColor = UIColor.Citygo.buttonfieldsInactive
         } else {
             self.setTitleColor(UIColor.Citygo.buttonfieldsInactive, for: .normal)
-            self.backgroundColor = UIColor.Citygo.buttonfieldsactive
+            self.backgroundColor = UIColor.Citygo.buttonInactiveBacground
         }
-        self.layer.borderColor = UIColor.Citygo.buttonfieldsInactive.cgColor
+        self.layer.borderColor = UIColor.Citygo.buttonBorderColor.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }

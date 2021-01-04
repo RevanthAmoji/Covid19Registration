@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 //        MyScheduleTestsViewController
         // Do any additional setup after loading the view.
         btnGetStarted.btnEnable(boolVal: true)
-        btnHowItWorks.btnHover(boolVal: true)
+        btnHowItWorks.btnEnable(boolVal: false)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
       
