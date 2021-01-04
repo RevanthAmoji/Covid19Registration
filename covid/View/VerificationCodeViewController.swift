@@ -14,11 +14,14 @@ class VerificationCodeViewController: UIViewController {
     @IBOutlet weak var tf3: SutherlandTextField!
     @IBOutlet weak var tf4: SutherlandTextField!
     
+    @IBOutlet weak var btnNext: SutherlandButton!
+    
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        btnNext.btnEnable(boolVal: true)
         // Do any additional setup after loading the view.
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }

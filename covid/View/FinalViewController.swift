@@ -10,10 +10,13 @@ import UIKit
 class FinalViewController: UIViewController {
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
+    @IBOutlet weak var btnNext: SutherlandButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        btnNext.btnEnable(boolVal: true)
         // Do any additional setup after loading the view.
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }

@@ -129,9 +129,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            self.navigationController?.pushViewController(controller, animated: false)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//            self.navigationController?.pushViewController(controller, animated: false)
         }
       
         alert.addAction(okButton)

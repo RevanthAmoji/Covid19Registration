@@ -18,6 +18,8 @@ class VerifiedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        btnVerifiedEmail.btnEnable(boolVal: true)
+        btnVerifiedPassword.btnEnable(boolVal: true)
         // Do any additional setup after loading the view.
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }

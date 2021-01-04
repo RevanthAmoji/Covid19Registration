@@ -30,6 +30,9 @@ class ScheduleScreentwo: UIViewController {
     
     @IBOutlet weak var btnNext:SutherlandButton!
     
+    @IBOutlet weak var titleLbl:UILabel!
+
+    
     var slots:slots?
     
     lazy var availableSlots:[Datas]? = []
@@ -41,6 +44,7 @@ class ScheduleScreentwo: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleLbl.text = SingletonData.shared.clientName
         // Do any additional setup after loading the view.
         
         self.itemsCollectionView.register(UINib(nibName: "ScheduleTwoDaysCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTwoDaysCell")
@@ -50,6 +54,8 @@ class ScheduleScreentwo: UIViewController {
         
         btnNext.btnEnable(boolVal: false)
         self.checkConnectivityRelation()
+        
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
     }
     
     func getCurrentDate() -> String {

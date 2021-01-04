@@ -154,6 +154,14 @@ class RegisterScreenConfirm: UIViewController {
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         setViewTitles()
+        
+       
+        let btnArr = self.view.subviews(ofType: UIImageView.self)
+        
+        for item in btnArr {
+            let itemVal = item as UIImageView
+            itemVal.backgroundColor = UIColor.Citygo.h1headingone
+        }
     }
 
     

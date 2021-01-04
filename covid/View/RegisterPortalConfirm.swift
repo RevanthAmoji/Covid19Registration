@@ -78,6 +78,13 @@ class RegisterPortalConfirm: UIViewController {
        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
+        let btnArr = self.view.subviews(ofType: UIImageView.self)
+        
+        for item in btnArr {
+            let itemVal = item as UIImageView
+            itemVal.backgroundColor = UIColor.Citygo.h1headingone
+        }
+        
     }
     
    

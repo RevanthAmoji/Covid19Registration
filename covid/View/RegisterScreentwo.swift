@@ -34,7 +34,6 @@ class RegisterScreentwo: UIViewController {
     @IBOutlet weak var pregnantBackViewHeight: NSLayoutConstraint!
     
     
-    
     var medicalCondition:String? = ""
     var pregnant:String? = ""
     var highRiskCategory:String? = ""

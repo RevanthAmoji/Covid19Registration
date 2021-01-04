@@ -31,6 +31,8 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var listCountLbl: SutherlandLabel!
+    
     var previousSelVal:Int = -1
 
     var stadiums:[Stadium] = []
@@ -95,6 +97,7 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
                 switch result {
                 case .success(let dashboads):
                     
+                    self.listCountLbl.text = "\(dashboads.count) Testing facilities found"
                     if dashboads.count == 0 {
                         
                         self.collectionViewHeight.constant = 0
