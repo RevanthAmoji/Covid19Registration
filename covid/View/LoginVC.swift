@@ -35,7 +35,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         btnGetStarted.btnEnable(boolVal: false)
-        btnHowItWorks.btnHover(boolVal: true)
+        btnHowItWorks.btnEnable(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
         tfPassword.textContentType = .oneTimeCode
