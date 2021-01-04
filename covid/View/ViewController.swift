@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     let yourAttributes: [NSAttributedString.Key: Any] = [
           .font: UIFont.systemFont(ofSize: 18),
-        .foregroundColor: UIColor.Citygo.formsubtitlesnotselected,
+        .foregroundColor: UIColor.Citygo.buttonHyperlinkColor,
           .underlineStyle: NSUnderlineStyle.single.rawValue]
     
     override func viewDidLoad() {

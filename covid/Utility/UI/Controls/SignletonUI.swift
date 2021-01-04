@@ -33,10 +33,24 @@ class SingletonUI {
         // To control navigation bar's translucency.
         UINavigationBar.appearance().isTranslucent = false
         
+       
+        
+        
+        
         self.barButtonColor()
     }
     
     func naviagationBarRightButton(vc: UIViewController,barItem:UIBarButtonItem) {
+        
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
+
+         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
+         imageView.contentMode = .scaleAspectFill
+         let image = UIImage(named: "headerImage")
+         imageView.image = image
+         logoContainer.addSubview(imageView)
+         vc.navigationItem.titleView = logoContainer
+        
         let isEnable=UserData.shared.getIsUserLogin()
         if isEnable ?? false {
             barItem.isEnabled = true
@@ -120,8 +134,8 @@ class SingletonUI {
             }
             else if itemVal.tag == 1006 {
                 itemVal.font = UIFont.Citygo.latoinfo400
-                itemVal.textColor = UIColor.Citygo.formtitles
-               // itemVal.textColor = UIColor.Citygo.h1headingone
+              //  itemVal.textColor = UIColor.Citygo.formtitles
+                itemVal.textColor = UIColor.Citygo.infoTextColor
             }
         }
         let btnArr = viewController.view.subviews(ofType: SutherlandButton.self)
@@ -137,7 +151,7 @@ class SingletonUI {
             let itemVal = item as SutherlandTextField
             itemVal.font = UIFont.Citygo.lato700
 //            itemVal.textColor = UIColor.Citygo.formsubtitlesentryfields
-            itemVal.textColor = UIColor.Citygo.h1headingone
+            itemVal.textColor = UIColor.Citygo.textFieldTextColor
             itemVal.backgroundColor = UIColor.Citygo.textFieldBackGroundColor
         }
     }

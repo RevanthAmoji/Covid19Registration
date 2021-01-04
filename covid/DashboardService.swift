@@ -88,7 +88,8 @@ class DashboardService {
 
     func getAutherizationResponse(url:String,completion: @escaping (_ : ServiceResult<Bool>) -> Void) {
 
-        let authUrl = url
+        guard let authUrl = URL(string: url) else { return }
+
         var request = URLRequest(url: try! authUrl.asURL())
         request.httpMethod = "GET"
 
