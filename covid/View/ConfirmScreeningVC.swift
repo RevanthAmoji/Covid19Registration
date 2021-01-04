@@ -20,14 +20,24 @@ class ConfirmScreeningVC: UIViewController {
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var directionBtn: SutherlandButton!
+    
     var availableSlots:MyScheduleTests?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        directionBtn.btnEnable(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         setPreviousData()
+        
+        let btnArr = self.view.subviews(ofType: UIImageView.self)
+        
+        for item in btnArr {
+            let itemVal = item as UIImageView
+            itemVal.backgroundColor = UIColor.Citygo.h1headingone
+        }
     }
     
     override func viewWillAppear (_ animated: Bool) {
