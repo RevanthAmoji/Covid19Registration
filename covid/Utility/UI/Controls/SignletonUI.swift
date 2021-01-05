@@ -17,6 +17,7 @@ class SingletonUI {
     //Language variable
     public var selectedLanguage:String? = "English"
     
+    public var currentVC:UIViewController?
     
     func navigationColor() {
         // MARK: Navigation Bar Customisation
@@ -42,16 +43,27 @@ class SingletonUI {
     
     func naviagationBarRightButton(vc: UIViewController,barItem:UIBarButtonItem) {
         
-        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
+        self.currentVC = vc
+        
+        let logoContainer = UIView(frame: CGRect(x: 0, y: -5, width: 150, height: 25))
 
-         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
+         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 25))
          imageView.contentMode = .scaleAspectFill
-         let image = UIImage(named: "headerImage")
+         let image = UIImage(named: "logo")
          imageView.image = image
          logoContainer.addSubview(imageView)
          vc.navigationItem.titleView = logoContainer
         
         let isEnable=UserData.shared.getIsUserLogin()
+//        barItem.target = vc
+//        barItem.action = #selector(menuAction)
+//        
+//        
+//        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(
+//            barButtonSystemItem: UIBarButtonItem.SystemItem.add,
+//            target: self,
+//            action: #selector(menuAction)
+//        )
         if isEnable ?? false {
             barItem.isEnabled = true
             vc.navigationController?.navigationItem.rightBarButtonItem = barItem
@@ -61,7 +73,9 @@ class SingletonUI {
         }
         
     }
-    
+   
+    // Find the Top Most Viewcontroller
+   
     func barButtonColor() {
     
         UIBarButtonItem.appearance().tintColor = .white
