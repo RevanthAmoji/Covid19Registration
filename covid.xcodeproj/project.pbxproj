@@ -15,7 +15,6 @@
 		03057EFB2590C2BB004CA4D5 /* ProgressBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03057EF82590C2BA004CA4D5 /* ProgressBar.storyboard */; };
 		03057EFC2590C2BB004CA4D5 /* SHProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */; };
 		03057F022590C308004CA4D5 /* UIViewController+LoaderShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */; };
-		03057F152590C856004CA4D5 /* covid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 03057F142590C856004CA4D5 /* covid.gif */; };
 		03057F1A2590EC00004CA4D5 /* MyScheduleTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */; };
 		03057F282591145C004CA4D5 /* MyScheduleTestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F272591145C004CA4D5 /* MyScheduleTestsCell.swift */; };
 		03057F3825911CAD004CA4D5 /* ConfirmScreeningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03057F3725911CAD004CA4D5 /* ConfirmScreeningVC.swift */; };
@@ -51,6 +50,7 @@
 		035E7C1A2564EBE600BF3EAB /* SignletonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C192564EBE600BF3EAB /* SignletonUI.swift */; };
 		035E7C2E25654E4F00BF3EAB /* EmailAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */; };
 		035E7C352565522400BF3EAB /* EmailAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */; };
+		037FF45A25A4A4FE0054EA55 /* covid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 037FF45925A4A4FE0054EA55 /* covid.gif */; };
 		038FD785256A7C6400BF054A /* RegisterScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FD784256A7C6400BF054A /* RegisterScreenOne.swift */; };
 		03AB099525878269001FEF4A /* RegisterPortalThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB099425878269001FEF4A /* RegisterPortalThree.swift */; };
 		03AD6411257F49BD00ECC469 /* ScheduleScreentwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */; };
@@ -133,7 +133,6 @@
 		03057EF82590C2BA004CA4D5 /* ProgressBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProgressBar.storyboard; sourceTree = "<group>"; };
 		03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProgressBarViewController.swift; sourceTree = "<group>"; };
 		03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoaderShower.swift"; sourceTree = "<group>"; };
-		03057F142590C856004CA4D5 /* covid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = covid.gif; sourceTree = "<group>"; };
 		03057F192590EC00004CA4D5 /* MyScheduleTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTestsViewController.swift; sourceTree = "<group>"; };
 		03057F272591145C004CA4D5 /* MyScheduleTestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTestsCell.swift; sourceTree = "<group>"; };
 		03057F3725911CAD004CA4D5 /* ConfirmScreeningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmScreeningVC.swift; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 		035E7C192564EBE600BF3EAB /* SignletonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignletonUI.swift; path = UI/Controls/SignletonUI.swift; sourceTree = "<group>"; };
 		035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressVC.swift; sourceTree = "<group>"; };
 		035E7C342565522400BF3EAB /* EmailAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressViewModel.swift; sourceTree = "<group>"; };
+		037FF45925A4A4FE0054EA55 /* covid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = covid.gif; sourceTree = "<group>"; };
 		038FD784256A7C6400BF054A /* RegisterScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenOne.swift; sourceTree = "<group>"; };
 		03AB099425878269001FEF4A /* RegisterPortalThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPortalThree.swift; sourceTree = "<group>"; };
 		03AD6410257F49BD00ECC469 /* ScheduleScreentwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreentwo.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		03057EF72590C2BA004CA4D5 /* ProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				03057F142590C856004CA4D5 /* covid.gif */,
+				037FF45925A4A4FE0054EA55 /* covid.gif */,
 				03057F012590C308004CA4D5 /* UIViewController+LoaderShower.swift */,
 				03057EF82590C2BA004CA4D5 /* ProgressBar.storyboard */,
 				03057EF92590C2BA004CA4D5 /* SHProgressBarViewController.swift */,
@@ -684,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B2436125780B8500CAE0B0 /* maps.json in Resources */,
+				037FF45A25A4A4FE0054EA55 /* covid.gif in Resources */,
 				035750032566B40100E2DB09 /* Lato-Light.ttf in Resources */,
 				035750152566B40A00E2DB09 /* Quicksand-SemiBold.ttf in Resources */,
 				03DD11F32562B02200DD0583 /* Localizable-English.strings in Resources */,
@@ -707,7 +708,6 @@
 				035750182566B40A00E2DB09 /* Quicksand-VariableFont_wght.ttf in Resources */,
 				035750002566B40100E2DB09 /* Lato-BlackItalic.ttf in Resources */,
 				03574FFE2566B40100E2DB09 /* Lato-Black.ttf in Resources */,
-				03057F152590C856004CA4D5 /* covid.gif in Resources */,
 				03AD641D257FC07500ECC469 /* ScheduleTwoDaysCell.xib in Resources */,
 				03574FFB2566B40100E2DB09 /* Lato-LightItalic.ttf in Resources */,
 				035750192566B40A00E2DB09 /* README.txt in Resources */,

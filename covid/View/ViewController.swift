@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var titlelbl: SutherlandLabel!
     @IBOutlet weak var subTitlelbl: SutherlandLabel!
-    @IBOutlet weak var languageTF: SutherlandTextField!
     
     
     @IBOutlet weak var backGndView:UIView!
@@ -40,19 +39,16 @@ class ViewController: UIViewController {
         
 //        MyScheduleTestsViewController
         // Do any additional setup after loading the view.
-        btnGetStarted.btnEnable(boolVal: true)
-        btnHowItWorks.btnEnable(boolVal: false)
+       // btnGetStarted.btnEnable(boolVal: true)
+        btnHowItWorks.btnEnableNew(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
-        
-      
-
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
 
-        languageTF.text = SingletonUI.shared.selectedLanguage
         self.setDynamicText()
     }
     
@@ -71,6 +67,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnGetStartedStarted(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "EmailAddressVC") as! EmailAddressVC
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     

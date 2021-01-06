@@ -17,9 +17,11 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     @IBOutlet weak var emailTF: SutherlandTextField!
     @IBOutlet weak var reenterEmailTF: SutherlandTextField!
     @IBOutlet weak var nextBtn: SutherlandButton!
-
+    @IBOutlet weak var previousBtn: SutherlandButton!
+    
     @IBOutlet weak var textViewAlert: UITextView!
     
+    @IBOutlet weak var scrollViewReg: UIScrollView!
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
     
@@ -28,10 +30,13 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       
+        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
-        nextBtn.btnEnable(boolVal: true)
+        nextBtn.btnEnableNew(boolVal: true)
+        previousBtn.btnEnableNew(boolVal: true)
         
         SingletonData.shared.isFromLogin = false
     
@@ -39,39 +44,73 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
          textViewAlert.hyperLink(originalText: "E-Mail already exists. Click here to Sign In.", hyperLink: "here", urlString: linkUrl)
 
     }
+    override func viewWillAppear (_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        emailTF.layer.cornerRadius = emailTF.frame.size.height/2
+        reenterEmailTF.layer.cornerRadius = reenterEmailTF.frame.size.height/2
+        nextBtn.layer.cornerRadius = nextBtn.frame.size.height/2
+        previousBtn.layer.cornerRadius = previousBtn.frame.size.height/2
+
+        self.navigationController?.navigationBar.isHidden = true
+       // SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+        // Add this observers to observe keyboard shown and hidden events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //  Remove the observers added for keyboard from your ViewController
+        let center: NotificationCenter = NotificationCenter.default
+        center.removeObserver(self, name: UIWindow.keyboardDidShowNotification, object: nil)
+        center.removeObserver(self, name: UIWindow.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillBeHidden (aNotification: NSNotification) {
+        let contentInsets: UIEdgeInsets = .zero
+        self.scrollViewReg.contentInset = contentInsets
+        self.scrollViewReg.scrollIndicatorInsets = contentInsets
+        self.scrollViewReg.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    // Called when the UIKeyboardWillShow is sent
+    // This method will adjust your scrollView and will show textFields above the keyboard.
+    @objc func keyboardWillShow(aNotification: NSNotification) {
+        let userInfo: NSDictionary = aNotification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 50, right: 0)
+        self.scrollViewReg.contentInset = contentInsets
+        self.scrollViewReg.scrollIndicatorInsets = contentInsets
+    }
     
     func checkConnectivityAuthorization() {
+        
+        self.showProgressBar()
         
         if Reachability.isConnectedToNetwork() {
     
             let email = emailTF.text ?? ""
-            let authUrl = Endpoint.authorization+email //"https://covid19api.sutherlandglobal.com/api/Scheduling?MailID=revanth.amojinarsimha@sutherlandglobal.com&username=abc bbc"
+            let authUrl = Endpoint.authorization+email
             print("verified verification: \(authUrl as Any)")
             Services.getDashboardService().getAutherizationResponse(url: authUrl, completion: {
                 result in
                 switch result {
                 case .success(let dashboads):
                  //   if let verified = dashboads as? Bool {
-                        
                         if dashboads {
-//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-//                            self.navigationController?.pushViewController(controller, animated: false)
+                            self.hideProgressBar()
                             self.textViewAlert.isHidden = false
                         } else {
                             self.checkConnectivity()
                         }
-                       
-//                    } else {
-//                        self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
-//                    }
-                    
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
@@ -80,7 +119,6 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     func checkConnectivity() {
         
-      //  self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = emailTF.text ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\"}'}"
@@ -99,18 +137,19 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                         self.checkConnectivityBackUpData()
                         
                     } else {
+                        self.hideProgressBar()
                         self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                         
                     }
                     
                 case .failure( _):
-                   // self.hideProgressBar()
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-         //   self.hideProgressBar()
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
@@ -121,10 +160,12 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         checkConnectivityAuthorization()
         
     }
-    override func viewWillAppear (_ animated: Bool) {
-        super.viewWillAppear(animated)
-        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    
+    @IBAction func previousBtnAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
+  
     func showOfflineMessage(title: String, msg: String) {
        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
@@ -160,6 +201,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     SingletonData.shared.StatusCode = dashboads.StatusCode
                     if dashboads.StatusCode == 0 {
                     
@@ -215,11 +257,13 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                         let controller = storyboard.instantiateViewController(withIdentifier: "InitialVC") as! InitialVC
                         self.navigationController?.pushViewController(controller, animated: false)
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
         }
     }
@@ -251,7 +295,7 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
              let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
             reenterEmailTF.showBoaderColor(isEnable: !isValid)
             if isValid  && emailTF.text == reenterEmailTF.text {
-                nextBtn.btnEnable(boolVal: true)
+                nextBtn.btnEnableNew(boolVal: true)
                 emailTF.showBoaderColor(isEnable: false)
                 reenterEmailTF.showBoaderColor(isEnable: false)
             } else {

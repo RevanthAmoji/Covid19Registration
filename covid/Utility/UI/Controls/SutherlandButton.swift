@@ -37,6 +37,20 @@ class SutherlandButton: UIButton {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }
+    
+    func btnEnableNew(boolVal: Bool) {
+        self.isEnabled = boolVal
+        if boolVal {
+            self.setTitleColor(UIColor.Citygo.buttonfieldsactive, for: .normal)
+            self.backgroundColor = UIColor.Citygo.buttonfieldsInactive
+        } else {
+            self.setTitleColor(UIColor.Citygo.buttonfieldsInactive, for: .normal)
+            self.backgroundColor = UIColor.Citygo.buttonInactiveBacground
+        }
+        self.layer.borderColor = UIColor.Citygo.buttonBorderColor.cgColor
+        self.layer.borderWidth = 1.0
+    }
+    
     func btnHover(boolVal: Bool){
         self.isEnabled = boolVal
         if boolVal {

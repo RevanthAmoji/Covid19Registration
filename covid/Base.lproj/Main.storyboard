@@ -32,32 +32,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language/Cambiar Idioma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLO-Jq-Ndv" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="68" y="68" width="252" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="DRL-l8-Oje">
+                                <rect key="frame" x="0.0" y="192.5" width="375" height="267"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You can have a swab test to check if you have coronavirus (COVID-19) now. Thiis is a live virus test and not an antibody test" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Jm-4i2" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                <rect key="frame" x="21" y="131.5" width="333" height="58"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="English" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ner-Ae-ANW" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="55" y="97" width="265" height="39"/>
-                                <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
-                                        <real key="value" value="17"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="choose_language_subtitle"/>
                                 </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule a COVID-19 Test Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="mjY-6o-Nh4" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="20" y="366" width="335" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Uwf-yu-aBd"/>
-                                </constraints>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule a COVID-19 Test Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="mjY-6o-Nh4" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                <rect key="frame" x="20" y="94" width="335" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Quicksand-SemiBold" family="Quicksand" pointSize="22"/>
                                 <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -65,62 +53,41 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="choose_language_title"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naj-4H-HHx">
-                                <rect key="frame" x="281" y="101.5" width="32" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WbY-2w-NgJ"/>
-                                    <constraint firstAttribute="width" constant="32" id="aLR-t4-MGh"/>
-                                </constraints>
-                                <state key="normal" image="Down"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfP-OA-mhk">
-                                <rect key="frame" x="55" y="97" width="265" height="39"/>
-                                <connections>
-                                    <action selector="dropdownButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbO-P9-v9z"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homescreenlogo" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-DN-zr9">
-                                <rect key="frame" x="67.5" y="177" width="240" height="176"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qk3-DN-zr9" secondAttribute="height" multiplier="15:11" id="2LN-ZC-tlD"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwz-z7-Oiv" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="484" width="295" height="39"/>
-                                <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="40" y="468.5" width="295" height="40"/>
+                                <color key="backgroundColor" red="0.51762157679999998" green="0.74777799840000003" blue="0.50976789" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="Qdu-0k-Hfi"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qdu-0k-Hfi"/>
                                 </constraints>
                                 <state key="normal" title="Get Started">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnGetStartedStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YUK-so-6kT"/>
-                                    <segue destination="olG-Jc-zas" kind="show" id="Gew-1c-d5y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-rD-ls7" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="538" width="295" height="39"/>
+                                <rect key="frame" x="40" y="523.5" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="How does it work?">
                                     <color key="titleColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="NTO-ON-rlU" kind="show" id="6V2-6K-Mxu"/>
+                                    <segue destination="6vf-W6-MwL" kind="show" id="rsa-OM-pd7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY2-2p-8do">
-                                <rect key="frame" x="40" y="587" width="295" height="39"/>
+                                <rect key="frame" x="40" y="573.5" width="295" height="40"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Already have an account?">
@@ -140,15 +107,6 @@
                                     <segue destination="mqa-wJ-sBm" kind="show" id="gT7-Q0-E2t"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You can have a swab test to check if you have coronavirus (COVID-19) now. Thiis is a live virus test and not an antibody test" textAlignment="center" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-Jm-4i2" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="21" y="401" width="333" height="56"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="choose_language_subtitle"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELY-3m-fCr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -158,43 +116,32 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hcr-rD-ls7" firstAttribute="top" secondItem="zwz-z7-Oiv" secondAttribute="bottom" constant="15" id="2VY-pI-El5"/>
-                            <constraint firstItem="qk3-DN-zr9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.263868" id="3xu-cG-iJS"/>
                             <constraint firstItem="hcr-rD-ls7" firstAttribute="trailing" secondItem="zwz-z7-Oiv" secondAttribute="trailing" id="41T-SD-whj"/>
-                            <constraint firstItem="YfP-OA-mhk" firstAttribute="leading" secondItem="ner-Ae-ANW" secondAttribute="leading" id="6w6-kq-MEy"/>
-                            <constraint firstItem="qk3-DN-zr9" firstAttribute="top" secondItem="ner-Ae-ANW" secondAttribute="bottom" constant="41" id="7Wj-yW-Pwo"/>
                             <constraint firstItem="ELY-3m-fCr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9T9-tq-wDY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjY-6o-Nh4" secondAttribute="trailing" constant="20" id="9We-22-YKo"/>
                             <constraint firstItem="ELY-3m-fCr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9XI-XF-gjP"/>
                             <constraint firstItem="v9X-Jm-4i2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="9ro-M2-fmD"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="top" secondItem="hcr-rD-ls7" secondAttribute="bottom" constant="10" id="APe-yC-49l"/>
+                            <constraint firstItem="v9X-Jm-4i2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0869565" id="BXS-XF-PGC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v9X-Jm-4i2" secondAttribute="trailing" constant="21" id="CZm-Ig-W5R"/>
-                            <constraint firstItem="zwz-z7-Oiv" firstAttribute="top" secondItem="v9X-Jm-4i2" secondAttribute="bottom" constant="27" id="Ffh-bR-l25"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ner-Ae-ANW" secondAttribute="trailing" constant="55" id="H5u-WH-gVv"/>
-                            <constraint firstItem="mjY-6o-Nh4" firstAttribute="top" secondItem="qk3-DN-zr9" secondAttribute="bottom" constant="13" id="Hb9-Zz-lh9"/>
-                            <constraint firstItem="ner-Ae-ANW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="HgP-1p-jjp"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="height" secondItem="hcr-rD-ls7" secondAttribute="height" id="MoE-Ue-Lc1"/>
+                            <constraint firstItem="DRL-l8-Oje" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PKe-hx-AkT"/>
                             <constraint firstItem="hcr-rD-ls7" firstAttribute="leading" secondItem="zwz-z7-Oiv" secondAttribute="leading" id="PaT-KM-Ae3"/>
-                            <constraint firstItem="zLO-Jq-Ndv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0269865" constant="2.0000044999999993" id="SoL-aD-EYv"/>
-                            <constraint firstItem="Naj-4H-HHx" firstAttribute="centerY" secondItem="ner-Ae-ANW" secondAttribute="centerY" id="Tq2-TP-uu3"/>
                             <constraint firstItem="zwz-z7-Oiv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="UFQ-X9-3u9"/>
+                            <constraint firstItem="DRL-l8-Oje" firstAttribute="top" secondItem="v9X-Jm-4i2" secondAttribute="bottom" constant="3" id="W2z-l0-o7T"/>
                             <constraint firstItem="mjY-6o-Nh4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xhl-7t-YCU"/>
-                            <constraint firstItem="YfP-OA-mhk" firstAttribute="top" secondItem="ner-Ae-ANW" secondAttribute="top" id="YwU-Md-EZj"/>
-                            <constraint firstItem="ner-Ae-ANW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0584708" id="cBh-gZ-khQ"/>
                             <constraint firstItem="hcr-rD-ls7" firstAttribute="height" secondItem="zwz-z7-Oiv" secondAttribute="height" id="dMt-Uq-2F3"/>
-                            <constraint firstItem="qk3-DN-zr9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgu-uc-PKM"/>
-                            <constraint firstItem="YfP-OA-mhk" firstAttribute="trailing" secondItem="ner-Ae-ANW" secondAttribute="trailing" id="dmc-ae-ZRO"/>
+                            <constraint firstItem="DRL-l8-Oje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gNd-BP-c4H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zwz-z7-Oiv" secondAttribute="trailing" constant="40" id="h3q-PE-zqL"/>
-                            <constraint firstItem="ner-Ae-ANW" firstAttribute="top" secondItem="zLO-Jq-Ndv" secondAttribute="bottom" constant="9" id="iWG-vN-kMI"/>
-                            <constraint firstItem="zLO-Jq-Ndv" firstAttribute="trailing" secondItem="ner-Ae-ANW" secondAttribute="trailing" id="nUV-Td-cwh"/>
+                            <constraint firstItem="zwz-z7-Oiv" firstAttribute="top" secondItem="DRL-l8-Oje" secondAttribute="bottom" constant="9" id="jJM-dK-lu7"/>
+                            <constraint firstItem="DRL-l8-Oje" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4003" id="m94-ay-r8k"/>
+                            <constraint firstItem="mjY-6o-Nh4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0412294" id="oHA-qI-CXz"/>
                             <constraint firstItem="v9X-Jm-4i2" firstAttribute="top" secondItem="mjY-6o-Nh4" secondAttribute="bottom" constant="10" id="pAr-YI-d58"/>
                             <constraint firstItem="ELY-3m-fCr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pk6-nI-kYC"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="leading" secondItem="hcr-rD-ls7" secondAttribute="leading" id="pu5-yF-Vjs"/>
-                            <constraint firstItem="zLO-Jq-Ndv" firstAttribute="leading" secondItem="ner-Ae-ANW" secondAttribute="leading" constant="13" id="r0R-F3-WoK"/>
-                            <constraint firstItem="YfP-OA-mhk" firstAttribute="bottom" secondItem="ner-Ae-ANW" secondAttribute="bottom" id="tZA-Ma-y6g"/>
                             <constraint firstItem="ELY-3m-fCr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="taY-Gh-byc"/>
-                            <constraint firstItem="Naj-4H-HHx" firstAttribute="trailing" secondItem="ner-Ae-ANW" secondAttribute="trailing" constant="-7" id="tfg-5F-E1b"/>
+                            <constraint firstItem="mjY-6o-Nh4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="yZ6-8P-35f"/>
                             <constraint firstItem="zY2-2p-8do" firstAttribute="trailing" secondItem="hcr-rD-ls7" secondAttribute="trailing" id="yxq-lf-BfC"/>
-                            <constraint firstItem="zLO-Jq-Ndv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="zJM-7r-cCn"/>
                             <constraint firstItem="mjY-6o-Nh4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zZi-pp-o9x"/>
                         </constraints>
                     </view>
@@ -210,7 +157,6 @@
                         <outlet property="btnAlreadyAccount" destination="zY2-2p-8do" id="XCs-sy-JPx"/>
                         <outlet property="btnGetStarted" destination="zwz-z7-Oiv" id="DjL-VM-Zan"/>
                         <outlet property="btnHowItWorks" destination="hcr-rD-ls7" id="TWn-ak-q5U"/>
-                        <outlet property="languageTF" destination="ner-Ae-ANW" id="tmd-EP-9Nj"/>
                         <outlet property="profileBarButton" destination="Bi4-qq-siK" id="xIz-fD-kj1"/>
                         <outlet property="subTitlelbl" destination="v9X-Jm-4i2" id="OXi-J2-R4K"/>
                         <outlet property="titlelbl" destination="mjY-6o-Nh4" id="H17-3c-FRb"/>
@@ -675,10 +621,10 @@
             </objects>
             <point key="canvasLocation" x="-678" y="81"/>
         </scene>
-        <!--Email AddressVC-->
+        <!--View Controller-->
         <scene sceneID="l5z-AH-OV1">
             <objects>
-                <viewController id="olG-Jc-zas" customClass="EmailAddressVC" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="olG-Jc-zas" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ax2-Yp-mGb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,25 +634,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgZ-GC-mWZ" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="77" width="231" height="21"/>
+                                <rect key="frame" x="17" y="33" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to get started please enter below your contact details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE4-79-Rxq" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="107" width="333" height="36"/>
+                                <rect key="frame" x="17" y="63" width="333" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D21-Bf-sgL" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="173" width="341" height="18"/>
+                                <rect key="frame" x="17" y="129" width="341" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="emailname@address.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEJ-36-x5X" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="202" width="341" height="40"/>
+                                <rect key="frame" x="17" y="158" width="341" height="40"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Pfq-Kt-3e9"/>
@@ -726,13 +672,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-enter Your Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7k-AH-oZP" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="269" width="340" height="18"/>
+                                <rect key="frame" x="17" y="225" width="340" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="emailname@address.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SnB-Ux-DPi" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="298" width="340" height="40"/>
+                                <rect key="frame" x="17" y="254" width="340" height="40"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IkJ-wF-cXs"/>
@@ -771,7 +717,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zar-hR-8uw">
-                                <rect key="frame" x="17" y="346" width="340" height="40"/>
+                                <rect key="frame" x="17" y="302" width="340" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5lM-9f-ARQ"/>
@@ -826,7 +772,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNf-jW-VvD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="-330"/>
+            <point key="canvasLocation" x="942" y="-777"/>
         </scene>
         <!--InitialVC-->
         <scene sceneID="kNQ-71-ea1">
@@ -1627,7 +1573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnE-lA-Vr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2458.4000000000001" y="94.452773613193415"/>
+            <point key="canvasLocation" x="3207" y="157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9x9-Jf-cyD">
@@ -3422,7 +3368,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5n-JF-cR8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6013.6000000000004" y="455.17241379310349"/>
+            <point key="canvasLocation" x="5886" y="344"/>
         </scene>
         <!--Register Screen Confirm-->
         <scene sceneID="usJ-fm-yGH">
@@ -6844,59 +6790,47 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set-up 2 Step Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nra-DQ-gmz" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="33" width="338" height="21"/>
+                                <rect key="frame" x="17" y="77" width="338" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To keep your account safe we require 2 step verification" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eht-j6-UzA" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="63" width="333" height="36"/>
+                                <rect key="frame" x="17" y="107" width="333" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verification" translatesAutoresizingMaskIntoConstraints="NO" id="IqD-BC-eb9">
+                                <rect key="frame" x="0.0" y="149" width="375" height="273"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQM-Tq-ZmZ" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="177" width="295" height="39"/>
+                                <rect key="frame" x="40" y="442" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="BLU-of-9QH"/>
+                                    <constraint firstAttribute="height" constant="40" id="BLU-of-9QH"/>
                                 </constraints>
                                 <state key="normal" title="Verify by Email">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="verifiedEmail:" destination="6vf-W6-MwL" eventType="touchUpInside" id="OGM-Le-tH2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPt-wl-ZZY" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="285" width="295" height="39"/>
-                                <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="What is 2 Step Verification?">
-                                    <color key="titleColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4G-gY-9AB" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="40" y="231" width="295" height="39"/>
+                                <rect key="frame" x="40" y="497" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="0.40223371478873238" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="K3L-IO-qxa"/>
-                                </constraints>
                                 <state key="normal" title="Verify by Phone">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -6904,16 +6838,46 @@ Cg
                                     <segue destination="CR4-7o-Gaf" kind="show" id="clW-E1-pyg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPt-wl-ZZY" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                <rect key="frame" x="40" y="587" width="295" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="What is 2 Step Verification?">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops/>
+                                                </paragraphStyle>
+                                                <integer key="NSUnderline" value="1"/>
+                                                <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jFR-ce-aXm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IqD-BC-eb9" firstAttribute="top" secondItem="eht-j6-UzA" secondAttribute="bottom" constant="6" id="1R4-Ow-Xic"/>
+                            <constraint firstItem="nra-DQ-gmz" firstAttribute="height" secondItem="jo1-35-1BL" secondAttribute="height" multiplier="0.0314843" id="2VJ-IL-SUr"/>
                             <constraint firstItem="oPt-wl-ZZY" firstAttribute="trailing" secondItem="T4G-gY-9AB" secondAttribute="trailing" id="5lD-2G-7KQ"/>
+                            <constraint firstItem="WQM-Tq-ZmZ" firstAttribute="top" secondItem="IqD-BC-eb9" secondAttribute="bottom" constant="20" id="84X-Ox-3VA"/>
                             <constraint firstItem="WQM-Tq-ZmZ" firstAttribute="leading" secondItem="jFR-ce-aXm" secondAttribute="leading" constant="40" id="Clr-5F-rrF"/>
+                            <constraint firstItem="IqD-BC-eb9" firstAttribute="height" secondItem="jo1-35-1BL" secondAttribute="height" multiplier="0.409295" id="FK5-Mg-zjk"/>
                             <constraint firstItem="T4G-gY-9AB" firstAttribute="trailing" secondItem="WQM-Tq-ZmZ" secondAttribute="trailing" id="Kqe-ba-RoA"/>
+                            <constraint firstItem="jFR-ce-aXm" firstAttribute="bottom" secondItem="oPt-wl-ZZY" secondAttribute="bottom" constant="48" id="LEf-E1-2hD"/>
+                            <constraint firstItem="jFR-ce-aXm" firstAttribute="trailing" secondItem="IqD-BC-eb9" secondAttribute="trailing" id="Mrz-sX-wdF"/>
                             <constraint firstItem="eht-j6-UzA" firstAttribute="top" secondItem="nra-DQ-gmz" secondAttribute="bottom" constant="9" id="OU9-4E-fRg"/>
                             <constraint firstItem="eht-j6-UzA" firstAttribute="leading" secondItem="jFR-ce-aXm" secondAttribute="leading" constant="17" id="Qj8-MD-Mej"/>
-                            <constraint firstItem="WQM-Tq-ZmZ" firstAttribute="top" secondItem="eht-j6-UzA" secondAttribute="bottom" constant="78" id="cYp-Sx-suy"/>
+                            <constraint firstItem="IqD-BC-eb9" firstAttribute="top" secondItem="eht-j6-UzA" secondAttribute="bottom" constant="6" id="ZwW-kf-oDv"/>
                             <constraint firstItem="T4G-gY-9AB" firstAttribute="top" secondItem="WQM-Tq-ZmZ" secondAttribute="bottom" constant="15" id="e2n-Ff-zyL"/>
                             <constraint firstItem="nra-DQ-gmz" firstAttribute="top" secondItem="jFR-ce-aXm" secondAttribute="top" constant="33" id="evL-OM-dUx"/>
                             <constraint firstItem="jFR-ce-aXm" firstAttribute="trailing" secondItem="eht-j6-UzA" secondAttribute="trailing" constant="25" id="iOt-P0-Ugr"/>
@@ -6921,9 +6885,10 @@ Cg
                             <constraint firstItem="T4G-gY-9AB" firstAttribute="leading" secondItem="WQM-Tq-ZmZ" secondAttribute="leading" id="m2U-j8-KFD"/>
                             <constraint firstItem="jFR-ce-aXm" firstAttribute="trailing" secondItem="WQM-Tq-ZmZ" secondAttribute="trailing" constant="40" id="nwV-ng-7lb"/>
                             <constraint firstItem="jFR-ce-aXm" firstAttribute="trailing" secondItem="nra-DQ-gmz" secondAttribute="trailing" constant="20" id="rLf-bU-aDX"/>
-                            <constraint firstItem="oPt-wl-ZZY" firstAttribute="top" secondItem="T4G-gY-9AB" secondAttribute="bottom" constant="15" id="sge-0b-KXA"/>
+                            <constraint firstItem="T4G-gY-9AB" firstAttribute="height" secondItem="WQM-Tq-ZmZ" secondAttribute="height" id="uSV-QY-0Fn"/>
+                            <constraint firstItem="IqD-BC-eb9" firstAttribute="leading" secondItem="jo1-35-1BL" secondAttribute="leading" id="vaU-By-VT0"/>
                             <constraint firstItem="nra-DQ-gmz" firstAttribute="leading" secondItem="jFR-ce-aXm" secondAttribute="leading" constant="17" id="vjn-bx-nSo"/>
-                            <constraint firstItem="oPt-wl-ZZY" firstAttribute="height" secondItem="T4G-gY-9AB" secondAttribute="height" id="zFY-8y-HLm"/>
+                            <constraint firstItem="eht-j6-UzA" firstAttribute="height" secondItem="jo1-35-1BL" secondAttribute="height" multiplier="0.053973" id="wO3-Yr-hDe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tvb-R9-dfd">
@@ -7102,7 +7067,7 @@ Cg
             <objects>
                 <viewController id="CR4-7o-Gaf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CrB-d4-MGP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR6-KW-UrG">
@@ -7110,25 +7075,25 @@ Cg
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify by Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnd-os-4Md" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="33" width="338" height="21"/>
+                                <rect key="frame" x="17" y="77" width="338" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your mobile number below to request your verification code by SMS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTT-MT-4yn" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="63" width="333" height="36"/>
+                                <rect key="frame" x="17" y="107" width="333" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcc-QC-0gy" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="129" width="341" height="18"/>
+                                <rect key="frame" x="17" y="173" width="341" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="001 946 0099" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g20-Kq-usR" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="158" width="341" height="40"/>
+                                <rect key="frame" x="17" y="202" width="341" height="40"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HAM-e0-qeI"/>
@@ -7148,7 +7113,7 @@ Cg
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lp8-zo-6Wm" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="158" y="559" width="192" height="39"/>
+                                <rect key="frame" x="158" y="579" width="192" height="39"/>
                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="FFX-N0-bsj"/>
@@ -7199,23 +7164,23 @@ Cg
             <objects>
                 <viewController storyboardIdentifier="VerificationCodeViewController" id="RIb-AX-fWc" customClass="VerificationCodeViewController" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KFn-Ye-Hev">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent you a verification code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsi-OU-BNz" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="33" width="338" height="20.5"/>
+                                <rect key="frame" x="17" y="77" width="338" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cn6-KT-thU" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="178" width="341" height="18"/>
+                                <rect key="frame" x="17" y="222" width="341" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-mH-P3U">
-                                <rect key="frame" x="20" y="209.5" width="335" height="40"/>
+                                <rect key="frame" x="20" y="253.5" width="335" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dO3-kN-k6q" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="40"/>
@@ -7285,7 +7250,7 @@ Cg
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZP-sM-oXX">
-                                <rect key="frame" x="22" y="273.5" width="113" height="30"/>
+                                <rect key="frame" x="22" y="317.5" width="113" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="113" id="6zm-Zi-0dW"/>
                                     <constraint firstAttribute="height" constant="30" id="V2C-iU-Gu5"/>
@@ -7307,7 +7272,7 @@ Cg
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGa-ao-JMc" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="158" y="323.5" width="192" height="39"/>
+                                <rect key="frame" x="158" y="367.5" width="192" height="39"/>
                                 <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="Ezg-ou-9g8"/>
@@ -7326,7 +7291,7 @@ Cg
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL9-Ix-S3w" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="20" y="86.5" width="335" height="38.5"/>
+                                <rect key="frame" x="20" y="130.5" width="335" height="38.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Thank for keeping your account secure Check your email.">
                                         <attributes>
@@ -8176,36 +8141,36 @@ Cg
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now it's time to register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8p-bf-ePo" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="144" width="231" height="21"/>
+                                <rect key="frame" x="17" y="100" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen6" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-px-gNf">
-                                <rect key="frame" x="20" y="59" width="335" height="75"/>
+                                <rect key="frame" x="20" y="15" width="335" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="MUD-u5-HEt"/>
                                     <constraint firstAttribute="width" constant="335" id="s68-GV-8d5"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter below the details for [Patient Name]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnj-eB-cWX" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="174" width="333" height="18"/>
+                                <rect key="frame" x="17" y="130" width="333" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-08-a6K">
-                                <rect key="frame" x="17" y="251" width="341" height="40"/>
+                                <rect key="frame" x="17" y="207" width="341" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M59-ta-bfS" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="222" width="341" height="18"/>
+                                <rect key="frame" x="17" y="178" width="341" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/DD/YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuJ-Xe-S79" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="251" width="341" height="40"/>
+                                <rect key="frame" x="17" y="207" width="341" height="40"/>
                                 <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bCs-Qd-NjM"/>
@@ -8225,25 +8190,25 @@ Cg
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-bH-as9">
-                                <rect key="frame" x="17" y="251" width="341" height="40"/>
+                                <rect key="frame" x="17" y="207" width="341" height="40"/>
                                 <connections>
                                     <action selector="buttonCalPressed:" destination="NTO-ON-rlU" eventType="touchUpInside" id="1Gd-Ge-cLt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVc-nS-hrT" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="20" y="318" width="338" height="18"/>
+                                <rect key="frame" x="20" y="274" width="338" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1006" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFI-dE-0Uj" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="291.5" y="316.5" width="64.5" height="21"/>
+                                <rect key="frame" x="291.5" y="272.5" width="64.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpu-hZ-6ZH">
-                                <rect key="frame" x="20" y="347" width="335" height="38"/>
+                                <rect key="frame" x="20" y="303" width="335" height="38"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igX-hp-PSK" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
@@ -8293,19 +8258,19 @@ Cg
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race/Ethnicity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZW-72-daG" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="17" y="421" width="341" height="18"/>
+                                <rect key="frame" x="17" y="377" width="341" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1006" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10a-w0-Mkc" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                <rect key="frame" x="290" y="419.5" width="65" height="21"/>
+                                <rect key="frame" x="290" y="375.5" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERB-ET-xTs">
-                                <rect key="frame" x="20" y="450" width="335" height="38"/>
+                                <rect key="frame" x="20" y="406" width="335" height="38"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Race/Ethinicity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU2-ow-Pv4" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
@@ -8377,7 +8342,7 @@ Cg
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pai-uQ-Hbn">
-                                        <rect key="frame" x="20" y="389" width="335" height="140"/>
+                                        <rect key="frame" x="20" y="345" width="335" height="140"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uIR-AA-tke">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="140"/>
@@ -8431,7 +8396,7 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-lX-FWD" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="347" width="335" height="38"/>
+                                        <rect key="frame" x="20" y="303" width="335" height="38"/>
                                         <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
@@ -8446,7 +8411,7 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-cy-aOx">
-                                        <rect key="frame" x="318" y="351" width="32" height="30"/>
+                                        <rect key="frame" x="318" y="307" width="32" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="oTA-Gr-fcN"/>
@@ -8455,7 +8420,7 @@ Cg
                                         <state key="normal" image="expand_less-24px"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjI-GR-CSD">
-                                        <rect key="frame" x="20" y="347" width="335" height="33"/>
+                                        <rect key="frame" x="20" y="303" width="335" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </button>
                                 </subviews>
@@ -8476,7 +8441,7 @@ Cg
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tac-Wk-Mma">
-                                        <rect key="frame" x="20" y="492" width="335" height="140"/>
+                                        <rect key="frame" x="20" y="448" width="335" height="140"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vq9-t2-vUI">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="140"/>
@@ -8530,7 +8495,7 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3y-8d-di3" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="450" width="335" height="38"/>
+                                        <rect key="frame" x="20" y="406" width="335" height="38"/>
                                         <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
@@ -8545,7 +8510,7 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfB-CB-MJC">
-                                        <rect key="frame" x="318" y="454" width="32" height="30"/>
+                                        <rect key="frame" x="318" y="410" width="32" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2Da-54-og0"/>
@@ -8554,7 +8519,7 @@ Cg
                                         <state key="normal" image="expand_less-24px"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUF-he-h4c">
-                                        <rect key="frame" x="20" y="450" width="335" height="33"/>
+                                        <rect key="frame" x="20" y="406" width="335" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </button>
                                 </subviews>
@@ -11407,6 +11372,351 @@ Cg
             </objects>
             <point key="canvasLocation" x="11159" y="2069"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="IhN-ah-FUl">
+            <objects>
+                <viewController id="tO7-x4-5QL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FoQ-Kh-5Xw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbo-f6-szk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="emailname@address.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOp-Xi-XDJ" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="415" width="335" height="40"/>
+                                        <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="tO7-x4-5QL" id="AzT-st-5Eh"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letsgostarted" translatesAutoresizingMaskIntoConstraints="NO" id="RvK-eQ-m4s">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="250"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upM-xH-uMI" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="77" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="emailname@address.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-7m-Bez" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="470" width="335" height="40"/>
+                                        <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="tO7-x4-5QL" id="ros-Ov-9hz"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to get started please enter below your contact details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoR-s4-GXM" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="113" width="335" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFG-Cl-bOd">
+                                        <rect key="frame" x="20" y="523" width="335" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tO7-x4-5QL" id="0el-gu-aMJ"/>
+                                        </connections>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ6-az-tk2" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="194" y="584" width="161" height="39"/>
+                                        <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextBtnAction:" destination="tO7-x4-5QL" eventType="touchUpInside" id="Uaq-cN-MRG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fz-ab-cwI" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="584" width="149" height="39"/>
+                                        <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="UeB-B9-cyZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Previous">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="previousBtnAction:" destination="tO7-x4-5QL" eventType="touchUpInside" id="rxg-TF-CpV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hCa-7m-Bez" firstAttribute="leading" secondItem="hOp-Xi-XDJ" secondAttribute="leading" id="3tf-wi-F2j"/>
+                                    <constraint firstItem="hCa-7m-Bez" firstAttribute="top" secondItem="hOp-Xi-XDJ" secondAttribute="bottom" constant="15" id="6LI-zZ-GUc"/>
+                                    <constraint firstItem="RvK-eQ-m4s" firstAttribute="top" secondItem="RoR-s4-GXM" secondAttribute="bottom" constant="1" id="6oK-hP-3gR"/>
+                                    <constraint firstItem="6fz-ab-cwI" firstAttribute="centerY" secondItem="ZZ6-az-tk2" secondAttribute="centerY" id="CVn-sb-d72"/>
+                                    <constraint firstItem="ptT-NF-rXn" firstAttribute="trailing" secondItem="upM-xH-uMI" secondAttribute="trailing" constant="20" id="Kby-gG-69d"/>
+                                    <constraint firstItem="6fz-ab-cwI" firstAttribute="leading" secondItem="ptT-NF-rXn" secondAttribute="leading" constant="20" id="OCo-Ad-OQc"/>
+                                    <constraint firstItem="hOp-Xi-XDJ" firstAttribute="top" secondItem="RvK-eQ-m4s" secondAttribute="bottom" constant="15" id="OcH-M3-80R"/>
+                                    <constraint firstItem="hOp-Xi-XDJ" firstAttribute="leading" secondItem="ptT-NF-rXn" secondAttribute="leading" constant="20" id="Onv-Sd-DPQ"/>
+                                    <constraint firstItem="rFG-Cl-bOd" firstAttribute="leading" secondItem="hCa-7m-Bez" secondAttribute="leading" id="RlQ-o8-i6S"/>
+                                    <constraint firstItem="RvK-eQ-m4s" firstAttribute="leading" secondItem="ptT-NF-rXn" secondAttribute="leading" id="USp-Dc-2Dr"/>
+                                    <constraint firstItem="hCa-7m-Bez" firstAttribute="trailing" secondItem="hOp-Xi-XDJ" secondAttribute="trailing" id="Yle-YO-kEZ"/>
+                                    <constraint firstItem="6fz-ab-cwI" firstAttribute="height" secondItem="ZZ6-az-tk2" secondAttribute="height" id="dVs-JL-eg2"/>
+                                    <constraint firstItem="RoR-s4-GXM" firstAttribute="leading" secondItem="ptT-NF-rXn" secondAttribute="leading" constant="20" id="dd6-2k-gCT"/>
+                                    <constraint firstItem="RvK-eQ-m4s" firstAttribute="top" secondItem="RoR-s4-GXM" secondAttribute="bottom" constant="1" id="ePN-cw-v70"/>
+                                    <constraint firstItem="upM-xH-uMI" firstAttribute="leading" secondItem="ptT-NF-rXn" secondAttribute="leading" constant="20" id="f2K-WT-9vc"/>
+                                    <constraint firstItem="6fz-ab-cwI" firstAttribute="width" secondItem="ZZ6-az-tk2" secondAttribute="width" constant="-12" id="g9l-j8-kdS"/>
+                                    <constraint firstItem="upM-xH-uMI" firstAttribute="top" secondItem="ptT-NF-rXn" secondAttribute="top" constant="77" id="gMD-00-54B"/>
+                                    <constraint firstItem="ptT-NF-rXn" firstAttribute="trailing" secondItem="hOp-Xi-XDJ" secondAttribute="trailing" constant="20" id="gkS-uG-Np9"/>
+                                    <constraint firstItem="rFG-Cl-bOd" firstAttribute="top" secondItem="hCa-7m-Bez" secondAttribute="bottom" constant="13" id="hxX-cg-pN9"/>
+                                    <constraint firstItem="RoR-s4-GXM" firstAttribute="top" secondItem="upM-xH-uMI" secondAttribute="bottom" constant="15" id="iWx-ox-9XJ"/>
+                                    <constraint firstItem="ZZ6-az-tk2" firstAttribute="leading" secondItem="6fz-ab-cwI" secondAttribute="trailing" constant="25" id="k1l-IH-YUG"/>
+                                    <constraint firstItem="ptT-NF-rXn" firstAttribute="trailing" secondItem="RoR-s4-GXM" secondAttribute="trailing" constant="20" id="lyO-rA-431"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZZ6-az-tk2" secondAttribute="bottom" constant="44" id="mwJ-oX-nrQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZZ6-az-tk2" secondAttribute="trailing" constant="20" id="sT5-CC-Wgg"/>
+                                    <constraint firstItem="rFG-Cl-bOd" firstAttribute="trailing" secondItem="hCa-7m-Bez" secondAttribute="trailing" id="tUr-gM-7I7"/>
+                                    <constraint firstItem="RvK-eQ-m4s" firstAttribute="trailing" secondItem="ptT-NF-rXn" secondAttribute="trailing" id="uXd-uq-8aO"/>
+                                    <constraint firstItem="ZZ6-az-tk2" firstAttribute="top" secondItem="rFG-Cl-bOd" secondAttribute="bottom" constant="21" id="vHU-bS-Bqf"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="icF-a9-8i1"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ptT-NF-rXn"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1RG-F4-cgG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hCa-7m-Bez" firstAttribute="height" secondItem="FoQ-Kh-5Xw" secondAttribute="height" multiplier="0.05997" id="1US-lk-E0p"/>
+                            <constraint firstItem="ZZ6-az-tk2" firstAttribute="height" secondItem="FoQ-Kh-5Xw" secondAttribute="height" multiplier="0.0584708" id="6ol-Hh-Ncv"/>
+                            <constraint firstItem="nbo-f6-szk" firstAttribute="top" secondItem="1RG-F4-cgG" secondAttribute="top" id="BUH-Lq-lJ4"/>
+                            <constraint firstItem="RvK-eQ-m4s" firstAttribute="height" secondItem="FoQ-Kh-5Xw" secondAttribute="height" multiplier="0.374813" id="Dbr-gl-gk0"/>
+                            <constraint firstItem="nbo-f6-szk" firstAttribute="bottom" secondItem="1RG-F4-cgG" secondAttribute="bottom" id="Mml-S7-R1z"/>
+                            <constraint firstAttribute="trailing" secondItem="nbo-f6-szk" secondAttribute="trailing" id="bV1-0W-IL8"/>
+                            <constraint firstItem="rFG-Cl-bOd" firstAttribute="height" secondItem="FoQ-Kh-5Xw" secondAttribute="height" multiplier="0.05997" id="g91-Fe-7O6"/>
+                            <constraint firstItem="hOp-Xi-XDJ" firstAttribute="height" secondItem="FoQ-Kh-5Xw" secondAttribute="height" multiplier="0.05997" id="gBd-Ka-rSC"/>
+                            <constraint firstItem="nbo-f6-szk" firstAttribute="leading" secondItem="FoQ-Kh-5Xw" secondAttribute="leading" id="s6F-LN-gpF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vtd-FF-Ail">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="rkm-Xe-1HX"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTF" destination="hOp-Xi-XDJ" id="Tng-wB-cnW"/>
+                        <outlet property="nextBtn" destination="ZZ6-az-tk2" id="3Yz-N1-XyC"/>
+                        <outlet property="previousBtn" destination="6fz-ab-cwI" id="D8T-wb-M1a"/>
+                        <outlet property="profileBarButton" destination="rkm-Xe-1HX" id="aof-gS-ZWU"/>
+                        <outlet property="reenterEmailTF" destination="hCa-7m-Bez" id="hcz-AJ-hIr"/>
+                        <outlet property="scrollViewReg" destination="nbo-f6-szk" id="KtK-vo-mg0"/>
+                        <outlet property="textViewAlert" destination="rFG-Cl-bOd" id="jUA-53-xVY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mO-3Y-x9J" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="-922"/>
+        </scene>
+        <!--Email AddressVC-->
+        <scene sceneID="GF3-xZ-tm4">
+            <objects>
+                <viewController storyboardIdentifier="EmailAddressVC" id="h7W-2j-vyI" customClass="EmailAddressVC" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lON-Kd-fZd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgK-tf-fAj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xf8-xF-irO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Lets get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6Z-C1-WFj" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="60" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="In order to get started please enter below your contact details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svj-7H-DNh" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="90" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letsgostarted" translatesAutoresizingMaskIntoConstraints="NO" id="zm3-cT-GEg">
+                                                <rect key="frame" x="0.0" y="131" width="375" height="301"/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter you Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OnV-1V-ZNl" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="432" width="335" height="39"/>
+                                                <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
+                                                        <real key="value" value="17"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="h7W-2j-vyI" id="bMv-Y9-hLj"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reenter your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dR-e1-FCO" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="486" width="335" height="39"/>
+                                                <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadingCustom">
+                                                        <real key="value" value="17"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="h7W-2j-vyI" id="Y9g-Qa-NgY"/>
+                                                </connections>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pqt-db-DoF">
+                                                <rect key="frame" x="20" y="540" width="335" height="20"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="h7W-2j-vyI" id="6lM-v5-So6"/>
+                                                </connections>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="svj-7H-DNh" firstAttribute="top" secondItem="M6Z-C1-WFj" secondAttribute="bottom" constant="9" id="3JJ-zZ-W94"/>
+                                            <constraint firstItem="4dR-e1-FCO" firstAttribute="top" secondItem="OnV-1V-ZNl" secondAttribute="bottom" constant="15" id="4Gl-1q-M3N"/>
+                                            <constraint firstItem="svj-7H-DNh" firstAttribute="height" secondItem="xf8-xF-irO" secondAttribute="height" multiplier="0.0642857" id="7Mc-gt-drw"/>
+                                            <constraint firstItem="zm3-cT-GEg" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" id="AFH-4z-4uq"/>
+                                            <constraint firstItem="OnV-1V-ZNl" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="Eu7-3K-YGM"/>
+                                            <constraint firstItem="4dR-e1-FCO" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="GlS-eX-ejY"/>
+                                            <constraint firstItem="zm3-cT-GEg" firstAttribute="height" secondItem="xf8-xF-irO" secondAttribute="height" multiplier="0.5375" id="JV3-ax-EvP"/>
+                                            <constraint firstAttribute="trailing" secondItem="zm3-cT-GEg" secondAttribute="trailing" id="WgP-gG-GHb"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pqt-db-DoF" secondAttribute="bottom" id="YSb-qI-mTP"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pqt-db-DoF" secondAttribute="trailing" constant="20" id="YY1-yr-mlL"/>
+                                            <constraint firstItem="Pqt-db-DoF" firstAttribute="top" secondItem="4dR-e1-FCO" secondAttribute="bottom" constant="15" id="bEH-uM-Mwx"/>
+                                            <constraint firstAttribute="trailing" secondItem="OnV-1V-ZNl" secondAttribute="trailing" constant="20" id="fAZ-oH-NvQ"/>
+                                            <constraint firstItem="M6Z-C1-WFj" firstAttribute="top" secondItem="xf8-xF-irO" secondAttribute="top" constant="60" id="hhU-ui-wE8"/>
+                                            <constraint firstItem="svj-7H-DNh" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="hm7-zf-FnL"/>
+                                            <constraint firstAttribute="trailing" secondItem="4dR-e1-FCO" secondAttribute="trailing" constant="20" id="keF-c3-dMW"/>
+                                            <constraint firstItem="OnV-1V-ZNl" firstAttribute="height" secondItem="xf8-xF-irO" secondAttribute="height" multiplier="0.0696429" id="lsq-8O-ub1"/>
+                                            <constraint firstItem="M6Z-C1-WFj" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="m4Q-6Q-05E"/>
+                                            <constraint firstItem="zm3-cT-GEg" firstAttribute="top" secondItem="svj-7H-DNh" secondAttribute="bottom" constant="5" id="p0H-TN-sKg"/>
+                                            <constraint firstItem="4dR-e1-FCO" firstAttribute="height" secondItem="xf8-xF-irO" secondAttribute="height" multiplier="0.0696429" id="riW-na-3PC"/>
+                                            <constraint firstItem="Pqt-db-DoF" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="sO2-3n-jci"/>
+                                            <constraint firstAttribute="trailing" secondItem="svj-7H-DNh" secondAttribute="trailing" constant="20" id="sbZ-t1-5tZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="M6Z-C1-WFj" secondAttribute="trailing" constant="20" id="vjR-4p-8tP"/>
+                                            <constraint firstItem="OnV-1V-ZNl" firstAttribute="top" secondItem="zm3-cT-GEg" secondAttribute="bottom" id="yfT-De-ywx"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-Yc-xUL" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="207.5" y="580" width="147.5" height="39"/>
+                                        <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextBtnAction:" destination="h7W-2j-vyI" eventType="touchUpInside" id="EUU-7Y-3mH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-eh-spe" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="580" width="147.5" height="39"/>
+                                        <color key="backgroundColor" red="0.1317232847" green="0.31727612020000001" blue="0.33725959059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Previous">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="previousBtnAction:" destination="h7W-2j-vyI" eventType="touchUpInside" id="mVv-qk-KbC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xf8-xF-irO" firstAttribute="centerX" secondItem="QgK-tf-fAj" secondAttribute="centerX" id="1fs-jS-ydy"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMp-Yc-xUL" secondAttribute="bottom" constant="28" id="7XI-IC-t0N"/>
+                                    <constraint firstItem="jMp-Yc-xUL" firstAttribute="top" secondItem="xf8-xF-irO" secondAttribute="bottom" constant="20" id="9PY-f7-Prm"/>
+                                    <constraint firstItem="d3T-eh-spe" firstAttribute="height" secondItem="QgK-tf-fAj" secondAttribute="height" multiplier="0.0584708" id="DH6-gm-FKG"/>
+                                    <constraint firstItem="d3T-eh-spe" firstAttribute="leading" secondItem="QgK-tf-fAj" secondAttribute="leading" constant="20" id="Dov-kJ-JCi"/>
+                                    <constraint firstItem="d3T-eh-spe" firstAttribute="height" secondItem="jMp-Yc-xUL" secondAttribute="height" id="G5H-cl-3eg"/>
+                                    <constraint firstItem="d3T-eh-spe" firstAttribute="top" secondItem="xf8-xF-irO" secondAttribute="bottom" constant="20" id="LiI-6j-2BC"/>
+                                    <constraint firstAttribute="trailing" secondItem="jMp-Yc-xUL" secondAttribute="trailing" constant="20" id="SXv-4f-Xqq"/>
+                                    <constraint firstItem="jMp-Yc-xUL" firstAttribute="leading" secondItem="d3T-eh-spe" secondAttribute="trailing" constant="40" id="d35-1W-igJ"/>
+                                    <constraint firstItem="xf8-xF-irO" firstAttribute="leading" secondItem="QgK-tf-fAj" secondAttribute="leading" id="dec-YV-2MJ"/>
+                                    <constraint firstItem="xf8-xF-irO" firstAttribute="top" secondItem="QgK-tf-fAj" secondAttribute="top" id="kC4-Ee-eex"/>
+                                    <constraint firstItem="d3T-eh-spe" firstAttribute="width" secondItem="jMp-Yc-xUL" secondAttribute="width" id="kCp-TG-MbS"/>
+                                    <constraint firstAttribute="trailing" secondItem="xf8-xF-irO" secondAttribute="trailing" id="r3k-fJ-PTn"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MAw-gj-cFy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QgK-tf-fAj" firstAttribute="bottom" secondItem="MAw-gj-cFy" secondAttribute="bottom" id="8gs-99-NH5"/>
+                            <constraint firstItem="QgK-tf-fAj" firstAttribute="top" secondItem="MAw-gj-cFy" secondAttribute="top" id="c0V-5w-suN"/>
+                            <constraint firstItem="QgK-tf-fAj" firstAttribute="leading" secondItem="MAw-gj-cFy" secondAttribute="leading" id="pOx-3w-reS"/>
+                            <constraint firstItem="QgK-tf-fAj" firstAttribute="trailing" secondItem="MAw-gj-cFy" secondAttribute="trailing" id="ssu-Mu-bHU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hef-cv-bGo">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="0g1-Gx-APJ"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="emailTF" destination="OnV-1V-ZNl" id="jI7-LQ-9Qn"/>
+                        <outlet property="nextBtn" destination="jMp-Yc-xUL" id="6Ir-0m-dho"/>
+                        <outlet property="previousBtn" destination="d3T-eh-spe" id="j1r-S2-mhW"/>
+                        <outlet property="reenterEmailTF" destination="4dR-e1-FCO" id="DeB-7G-ECC"/>
+                        <outlet property="scrollViewReg" destination="QgK-tf-fAj" id="EtP-GT-uqA"/>
+                        <outlet property="textViewAlert" destination="Pqt-db-DoF" id="B6D-3E-Zu1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zj-y1-N2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-86.806596701649184"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h3L-5F-G0Q"/>
@@ -11420,7 +11730,8 @@ Cg
         <image name="chevron_left-24px" width="12" height="12"/>
         <image name="chevron_right-24px" width="12" height="12"/>
         <image name="expand_less-24px" width="36" height="36"/>
-        <image name="homescreenlogo" width="247" height="191"/>
+        <image name="home" width="453" height="267"/>
+        <image name="letsgostarted" width="420" height="301"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="screen1" width="650" height="142"/>
@@ -11434,6 +11745,7 @@ Cg
         <image name="search" width="86" height="84"/>
         <image name="selected" width="36" height="36"/>
         <image name="unselected" width="36" height="36"/>
+        <image name="verification" width="420" height="273"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

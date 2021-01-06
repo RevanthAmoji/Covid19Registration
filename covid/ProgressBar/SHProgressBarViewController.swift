@@ -24,9 +24,9 @@ class SHProgressBarViewController: UIViewController {
         super.viewDidLoad()
         
         if !UIAccessibility.isReduceTransparencyEnabled {
-            view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.67)
+            view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.1)
             
-            let blurEffect = UIBlurEffect(style: .light)
+            let blurEffect = UIBlurEffect.init()
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             //always fill the view
             blurEffectView.frame = self.view.bounds
