@@ -79,7 +79,8 @@ class InitialVC: UIViewController {
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
-
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)

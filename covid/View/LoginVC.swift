@@ -45,6 +45,7 @@ class LoginVC: UIViewController {
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
 
         languageTF.text = SingletonUI.shared.selectedLanguage

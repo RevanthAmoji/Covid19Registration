@@ -52,7 +52,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         nextBtn.layer.cornerRadius = nextBtn.frame.size.height/2
         previousBtn.layer.cornerRadius = previousBtn.frame.size.height/2
 
-       // self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
        // SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
