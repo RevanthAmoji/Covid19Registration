@@ -177,7 +177,16 @@ class RegisterPortalThree: UIViewController {
         
         checkConnectivity()
     }
-    
+    @IBAction func uploadNewResumeAction(_ sender: Any) {
+
+     let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item","public.data", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content", "public.text"], in: .import)
+
+    // let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text", "com.apple.iwork.pages.pages", "public.data"], in: .import)
+        
+
+     documentPicker.delegate = self
+     present(documentPicker, animated: true, completion: nil)
+ }
     func checkConnectivity() {
         
         if Reachability.isConnectedToNetwork() {
@@ -348,3 +357,18 @@ extension RegisterPortalThree: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+extension RegisterPortalThree: UIDocumentPickerDelegate{
+
+      func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+
+                let cico = url as URL
+                print(cico)
+                print(url)
+
+                print(url.lastPathComponent)
+
+                print(url.pathExtension)
+
+               }
+   }

@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.setNavigationBarHidden(true, animated: true)
+
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
 
         self.setDynamicText()
