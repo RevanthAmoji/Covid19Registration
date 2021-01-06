@@ -11560,19 +11560,19 @@ Cg
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Lets get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6Z-C1-WFj" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="60" width="335" height="21"/>
+                                                <rect key="frame" x="20" y="50" width="335" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.50684368609999997" green="0.65102237460000001" blue="0.64313870669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="In order to get started please enter below your details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svj-7H-DNh" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="90" width="335" height="36"/>
+                                                <rect key="frame" x="20" y="80" width="335" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letsgostarted" translatesAutoresizingMaskIntoConstraints="NO" id="zm3-cT-GEg">
-                                                <rect key="frame" x="0.0" y="131" width="375" height="301"/>
+                                                <rect key="frame" x="0.0" y="121" width="375" height="301"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter you Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OnV-1V-ZNl" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="432" width="335" height="39"/>
@@ -11635,7 +11635,7 @@ Cg
                                             <constraint firstAttribute="trailing" secondItem="Pqt-db-DoF" secondAttribute="trailing" constant="20" id="YY1-yr-mlL"/>
                                             <constraint firstItem="Pqt-db-DoF" firstAttribute="top" secondItem="4dR-e1-FCO" secondAttribute="bottom" constant="15" id="bEH-uM-Mwx"/>
                                             <constraint firstAttribute="trailing" secondItem="OnV-1V-ZNl" secondAttribute="trailing" constant="20" id="fAZ-oH-NvQ"/>
-                                            <constraint firstItem="M6Z-C1-WFj" firstAttribute="top" secondItem="xf8-xF-irO" secondAttribute="top" constant="60" id="hhU-ui-wE8"/>
+                                            <constraint firstItem="M6Z-C1-WFj" firstAttribute="top" secondItem="xf8-xF-irO" secondAttribute="top" constant="50" id="hhU-ui-wE8"/>
                                             <constraint firstItem="svj-7H-DNh" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="hm7-zf-FnL"/>
                                             <constraint firstAttribute="trailing" secondItem="4dR-e1-FCO" secondAttribute="trailing" constant="20" id="keF-c3-dMW"/>
                                             <constraint firstItem="OnV-1V-ZNl" firstAttribute="height" secondItem="xf8-xF-irO" secondAttribute="height" multiplier="0.0696429" id="lsq-8O-ub1"/>
@@ -11645,7 +11645,7 @@ Cg
                                             <constraint firstItem="Pqt-db-DoF" firstAttribute="leading" secondItem="xf8-xF-irO" secondAttribute="leading" constant="20" id="sO2-3n-jci"/>
                                             <constraint firstAttribute="trailing" secondItem="svj-7H-DNh" secondAttribute="trailing" constant="20" id="sbZ-t1-5tZ"/>
                                             <constraint firstAttribute="trailing" secondItem="M6Z-C1-WFj" secondAttribute="trailing" constant="20" id="vjR-4p-8tP"/>
-                                            <constraint firstItem="OnV-1V-ZNl" firstAttribute="top" secondItem="zm3-cT-GEg" secondAttribute="bottom" id="yfT-De-ywx"/>
+                                            <constraint firstItem="OnV-1V-ZNl" firstAttribute="top" secondItem="zm3-cT-GEg" secondAttribute="bottom" constant="10" id="yfT-De-ywx"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-Yc-xUL" customClass="SutherlandButton" customModule="covid" customModuleProvider="target">
@@ -11681,7 +11681,7 @@ Cg
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xf8-xF-irO" firstAttribute="centerX" secondItem="QgK-tf-fAj" secondAttribute="centerX" id="1fs-jS-ydy"/>
-                                    <constraint firstAttribute="bottom" secondItem="jMp-Yc-xUL" secondAttribute="bottom" constant="28" id="7XI-IC-t0N"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMp-Yc-xUL" secondAttribute="bottom" constant="15" id="7XI-IC-t0N"/>
                                     <constraint firstItem="jMp-Yc-xUL" firstAttribute="top" secondItem="xf8-xF-irO" secondAttribute="bottom" constant="20" id="9PY-f7-Prm"/>
                                     <constraint firstItem="d3T-eh-spe" firstAttribute="height" secondItem="QgK-tf-fAj" secondAttribute="height" multiplier="0.0584708" id="DH6-gm-FKG"/>
                                     <constraint firstItem="d3T-eh-spe" firstAttribute="leading" secondItem="QgK-tf-fAj" secondAttribute="leading" constant="20" id="Dov-kJ-JCi"/>
