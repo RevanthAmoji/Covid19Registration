@@ -85,7 +85,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     func checkConnectivityAuthorization() {
         
-        self.showProgressBar()
+//        self.showProgressBar()
         
         if Reachability.isConnectedToNetwork() {
     
@@ -98,19 +98,19 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 case .success(let dashboads):
                  //   if let verified = dashboads as? Bool {
                         if dashboads {
-                            self.hideProgressBar()
+//                            self.hideProgressBar()
                             self.textViewAlert.isHidden = false
                         } else {
                             self.checkConnectivity()
                         }
                 case .failure( _):
-                    self.hideProgressBar()
+//                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-            self.hideProgressBar()
+//            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
