@@ -98,19 +98,19 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 case .success(let dashboads):
                  //   if let verified = dashboads as? Bool {
                         if dashboads {
-//                            self.hideProgressBar()
+//                            // self.hideProgressBar()
                             self.textViewAlert.isHidden = false
                         } else {
                             self.checkConnectivity()
                         }
                 case .failure( _):
-//                    self.hideProgressBar()
+//                    // self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-//            self.hideProgressBar()
+//            // self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
@@ -131,25 +131,25 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 switch result {
                 
                 case .success(let dashboads):
-                   // self.hideProgressBar()
+                   // // self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         self.checkConnectivityBackUpData()
                         
                     } else {
-                        self.hideProgressBar()
+                        // self.hideProgressBar()
                         self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                         
                     }
                     
                 case .failure( _):
-                    self.hideProgressBar()
+                    // self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-            self.hideProgressBar()
+            // self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
@@ -201,7 +201,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 result in
                 switch result {
                 case .success(let dashboads):
-                    self.hideProgressBar()
+                    // self.hideProgressBar()
                     SingletonData.shared.StatusCode = dashboads.StatusCode
                     if dashboads.StatusCode == 0 {
                     
@@ -257,13 +257,13 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                         let controller = storyboard.instantiateViewController(withIdentifier: "InitialVC") as! InitialVC
                         self.navigationController?.pushViewController(controller, animated: false)
                 case .failure( _):
-                    self.hideProgressBar()
+                    // self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-            self.hideProgressBar()
+            // self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
         }
     }
