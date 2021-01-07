@@ -155,6 +155,8 @@ class InitialVC: UIViewController {
     
         SingletonData.shared.gender = tfGender.text
         SingletonData.shared.genderVal = selectGenderNumber
+        SingletonData.shared.firstNamePatient = tfPatientFirstName.text
+        SingletonData.shared.lastNamePatient = tfPatientLastName.text
         checkConnectivity()
         print("nextbtnaction")
     }
