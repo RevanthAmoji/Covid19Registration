@@ -7526,7 +7526,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="AM9-u1-57G"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slot Time" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-RA-i8I" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slot Time (24 Hrs)" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-RA-i8I" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="239" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="7ba-oj-Rax"/>
@@ -7922,7 +7922,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="SHF-9H-GW8"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Location" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8c-M5-KN5" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hosptial Name" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8c-M5-KN5" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="19" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="wO9-qu-W0f"/>
@@ -7961,7 +7961,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="B2N-xu-VFR"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a2-BG-IuD" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slot Date" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a2-BG-IuD" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="140.5" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="Q7k-aN-NdE"/>
@@ -7994,7 +7994,7 @@ Cg
                                                     <constraint firstAttribute="height" constant="1" id="tau-gg-lrM"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Time" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vP-A9-5Ew" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slot Time (24 Hrs)" lineBreakMode="clip" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vP-A9-5Ew" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="239" width="335" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="NxF-H7-atG"/>
@@ -9373,7 +9373,7 @@ Cg
                                 <rect key="frame" x="0.0" y="44" width="375" height="1156"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xw-FD-6Xb">
-                                        <rect key="frame" x="20" y="893" width="335" height="100"/>
+                                        <rect key="frame" x="20" y="913" width="335" height="100"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Dh-j8-dYr">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
@@ -9427,7 +9427,7 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7Q-sZ-Xnm" customClass="SutherlandTextField" customModule="covid" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="849" width="335" height="40"/>
+                                        <rect key="frame" x="20" y="869" width="335" height="40"/>
                                         <color key="backgroundColor" red="0.96868091820000002" green="0.98043209310000001" blue="0.97647088770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.38823529410000002" green="0.57254901960000004" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
@@ -9442,7 +9442,7 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdZ-jc-63w">
-                                        <rect key="frame" x="318" y="854" width="32" height="30"/>
+                                        <rect key="frame" x="318" y="874" width="32" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="59e-JM-rju"/>
@@ -9451,7 +9451,7 @@ Cg
                                         <state key="normal" image="expand_less-24px"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynw-ZE-52E">
-                                        <rect key="frame" x="20" y="849" width="335" height="35"/>
+                                        <rect key="frame" x="20" y="869" width="335" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </button>
                                 </subviews>
