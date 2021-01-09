@@ -128,6 +128,53 @@ enum titles {
     static let portalOneTitle = "Enter below the details for \(SingletonData.shared.firstNamePatient ?? "")"
     
     static let portalFinalTitle = "Does \(SingletonData.shared.firstNamePatient ?? "") have a valid form of indentification?"
+    
+    
+    static let symptoms_myslef = "Have you developed coronavirus symptoms?"
+
+       
+
+        static let dateSymptomsStarted_myslef = "Date symptoms started"
+
+        
+
+        static let proritizedForTesting_myslef = "Have you been prioritized for testing?"
+
+        
+
+        static let firstTimeTesting_myslef = "Is this the first time you are taking a test?"
+
+        
+
+        static let contactWithAnyOne_myslef = "Have you been in contact with anyone who has tested positive in the last 15 days?"
+
+        
+
+        
+
+        static let medicalCondition_myslef = "Do you have a chronic medical condition?"
+
+        
+
+        static let pregnant_myslef = "Is \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") pregnant?"
+
+        
+
+        static let highRiskCategory_myslef = "Are you over 65 years of age, or part of a high risk category?"
+
+        
+
+        static let smoker_myslef = "Do you smoke, chew, or vape?"
+
+        
+
+        static let primaryCareProvider_myslef = "Do you have a primary care provider?"
+
+        
+
+        
+
+        static let careFacility_myslef = "Do you live in a group setting e.g Care Facility?"
        
 }
 

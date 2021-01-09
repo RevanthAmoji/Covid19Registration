@@ -69,12 +69,26 @@ class RegisterScreenOne: UIViewController {
     }
     
     func setViewTitles(){
-        self.symptomsTitle.text = titles.symptoms
-        self.dateSymStartedTitle.text = titles.dateSymptomsStarted
-        self.proritizedForTestingTitle.text = titles.proritizedForTesting
-        self.firstTimeTestingTitle.text = titles.firstTimeTesting
-        self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
         
+        print(SingletonData.shared.relationName as Any)
+        
+        if SingletonData.shared.relationNumber == SingletonData.shared.myselfRelationVal {
+            
+            self.symptomsTitle.text = titles.symptoms_myslef
+            self.dateSymStartedTitle.text = titles.dateSymptomsStarted_myslef
+            self.proritizedForTestingTitle.text = titles.proritizedForTesting_myslef
+            self.firstTimeTestingTitle.text = titles.firstTimeTesting_myslef
+            self.contactWithAnyOneTitle.text = titles.contactWithAnyOne_myslef
+            
+        } else {
+            
+            self.symptomsTitle.text = titles.symptoms
+            self.dateSymStartedTitle.text = titles.dateSymptomsStarted
+            self.proritizedForTestingTitle.text = titles.proritizedForTesting
+            self.firstTimeTestingTitle.text = titles.firstTimeTesting
+            self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
+        }
+    
         if SingletonData.shared.StatusCode == 0 {
             
             symptoms = SingletonData.shared.symptoms

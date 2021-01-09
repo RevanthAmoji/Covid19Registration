@@ -75,8 +75,16 @@ class RegisterScreenThree: UIViewController {
 
     func setViewTitles() {
         
+        if SingletonData.shared.relationNumber == SingletonData.shared.myselfRelationVal {
+            
+            self.primaryCareProviderTitle.text = titles.primaryCareProvider_myslef
+            self.careFacilityTitle.text = titles.careFacility_myslef
+            
+        } else {
+        
         self.primaryCareProviderTitle.text = titles.primaryCareProvider
         self.careFacilityTitle.text = titles.careFacility
+        }
         
         if SingletonData.shared.StatusCode == 0 {
             

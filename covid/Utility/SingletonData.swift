@@ -56,6 +56,7 @@ class SingletonData {
     var relationName:String?
     var relationNumber:String?
     
+    var myselfRelationVal:String? = "3"
 
     var dateOfBirth:String?
     var gender:String?

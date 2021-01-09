@@ -157,6 +157,8 @@ class InitialVC: UIViewController {
         SingletonData.shared.genderVal = selectGenderNumber
         SingletonData.shared.firstNamePatient = tfPatientFirstName.text
         SingletonData.shared.lastNamePatient = tfPatientLastName.text
+        SingletonData.shared.relationName = tfRelationShip.text
+        SingletonData.shared.relationNumber = selectRelationNumber
         checkConnectivity()
         print("nextbtnaction")
     }
@@ -529,7 +531,7 @@ extension InitialVC: UITextFieldDelegate {
         } else  if textField == tfSignature {
             if  textField.text?.count != 0 {
                 
-                infoLbl.text = "I, \(tfSignature.text ?? "") acknowledge that I have the full consent of [Patient Name Here] to register on their behalf and any misrepresentation of their provided details is my sole responsbility"
+                infoLbl.text = "I, \(tfSignature.text ?? "") acknowledge that I have the full consent of \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") to register on their behalf and any misrepresentation of their provided details is my sole responsbility"
                 self.checkAllTheFeilds()
             }
         } else  if textField == tfPatientLastName {
@@ -550,7 +552,7 @@ extension InitialVC: UITextFieldDelegate {
                     
                 return true
             } else {
-                infoLbl.text = "I, \(text ?? "")\(string) acknowledge that I have the full consent of [Patient Name Here] to register on their behalf and any misrepresentation of their provided details is my sole responsbility"
+                infoLbl.text = "I, \(text ?? "")\(string) acknowledge that I have the full consent of \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") to register on their behalf and any misrepresentation of their provided details is my sole responsbility"
                     return true
             }
 

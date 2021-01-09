@@ -61,10 +61,23 @@ class RegisterScreentwo: UIViewController {
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
     }
     func setViewTitles(){
+        
+        if SingletonData.shared.relationNumber == SingletonData.shared.myselfRelationVal {
+            
+            self.medicalConditionTitle.text = titles.medicalCondition_myslef
+            self.pregnantTitle.text = titles.pregnant_myslef
+            self.highRiskCategoryTitle.text = titles.highRiskCategory_myslef
+            self.smokerTitle.text = titles.smoker_myslef
+            
+            
+        } else {
+        
         self.medicalConditionTitle.text = titles.medicalCondition
         self.pregnantTitle.text = titles.pregnant
         self.highRiskCategoryTitle.text = titles.highRiskCategory
         self.smokerTitle.text = titles.smoker
+            
+        }
         
         if SingletonData.shared.StatusCode == 0 {
             medicalCondition = SingletonData.shared.medicalCondition

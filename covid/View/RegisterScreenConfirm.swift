@@ -193,17 +193,35 @@ class RegisterScreenConfirm: UIViewController {
     }
     
     func setViewTitles(){
-        self.symptomsTitle.text = titles.symptoms
-        self.dateSymStartedTitle.text = titles.dateSymptomsStarted
-        self.proritizedForTestingTitle.text = titles.proritizedForTesting
-        self.firstTimeTestingTitle.text = titles.firstTimeTesting
-        self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
-        self.medicalConditionTitle.text = titles.medicalCondition
-        self.pregnantTitle.text = titles.pregnant
-        self.highRiskCategoryTitle.text = titles.highRiskCategory
-        self.smokerTitle.text = titles.smoker
-        self.primaryCareProviderTitle.text = titles.primaryCareProvider
-        self.careFacilityTitle.text = titles.careFacility
+        
+        if SingletonData.shared.relationNumber == SingletonData.shared.myselfRelationVal {
+            
+            self.symptomsTitle.text = titles.symptoms_myslef
+            self.dateSymStartedTitle.text = titles.dateSymptomsStarted_myslef
+            self.proritizedForTestingTitle.text = titles.proritizedForTesting_myslef
+            self.firstTimeTestingTitle.text = titles.firstTimeTesting_myslef
+            self.contactWithAnyOneTitle.text = titles.contactWithAnyOne_myslef
+            self.medicalConditionTitle.text = titles.medicalCondition_myslef
+            self.pregnantTitle.text = titles.pregnant_myslef
+            self.highRiskCategoryTitle.text = titles.highRiskCategory_myslef
+            self.smokerTitle.text = titles.smoker_myslef
+            self.primaryCareProviderTitle.text = titles.primaryCareProvider_myslef
+            self.careFacilityTitle.text = titles.careFacility_myslef
+            
+        } else {
+            
+            self.symptomsTitle.text = titles.symptoms
+            self.dateSymStartedTitle.text = titles.dateSymptomsStarted
+            self.proritizedForTestingTitle.text = titles.proritizedForTesting
+            self.firstTimeTestingTitle.text = titles.firstTimeTesting
+            self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
+            self.medicalConditionTitle.text = titles.medicalCondition
+            self.pregnantTitle.text = titles.pregnant
+            self.highRiskCategoryTitle.text = titles.highRiskCategory
+            self.smokerTitle.text = titles.smoker
+            self.primaryCareProviderTitle.text = titles.primaryCareProvider
+            self.careFacilityTitle.text = titles.careFacility
+        }
     }
     
     func setPreviousData() {
