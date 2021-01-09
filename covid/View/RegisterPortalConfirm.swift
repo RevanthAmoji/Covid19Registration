@@ -78,11 +78,20 @@ class RegisterPortalConfirm: UIViewController {
        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
-        let btnArr = self.view.subviews(ofType: UIImageView.self)
+        let imagArr = self.view.subviews(ofType: UIImageView.self)
         
-        for item in btnArr {
+        for item in imagArr {
             let itemVal = item as UIImageView
             itemVal.backgroundColor = UIColor.Citygo.h1headingone
+        }
+        
+        let btnArr = self.view.subviews(ofType: UIButton.self)
+        
+        for item in btnArr {
+            let itemVal = item as UIButton
+            if itemVal.titleLabel?.text == "Update" {
+                itemVal.backgroundColor = UIColor.Citygo.buttonfieldsInactive
+            }
         }
         
     }

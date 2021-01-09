@@ -110,8 +110,8 @@ class RegisterPortalThree: UIViewController {
             selAgreeStr = "1"
             btnSelAgree.isSelected = true
             
-            uploadFormBackGndView.isHidden = false
-            uploadFormBackGndViewwHeight.constant = 140 //140
+            uploadFormBackGndView.isHidden = true
+            uploadFormBackGndViewwHeight.constant = 0 //140
             
             policyBackGndView.isHidden = true
             policyBackGndViewHeight.constant = 0 //278

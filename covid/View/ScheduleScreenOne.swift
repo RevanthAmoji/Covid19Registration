@@ -171,6 +171,7 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     }
     
     func fetchStadiumsOnMap(_ stadiums: [Stadium]) {
+        self.mapView.removeAnnotations(self.mapView.annotations)
       for stadium in stadiums {
         let annotations = MKPointAnnotation()
         annotations.title = stadium.HospitalName
@@ -180,7 +181,6 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
         if( annotations.coordinate.latitude > -89 && annotations.coordinate.latitude < 89 && annotations.coordinate.longitude > -179 && annotations.coordinate.longitude < 179 ){
             mapView.setRegion(coordinateRegion, animated: true)
         }
-        
         mapView.addAnnotation(annotations)
       }
     }
