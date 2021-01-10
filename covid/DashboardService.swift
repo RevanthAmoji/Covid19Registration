@@ -316,7 +316,7 @@ class DashboardService {
     
     func getLogin(url:String,completion: @escaping (_ : ServiceResult<LoginModel>) -> Void) {
         
-        let authUrl = url
+        guard let authUrl = URL(string: url) else { return }
         var request = URLRequest(url: try! authUrl.asURL())
         request.httpMethod = "GET"
         

@@ -67,7 +67,13 @@ class RegisterScreenOne: UIViewController {
         // Pass the selected object to the new view controller.
 
     }
-    
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+   
     func setViewTitles(){
         
         print(SingletonData.shared.relationName as Any)

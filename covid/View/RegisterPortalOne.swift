@@ -101,7 +101,12 @@ class RegisterPortalOne: UIViewController {
     
     
     */
-    
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     @IBAction func dropdownBtnAgeAction(_ sender: Any) {
     
         self.heighlighBoarderColorAge(boolVal: true)

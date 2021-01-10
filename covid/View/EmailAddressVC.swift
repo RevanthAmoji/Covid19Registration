@@ -41,7 +41,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         SingletonData.shared.isFromLogin = false
     
         textViewAlert.isHidden = true
-         textViewAlert.hyperLink(originalText: "E-Mail already exists. Click here to Sign In.", hyperLink: "here", urlString: linkUrl)
+        textViewAlert.hyperLink(originalText: "E-Mail already exists. Click here to Sign In.", hyperLink: "here", urlString: linkUrl)
 
     }
     override func viewWillAppear (_ animated: Bool) {
@@ -99,7 +99,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                  //   if let verified = dashboads as? Bool {
                         if dashboads {
 //                            // self.hideProgressBar()
-                            self.textViewAlert.isHidden = false
+                            DispatchQueue.main.async {
+                                self.textViewAlert.isHidden = false
+                            }
                         } else {
                             self.checkConnectivity()
                         }

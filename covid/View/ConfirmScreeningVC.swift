@@ -42,7 +42,9 @@ class ConfirmScreeningVC: UIViewController {
     
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+       
     }
     func setPreviousData() {
         
@@ -57,6 +59,13 @@ class ConfirmScreeningVC: UIViewController {
     
     @IBAction func btnGetDirectionsAction(_ sender: Any) {
         self.getDirections()
+    }
+    
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     func getDirections() {
         /*

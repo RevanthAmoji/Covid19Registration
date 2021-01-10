@@ -28,6 +28,12 @@ class LanguagesVC: UIViewController {
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
     }
 
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     /*
     // MARK: - Navigation
 

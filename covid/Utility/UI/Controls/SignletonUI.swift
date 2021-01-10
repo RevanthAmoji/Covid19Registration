@@ -64,6 +64,9 @@ class SingletonUI {
 //            target: self,
 //            action: #selector(menuAction)
 //        )
+     
+
+        
         if isEnable ?? false {
             barItem.isEnabled = true
             vc.navigationController?.navigationItem.rightBarButtonItem = barItem
@@ -74,6 +77,11 @@ class SingletonUI {
         
     }
    
+    
+    @objc @IBAction func profileAction() {
+     
+        
+     }
     // Find the Top Most Viewcontroller
    
     func barButtonColor() {

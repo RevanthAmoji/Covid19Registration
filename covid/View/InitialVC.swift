@@ -80,7 +80,7 @@ class InitialVC: UIViewController {
         super.viewWillAppear(animated)
         SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+       
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
@@ -335,7 +335,12 @@ class InitialVC: UIViewController {
         alertController.addAction(trueAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     func checkConnectivity() {
         //Patient_Gender
