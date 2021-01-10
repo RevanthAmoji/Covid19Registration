@@ -19,7 +19,7 @@ class MenuVC: UIViewController {
         SingletonUI.shared.viewMenuBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         // Hidden backbutton
-        self.navigationController?.navigationBar.topItem?.hidesBackButton = true
+       // self.navigationController?.navigationBar.topItem?.hidesBackButton = true
 
     }
     
