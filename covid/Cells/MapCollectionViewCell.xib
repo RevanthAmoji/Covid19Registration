@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapCollectionViewCell" id="gTV-IL-0wX" customClass="MapCollectionViewCell" customModule="covid" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="227" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="227" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-mv-Rd3">
+                        <rect key="frame" x="11" y="5" width="205" height="121"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXs-A6-3tF" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                <rect key="frame" x="10" y="5" width="185" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="gdQ-kB-8I2"/>
+                                    <constraint firstAttribute="height" constant="40" id="x4a-nv-Std"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxr-BV-Ta9" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                <rect key="frame" x="10" y="47" width="185" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="quF-yh-WHK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWX-WX-IyW" customClass="SutherlandLabel" customModule="covid" customModuleProvider="target">
+                                <rect key="frame" x="10" y="88" width="185" height="23"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92953616380000004" green="0.95297545189999999" blue="0.94902008770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uXs-A6-3tF" secondAttribute="trailing" constant="10" id="4pB-xb-wdb"/>
+                            <constraint firstItem="uXs-A6-3tF" firstAttribute="top" secondItem="k1A-mv-Rd3" secondAttribute="top" constant="5" id="5MP-Hw-0PX"/>
+                            <constraint firstItem="IWX-WX-IyW" firstAttribute="leading" secondItem="k1A-mv-Rd3" secondAttribute="leading" constant="10" id="7or-1C-dsk"/>
+                            <constraint firstAttribute="trailing" secondItem="IWX-WX-IyW" secondAttribute="trailing" constant="10" id="HeU-BM-kA3"/>
+                            <constraint firstAttribute="bottom" secondItem="IWX-WX-IyW" secondAttribute="bottom" constant="10" id="KvP-HQ-9cf"/>
+                            <constraint firstItem="Nxr-BV-Ta9" firstAttribute="leading" secondItem="k1A-mv-Rd3" secondAttribute="leading" constant="10" id="Zs5-fQ-gfR"/>
+                            <constraint firstItem="uXs-A6-3tF" firstAttribute="leading" secondItem="k1A-mv-Rd3" secondAttribute="leading" constant="10" id="hlf-j8-dsN"/>
+                            <constraint firstItem="Nxr-BV-Ta9" firstAttribute="top" secondItem="uXs-A6-3tF" secondAttribute="bottom" constant="2" id="lTX-5I-Wmj"/>
+                            <constraint firstAttribute="trailing" secondItem="Nxr-BV-Ta9" secondAttribute="trailing" constant="10" id="mJM-Zi-uSY"/>
+                            <constraint firstItem="IWX-WX-IyW" firstAttribute="top" secondItem="Nxr-BV-Ta9" secondAttribute="bottom" constant="1" id="yu3-53-jhT"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                <color key="value" red="0.13333333333333333" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="k1A-mv-Rd3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="MmD-rH-MHZ"/>
+                <constraint firstItem="k1A-mv-Rd3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="hLa-xO-TRj"/>
+                <constraint firstAttribute="trailing" secondItem="k1A-mv-Rd3" secondAttribute="trailing" constant="11" id="hlR-5m-FIU"/>
+                <constraint firstAttribute="bottom" secondItem="k1A-mv-Rd3" secondAttribute="bottom" constant="11" id="jzf-eq-meI"/>
+            </constraints>
+            <size key="customSize" width="227" height="137"/>
+            <connections>
+                <outlet property="backGndView" destination="k1A-mv-Rd3" id="8zg-hg-4GF"/>
+                <outlet property="seats" destination="IWX-WX-IyW" id="AE5-ge-6nW"/>
+                <outlet property="subTitlelbl" destination="Nxr-BV-Ta9" id="8Dj-u1-vnI"/>
+                <outlet property="titleWidth" destination="gdQ-kB-8I2" id="COo-Yi-OJF"/>
+                <outlet property="titlelbl" destination="uXs-A6-3tF" id="R9E-4h-fJB"/>
+            </connections>
+            <point key="canvasLocation" x="165.94202898550725" y="115.51339285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>

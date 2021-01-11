@@ -12,16 +12,28 @@ class LanguagesVC: UIViewController {
     @IBOutlet weak var languagesTableView: UITableView!
     var languagesList:[String] = ["English", "Español"]
     
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SingletonUI.shared.viewMenuBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
-        self.view.backgroundColor =  UIColor.init(hex: Colors.buttonHoverStateColor.rawValue)
         self.languagesTableView.reloadData()
         
     }
-    
+    override func viewWillAppear (_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        super.viewWillAppear(animated)
+       // SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
+    }
 
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     /*
     // MARK: - Navigation
 

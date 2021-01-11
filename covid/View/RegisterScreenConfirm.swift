@@ -16,14 +16,23 @@ enum viewHeight: CGFloat {
     case TwelveViewWithOutEditHeight = 180.0
     case TwelveViewWithEditHeight = 600.0
     case ThirteenViewWithEditHeight = 300.0
+    case ThirteenViewWithEditHeight_new = 170.0
 }
 
 enum checkBox: String {
     case trueVal = "Yes"
     case falseVal = "No"
 }
+enum checkBoxInt: String {
+    case trueVal = "1"
+    case falseVal = "0"
+}
 
 class RegisterScreenConfirm: UIViewController {
+    
+    var viewModel = RegisterScreenConfirm()
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
     @IBOutlet weak var symptomsHeight: NSLayoutConstraint!
     @IBOutlet weak var backGrdViewTwoHeight: NSLayoutConstraint!
@@ -99,7 +108,19 @@ class RegisterScreenConfirm: UIViewController {
     @IBOutlet weak var btnNext: SutherlandButton!
     
     @IBOutlet weak var tfCareProvider, tfAddressLineOne, tfAddressLineTwo, tfCity, tfState, tfZipCode, tfPhoneNumber,tfEmailAddress  : SutherlandTextField!
-
+    
+    @IBOutlet weak var symptomsTitle:UILabel!
+    @IBOutlet weak var dateSymStartedTitle:UILabel!
+    @IBOutlet weak var proritizedForTestingTitle:UILabel!
+    @IBOutlet weak var firstTimeTestingTitle:UILabel!
+    @IBOutlet weak var contactWithAnyOneTitle:UILabel!
+    @IBOutlet weak var medicalConditionTitle:UILabel!
+    @IBOutlet weak var pregnantTitle:UILabel!
+    @IBOutlet weak var highRiskCategoryTitle:UILabel!
+    @IBOutlet weak var smokerTitle:UILabel!
+    @IBOutlet weak var primaryCareProviderTitle:UILabel!
+    @IBOutlet weak var careFacilityTitle:UILabel!
+   
     var symptoms:String?
     var dateSymptomsStarted:String?
     var proritizedForTesting:String?
@@ -131,11 +152,35 @@ class RegisterScreenConfirm: UIViewController {
         setPreviousData()
         setPreviousDetails()
        
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+        setViewTitles()
+        
+       
+        let imagArr = self.view.subviews(ofType: UIImageView.self)
+        
+        for item in imagArr {
+            let itemVal = item as UIImageView
+            itemVal.backgroundColor = UIColor.Citygo.h1headingone
+        }
+        
+        //27235E
+        
+        let btnArr = self.view.subviews(ofType: UIButton.self)
+        
+        for item in btnArr {
+            let itemVal = item as UIButton
+            if itemVal.titleLabel?.text == "Update" {
+                itemVal.backgroundColor = UIColor.Citygo.buttonfieldsInactive
+            }
+        }
     }
 
     
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+       
+            SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
@@ -146,6 +191,43 @@ class RegisterScreenConfirm: UIViewController {
         let center: NotificationCenter = NotificationCenter.default
         center.removeObserver(self, name: UIWindow.keyboardDidShowNotification, object: nil)
         center.removeObserver(self, name: UIWindow.keyboardWillHideNotification, object: nil)
+    }
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    func setViewTitles(){
+        
+        if SingletonData.shared.relationNumber == SingletonData.shared.myselfRelationVal {
+            
+            self.symptomsTitle.text = titles.symptoms_myslef
+            self.dateSymStartedTitle.text = titles.dateSymptomsStarted_myslef
+            self.proritizedForTestingTitle.text = titles.proritizedForTesting_myslef
+            self.firstTimeTestingTitle.text = titles.firstTimeTesting_myslef
+            self.contactWithAnyOneTitle.text = titles.contactWithAnyOne_myslef
+            self.medicalConditionTitle.text = titles.medicalCondition_myslef
+            self.pregnantTitle.text = titles.pregnant_myslef
+            self.highRiskCategoryTitle.text = titles.highRiskCategory_myslef
+            self.smokerTitle.text = titles.smoker_myslef
+            self.primaryCareProviderTitle.text = titles.primaryCareProvider_myslef
+            self.careFacilityTitle.text = titles.careFacility_myslef
+            
+        } else {
+            
+            self.symptomsTitle.text = titles.symptoms
+            self.dateSymStartedTitle.text = titles.dateSymptomsStarted
+            self.proritizedForTestingTitle.text = titles.proritizedForTesting
+            self.firstTimeTestingTitle.text = titles.firstTimeTesting
+            self.contactWithAnyOneTitle.text = titles.contactWithAnyOne
+            self.medicalConditionTitle.text = titles.medicalCondition
+            self.pregnantTitle.text = titles.pregnant
+            self.highRiskCategoryTitle.text = titles.highRiskCategory
+            self.smokerTitle.text = titles.smoker
+            self.primaryCareProviderTitle.text = titles.primaryCareProvider
+            self.careFacilityTitle.text = titles.careFacility
+        }
     }
     
     func setPreviousData() {
@@ -169,7 +251,6 @@ class RegisterScreenConfirm: UIViewController {
         self.zipCode = SingletonData.shared.zipCode
         self.phoneNumber = SingletonData.shared.phoneNumber
         self.emailAddress = SingletonData.shared.emailAddress
-        
     }
     
     @objc func keyboardWillBeHidden (aNotification: NSNotification) {
@@ -188,9 +269,16 @@ class RegisterScreenConfirm: UIViewController {
         self.scrollViewReg.contentInset = contentInsets
         self.scrollViewReg.scrollIndicatorInsets = contentInsets
     }
+    func intValueConver(value:String) -> String {
+        if value == checkBoxInt.trueVal.rawValue {
+            return checkBox.trueVal.rawValue
+        } else {
+            return checkBox.falseVal.rawValue
+        }
+    }
     func setPreviousDetails() {
-        lblEditSymptomsOne.text = symptoms
-        if lblEditSymptomsOne.text == "Yes" {
+        lblEditSymptomsOne.text = intValueConver(value: symptoms ?? "")
+        if lblEditSymptomsOne.text == checkBox.trueVal.rawValue {
             btntrueOne.isSelected = true
             btnfalseOne.isSelected = false
         } else {
@@ -201,8 +289,8 @@ class RegisterScreenConfirm: UIViewController {
         lblEditdateSymptomsStartedTwo.text = dateSymptomsStarted
         tfDateSymStarted.text = dateSymptomsStarted
         
-        lblEditProritizedForTestingThree.text = proritizedForTesting
-        if lblEditProritizedForTestingThree.text == "Yes" {
+        lblEditProritizedForTestingThree.text = intValueConver(value: proritizedForTesting ?? "")
+        if lblEditProritizedForTestingThree.text == checkBox.trueVal.rawValue {
             btntrueTwo.isSelected = true
             btnfalseTwo.isSelected = false
         } else {
@@ -210,8 +298,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseTwo.isSelected = true
         }
         
-        lblEditFirstTimeTestingFour.text = firstTimeTesting
-        if lblEditFirstTimeTestingFour.text == "Yes" {
+        lblEditFirstTimeTestingFour.text =  intValueConver(value: firstTimeTesting ?? "")
+        if lblEditFirstTimeTestingFour.text == checkBox.trueVal.rawValue {
             btntrueThree.isSelected = true
             btnfalseThree.isSelected = false
         } else {
@@ -219,8 +307,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseThree.isSelected = true
         }
         
-        lblEditContactWithAnyOneFive.text = contactWithAnyOne
-        if lblEditContactWithAnyOneFive.text == "Yes" {
+        lblEditContactWithAnyOneFive.text = intValueConver(value: contactWithAnyOne ?? "")
+        if lblEditContactWithAnyOneFive.text == checkBox.trueVal.rawValue {
             btntrueFour.isSelected = true
             btnfalseFour.isSelected = false
         } else {
@@ -228,8 +316,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseFour.isSelected = true
         }
         
-        lblEditMedicalConditionSix.text = medicalCondition
-        if lblEditMedicalConditionSix.text == "Yes" {
+        lblEditMedicalConditionSix.text = intValueConver(value: medicalCondition ?? "")
+        if lblEditMedicalConditionSix.text == checkBox.trueVal.rawValue {
             btntrueFive.isSelected = true
             btnfalseFive.isSelected = false
         } else {
@@ -237,8 +325,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseFive.isSelected = true
         }
         
-        lblEditPregnantSeven.text = pregnant
-        if lblEditMedicalConditionSix.text == "Yes" {
+        lblEditPregnantSeven.text = intValueConver(value: pregnant ?? "")
+        if lblEditMedicalConditionSix.text == checkBox.trueVal.rawValue {
             btntrueSix.isSelected = true
             btnfalseSix.isSelected = false
         } else {
@@ -246,8 +334,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseSix.isSelected = true
         }
         
-        lblEditHighRiskCategoryEight.text = highRiskCategory
-        if lblEditHighRiskCategoryEight.text == "Yes" {
+        lblEditHighRiskCategoryEight.text = intValueConver(value: highRiskCategory ?? "")
+        if lblEditHighRiskCategoryEight.text == checkBox.trueVal.rawValue {
             btntrueSeven.isSelected = true
             btnfalseSeven.isSelected = false
         } else {
@@ -255,8 +343,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseSeven.isSelected = true
         }
         
-        lblEditSmokerNine.text = smoker
-        if lblEditSmokerNine.text == "Yes" {
+        lblEditSmokerNine.text = intValueConver(value: smoker ?? "")
+        if lblEditSmokerNine.text == checkBox.trueVal.rawValue {
             btntrueEight.isSelected = true
             btnfalseEight.isSelected = false
         } else {
@@ -264,8 +352,8 @@ class RegisterScreenConfirm: UIViewController {
             btnfalseEight.isSelected = true
         }
         
-        lblEditPrimaryCareProviderTen.text = primaryCareProvider
-        if lblEditPrimaryCareProviderTen.text == "Yes" {
+        lblEditPrimaryCareProviderTen.text = intValueConver(value: primaryCareProvider ?? "")
+        if lblEditPrimaryCareProviderTen.text == checkBox.trueVal.rawValue {
             btntrueNine.isSelected = true
             btnfalseNine.isSelected = false
         } else {
@@ -287,8 +375,8 @@ class RegisterScreenConfirm: UIViewController {
         tfPhoneNumber.text = phoneNumber ?? ""
         tfEmailAddress.text = emailAddress ?? ""
         
-        lblEditCareFacilityFourteen.text = careFacility
-        if lblEditCareFacilityFourteen.text == "Yes" {
+        lblEditCareFacilityFourteen.text = intValueConver(value: careFacility ?? "")
+        if lblEditCareFacilityFourteen.text == checkBox.trueVal.rawValue {
             btntrueTen.isSelected = true
             btnfalseTen.isSelected = false
         } else {
@@ -419,11 +507,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditOne.isHidden = false
             
             if btntrueOne.isSelected {
-                symptoms = checkBox.trueVal.rawValue
+                symptoms = checkBoxInt.trueVal.rawValue
             } else if btnfalseOne.isSelected {
-                symptoms = checkBox.falseVal.rawValue
+                symptoms = checkBoxInt.falseVal.rawValue
             }
-            lblEditSymptomsOne.text = symptoms
+            lblEditSymptomsOne.text = intValueConver(value: symptoms ?? "")
             
         } else if selBtn.tag == 701 {
             backGrdViewTwo.isHidden = true
@@ -439,11 +527,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditThree.isHidden = false
             
             if btntrueTwo.isSelected {
-                proritizedForTesting  = checkBox.trueVal.rawValue
+                proritizedForTesting  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseTwo.isSelected {
-                proritizedForTesting = checkBox.falseVal.rawValue
+                proritizedForTesting = checkBoxInt.falseVal.rawValue
             }
-            lblEditProritizedForTestingThree.text = proritizedForTesting
+            lblEditProritizedForTestingThree.text = intValueConver(value: proritizedForTesting ?? "")
             
         } else if selBtn.tag == 703 {
             backGrdViewFour.isHidden = true
@@ -451,11 +539,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditFour.isHidden = false
             
             if btntrueThree.isSelected {
-                firstTimeTesting  = checkBox.trueVal.rawValue
+                firstTimeTesting  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseThree.isSelected {
-                firstTimeTesting = checkBox.falseVal.rawValue
+                firstTimeTesting = checkBoxInt.falseVal.rawValue
             }
-            lblEditFirstTimeTestingFour.text = firstTimeTesting
+            lblEditFirstTimeTestingFour.text = intValueConver(value: firstTimeTesting ?? "")
             
         } else if selBtn.tag == 704 {
             backGrdViewFive.isHidden = true
@@ -463,11 +551,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditFive.isHidden = false
             
             if btntrueFour.isSelected {
-                contactWithAnyOne  = checkBox.trueVal.rawValue
+                contactWithAnyOne  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseFour.isSelected {
-                contactWithAnyOne = checkBox.falseVal.rawValue
+                contactWithAnyOne = checkBoxInt.falseVal.rawValue
             }
-            lblEditContactWithAnyOneFive.text = contactWithAnyOne
+            lblEditContactWithAnyOneFive.text = intValueConver(value: contactWithAnyOne ?? "")
             
         } else if selBtn.tag == 705 {
             backGrdViewSix.isHidden = true
@@ -475,11 +563,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditSix.isHidden = false
             
             if btntrueFive.isSelected {
-                medicalCondition  = checkBox.trueVal.rawValue
+                medicalCondition  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseFive.isSelected {
-                medicalCondition = checkBox.falseVal.rawValue
+                medicalCondition = checkBoxInt.falseVal.rawValue
             }
-            lblEditMedicalConditionSix.text = medicalCondition
+            lblEditMedicalConditionSix.text = intValueConver(value: medicalCondition ?? "")
             
         } else if selBtn.tag == 706 {
             backGrdViewSeven.isHidden = true
@@ -487,11 +575,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditSeven.isHidden = false
             
             if btntrueSix.isSelected {
-                pregnant  = checkBox.trueVal.rawValue
+                pregnant  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseSix.isSelected {
-                pregnant = checkBox.falseVal.rawValue
+                pregnant = checkBoxInt.falseVal.rawValue
             }
-            lblEditPregnantSeven.text = pregnant
+            lblEditPregnantSeven.text =  intValueConver(value: pregnant ?? "")
             
         } else if selBtn.tag == 707 {
             backGrdViewEight.isHidden = true
@@ -499,11 +587,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditEight.isHidden = false
             
             if btntrueSeven.isSelected {
-                highRiskCategory  = checkBox.trueVal.rawValue
+                highRiskCategory  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseSeven.isSelected {
-                highRiskCategory = checkBox.falseVal.rawValue
+                highRiskCategory = checkBoxInt.falseVal.rawValue
             }
-            lblEditHighRiskCategoryEight.text = highRiskCategory
+            lblEditHighRiskCategoryEight.text = intValueConver(value: highRiskCategory ?? "")
             
         } else if selBtn.tag == 708 {
             backGrdViewNine.isHidden = true
@@ -511,11 +599,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditNine.isHidden = false
             
             if btntrueEight.isSelected {
-                smoker  = checkBox.trueVal.rawValue
+                smoker  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseEight.isSelected {
-                smoker = checkBox.falseVal.rawValue
+                smoker = checkBoxInt.falseVal.rawValue
             }
-            lblEditSmokerNine.text = smoker
+            lblEditSmokerNine.text = intValueConver(value: smoker ?? "")
             
         } else if selBtn.tag == 709 {
             backGrdViewTen.isHidden = true
@@ -523,11 +611,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditTen.isHidden = false
             
             if btntrueNine.isSelected {
-                primaryCareProvider  = checkBox.trueVal.rawValue
+                primaryCareProvider  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseNine.isSelected {
-                primaryCareProvider = checkBox.falseVal.rawValue
+                primaryCareProvider = checkBoxInt.falseVal.rawValue
             }
-            lblEditPrimaryCareProviderTen.text = primaryCareProvider
+            lblEditPrimaryCareProviderTen.text = intValueConver(value: primaryCareProvider ?? "")
             
         } else if selBtn.tag == 710 {
             backGrdViewEleven.isHidden = true
@@ -568,11 +656,11 @@ class RegisterScreenConfirm: UIViewController {
             btnEditFourteen.isHidden = false
             
             if btntrueTen.isSelected {
-                careFacility  = checkBox.trueVal.rawValue
+                careFacility  = checkBoxInt.trueVal.rawValue
             } else  if btnfalseTen.isSelected {
-                careFacility = checkBox.falseVal.rawValue
+                careFacility = checkBoxInt.falseVal.rawValue
             }
-            lblEditCareFacilityFourteen.text = careFacility
+            lblEditCareFacilityFourteen.text = intValueConver(value: careFacility ?? "")
         }
     }
 
@@ -702,6 +790,53 @@ class RegisterScreenConfirm: UIViewController {
             
         }
     }
+    
+    @IBAction func nextBtnAction(_ sender: Any) {
+    
+        checkConnectivity()
+    }
+    
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+   
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"HasCorona_symptoms\":\"\(symptoms ?? "")\",\"Symptoms_StartedDate\":\"\(dateSymptomsStarted ?? "")\",\"Proritized_Testing\":\"\(proritizedForTesting ?? "")\",\"FirstTime_Test\":\"\(firstTimeTesting ?? "")\",\"Contact_Last15days\":\"\(contactWithAnyOne ?? "")\",\"Medical_Condition\":\"\(medicalCondition ?? "")\",\"Pregnant\":\"\(pregnant ?? "")\",\"Highrisk_Category\":\"\(highRiskCategory ?? "")\",\"Smoke\":\"\(smoker ?? "")\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(careProvider ?? "")\",\"PrimaryCare_AddLine1\":\"\(addressLineOne?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_AddLine2\":\"\(addressLineTwo?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_City\":\"\(city ?? "")\",\"PrimaryCare_State\":\"\(state ?? "")\",\"PrimaryCare_Zipcode\":\"\(zipCode ?? "")\",\"PrimaryCare_Email\":\"\(emailAddress ?? "")\",\"PrimaryCare_Phone\":\"\(phoneNumber ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "ScheduleScreenOne") as! ScheduleScreenOne
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
+    }
+    
+    
 }
 
 extension RegisterScreenConfirm: JBCalendarViewControllerDelegate {
@@ -720,4 +855,80 @@ extension RegisterScreenConfirm: JBCalendarViewControllerDelegate {
     }
     
   
+}
+
+extension RegisterScreenConfirm: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    /// Thid is used to validate number plate and model when resign keyboard
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        /*
+        if textField == tfCareProvider  {
+            
+            if textField.text?.count == 0 {
+               tfCareProvider.showBoaderColor(isEnable:true)
+            } else {
+                tfCareProvider.showBoaderColor(isEnable:false)
+            }
+        
+        } else  if textField == tfAddressLineOne  {
+            
+            if textField.text?.count == 0 {
+                tfAddressLineOne.showBoaderColor(isEnable:true)
+            } else {
+                tfAddressLineOne.showBoaderColor(isEnable:false)
+            }
+        
+        } else if textField == tfAddressLineTwo  {
+            
+            if textField.text?.count == 0 {
+                tfAddressLineTwo.showBoaderColor(isEnable:true)
+            } else {
+                tfAddressLineTwo.showBoaderColor(isEnable:false)
+            }
+        
+        } else if textField == tfCity  {
+            
+            if textField.text?.count == 0 {
+                tfCity.showBoaderColor(isEnable:true)
+            } else {
+                tfCity.showBoaderColor(isEnable:false)
+            }
+        
+        } else  if textField == tfState  {
+            
+            if textField.text?.count == 0 {
+                tfState.showBoaderColor(isEnable:true)
+            } else {
+                tfState.showBoaderColor(isEnable:false)
+            }
+        
+        } else if textField == tfZipCode  {
+            
+            if textField.text?.count == 0 {
+                tfZipCode.showBoaderColor(isEnable:true)
+            } else {
+                tfZipCode.showBoaderColor(isEnable:false)
+            }
+        
+        } else if textField == tfPhoneNumber  {
+            
+            if textField.text?.count == 0 {
+                tfPhoneNumber.showBoaderColor(isEnable:true)
+            } else {
+                tfPhoneNumber.showBoaderColor(isEnable:false)
+            }
+        
+        } else if textField == tfEmailAddress {
+             let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
+            tfEmailAddress.showBoaderColor(isEnable: !isValid)
+        }
+     */
+    }
+    /// Thid is used to validate number plate and model when typing on keypad
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+      return true
+    }
 }

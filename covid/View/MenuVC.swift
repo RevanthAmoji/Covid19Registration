@@ -9,19 +9,22 @@ import UIKit
 
 class MenuVC: UIViewController {
 
-    @IBOutlet weak var laguageLabel: UILabel!
+    @IBOutlet weak var laguageLabel: SutherlandLabel!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SingletonUI.shared.viewMenuBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
-        self.view.backgroundColor =  UIColor.init(hex: Colors.buttonHoverStateColor.rawValue)
         // Hidden backbutton
-        self.navigationController?.navigationBar.topItem?.hidesBackButton = true
+       // self.navigationController?.navigationBar.topItem?.hidesBackButton = true
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewWillAppear(animated)
         self.laguageLabel.text = SingletonUI.shared.selectedLanguage
     }
@@ -39,6 +42,13 @@ class MenuVC: UIViewController {
     @IBAction func closeBtnAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    @IBAction func signOutBtnAction(_ sender: Any) {
+        
+        UserData.shared.nilUserDetails()
+        navigationController?.popToViewController(ofClass: ViewController.self)
+        
     }
      
 }

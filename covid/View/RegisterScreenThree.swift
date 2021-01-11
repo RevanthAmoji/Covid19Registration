@@ -33,6 +33,12 @@ class RegisterScreenThree: UIViewController {
     @IBOutlet weak var tfZipCode: SutherlandTextField!
     @IBOutlet weak var tfPhoneNumber: SutherlandTextField!
     @IBOutlet weak var tfEmailAddress: SutherlandTextField!
+    
+    @IBOutlet weak var primaryCareProviderTitle:UILabel!
+    @IBOutlet weak var careFacilityTitle:UILabel!
+    
+    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+   
 
     var primaryCareProvider:String? = ""
     var careFacility:String? = ""
@@ -44,10 +50,16 @@ class RegisterScreenThree: UIViewController {
         fieldsViewHeight.constant = 0
         backGndView.isHidden = true
         
-        btnNext.btnEnable(boolVal: false)
+      //  btnNext.btnEnable(boolVal: false)
+        
+        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
+        
+        self.setViewTitles()
     }
+   
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
+        SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
@@ -60,7 +72,51 @@ class RegisterScreenThree: UIViewController {
         center.removeObserver(self, name: UIWindow.keyboardWillHideNotification, object: nil)
     }
 
+    @IBAction func profileViewBtnAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 
+    func setViewTitles() {
+        
+        if SingletonData.shared.relationNumber == SingletonData.shared.myselfRelationVal {
+            
+            self.primaryCareProviderTitle.text = titles.primaryCareProvider_myslef
+            self.careFacilityTitle.text = titles.careFacility_myslef
+            
+        } else {
+        
+        self.primaryCareProviderTitle.text = titles.primaryCareProvider
+        self.careFacilityTitle.text = titles.careFacility
+        }
+        
+        if SingletonData.shared.StatusCode == 0 {
+            
+            self.primaryCareProvider = SingletonData.shared.primaryCareProvider
+            if primaryCareProvider == checkBoxInt.trueVal.rawValue {
+                btnPrimaryCareProviderTrue.isSelected = true
+            } else  if primaryCareProvider == checkBoxInt.falseVal.rawValue {
+                btnPrimaryCareProviderfalse.isSelected = true
+            }
+            self.careFacility = SingletonData.shared.careFacility
+            if careFacility == checkBoxInt.trueVal.rawValue {
+                btnCareFacilityTrue.isSelected = true
+            } else  if careFacility == checkBoxInt.falseVal.rawValue {
+                btnCareFacilityfalse.isSelected = true
+            }
+            self.tfCareProvider.text = SingletonData.shared.careProvider
+            self.tfAddressLineOne.text = SingletonData.shared.addressLineOne
+            self.tfAddressLineTwo.text = SingletonData.shared.addressLineTwo
+            self.tfCity.text = SingletonData.shared.city
+            self.tfState.text = SingletonData.shared.state
+            self.tfZipCode.text = SingletonData.shared.zipCode
+            self.tfPhoneNumber.text = SingletonData.shared.phoneNumber
+            self.tfEmailAddress.text = SingletonData.shared.emailAddress
+            btnNext.btnEnable(boolVal: true)
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -74,13 +130,13 @@ class RegisterScreenThree: UIViewController {
     @IBAction func btnPrimaryCareProviderAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 100 {
-            primaryCareProvider = "Yes"
+            primaryCareProvider = "1"
             btnPrimaryCareProviderfalse.isSelected = false
             btnPrimaryCareProviderTrue.isSelected = true
             fieldsViewHeight.constant = 780
             backGndView.isHidden = false
         } else if selBtn.tag == 101 {
-            primaryCareProvider = "No"
+            primaryCareProvider = "0"
             btnPrimaryCareProviderfalse.isSelected = true
             btnPrimaryCareProviderTrue.isSelected = false
             fieldsViewHeight.constant = 0
@@ -91,11 +147,11 @@ class RegisterScreenThree: UIViewController {
     @IBAction func btnCareFacilityAction(_ sender: Any) {
         let selBtn = sender as! UIButton
         if selBtn.tag == 102 {
-            careFacility = "Yes"
+            careFacility = "1"
             btnCareFacilityfalse.isSelected = false
             btnCareFacilityTrue.isSelected = true
         } else if selBtn.tag == 103 {
-            careFacility = "No"
+            careFacility = "0"
             btnCareFacilityfalse.isSelected = true
             btnCareFacilityTrue.isSelected = false
         }
@@ -114,6 +170,8 @@ class RegisterScreenThree: UIViewController {
         SingletonData.shared.zipCode = tfZipCode.text
         SingletonData.shared.phoneNumber = tfPhoneNumber.text
         SingletonData.shared.emailAddress = tfEmailAddress.text
+        
+        checkConnectivity()
     }
 
     @objc func keyboardWillBeHidden (aNotification: NSNotification) {
@@ -134,7 +192,7 @@ class RegisterScreenThree: UIViewController {
     }
     
     func checkAllTheFeilds() {
-        btnNext.btnEnable(boolVal: false)
+      //  btnNext.btnEnable(boolVal: false)
         var errorMessage = ""
         if (primaryCareProvider?.count == 0 || primaryCareProvider == nil) {
            
@@ -174,6 +232,45 @@ class RegisterScreenThree: UIViewController {
         }
         //self.showsAlertWithoutWhiteBg(titleVal: "", messageVal: errorMessage)
         print(errorMessage)
+    }
+    
+    func showsAlertWithoutWhiteBg( titleVal : String , messageVal: String) {
+        let alertController = UIAlertController(title: titleVal, message: messageVal, preferredStyle: .alert)
+        let trueAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        alertController.addAction(trueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func checkConnectivity() {
+        
+        if Reachability.isConnectedToNetwork() {
+            let email = SingletonData.shared.email ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(tfCareProvider.text ?? "")\",\"PrimaryCare_AddLine1\":\"\(tfAddressLineOne.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_AddLine2\":\"\(tfAddressLineTwo.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_City\":\"\(tfCity.text ?? "")\",\"PrimaryCare_State\":\"\(tfState.text ?? "")\",\"PrimaryCare_Zipcode\":\"\(tfZipCode.text ?? "")\",\"PrimaryCare_Email\":\"\(tfEmailAddress.text ?? "")\",\"PrimaryCare_Phone\":\"\(tfPhoneNumber.text ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
+            print("email verification: \(dic)")
+            let authUrl = Endpoint.account
+            print("email verification: \(authUrl as Any)")
+            Services.getDashboardService().getKpiDashboardData(url: authUrl, strData: dic, completion: {
+                result in
+                switch result {
+                case .success(let dashboads):
+                    if dashboads.isSuccess ?? false {
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreenConfirm") as! RegisterScreenConfirm
+                        self.navigationController?.pushViewController(controller, animated: false)
+                    } else {
+                        self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                    }
+                case .failure( _):
+                    //something went wrong, print the error.
+                    self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
+                }
+            })
+        } else {
+            self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
+        }
     }
 }
 

@@ -7,12 +7,25 @@
 
 import Foundation
 
+
 class SingletonData {
     
     static let shared = SingletonData()
     private init() {
     }
-        
+    
+    var isFromLogin:Bool? = false
+    
+    var email:String?
+    var password:String?
+    
+    var createAccountFirstname:String?
+    var createAccountLastname:String?
+    
+    var firstNamePatient:String?
+    var lastNamePatient:String?
+    var patientAge:String?
+    
     var symptoms:String?
     var dateSymptomsStarted:String?
     var proritizedForTesting:String?
@@ -32,5 +45,90 @@ class SingletonData {
     var zipCode:String?
     var phoneNumber:String?
     var emailAddress:String?
+    
+    var clientName: String?
+    var clientAddress: String?
+    var testDate: String?
+    var testTime: String?
+    var hospitalID: String?
+    var slotId:String?
+    
+    var relationName:String?
+    var relationNumber:String?
+    
+    var myselfRelationVal:String? = "3"
+
+    var dateOfBirth:String?
+    var gender:String?
+    var genderVal:String?
+    var race:String?
+    var raceVal:String?
+    var addressLineOnePatient:String?
+    var addressLineTwoPatient:String?
+    var cityPatient:String?
+    var statePatient:String?
+    var zipCodePatient:String?
+    var insuranceProvider:String?
+    var policyNumber:String?
+    var policyHolderName:String?
+    var identification:String?
+    var identificationVal:String?
+    var identificationAttached:String?
+    
+    var guardianFullName:String?
+    var consent:String?
+    
+    var verificationCode:String?
+    
+    var StatusCode:Int?
+    
+    func getChartTypeDetails() -> Array<Any>  {
+        
+        var chartDetailsArray:Array? = []
+        
+        if let path = Bundle.main.path(forResource: "maps", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options:.mappedIfSafe)
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [Any]
+                let modulesData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+                do {
+                    let array = try JSONDecoder().decode([Stadium].self, from: modulesData)
+                    chartDetailsArray = array
+                } catch let e {
+                    print("getChartTypeDetails error : \(e)")
+                }
+                
+            } catch let e {
+                print("getChartTypeDetails error: \(e)")
+            }
+        }
+        return chartDetailsArray!
+    }
+    
+    func getSlotsDetails() -> slots  {
+        
+        var chartDetailsArray:slots = slots()
+        
+        if let path = Bundle.main.path(forResource: "slots", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options:.mappedIfSafe)
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: [])
+                let modulesData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+                do {
+                    let array = try JSONDecoder().decode(slots.self, from: modulesData)
+                    chartDetailsArray = array
+                } catch let e {
+                    print("getChartTypeDetails error : \(e)")
+                }
+                
+            } catch let e {
+                print("getChartTypeDetails error: \(e)")
+            }
+        }
+        return chartDetailsArray
+    }
+    
 
 }
+
+

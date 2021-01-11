@@ -11,20 +11,41 @@ import UIKit
 extension UIColor {
     enum Citygo {
         
-        static let h1headingone = UIColor(rgbValue: 0x549491)
+        static let h1headingone = UIColor(rgbValue: 0x27225e)
        
         static let mainbody = UIColor(rgbValue: 0x253B3D)
         static let mainbodybold = UIColor(rgbValue: 0x253B3D)
         
         static let formtitles = UIColor(rgbValue: 0x253B3D)
-        static let formsubtitlesnotselected = UIColor(rgbValue: 0x549491)
+        static let formsubtitlesnotselected = UIColor(rgbValue: 0x27225e)// UIColor(rgbValue: 0x549491)
         static let formsubtitlesentryfields = UIColor(rgbValue: 0x045257)
         
-        static let buttonfieldsInactive = UIColor(rgbValue: 0x045257)
+        static let buttonfieldsInactive = UIColor(rgbValue: 0x27235e)
         static let buttonfieldsactive = UIColor(rgbValue: 0xFFFFFF)
+        static let buttonHoverStateColor = UIColor(rgbValue: 0x549491)
         
+        static let buttonInactiveBacground = UIColor(rgbValue: 0xf1f1f1)
+        
+        static let buttonHyperlinkColor = UIColor(rgbValue: 0x3261c1)
+       // 27235e
+        //f56d99
+        static let buttonBorderColor = UIColor(rgbValue: 0xf56d99)
+        
+        //060419
         static let forminfo = UIColor(rgbValue: 0x549491)
         
+        static let textFieldTextColor = UIColor(rgbValue: 0x495057)
+        
+        static let infoTextColor = UIColor(rgbValue: 0x060419)
+        
+        
+        static let navigationBar = UIColor(rgbValue: 0x27235e)
+        
+        static let redColor = UIColor(rgbValue: 0xED6660)
+        
+        static let textFieldBackGroundColor = UIColor(rgbValue: 0xe8f7fc)
+        //e8f7fc
+        static let menuBackGroundColor = UIColor(rgbValue: 0x639290)
        
         static let shadowDefault = UIColor(rgbValue: 0x000000, alpha: 0.25)
         static let shadowDropLarge = UIColor(rgbValue: 0x000000, alpha: 0.16)

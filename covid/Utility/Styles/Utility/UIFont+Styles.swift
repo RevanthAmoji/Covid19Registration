@@ -24,10 +24,13 @@ import UIKit
 extension UIFont {
     enum Citygo {
         static let quicksand700 = citygoFont(name: .quicksandregular, size: 22.0)
+        static let quicksandSemiBold700 = citygoFont(name: .quicksandsemibold, size: 22.0)
+        static let quicksandBold700 = citygoFont(name: .quicksandbold, size: 22.0)
         
-        static let lato400 = citygoFont(name: .latoregular, size: 16.0)
+        static let lato400 = citygoFont(name: .latobold, size: 16.0)
         static let lato700 = citygoFont(name: .latoregular, size: 16.0)
-        static let latoinfo400 = citygoFont(name: .latoitalic, size: 12.0)
+        static let latoinfo400 = citygoFont(name: .latobolditalic, size: 12.0)
+        static let latobtn700 = citygoFont(name: .latobold, size: 16.0)
         
         private static func citygoFont(name fontName: Citygo.FontFamily, size fontSize: CGFloat) -> UIFont {
             if let font = UIFont(name: fontName.rawValue, size: fontSize) {
@@ -67,3 +70,111 @@ extension UIFont {
         }
     }
 }
+
+/*
+ 
+ SingletonData.shared.firstNamePatient = tfPatientFirstName.text
+ SingletonData.shared.lastNamePatient = tfPatientLastName.text
+ 
+ 
+ var symptoms:String?
+ var dateSymptomsStarted:String?
+ var proritizedForTesting:String?
+ var firstTimeTesting:String?
+ var contactWithAnyOne:String?
+ var medicalCondition:String?
+ var pregnant:String?
+ var highRiskCategory:String?
+ var smoker:String?
+ var primaryCareProvider:String?
+ var careFacility:String?
+ var careProvider:String?
+ var addressLineOne:String?
+ var addressLineTwo:String?
+ var city:String?
+ var state:String?
+ var zipCode:String?
+ var phoneNumber:String?
+ var emailAddress:String?
+ */
+enum titles {
+    
+    static let symptoms = "Has \(SingletonData.shared.firstNamePatient ?? "") \(SingletonData.shared.lastNamePatient ?? "") developed coronavirus symptions?"
+   
+    static let dateSymptomsStarted = "Date symptoms started"
+    
+    static let proritizedForTesting = "Has \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") been proritized for testing?"
+    
+    static let firstTimeTesting = "Is this \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "")'s first time taking a test?"
+    
+    static let contactWithAnyOne = "Has \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") been in contact with anyone who has tested positive in the last 15 days?"
+    
+    
+    static let medicalCondition = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a chronic medical condition?"
+    
+    static let pregnant = "Is \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") pregnant?"
+    
+    static let highRiskCategory = "Is \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") over 65 years of age, or part of a high risk category?"
+    
+    static let smoker = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") smoke, chew, or vape?"
+    
+    static let primaryCareProvider = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a primary care provider?"
+    
+    
+    static let careFacility = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") live in a group setting e.g. Care Facility"
+    
+    static let identificationTitle = "Does \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") have a valid form of identification?"
+    
+    static let portalOneTitle = "Enter below the details for \(SingletonData.shared.firstNamePatient ?? "")"
+    
+    static let portalFinalTitle = "Does \(SingletonData.shared.firstNamePatient ?? "") have a valid form of indentification?"
+    
+    
+    static let symptoms_myslef = "Have you developed coronavirus symptoms?"
+
+       
+
+        static let dateSymptomsStarted_myslef = "Date symptoms started"
+
+        
+
+        static let proritizedForTesting_myslef = "Have you been prioritized for testing?"
+
+        
+
+        static let firstTimeTesting_myslef = "Is this the first time you are taking a test?"
+
+        
+
+        static let contactWithAnyOne_myslef = "Have you been in contact with anyone who has tested positive in the last 15 days?"
+
+        
+
+        
+
+        static let medicalCondition_myslef = "Do you have a chronic medical condition?"
+
+        
+
+        static let pregnant_myslef = "Is \(SingletonData.shared.firstNamePatient ?? "") \( SingletonData.shared.lastNamePatient ?? "") pregnant?"
+
+        
+
+        static let highRiskCategory_myslef = "Are you over 65 years of age, or part of a high risk category?"
+
+        
+
+        static let smoker_myslef = "Do you smoke, chew, or vape?"
+
+        
+
+        static let primaryCareProvider_myslef = "Do you have a primary care provider?"
+
+        
+
+        
+
+        static let careFacility_myslef = "Do you live in a group setting e.g Care Facility?"
+       
+}
+

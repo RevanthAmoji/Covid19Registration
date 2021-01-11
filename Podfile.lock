@@ -1,16 +1,66 @@
 PODS:
+  - Alamofire (5.4.0)
   - JBCalendarDatePicker (0.2.4)
+  - JTMaterialSpinner (3.0.5)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `master`, tag `5.0.0`)
   - JBCalendarDatePicker
+  - JTMaterialSpinner (from `https://github.com/jonathantribouharet/JTMaterialSpinner`, branch `master`, tag `3.0.5`)
+  - NVActivityIndicatorView (from `https://github.com/ninjaprox/NVActivityIndicatorView`, branch `master`, tag `v3.5`)
+  - SwiftGifOrigin (from `https://github.com/swiftgif/SwiftGif`, branch `master`, tag `v1.7.0`)
 
 SPEC REPOS:
   https://github.com/joshbirnholz/JBPodSpecs.git:
     - JBCalendarDatePicker
 
-SPEC CHECKSUMS:
-  JBCalendarDatePicker: f37fa398d885fb9229ee3d2def4c9ff7e426dd06
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: master
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 5.0.0
+  JTMaterialSpinner:
+    :branch: master
+    :git: https://github.com/jonathantribouharet/JTMaterialSpinner
+    :tag: 3.0.5
+  NVActivityIndicatorView:
+    :branch: master
+    :git: https://github.com/ninjaprox/NVActivityIndicatorView
+    :tag: v3.5
+  SwiftGifOrigin:
+    :branch: master
+    :git: https://github.com/swiftgif/SwiftGif
+    :tag: v1.7.0
 
-PODFILE CHECKSUM: c726c247992fa320ef10644067ad2e65d9b2593a
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 9e0328127dfb801cefe8ac53a13c0c90a7770448
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 5.0.0
+  JTMaterialSpinner:
+    :commit: 4cea9842768bdf953ad620014ed286ce3e51fac0
+    :git: https://github.com/jonathantribouharet/JTMaterialSpinner
+    :tag: 3.0.5
+  NVActivityIndicatorView:
+    :commit: bcb52371f2259254bac6690f92bb474a61768c47
+    :git: https://github.com/ninjaprox/NVActivityIndicatorView
+    :tag: v3.5
+  SwiftGifOrigin:
+    :commit: 029ef0d0da1e6cc8b2f2be1b350b1b94244f2aee
+    :git: https://github.com/swiftgif/SwiftGif
+    :tag: v1.7.0
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  JBCalendarDatePicker: f37fa398d885fb9229ee3d2def4c9ff7e426dd06
+  JTMaterialSpinner: 5c9dbaefc638507af4e8c1788b44cebdfce61939
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+
+PODFILE CHECKSUM: 31f912fc5504406cf423946f1a54be3f3e81c093
 
 COCOAPODS: 1.9.1
