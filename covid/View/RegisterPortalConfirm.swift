@@ -221,7 +221,7 @@ class RegisterPortalConfirm: UIViewController {
         backGrdViewSixHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
         //7
         backGrdViewSeven.isHidden = true
-        backGrdViewSevenHeight.constant = viewHeight.ThirteenViewWithEditHeight.rawValue
+        backGrdViewSevenHeight.constant = viewHeight.ThirteenViewWithEditHeight_new.rawValue
         
         backGrdViewEight.isHidden = true
         backGrdViewEightHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
@@ -236,7 +236,7 @@ class RegisterPortalConfirm: UIViewController {
         backGrdViewElevenHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
 
         backGrdViewTwelve.isHidden = true
-        backGrdViewTwelveHeight.constant = viewHeight.symptomsWithOutEditHeight.rawValue
+        backGrdViewTwelveHeight.constant = 0
     
     }
     

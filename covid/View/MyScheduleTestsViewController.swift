@@ -121,7 +121,7 @@ extension MyScheduleTestsViewController : UITableViewDataSource, UITableViewDele
        // let slot = "\(model?.SlotStart ?? "") - \(model?.SlotEnd ?? "")"
         cell.titlelbl.text = model?.PatientName
 //        cell.subTitlelbl.text = "Available"
-        
+        cell.selectionStyle = .none
         return cell
     }
     

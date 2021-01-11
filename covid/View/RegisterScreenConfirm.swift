@@ -16,6 +16,7 @@ enum viewHeight: CGFloat {
     case TwelveViewWithOutEditHeight = 180.0
     case TwelveViewWithEditHeight = 600.0
     case ThirteenViewWithEditHeight = 300.0
+    case ThirteenViewWithEditHeight_new = 170.0
 }
 
 enum checkBox: String {
@@ -29,7 +30,7 @@ enum checkBoxInt: String {
 
 class RegisterScreenConfirm: UIViewController {
     
-    var viewModel = RegisterScreenThreeModel()
+    var viewModel = RegisterScreenConfirm()
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
 

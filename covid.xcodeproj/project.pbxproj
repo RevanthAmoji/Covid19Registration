@@ -280,7 +280,7 @@
 		0308DD70256F43870013A868 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */,
+				035E7C33256551D800BF3EAB /* ViewModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +342,7 @@
 				03B2436525781BFB00CAE0B0 /* MapCollectionViewCell.swift */,
 				03B2436625781BFB00CAE0B0 /* MapCollectionViewCell.xib */,
 				03AD641A257FC07500ECC469 /* ScheduleTwoDaysCell.swift */,
+				0308DD71256F43AD0013A868 /* RegisterScreenModel.swift */,
 				03AD641B257FC07500ECC469 /* ScheduleTwoDaysCell.xib */,
 				03AD6421257FEAC800ECC469 /* ScheduleTwoAvailableCell.swift */,
 				03057F272591145C004CA4D5 /* MyScheduleTestsCell.swift */,
@@ -361,7 +362,6 @@
 		035E7C32256551C800BF3EAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				03DD117625627CA100DD0583 /* ViewController.swift */,
 				03DD12052562BB3300DD0583 /* InitialVC.swift */,
 				035E7C2D25654E4F00BF3EAB /* EmailAddressVC.swift */,
 				035750202567927900E2DB09 /* MenuVC.swift */,
@@ -404,6 +404,7 @@
 		03B2435F25780B6600CAE0B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03DD117625627CA100DD0583 /* ViewController.swift */,
 				03AD642D257FFE8200ECC469 /* slots.json */,
 				03B2436025780B8500CAE0B0 /* maps.json */,
 			);
@@ -444,7 +445,6 @@
 				0308DD70256F43870013A868 /* Model */,
 				0357503925679F4C00E2DB09 /* Cells */,
 				03574FED2566B3E700E2DB09 /* Customfonts */,
-				035E7C33256551D800BF3EAB /* ViewModel */,
 				035E7C32256551C800BF3EAB /* View */,
 				03DD11AB2562B02100DD0583 /* Utility */,
 				03DD117225627CA100DD0583 /* AppDelegate.swift */,
