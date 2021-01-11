@@ -28,6 +28,7 @@ class MyScheduleTestsViewController: UIViewController {
         
         SingletonData.shared.isFromLogin = true
         
+        clearAllpreviousData()
         
     }
     
@@ -133,6 +134,55 @@ extension MyScheduleTestsViewController : UITableViewDataSource, UITableViewDele
         controller.availableSlots = model
         self.navigationController?.pushViewController(controller, animated: false)
         
+    }
+    
+    func clearAllpreviousData()
+    {
+        SingletonData.shared.firstNamePatient = ""
+        SingletonData.shared.lastNamePatient = ""
+        SingletonData.shared.email = ""
+            SingletonData.shared.patientAge = ""
+        SingletonData.shared.relationNumber = ""
+        SingletonData.shared.relationName = ""
+        SingletonData.shared.guardianFullName = ""
+        SingletonData.shared.consent = ""
+        SingletonData.shared.symptoms = ""
+        SingletonData.shared.dateSymptomsStarted = ""
+        SingletonData.shared.proritizedForTesting = ""
+        SingletonData.shared.firstTimeTesting = ""
+        SingletonData.shared.contactWithAnyOne = ""
+        SingletonData.shared.medicalCondition = ""
+        SingletonData.shared.pregnant = ""
+        SingletonData.shared.highRiskCategory = ""
+        SingletonData.shared.smoker = ""
+        
+        SingletonData.shared.primaryCareProvider = ""
+        SingletonData.shared.careProvider = ""
+        SingletonData.shared.addressLineOne = ""
+        SingletonData.shared.addressLineTwo = ""
+        SingletonData.shared.city = ""
+        SingletonData.shared.state = ""
+        SingletonData.shared.zipCode = ""
+        SingletonData.shared.phoneNumber = ""
+       // SingletonData.shared.email = data?.PrimaryCareEmail
+        SingletonData.shared.careFacility = ""
+        
+        SingletonData.shared.dateOfBirth = ""
+        SingletonData.shared.gender = ""
+        SingletonData.shared.genderVal = ""
+        SingletonData.shared.race = ""
+        SingletonData.shared.raceVal = ""
+        
+        SingletonData.shared.addressLineOnePatient = ""
+        SingletonData.shared.addressLineTwoPatient = ""
+        SingletonData.shared.cityPatient = ""
+        SingletonData.shared.statePatient = ""
+        SingletonData.shared.zipCodePatient = ""
+        SingletonData.shared.insuranceProvider = ""
+        SingletonData.shared.policyNumber = ""
+        SingletonData.shared.policyHolderName = ""
+        SingletonData.shared.identification = ""
+        SingletonData.shared.identificationVal = ""
     }
     
 }
