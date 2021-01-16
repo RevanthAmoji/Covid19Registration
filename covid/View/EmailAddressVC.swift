@@ -16,8 +16,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     // Initialize email textField variable
     @IBOutlet weak var emailTF: SutherlandTextField!
     @IBOutlet weak var reenterEmailTF: SutherlandTextField!
+    @IBOutlet weak var mobileTF: SutherlandTextField!
     @IBOutlet weak var nextBtn: SutherlandButton!
-    @IBOutlet weak var previousBtn: SutherlandButton!
+   // @IBOutlet weak var previousBtn: SutherlandButton!
     
     @IBOutlet weak var textViewAlert: UITextView!
     
@@ -27,6 +28,12 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     let linkUrl = "www.sutherland.com"
 
+    var preferredModeOfComm:String? =  ""
+    
+    @IBOutlet weak var btnEmailTrue: UIButton!
+    @IBOutlet weak var btnEmailfalse: UIButton!
+    
+    @IBOutlet weak var lblemailerror, lblReemailerror, lblphonenumbererror, lblmodeofcommerror:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +43,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         nextBtn.btnEnableNew(boolVal: true)
-        previousBtn.btnEnableNew(boolVal: true)
+      //  previousBtn.btnEnableNew(boolVal: true)
         
         SingletonData.shared.isFromLogin = false
     
@@ -47,17 +54,18 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        emailTF.layer.cornerRadius = emailTF.frame.size.height/2
-        reenterEmailTF.layer.cornerRadius = reenterEmailTF.frame.size.height/2
-        nextBtn.layer.cornerRadius = nextBtn.frame.size.height/2
-        previousBtn.layer.cornerRadius = previousBtn.frame.size.height/2
+      //  emailTF.layer.cornerRadius = emailTF.frame.size.height/2
+      //  reenterEmailTF.layer.cornerRadius = reenterEmailTF.frame.size.height/2
+      //  nextBtn.layer.cornerRadius = nextBtn.frame.size.height/2
+     //   previousBtn.layer.cornerRadius = previousBtn.frame.size.height/2
 
         self.navigationController?.setNavigationBarHidden(true, animated: true)
        // SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(aNotification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
     }
+    /*
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //  Remove the observers added for keyboard from your ViewController
@@ -68,9 +76,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     @objc func keyboardWillBeHidden (aNotification: NSNotification) {
         let contentInsets: UIEdgeInsets = .zero
-        self.scrollViewReg.contentInset = contentInsets
-        self.scrollViewReg.scrollIndicatorInsets = contentInsets
-        self.scrollViewReg.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+      //  self.scrollViewReg.contentInset = contentInsets
+      //  self.scrollViewReg.scrollIndicatorInsets = contentInsets
+      //  self.scrollViewReg.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     // Called when the UIKeyboardWillShow is sent
     // This method will adjust your scrollView and will show textFields above the keyboard.
@@ -79,8 +87,36 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
         let keyboardSize = keyboardInfo.cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 50, right: 0)
-        self.scrollViewReg.contentInset = contentInsets
-        self.scrollViewReg.scrollIndicatorInsets = contentInsets
+      //  self.scrollViewReg.contentInset = contentInsets
+      //  self.scrollViewReg.scrollIndicatorInsets = contentInsets
+    }
+    */
+    
+    @IBAction func reloationshipBtnAction(_ sender: Any) {
+    
+        let selBtn = sender as! UIButton
+        
+        if selBtn.tag == 100 {
+            
+            preferredModeOfComm = "Email"
+            btnEmailfalse.isSelected = false
+            btnEmailTrue.isSelected = true
+            
+        } else if selBtn.tag == 101 {
+            
+            preferredModeOfComm = "Mobile"
+            btnEmailTrue.isSelected = false
+            btnEmailfalse.isSelected = true
+        }
+        
+        if preferredModeOfComm?.count == 0 {
+            lblphonenumbererror.text = ""
+        } else {
+            lblphonenumbererror.text = "Preferred mode of communication is required"
+        }
+//        nameViewHeight.constant = 203
+//        nameViewHeightView.isHidden = false
+        
     }
     
     func checkConnectivityAuthorization() {
@@ -123,7 +159,8 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         
         if Reachability.isConnectedToNetwork() {
             let email = emailTF.text ?? ""
-            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\"}'}"
+            let mobileNumber = mobileTF.text ?? ""
+            let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"MobileNumber\":\"\(mobileNumber)\",\"PreferredModeOfComm\":\"\(preferredModeOfComm ?? "")\"}'}"
             print("email verification: \(dic)")
             let authUrl = Endpoint.account
             print("email verification: \(authUrl as Any)")
@@ -159,8 +196,40 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     @IBAction func nextBtnAction(_ sender: Any) {
         
         SingletonData.shared.email = emailTF.text
-        checkConnectivityAuthorization()
+        checkAllFields()
         
+    }
+    
+    func checkAllFields() {
+        
+        if emailTF.text?.count == 0 {
+            lblemailerror.text = "E-Mail is required"
+        }
+        if reenterEmailTF.text?.count == 0 {
+            lblReemailerror.text = "E-Mail is required"
+        }
+        if mobileTF.text?.count == 0 {
+            lblphonenumbererror.text = "Mobile Number is required"
+        }
+        if preferredModeOfComm?.count == 0 {
+            lblmodeofcommerror.text = "Preferred mode of communication is required"
+        }
+        
+        if !viewModel.validateEmailAddress(email: emailTF.text ?? "") {
+            lblemailerror.text = "Enter Valid E-mail"
+        }
+        if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
+            lblemailerror.text = "Enter Valid E-mail"
+        }
+        if !viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {
+            lblemailerror.text = "Enter Valid Mobile Number"
+        }
+        
+        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && mobileTF.text?.count != 0 && preferredModeOfComm?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {
+            
+            checkConnectivityAuthorization()
+            
+        }
     }
     
     @IBAction func previousBtnAction(_ sender: Any) {
@@ -289,25 +358,85 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
     }
     /// Thid is used to validate number plate and model when resign keyboard
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == emailTF {
-             let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
-            emailTF.showBoaderColor(isEnable: !isValid)
-        }
-        else if textField == reenterEmailTF {
-             let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
-            reenterEmailTF.showBoaderColor(isEnable: !isValid)
-            if isValid  && emailTF.text == reenterEmailTF.text {
-                nextBtn.btnEnableNew(boolVal: true)
-                emailTF.showBoaderColor(isEnable: false)
-                reenterEmailTF.showBoaderColor(isEnable: false)
-            } else {
-                emailTF.showBoaderColor(isEnable: true)
-                reenterEmailTF.showBoaderColor(isEnable: true)
-            }
+//        if textField == emailTF {
+//             let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
+//            emailTF.showBoaderColor(isEnable: !isValid)
+//        }
+//        else if textField == reenterEmailTF {
+//             let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
+//            reenterEmailTF.showBoaderColor(isEnable: !isValid)
+//            if isValid  && emailTF.text == reenterEmailTF.text {
+//                nextBtn.btnEnableNew(boolVal: true)
+//                emailTF.showBoaderColor(isEnable: false)
+//                reenterEmailTF.showBoaderColor(isEnable: false)
+//            } else {
+//                emailTF.showBoaderColor(isEnable: true)
+//                reenterEmailTF.showBoaderColor(isEnable: true)
+//            }
+//        }
+        if textField == reenterEmailTF {
+           
+                lblReemailerror.text = ""
+                if emailTF.text != reenterEmailTF.text {
+                    lblReemailerror.text = "Email not match"
+                }
+                if emailTF.text == reenterEmailTF.text {
+                    lblReemailerror.text = ""
+                }
+            
         }
     }
     /// Thid is used to validate number plate and model when typing on keypad
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if range.location == 0 && string == " " {
+            return false
+        }
+        if !string.canBeConverted(to: .ascii){
+            return false
+        }
+        
+        var text = textField.text ?? ""
+        
+        if string.count == 0 && text.count > 0 {
+            text.removeLast()
+        } else {
+            text += string
+        }
+        
+        if textField == emailTF {
+            let isValid = viewModel.validateEmailAddress(email: text )
+            lblemailerror.text = ""
+            if !isValid {
+                lblemailerror.text = "Enter Valid Email"
+            }
+        } else if textField == reenterEmailTF {
+            let isValid = viewModel.validateEmailAddress(email: text )
+            lblReemailerror.text = ""
+            if !isValid {
+                lblReemailerror.text = "Enter Valid Email"
+            }
+            if isValid {
+                lblReemailerror.text = ""
+                if emailTF.text != reenterEmailTF.text {
+                    lblReemailerror.text = "Email not match"
+                }
+                if emailTF.text == reenterEmailTF.text {
+                    lblReemailerror.text = ""
+                }
+            }
+        } else if textField == mobileTF{
+           
+            textField.text = formatPhone(text)
+            let isValid = viewModel.validatePhoneNumber(phone: textField.text ?? "")
+            lblphonenumbererror.text = ""
+            if !isValid {
+                lblphonenumbererror.text = "Enter Valid phonenumber"
+            }
+           return false
+        }
+        
+       // print(text)
        
       return true
     }
@@ -325,8 +454,25 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
         return false
     }
     
-     
-    
+    func formatPhone(_ number: String) -> String {
+        let cleanNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let format: [Character] = ["X", "X", "X", "-", "X", "X", "X", "-", "X", "X", "X", "X"]
+
+        var result = ""
+        var index = cleanNumber.startIndex
+        for ch in format {
+            if index == cleanNumber.endIndex {
+                break
+            }
+            if ch == "X" {
+                result.append(cleanNumber[index])
+                index = cleanNumber.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
 }
 
 extension String {

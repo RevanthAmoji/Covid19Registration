@@ -13,4 +13,8 @@ class EmailAddressViewModel: NSObject {
         let regPlateString = email.isEmailValidate
         return regPlateString
     }
+    func validatePhoneNumber(phone: String) -> Bool {
+        let regPlateString = phone.isPhoneValidate
+        return regPlateString
+    }
 }

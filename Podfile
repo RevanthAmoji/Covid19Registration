@@ -24,10 +24,15 @@ target 'covid' do
           :branch => 'master',
           :tag => 'v3.5'
           
-          pod 'SwiftGifOrigin',
+  pod 'SwiftGifOrigin',
                   :git => 'https://github.com/swiftgif/SwiftGif',
                   :branch => 'master',
                   :tag => 'v1.7.0'
+                  
+  pod 'ACFloatingTextfield-Swift',
+        :git => 'https://github.com/ErAbhishekChandani/ACFloatingTextfield',
+        :branch => 'master',
+        :tag => 'v1.0.6'
   
   target 'covidTests' do
     inherit! :search_paths

@@ -1,4 +1,5 @@
 PODS:
+  - ACFloatingTextfield-Swift (1.8)
   - Alamofire (5.4.0)
   - JBCalendarDatePicker (0.2.4)
   - JTMaterialSpinner (3.0.5)
@@ -8,6 +9,7 @@ PODS:
   - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
+  - ACFloatingTextfield-Swift (from `https://github.com/ErAbhishekChandani/ACFloatingTextfield`, branch `master`, tag `v1.0.6`)
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `master`, tag `5.0.0`)
   - JBCalendarDatePicker
   - JTMaterialSpinner (from `https://github.com/jonathantribouharet/JTMaterialSpinner`, branch `master`, tag `3.0.5`)
@@ -19,6 +21,10 @@ SPEC REPOS:
     - JBCalendarDatePicker
 
 EXTERNAL SOURCES:
+  ACFloatingTextfield-Swift:
+    :branch: master
+    :git: https://github.com/ErAbhishekChandani/ACFloatingTextfield
+    :tag: v1.0.6
   Alamofire:
     :branch: master
     :git: https://github.com/Alamofire/Alamofire.git
@@ -37,6 +43,10 @@ EXTERNAL SOURCES:
     :tag: v1.7.0
 
 CHECKOUT OPTIONS:
+  ACFloatingTextfield-Swift:
+    :commit: 7ea1b72c21cdce369da54da5f7b2ff2639bdc351
+    :git: https://github.com/ErAbhishekChandani/ACFloatingTextfield
+    :tag: v1.0.6
   Alamofire:
     :commit: 9e0328127dfb801cefe8ac53a13c0c90a7770448
     :git: https://github.com/Alamofire/Alamofire.git
@@ -55,12 +65,13 @@ CHECKOUT OPTIONS:
     :tag: v1.7.0
 
 SPEC CHECKSUMS:
+  ACFloatingTextfield-Swift: c3212cef9548ae58fa914ea1c26a2f9a4f7cd7df
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   JBCalendarDatePicker: f37fa398d885fb9229ee3d2def4c9ff7e426dd06
   JTMaterialSpinner: 5c9dbaefc638507af4e8c1788b44cebdfce61939
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
 
-PODFILE CHECKSUM: 31f912fc5504406cf423946f1a54be3f3e81c093
+PODFILE CHECKSUM: a246717d1ce33eb8098bb243639f9d1ffd9487a7
 
 COCOAPODS: 1.9.1

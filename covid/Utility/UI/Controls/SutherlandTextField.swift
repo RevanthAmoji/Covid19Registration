@@ -15,14 +15,17 @@ class SutherlandTextField: UITextField {
 //            StylesManager.shared.apply(styles: styles, for: self)
 //        }
 //    }
-    lazy var infoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.Citygo.latoinfo400
-        label.textColor = UIColor.Citygo.formtitles
-        return label
-    }()
+//    lazy var infoLabel: UILabel = {
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.font = UIFont.Citygo.latoinfo400
+//        label.textColor = UIColor.Citygo.formtitles
+//        return label
+//    }()
 
+    fileprivate var infoLabel : UILabel?
+    
+    fileprivate var errorLabelHieght : NSLayoutConstraint?
     
     override init(frame: CGRect) {
            super.init(frame: frame)
@@ -31,24 +34,37 @@ class SutherlandTextField: UITextField {
 
        required init?(coder: NSCoder) {
             super.init(coder: coder)
-           setupTextField()
+          // setupTextField()
        }
 
        override func prepareForInterfaceBuilder() {
            super.prepareForInterfaceBuilder()
-           self.setupTextField()
+          // self.setupTextField()
        }
 
        private func setupTextField() {
          
-        addSubview(infoLabel)
-        infoLabel.text = ""
-        infoLabel.frame = CGRect(x: 0, y: self.frame.origin.y + self.frame.size.height + 10, width: self.frame.size.width, height: 20)
-       // self.superview?.addSubview(infoLabel)
+        if self.infoLabel?.superview != nil{
+            return
+        }
+        infoLabel = UILabel()
+        infoLabel?.text = "info text"
+        infoLabel?.textAlignment = self.textAlignment
+        infoLabel?.textColor = UIColor.red
+        infoLabel?.font = UIFont(name: (self.font?.fontName ?? "helvetica")!, size: 12)
+        infoLabel?.sizeToFit()
+        infoLabel?.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(infoLabel!)
+
+        let trailingConstraint = NSLayoutConstraint.init(item: infoLabel!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        let topConstraint = NSLayoutConstraint.init(item: infoLabel!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
+        errorLabelHieght = NSLayoutConstraint.init(item: infoLabel!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
+
+        self.addConstraints([trailingConstraint,topConstraint])
+        infoLabel?.addConstraint(errorLabelHieght!)
         
-//        infoLabel.translatesAutoresizingMaskIntoConstraints = false
-//        infoLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-//        infoLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: -2).isActive = true
+        errorLabelHieght?.constant = 15
+        
         self.setNeedsDisplay()
        }
     
