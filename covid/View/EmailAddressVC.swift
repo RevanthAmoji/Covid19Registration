@@ -59,7 +59,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
       //  nextBtn.layer.cornerRadius = nextBtn.frame.size.height/2
      //   previousBtn.layer.cornerRadius = previousBtn.frame.size.height/2
 
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
        // SingletonUI.shared.naviagationBarRightButton(vc: self, barItem: profileBarButton)
         // Add this observers to observe keyboard shown and hidden events
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(aNotification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
@@ -352,6 +352,32 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
 }
 
 extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
+    
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) ->  Bool {
+
+        if emailTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+        if reenterEmailTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+        if mobileTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+
+        return super.canPerformAction(action, withSender: sender)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -487,3 +513,10 @@ extension String {
         }
     }
 }
+
+//extension UITextField {
+//    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+//        return action == #selector(UIResponderStandardEditActions.paste(_:)) ?
+//            false : super.canPerformAction(action, withSender: sender)
+//    }
+//}
