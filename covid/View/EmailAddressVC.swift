@@ -219,10 +219,10 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
             lblemailerror.text = "Enter Valid E-mail"
         }
         if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
-            lblemailerror.text = "Enter Valid E-mail"
+            lblReemailerror.text = "Enter Valid E-mail"
         }
         if !viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {
-            lblemailerror.text = "Enter Valid Mobile Number"
+            lblphonenumbererror.text = "Enter Valid Mobile Number"
         }
         
         if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && mobileTF.text?.count != 0 && preferredModeOfComm?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {

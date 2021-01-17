@@ -27,11 +27,12 @@ class CreateAccountVC: UIViewController {
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
 
+    @IBOutlet weak var lblFirstNameError,lblLastNameError,lblEmailError,lblReenterEmailError,lblPasswordError,lblReenterPasswordError: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nextBtn.btnEnable(boolVal: false)
+       // nextBtn.btnEnable(boolVal: false)
 
        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -45,27 +46,47 @@ class CreateAccountVC: UIViewController {
     
     func checkAllTheFeilds() {
         //tfIdentification.text
-        var errorMessage = ""
-        nextBtn.btnEnable(boolVal: false)
+      //  nextBtn.btnEnable(boolVal: false)
         
         if emailTF.text?.count == 0 || emailTF == nil {
-            errorMessage = "Please enter email address"
-        } else if reenterEmailTF.text?.count == 0 || reenterEmailTF == nil {
-            errorMessage = "Please enter re-email address"
-        } else if passwordTF.text?.count == 0 || passwordTF == nil {
-            errorMessage = "Please enter password"
-        } else if rePasswordTF.text?.count == 0 || rePasswordTF == nil {
-            errorMessage = "Please enter re-enter password"
-        } else if firstnameTF.text?.count == 0 || firstnameTF == nil {
-            errorMessage = "Please first name"
-        } else if lastNameTF.text?.count == 0 || lastNameTF == nil {
-            errorMessage = "Please lastname"
-        } else {
-            nextBtn.btnEnable(boolVal: true)
-            return
+            lblEmailError.text = "Please enter email address"
         }
-        print(errorMessage)
+        if reenterEmailTF.text?.count == 0 || reenterEmailTF == nil {
+            lblReenterEmailError.text = "Please enter re-email address"
+        }
+        if passwordTF.text?.count == 0 || passwordTF == nil {
+            lblPasswordError.text = "Please enter password"
+        }
+        if rePasswordTF.text?.count == 0 || rePasswordTF == nil {
+            lblReenterPasswordError.text = "Please enter re-enter password"
+        }
+        if firstnameTF.text?.count == 0 || firstnameTF == nil {
+            lblFirstNameError.text = "Please enter first name"
+        }
+        if lastNameTF.text?.count == 0 || lastNameTF == nil {
+            lblLastNameError.text = "Please enter last name"
+        }
         
+        if !viewModel.validateEmailAddress(email: emailTF.text ?? "") {
+            lblEmailError.text = "Enter Valid E-mail"
+        }
+        if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
+            lblReenterEmailError.text = "Enter Valid E-mail"
+        }
+        
+        if emailTF.text != reenterEmailTF.text {
+            lblReenterEmailError.text = "Email not match"
+        }
+        if passwordTF.text != rePasswordTF.text {
+            lblReenterPasswordError.text = "Password not match"
+        }
+        
+        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && passwordTF.text?.count != 0 && rePasswordTF.text?.count != 0 && firstnameTF.text?.count != 0 && lastNameTF.text?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "")  {
+            
+            
+            checkConnectivity()
+
+        }
     }
     
     @IBAction func profileViewBtnAction(_ sender: Any) {
@@ -159,7 +180,8 @@ class CreateAccountVC: UIViewController {
         SingletonData.shared.createAccountFirstname = firstnameTF.text ?? ""
         SingletonData.shared.createAccountLastname = lastNameTF.text ?? ""
         
-        checkConnectivity()
+        
+        checkAllTheFeilds()
         
     }
     
@@ -227,8 +249,84 @@ extension CreateAccountVC: UITextFieldDelegate {
         }
         checkAllTheFeilds()
     }
+  
+    
     /// Thid is used to validate number plate and model when typing on keypad
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if range.location == 0 && string == " " {
+            return false
+        }
+        if !string.canBeConverted(to: .ascii){
+            return false
+        }
+        
+        var text = textField.text ?? ""
+        
+        if string.count == 0 && text.count > 0 {
+            text.removeLast()
+        } else {
+            text += string
+        }
+        
+        if textField == firstnameTF {
+           
+            if text.count > 0 {
+                lblFirstNameError.text = ""
+            }
+            
+        }
+        
+        if textField == lastNameTF {
+           
+            if text.count > 0 {
+                lblLastNameError.text = ""
+            }
+            
+        }
+        
+        if textField == passwordTF {
+           
+            if text.count > 0 {
+                lblPasswordError.text = ""
+            }
+            
+        }
+        
+        if textField == emailTF {
+            let isValid = viewModel.validateEmailAddress(email: text )
+            lblEmailError.text = ""
+            if !isValid {
+                lblEmailError.text = "Enter Valid Email"
+            }
+        } else if textField == reenterEmailTF {
+            let isValid = viewModel.validateEmailAddress(email: text )
+            lblReenterEmailError.text = ""
+            if !isValid {
+                lblReenterEmailError.text = "Enter Valid Email"
+            }
+            if isValid {
+                lblReenterEmailError.text = ""
+                if emailTF.text != text {
+                    lblReenterEmailError.text = "Email not match"
+                }
+                if emailTF.text == text {
+                    lblReenterEmailError.text = ""
+                }
+            }
+        } else if textField == rePasswordTF{
+           
+          
+            if passwordTF.text != text {
+                lblReenterPasswordError.text = "Email not match"
+            }
+            if passwordTF.text == text {
+                lblReenterPasswordError.text = ""
+            }
+           
+        }
+        
+       // print(text)
        
       return true
     }
