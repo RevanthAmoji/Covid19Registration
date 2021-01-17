@@ -32,7 +32,7 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // nextBtn.btnEnable(boolVal: false)
+       nextBtn.btnEnable(boolVal: true)
 
        SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -48,40 +48,47 @@ class CreateAccountVC: UIViewController {
         //tfIdentification.text
       //  nextBtn.btnEnable(boolVal: false)
         
-        if emailTF.text?.count == 0 || emailTF == nil {
-            lblEmailError.text = "Please enter email address"
-        }
-        if reenterEmailTF.text?.count == 0 || reenterEmailTF == nil {
-            lblReenterEmailError.text = "Please enter re-email address"
-        }
-        if passwordTF.text?.count == 0 || passwordTF == nil {
-            lblPasswordError.text = "Please enter password"
-        }
-        if rePasswordTF.text?.count == 0 || rePasswordTF == nil {
-            lblReenterPasswordError.text = "Please enter re-enter password"
-        }
-        if firstnameTF.text?.count == 0 || firstnameTF == nil {
-            lblFirstNameError.text = "Please enter first name"
-        }
-        if lastNameTF.text?.count == 0 || lastNameTF == nil {
-            lblLastNameError.text = "Please enter last name"
-        }
+        lblEmailError.text = ""
+        lblReenterEmailError.text = ""
+        lblPasswordError.text = ""
+        lblReenterPasswordError.text = ""
+        lblFirstNameError.text = ""
+        lblLastNameError.text = ""
         
-        if !viewModel.validateEmailAddress(email: emailTF.text ?? "") {
+        
+        if passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 || passwordTF == nil {
+            lblPasswordError.text = "Password is required"
+        }
+       
+        if firstnameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 || firstnameTF == nil {
+            lblFirstNameError.text = "Firstname is required"
+        }
+        if lastNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 || lastNameTF == nil {
+            lblLastNameError.text = "Lastname is required"
+        }
+        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 || emailTF == nil {
+            lblEmailError.text = "E-mail is required"
+        } else if !viewModel.validateEmailAddress(email: emailTF.text ?? "") {
             lblEmailError.text = "Enter Valid E-mail"
         }
-        if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
+        
+        if reenterEmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 || reenterEmailTF == nil {
+            
+            lblReenterEmailError.text = "E-mail is required"
+            
+        } else if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
             lblReenterEmailError.text = "Enter Valid E-mail"
+        } else if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) != reenterEmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
+            lblReenterEmailError.text = "E-mail doesn't match"
         }
         
-        if emailTF.text != reenterEmailTF.text {
-            lblReenterEmailError.text = "Email doesn't match"
-        }
-        if passwordTF.text != rePasswordTF.text {
+        if rePasswordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 || rePasswordTF == nil {
+            lblReenterPasswordError.text = "Password is required"
+        } else if passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) != rePasswordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             lblReenterPasswordError.text = "Password doesn't match"
         }
         
-        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && passwordTF.text?.count != 0 && rePasswordTF.text?.count != 0 && firstnameTF.text?.count != 0 && lastNameTF.text?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && (emailTF.text == reenterEmailTF.text) && (passwordTF.text == rePasswordTF.text) {
+        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && reenterEmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && rePasswordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && firstnameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && lastNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && (emailTF.text == reenterEmailTF.text) && (passwordTF.text == rePasswordTF.text) {
             
             checkConnectivity()
 
@@ -199,6 +206,37 @@ class CreateAccountVC: UIViewController {
 
 }
 extension CreateAccountVC: UITextFieldDelegate {
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) ->  Bool {
+
+        if emailTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+        if reenterEmailTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+        if passwordTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+        if rePasswordTF.isFirstResponder {
+            DispatchQueue.main.async(execute: {
+                (sender as? UIMenuController)?.setMenuVisible(false, animated: false)
+            })
+            return false
+        }
+
+        return super.canPerformAction(action, withSender: sender)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

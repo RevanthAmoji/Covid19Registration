@@ -202,34 +202,35 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     func checkAllFields() {
         
-        if emailTF.text?.count == 0 {
-            lblemailerror.text = "E-Mail is required"
-        }
-        if reenterEmailTF.text?.count == 0 {
-            lblReemailerror.text = "E-Mail is required"
-        }
-        if mobileTF.text?.count == 0 {
-            lblphonenumbererror.text = "Mobile Number is required"
-        }
-        if preferredModeOfComm?.count == 0 {
+        lblReemailerror.text = ""
+        lblphonenumbererror.text = ""
+        lblemailerror.text = ""
+        lblmodeofcommerror.text = ""
+        
+       
+        if preferredModeOfComm?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
             lblmodeofcommerror.text = "Preferred mode of communication is required"
         }
-        
-        if !viewModel.validateEmailAddress(email: emailTF.text ?? "") {
+        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+            lblemailerror.text = "E-Mail is required"
+        } else if !viewModel.validateEmailAddress(email: emailTF.text ?? "") {
             lblemailerror.text = "Enter Valid E-mail"
         }
-        if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
+        if reenterEmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+            lblReemailerror.text = "E-Mail is required"
+        } else if !viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") {
             lblReemailerror.text = "Enter Valid E-mail"
-        }
-        if !viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {
-            lblphonenumbererror.text = "Enter Valid Mobile Number"
-        }
-        
-        if emailTF.text != reenterEmailTF.text {
+        } else if emailTF.text != reenterEmailTF.text {
             lblReemailerror.text = "Email doesn't match"
         }
         
-        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && mobileTF.text?.count != 0 && preferredModeOfComm?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") && (emailTF.text == reenterEmailTF.text) {
+        if mobileTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+            lblphonenumbererror.text = "Mobile Number is required"
+        } else if !viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {
+            lblphonenumbererror.text = "Enter Valid Mobile Number"
+        }
+        
+        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && reenterEmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && mobileTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && preferredModeOfComm?.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") && (emailTF.text == reenterEmailTF.text) {
             
             checkConnectivityAuthorization()
             
