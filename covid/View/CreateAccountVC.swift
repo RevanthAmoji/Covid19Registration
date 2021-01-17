@@ -75,14 +75,13 @@ class CreateAccountVC: UIViewController {
         }
         
         if emailTF.text != reenterEmailTF.text {
-            lblReenterEmailError.text = "Email not match"
+            lblReenterEmailError.text = "Email doesn't match"
         }
         if passwordTF.text != rePasswordTF.text {
-            lblReenterPasswordError.text = "Password not match"
+            lblReenterPasswordError.text = "Password doesn't match"
         }
         
-        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && passwordTF.text?.count != 0 && rePasswordTF.text?.count != 0 && firstnameTF.text?.count != 0 && lastNameTF.text?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "")  {
-            
+        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && passwordTF.text?.count != 0 && rePasswordTF.text?.count != 0 && firstnameTF.text?.count != 0 && lastNameTF.text?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && (emailTF.text == reenterEmailTF.text) && (passwordTF.text == rePasswordTF.text) {
             
             checkConnectivity()
 
@@ -216,6 +215,7 @@ extension CreateAccountVC: UITextFieldDelegate {
     }
     /// Thid is used to validate number plate and model when resign keyboard
     func textFieldDidEndEditing(_ textField: UITextField) {
+        /*
         if textField == emailTF {
              let isValid = viewModel.validateEmailAddress(email: textField.text ?? "")
             emailTF.showBoaderColor(isEnable: !isValid)
@@ -248,6 +248,7 @@ extension CreateAccountVC: UITextFieldDelegate {
             }
         }
         checkAllTheFeilds()
+ */
     }
   
     
@@ -284,7 +285,7 @@ extension CreateAccountVC: UITextFieldDelegate {
             }
             
         }
-        
+        /*
         if textField == passwordTF {
            
             if text.count > 0 {
@@ -325,7 +326,7 @@ extension CreateAccountVC: UITextFieldDelegate {
             }
            
         }
-        
+        */
        // print(text)
        
       return true

@@ -225,7 +225,11 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
             lblphonenumbererror.text = "Enter Valid Mobile Number"
         }
         
-        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && mobileTF.text?.count != 0 && preferredModeOfComm?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") {
+        if emailTF.text != reenterEmailTF.text {
+            lblReemailerror.text = "Email doesn't match"
+        }
+        
+        if emailTF.text?.count != 0 && reenterEmailTF.text?.count != 0 && mobileTF.text?.count != 0 && preferredModeOfComm?.count != 0 && viewModel.validateEmailAddress(email: emailTF.text ?? "") && viewModel.validateEmailAddress(email: reenterEmailTF.text ?? "") && viewModel.validatePhoneNumber(phone: mobileTF.text ?? "") && (emailTF.text == reenterEmailTF.text) {
             
             checkConnectivityAuthorization()
             
@@ -400,17 +404,17 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
 //                reenterEmailTF.showBoaderColor(isEnable: true)
 //            }
 //        }
-        if textField == reenterEmailTF {
-           
-                lblReemailerror.text = ""
-                if emailTF.text != reenterEmailTF.text {
-                    lblReemailerror.text = "Email not match"
-                }
-                if emailTF.text == reenterEmailTF.text {
-                    lblReemailerror.text = ""
-                }
-            
-        }
+//        if textField == reenterEmailTF {
+//
+//                lblReemailerror.text = ""
+//                if emailTF.text != reenterEmailTF.text {
+//                    lblReemailerror.text = "Email not match"
+//                }
+//                if emailTF.text == reenterEmailTF.text {
+//                    lblReemailerror.text = ""
+//                }
+//
+//        }
     }
     /// Thid is used to validate number plate and model when typing on keypad
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -430,6 +434,13 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
             text += string
         }
         
+        let  char = string.cString(using: String.Encoding.utf8)!
+        let isBackSpace = strcmp(char, "\\b")
+
+        if (isBackSpace == -92) {
+            print("Backspace was pressed")
+        }
+        /*
         if textField == emailTF {
             let isValid = viewModel.validateEmailAddress(email: text )
             lblemailerror.text = ""
@@ -451,14 +462,17 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
                     lblReemailerror.text = ""
                 }
             }
-        } else if textField == mobileTF{
+            return false
+        } else
+ */
+        if textField == mobileTF{
            
             textField.text = formatPhone(text)
-            let isValid = viewModel.validatePhoneNumber(phone: textField.text ?? "")
-            lblphonenumbererror.text = ""
-            if !isValid {
-                lblphonenumbererror.text = "Enter Valid phonenumber"
-            }
+//            let isValid = viewModel.validatePhoneNumber(phone: textField.text ?? "")
+//            lblphonenumbererror.text = ""
+//            if !isValid {
+//                lblphonenumbererror.text = "Enter Valid phonenumber"
+//            }
            return false
         }
         
