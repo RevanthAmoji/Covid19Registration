@@ -24,18 +24,18 @@ class SHProgressBarViewController: UIViewController {
         super.viewDidLoad()
         
         if !UIAccessibility.isReduceTransparencyEnabled {
-            view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.1)
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
             
             let blurEffect = UIBlurEffect.init()
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             //always fill the view
             blurEffectView.frame = self.view.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            //blurEffectView.alpha = 0.98
+           // blurEffectView.alpha = 0.75
             view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
             view.bringSubviewToFront(viewLoader)
         } else {
-            view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         }
         
         imgLoader.image = UIImage.gif(name: "covid")

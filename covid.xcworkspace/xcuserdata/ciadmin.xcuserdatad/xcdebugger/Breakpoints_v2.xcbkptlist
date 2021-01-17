@@ -14,8 +14,8 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "checkAllFields()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "covid/View/EmailAddressVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "checkAllFields()"
             landmarkType = "7">
          </BreakpointContent>
@@ -65,6 +65,134 @@
             startingLineNumber = "93"
             endingLineNumber = "93"
             landmarkName = "checkAllTheFeilds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "786A37C2-8776-447E-B8A2-958171C0FEAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/EmailAddressVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "checkConnectivity()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "786A37C2-8776-447E-B8A2-958171C0FEAD - c83f8bf5425d4b1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.ServerResponse&gt;) -&gt; () in covid.EmailAddressVC.checkConnectivity() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ciadmin/Downloads/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "181">
+               </Location>
+               <Location
+                  uuid = "786A37C2-8776-447E-B8A2-958171C0FEAD - c83f8bf5425d4b1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.ServerResponse&gt;) -&gt; () in covid.EmailAddressVC.checkConnectivity() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ciadmin/Downloads/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7754268-1B47-4867-8ED9-53EB66DD540E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/EmailAddressVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "checkConnectivityBackUpData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B7754268-1B47-4867-8ED9-53EB66DD540E - b3be4cce58a499f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.AccountDetails&gt;) -&gt; () in covid.EmailAddressVC.checkConnectivityBackUpData() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ciadmin/Downloads/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "277"
+                  endingLineNumber = "277"
+                  offsetFromSymbolStart = "226">
+               </Location>
+               <Location
+                  uuid = "B7754268-1B47-4867-8ED9-53EB66DD540E - b3be4cce58a499f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (covid.ServiceResult&lt;covid.AccountDetails&gt;) -&gt; () in covid.EmailAddressVC.checkConnectivityBackUpData() -&gt; ()"
+                  moduleName = "covid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ciadmin/Downloads/Covid19Registration/covid/View/EmailAddressVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "277"
+                  endingLineNumber = "277"
+                  offsetFromSymbolStart = "274">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65965E81-9503-496E-BA6E-2536524CBED9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/EmailAddressVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "checkConnectivityAuthorization()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91505E31-267E-4FE7-9336-30CA8B6E89A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covid/View/EmailAddressVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "checkConnectivity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -38,8 +38,6 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         // Do any additional setup after loading the view.
         nextBtn.btnEnableNew(boolVal: true)
@@ -121,7 +119,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
     
     func checkConnectivityAuthorization() {
         
-//        self.showProgressBar()
+        self.showProgressBar()
         
         if Reachability.isConnectedToNetwork() {
     
@@ -134,7 +132,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 case .success(let dashboads):
                  //   if let verified = dashboads as? Bool {
                         if dashboads {
-//                            // self.hideProgressBar()
+                            self.hideProgressBar()
                             DispatchQueue.main.async {
                                 self.textViewAlert.isHidden = false
                             }
@@ -142,13 +140,13 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                             self.checkConnectivity()
                         }
                 case .failure( _):
-//                    // self.hideProgressBar()
+                   self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-//            // self.hideProgressBar()
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
@@ -170,25 +168,25 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 switch result {
                 
                 case .success(let dashboads):
-                   // // self.hideProgressBar()
+                  // self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         self.checkConnectivityBackUpData()
                         
                     } else {
-                        // self.hideProgressBar()
+                        self.hideProgressBar()
                         self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                         
                     }
                     
                 case .failure( _):
-                    // self.hideProgressBar()
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-            // self.hideProgressBar()
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }
@@ -277,7 +275,7 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                 result in
                 switch result {
                 case .success(let dashboads):
-                    // self.hideProgressBar()
+                    self.hideProgressBar()
                     SingletonData.shared.StatusCode = dashboads.StatusCode
                     if dashboads.StatusCode == 0 {
                     
@@ -333,13 +331,13 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
                         let controller = storyboard.instantiateViewController(withIdentifier: "InitialVC") as! InitialVC
                         self.navigationController?.pushViewController(controller, animated: false)
                 case .failure( _):
-                    // self.hideProgressBar()
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
-            // self.hideProgressBar()
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
         }
     }
