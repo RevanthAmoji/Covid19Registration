@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         subTitlelbl.localizableKey = "choose_language_subtitle"
         btnGetStarted.localizableKey = "choose_language_getstarted"
         btnHowItWorks.localizableKey = "choose_language_itworks"
-        var localString = "Alreay have an account?"
+        var localString = "Already have an account?"
         if SingletonUI.shared.selectedLanguage == "Español" {
             localString = "¿Ya tienes una cuenta?"
         }
