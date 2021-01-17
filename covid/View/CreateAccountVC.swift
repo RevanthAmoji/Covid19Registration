@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateAccountVC: UIViewController {
+class CreateAccountVC: UIViewController , ProgressBarShower{
     
     // Intialize view model variable
     var viewModel = EmailAddressViewModel()
@@ -146,6 +146,8 @@ class CreateAccountVC: UIViewController {
 
     func checkConnectivity() {
         
+        self.showProgressBar()
+        
         if Reachability.isConnectedToNetwork() {
             let email = emailTF.text ?? ""
             let dic = "{\"EmailAddress\":\"\(emailTF.text ?? "")\",\"PatientFirstName\":\"\(firstnameTF.text ?? "")\",\"PatientLastName\":\"\(lastNameTF.text ?? "")\",\"Password\":\"\(passwordTF.text ?? "")\"}"
@@ -157,6 +159,7 @@ class CreateAccountVC: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         UserData.shared.setIsUserLogin(boolVal: true)
@@ -167,16 +170,19 @@ class CreateAccountVC: UIViewController {
                             self.navigationController?.pushViewController(controller, animated: false)
                         
                     } else {
+                        self.hideProgressBar()
                         self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                         
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }

@@ -27,7 +27,7 @@ enum checkBoxInt: String {
     case falseVal = "0"
 }
 
-class RegisterScreenConfirm: UIViewController {
+class RegisterScreenConfirm: UIViewController,ProgressBarShower {
     
     var viewModel = RegisterScreenThreeModel()
     
@@ -806,7 +806,7 @@ class RegisterScreenConfirm: UIViewController {
    
     
     func checkConnectivity() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"HasCorona_symptoms\":\"\(symptoms ?? "")\",\"Symptoms_StartedDate\":\"\(dateSymptomsStarted ?? "")\",\"Proritized_Testing\":\"\(proritizedForTesting ?? "")\",\"FirstTime_Test\":\"\(firstTimeTesting ?? "")\",\"Contact_Last15days\":\"\(contactWithAnyOne ?? "")\",\"Medical_Condition\":\"\(medicalCondition ?? "")\",\"Pregnant\":\"\(pregnant ?? "")\",\"Highrisk_Category\":\"\(highRiskCategory ?? "")\",\"Smoke\":\"\(smoker ?? "")\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(careProvider ?? "")\",\"PrimaryCare_AddLine1\":\"\(addressLineOne?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_AddLine2\":\"\(addressLineTwo?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_City\":\"\(city ?? "")\",\"PrimaryCare_State\":\"\(state ?? "")\",\"PrimaryCare_Zipcode\":\"\(zipCode ?? "")\",\"PrimaryCare_Email\":\"\(emailAddress ?? "")\",\"PrimaryCare_Phone\":\"\(phoneNumber ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
@@ -817,6 +817,7 @@ class RegisterScreenConfirm: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -826,11 +827,13 @@ class RegisterScreenConfirm: UIViewController {
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                     }
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }

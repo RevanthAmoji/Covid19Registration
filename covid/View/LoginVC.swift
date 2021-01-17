@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, ProgressBarShower {
     
     
     @IBOutlet weak var btnGetStarted: SutherlandButton!
@@ -119,7 +119,7 @@ class LoginVC: UIViewController {
     
     
     func checkConnectivityBackUpData() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             
             // let authUrl = Endpoint.accountDetails+"s.shetty@gmail.com"
@@ -129,6 +129,7 @@ class LoginVC: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         let loginVal = dashboads.Data?[0]
                         if loginVal?.Message == "Valid" {
@@ -152,11 +153,13 @@ class LoginVC: UIViewController {
                     }
                        
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
         }
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyScheduleTestsViewController: UIViewController {
+class MyScheduleTestsViewController: UIViewController , ProgressBarShower {
 
     
     @IBOutlet weak var itemsTableView:UITableView!
@@ -64,6 +64,7 @@ class MyScheduleTestsViewController: UIViewController {
     
     func checkConnectivity() {
         
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
     
            // let authUrl = Endpoint.accountDetails+"s.shetty@gmail.com"
@@ -73,6 +74,7 @@ class MyScheduleTestsViewController: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.count != 0 {
                         self.availableSlots = dashboads
                         self.itemsTableView.reloadData()
@@ -81,11 +83,13 @@ class MyScheduleTestsViewController: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }

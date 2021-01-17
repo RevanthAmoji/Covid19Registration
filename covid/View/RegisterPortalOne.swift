@@ -8,7 +8,7 @@
 import UIKit
 import JBCalendarDatePicker
 
-class RegisterPortalOne: UIViewController {
+class RegisterPortalOne: UIViewController , ProgressBarShower{
     
     @IBOutlet weak var tfDateSymStarted: SutherlandTextField!
     @IBOutlet weak var btnDateSym: UIButton!
@@ -143,7 +143,7 @@ class RegisterPortalOne: UIViewController {
     }
     
     func checkConnectivity() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? "rev1@test.com"
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Patient_DOB\":\"\(tfDateSymStarted.text ?? "")\",\"Patient_Gender\":\"\(gender)\",\"Patient_Ethnicity\":\"\(race)\"}'}"
@@ -155,6 +155,7 @@ class RegisterPortalOne: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -165,18 +166,20 @@ class RegisterPortalOne: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }
 
     
     func checkConnectivityGender() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
     
             let authUrl = Endpoint.gender
@@ -185,6 +188,7 @@ class RegisterPortalOne: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.count != 0 {
                         
                         self.ageList = dashboads
@@ -196,17 +200,19 @@ class RegisterPortalOne: UIViewController {
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                     }
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }
     
     func checkConnectivityEthinicity() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
     
             let authUrl = Endpoint.ethinicity
@@ -215,6 +221,7 @@ class RegisterPortalOne: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.count != 0 {
                         self.raceList = dashboads
                         //self.raceTableView.reloadData()
@@ -223,11 +230,13 @@ class RegisterPortalOne: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }

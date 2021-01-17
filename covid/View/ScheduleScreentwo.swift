@@ -20,7 +20,7 @@ extension Date {
     }
 }
 
-class ScheduleScreentwo: UIViewController {
+class ScheduleScreentwo: UIViewController, ProgressBarShower {
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
     
@@ -77,6 +77,8 @@ class ScheduleScreentwo: UIViewController {
     }
     func checkConnectivityRelation() {
         
+        self.showProgressBar()
+        
         if Reachability.isConnectedToNetwork() {
     
             let authUrl = Endpoint.slotslist+(SingletonData.shared.hospitalID ?? "")+Endpoint.requiredDate+getCurrentDate()
@@ -86,6 +88,7 @@ class ScheduleScreentwo: UIViewController {
                 switch result {
                 
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     self.slots = dashboads
                     self.itemsCollectionView.reloadData()
                     self.itemsCollectionView.layoutIfNeeded()
@@ -94,11 +97,13 @@ class ScheduleScreentwo: UIViewController {
                     self.collectionView(self.itemsCollectionView, didSelectItemAt: indexpath)
                    
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }

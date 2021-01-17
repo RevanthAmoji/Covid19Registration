@@ -8,7 +8,7 @@
 import UIKit
 import JBCalendarDatePicker
 
-class RegisterScreenOne: UIViewController {
+class RegisterScreenOne: UIViewController,ProgressBarShower {
     
     @IBOutlet weak var scrollViewReg: UIScrollView!
     
@@ -225,6 +225,8 @@ class RegisterScreenOne: UIViewController {
     
     func checkConnectivity() {
         
+        self.showProgressBar()
+        
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"HasCorona_symptoms\":\"\(symptoms ?? "")\",\"Symptoms_StartedDate\":\"\(tfDateSymStarted.text ?? "")\",\"Proritized_Testing\":\"\(proritizedForTesting ?? "")\",\"FirstTime_Test\":\"\(firstTimeTesting ?? "")\",\"Contact_Last15days\":\"\(contactWithAnyOne ?? "")\"}'}"
@@ -235,21 +237,25 @@ class RegisterScreenOne: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let controller = storyboard.instantiateViewController(withIdentifier: "RegisterScreentwo") as! RegisterScreentwo
                         self.navigationController?.pushViewController(controller, animated: false)
                     } else {
+                        
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }

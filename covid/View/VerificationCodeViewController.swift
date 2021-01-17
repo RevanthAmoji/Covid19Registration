@@ -37,7 +37,7 @@ class VerificationCodeViewController: UIViewController {
     }
     
     func checkConnectivity() {
-        
+       
         let code = "\(tf1.text ?? "")\(tf2.text ?? "")\(tf3.text ?? "")\(tf4.text ?? "")"
         
         if SingletonData.shared.verificationCode == code {
@@ -53,7 +53,7 @@ class VerificationCodeViewController: UIViewController {
     
     func checkConnectivityEmail() {
         
-      //  self.showProgressBar()
+      // self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\"}"
@@ -66,7 +66,7 @@ class VerificationCodeViewController: UIViewController {
                 switch result {
                 
                 case .success( _):
-                   // self.hideProgressBar()
+                 // self.hideProgressBar()
                   break
                     
                 case .failure( _):
@@ -76,7 +76,7 @@ class VerificationCodeViewController: UIViewController {
                 }
             })
         } else {
-         //   self.hideProgressBar()
+           // self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }

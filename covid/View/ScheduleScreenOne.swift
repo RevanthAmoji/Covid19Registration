@@ -18,7 +18,7 @@ struct Stadium: Codable {
   var Latidude: String?
 }
 
-class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, ProgressBarShower {
 
     @IBOutlet weak var mapView:MKMapView!
     @IBOutlet weak var itemsCollectionView:UICollectionView!
@@ -87,7 +87,7 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
     */
     
     func checkConnectivityRelation() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
     
             let authUrl = Endpoint.location+(self.searchField.text ?? "")
@@ -98,6 +98,7 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
                 case .success(let dashboads):
                     
                     self.listCountLbl.text = "\(dashboads.count) Testing facilities found"
+                    self.hideProgressBar()
                     if dashboads.count == 0 {
                         
                         self.collectionViewHeight.constant = 0
@@ -124,11 +125,13 @@ class ScheduleScreenOne: UIViewController,UICollectionViewDelegate,UICollectionV
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }

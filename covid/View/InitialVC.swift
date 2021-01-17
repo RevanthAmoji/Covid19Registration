@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitialVC: UIViewController {
+class InitialVC: UIViewController,ProgressBarShower {
     
     @IBOutlet weak var tfRelationShip: SutherlandTextField!
     @IBOutlet weak var tfRelationShipDummy: SutherlandTextField!
@@ -344,6 +344,7 @@ class InitialVC: UIViewController {
     
     func checkConnectivity() {
         //Patient_Gender
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"PatientRelationship\":\"\(selectRelationNumber ?? "")\",\"PatientAge\":\"\(selectionAge ?? "")\",\"PatientFirstName\":\"\(tfPatientFirstName.text ?? "")\",\"PatientLastName\":\"\(tfPatientLastName.text ?? "")\",\"PatientConsent\":\"\(selectionRegister ?? "")\",\"Patient_Gender\":\"\(selectGenderNumber ?? "")\",\"GuardianFullName\":\"\(tfSignature.text ?? "")\"}'}"
@@ -354,6 +355,7 @@ class InitialVC: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -364,16 +366,19 @@ class InitialVC: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }
 
     func checkConnectivityRelation() {
+        self.showProgressBar()
         
         if Reachability.isConnectedToNetwork() {
     
@@ -383,6 +388,7 @@ class InitialVC: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.showProgressBar()
                     if dashboads.count != 0 {
                         
                         self.languagesList = dashboads
@@ -396,16 +402,20 @@ class InitialVC: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }
     
     func checkConnectivityGender() {
+        
+        self.showProgressBar()
         
         if Reachability.isConnectedToNetwork() {
     
@@ -415,6 +425,7 @@ class InitialVC: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.count != 0 {
                         
                         self.genderList = dashboads
@@ -425,11 +436,13 @@ class InitialVC: UIViewController {
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                     }
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
        }
     }

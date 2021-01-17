@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerifiedViewController: UIViewController {
+class VerifiedViewController: UIViewController, ProgressBarShower{
     
     @IBOutlet weak var btnVerifiedEmail: SutherlandButton!
     @IBOutlet weak var btnVerifiedPassword: SutherlandButton!
@@ -35,6 +35,8 @@ class VerifiedViewController: UIViewController {
     }
     func checkConnectivity() {
         
+        self.showProgressBar()
+        
         if Reachability.isConnectedToNetwork() {
     
             let email = "revanth.amojinarsimha@sutherlandglobal.com"
@@ -46,6 +48,7 @@ class VerifiedViewController: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if let verified = dashboads as? String {
                         print(dashboads)
                         SingletonData.shared.verificationCode = verified
@@ -57,11 +60,13 @@ class VerifiedViewController: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
        }
     }

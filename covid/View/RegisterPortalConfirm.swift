@@ -8,7 +8,7 @@
 import UIKit
 import JBCalendarDatePicker
 
-class RegisterPortalConfirm: UIViewController {
+class RegisterPortalConfirm: UIViewController , ProgressBarShower{
     
     
     @IBOutlet weak var profileBarButton: UIBarButtonItem!
@@ -265,6 +265,8 @@ class RegisterPortalConfirm: UIViewController {
     }
     func checkConnectivity() {
         
+        self.showProgressBar()
+        
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"PatientFirstName\":\"\(SingletonData.shared.firstNamePatient ?? "")\",\"PatientLastName\":\"\(SingletonData.shared.lastNamePatient ?? "")\",\"Password\":\"\(SingletonData.shared.password ?? "")\"}"
@@ -276,6 +278,8 @@ class RegisterPortalConfirm: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -288,11 +292,13 @@ class RegisterPortalConfirm: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showOfflineMessage(title: Endpoint.errorMessage, msg: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showOfflineMessage(title: "Network Error", msg: "Unable to access the Network")
         }
     }

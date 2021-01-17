@@ -14,7 +14,7 @@ extension UINavigationController {
     }
   }
 }
-class ScheduleConfirm: UIViewController {
+class ScheduleConfirm: UIViewController,ProgressBarShower{
     
     @IBOutlet weak var btnNext:SutherlandButton!
     
@@ -71,7 +71,7 @@ class ScheduleConfirm: UIViewController {
     }
     
     func checkConnectivity() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? "rev1@test.com"
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"SlotID\":\"\(SingletonData.shared.slotId ?? "")\",\"FacilityID\":\"\(SingletonData.shared.hospitalID ?? "")\",\"SlotDate\":\"\(SingletonData.shared.testDate ?? "")\"}'}"
@@ -82,6 +82,7 @@ class ScheduleConfirm: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -92,11 +93,13 @@ class ScheduleConfirm: UIViewController {
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                     }
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }

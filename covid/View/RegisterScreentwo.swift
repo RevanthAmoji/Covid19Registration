@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterScreentwo: UIViewController {
+class RegisterScreentwo: UIViewController,ProgressBarShower{
     
     @IBOutlet weak var btnMedicalConditionTrue: UIButton!
     @IBOutlet weak var btnMedicalConditionfalse: UIButton!
@@ -209,6 +209,7 @@ class RegisterScreentwo: UIViewController {
     
     func checkConnectivity() {
         
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"Medical_Condition\":\"\(medicalCondition ?? "")\",\"Pregnant\":\"\(pregnant ?? "")\",\"Highrisk_Category\":\"\(highRiskCategory ?? "")\",\"Smoke\":\"\(smoker ?? "")\"}'}"
@@ -219,6 +220,7 @@ class RegisterScreentwo: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -229,11 +231,13 @@ class RegisterScreentwo: UIViewController {
                     }
                     
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }

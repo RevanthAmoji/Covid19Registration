@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterScreenThree: UIViewController {
+class RegisterScreenThree: UIViewController,ProgressBarShower {
     
     // Intialize view model variable
     var viewModel = RegisterScreenThreeModel()
@@ -244,7 +244,7 @@ class RegisterScreenThree: UIViewController {
     }
     
     func checkConnectivity() {
-        
+        self.showProgressBar()
         if Reachability.isConnectedToNetwork() {
             let email = SingletonData.shared.email ?? ""
             let dic = "{\"EmailAddress\":\"\(email)\",\"param\":'{\"EmailAddress\":\"\(email)\",\"hasPrimarycare_Prov\":\"\(primaryCareProvider ?? "")\",\"PrimaryCare_Name\":\"\(tfCareProvider.text ?? "")\",\"PrimaryCare_AddLine1\":\"\(tfAddressLineOne.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_AddLine2\":\"\(tfAddressLineTwo.text?.replacingOccurrences(of: ",", with: "%2C") ?? "")\",\"PrimaryCare_City\":\"\(tfCity.text ?? "")\",\"PrimaryCare_State\":\"\(tfState.text ?? "")\",\"PrimaryCare_Zipcode\":\"\(tfZipCode.text ?? "")\",\"PrimaryCare_Email\":\"\(tfEmailAddress.text ?? "")\",\"PrimaryCare_Phone\":\"\(tfPhoneNumber.text ?? "")\",\"hasCare_Facility\":\"\(careFacility ?? "")\"}'}"
@@ -255,6 +255,7 @@ class RegisterScreenThree: UIViewController {
                 result in
                 switch result {
                 case .success(let dashboads):
+                    self.hideProgressBar()
                     if dashboads.isSuccess ?? false {
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -264,11 +265,13 @@ class RegisterScreenThree: UIViewController {
                         self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                     }
                 case .failure( _):
+                    self.hideProgressBar()
                     //something went wrong, print the error.
                     self.showsAlertWithoutWhiteBg(titleVal: Endpoint.errorMessage, messageVal: "")
                 }
             })
         } else {
+            self.hideProgressBar()
             self.showsAlertWithoutWhiteBg(titleVal: "Network Error", messageVal: "Unable to access the Network")
         }
     }
