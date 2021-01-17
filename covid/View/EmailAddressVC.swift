@@ -110,9 +110,9 @@ class EmailAddressVC: UIViewController,ProgressBarShower{
         }
         
         if preferredModeOfComm?.count == 0 {
-            lblphonenumbererror.text = ""
+            lblmodeofcommerror.text = "Preferred mode of communication is required"
         } else {
-            lblphonenumbererror.text = "Preferred mode of communication is required"
+            lblmodeofcommerror.text = ""
         }
 //        nameViewHeight.constant = 203
 //        nameViewHeightView.isHidden = false
@@ -444,10 +444,10 @@ extension EmailAddressVC: UITextFieldDelegate,UITextViewDelegate {
             }
             if isValid {
                 lblReemailerror.text = ""
-                if emailTF.text != reenterEmailTF.text {
+                if emailTF.text != text {
                     lblReemailerror.text = "Email not match"
                 }
-                if emailTF.text == reenterEmailTF.text {
+                if emailTF.text == text {
                     lblReemailerror.text = ""
                 }
             }
