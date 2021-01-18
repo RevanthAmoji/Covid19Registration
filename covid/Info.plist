@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Covid19 Slot</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,11 +17,31 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use for your purpose</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Quicksand-Light.ttf</string>
+		<string>Quicksand-Regular.ttf</string>
+		<string>Quicksand-Medium.ttf</string>
+		<string>Quicksand-SemiBold.ttf</string>
+		<string>Quicksand-Bold.ttf</string>
+		<string>Lato-Italic.ttf</string>
+		<string>Lato-LightItalic.ttf</string>
+		<string>Lato-Thin.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-BlackItalic.ttf</string>
+		<string>Lato-BoldItalic.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Lato-ThinItalic.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -62,25 +84,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>UIAppFonts</key>
-    <array>
-        <string>Quicksand-Light.ttf</string>
-        <string>Quicksand-Regular.ttf</string>
-        <string>Quicksand-Medium.ttf</string>
-        <string>Quicksand-SemiBold.ttf</string>
-        <string>Quicksand-Bold.ttf</string>
-        <string>Lato-Italic.ttf</string>
-        <string>Lato-LightItalic.ttf</string>
-        <string>Lato-Thin.ttf</string>
-        <string>Lato-Bold.ttf</string>
-        <string>Lato-Black.ttf</string>
-        <string>Lato-Regular.ttf</string>
-        <string>Lato-BlackItalic.ttf</string>
-        <string>Lato-BoldItalic.ttf</string>
-        <string>Lato-Light.ttf</string>
-        <string>Lato-ThinItalic.ttf</string>
-    </array>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Use for your purpose</string>
 </dict>
 </plist>
