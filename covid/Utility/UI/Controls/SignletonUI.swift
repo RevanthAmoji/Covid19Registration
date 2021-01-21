@@ -121,6 +121,8 @@ class SingletonUI {
     
     func viewObjectsBackGndColor(viewController: UIViewController) {
         
+      //  viewController.view.backgroundColor = UIColor.white
+        
         let arr = viewController.view.subviews(ofType: SutherlandLabel.self)
         
         for item in arr {
