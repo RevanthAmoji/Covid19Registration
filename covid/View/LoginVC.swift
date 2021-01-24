@@ -34,7 +34,7 @@ class LoginVC: UIViewController, ProgressBarShower {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnGetStarted.btnEnable(boolVal: false)
+        btnGetStarted.btnEnable(boolVal: true)
         btnHowItWorks.btnEnable(boolVal: true)
         SingletonUI.shared.viewObjectsBackGndColor(viewController: self)
         
@@ -74,7 +74,21 @@ class LoginVC: UIViewController, ProgressBarShower {
         
         SingletonData.shared.email = tfEmail.text ?? ""
         SingletonData.shared.password = tfPassword.text ?? ""
-        checkConnectivityBackUpData()
+        
+        let isValid = viewModel.validateEmailAddress(email: tfEmail.text ?? "")
+        if tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+            self.showOfflineMessage(title: "Email is required", msg: "")
+            return
+        } else if !isValid {
+            self.showOfflineMessage(title: "Invalid Email Address", msg: "")
+            return
+        } else if tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+            self.showOfflineMessage(title: "Password is required", msg: "")
+            return
+        } else {
+            checkConnectivityBackUpData()
+        }
+        
         
     }
     
